@@ -20,8 +20,8 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Alex Chen</span>
-            <span className="text-gradient">Product Manager</span>
+            <span className="block text-foreground mb-2">Sunny Soni</span>
+            <span className="text-gradient">AI Product Manager</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
