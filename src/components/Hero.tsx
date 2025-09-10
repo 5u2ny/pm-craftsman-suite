@@ -32,8 +32,8 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Sunny Soni</span>
-            <span className="text-gradient">AI Product Manager</span>
+            <span className="block text-foreground mb-2 animate-slide-up">Sunny Soni</span>
+            <span className="text-gradient animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -44,19 +44,19 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button asChild size="lg" className="button-glow group">
-              <Link to="/case-studies">
-                View Case Studies
+              <Link to="/about">
+                View Experience
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="hover-lift">
+              <Link to="/case-studies">
+                Case Studies
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="hover-lift">
               <Link to="/projects">
                 Projects
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="hover-lift">
-              <Link to="/about">
-                About Me
               </Link>
             </Button>
           </div>
@@ -99,23 +99,38 @@ const Hero = () => {
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating geometric shapes */}
-        <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/10 rounded-full animate-float" />
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-accent/10 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-primary-glow/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+        {/* Floating triangular shapes */}
+        <div className="absolute top-1/4 left-10 w-16 h-16 bg-primary/10 transform rotate-45 animate-float" 
+             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }} />
+        <div className="absolute bottom-1/4 right-10 w-12 h-12 bg-accent/10 animate-float" 
+             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)", animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/3 w-10 h-10 bg-primary-glow/20 transform rotate-12 animate-float" 
+             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)", animationDelay: "2s" }} />
         
-        {/* Drifting elements */}
-        <div className="absolute top-20 right-1/4 w-8 h-8 bg-primary/15 rotate-45 animate-drift" />
-        <div className="absolute bottom-20 left-1/4 w-6 h-6 bg-accent/15 rounded-full animate-drift" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-2/3 right-10 w-10 h-10 bg-primary-glow/10 rotate-12 animate-drift" style={{ animationDelay: "1.5s" }} />
+        {/* Hexagonal drifting elements */}
+        <div className="absolute top-20 right-1/4 w-14 h-14 bg-primary/15 animate-drift" 
+             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)" }} />
+        <div className="absolute bottom-20 left-1/4 w-10 h-10 bg-accent/15 animate-drift" 
+             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)", animationDelay: "3s" }} />
+        <div className="absolute top-2/3 right-10 w-12 h-12 bg-primary-glow/10 animate-drift" 
+             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)", animationDelay: "1.5s" }} />
         
-        {/* Pulsing glow effects */}
-        <div className="absolute top-1/3 left-1/2 w-32 h-32 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-xl animate-pulse-glow" />
-        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-r from-accent/5 to-primary/5 rounded-full blur-xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
+        {/* Diamond-shaped pulsing elements */}
+        <div className="absolute top-1/3 left-1/2 w-20 h-20 bg-gradient-to-r from-primary/8 to-accent/8 animate-pulse-glow transform rotate-45" />
+        <div className="absolute bottom-1/3 right-1/3 w-16 h-16 bg-gradient-to-r from-accent/8 to-primary/8 animate-pulse-glow transform rotate-45" 
+             style={{ animationDelay: "2s" }} />
         
-        {/* Moving gradient orbs */}
-        <div className="absolute top-10 left-1/2 w-40 h-40 bg-gradient-to-br from-primary/8 to-transparent rounded-full blur-2xl animate-drift" />
-        <div className="absolute bottom-10 right-1/2 w-36 h-36 bg-gradient-to-tl from-accent/8 to-transparent rounded-full blur-2xl animate-drift" style={{ animationDelay: "4s" }} />
+        {/* Star-shaped moving elements */}
+        <div className="absolute top-10 left-1/2 w-24 h-24 bg-gradient-to-br from-primary/6 to-transparent animate-drift" 
+             style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
+        <div className="absolute bottom-10 right-1/2 w-20 h-20 bg-gradient-to-tl from-accent/6 to-transparent animate-drift" 
+             style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)", animationDelay: "4s" }} />
+        
+        {/* Arrow-shaped elements */}
+        <div className="absolute top-1/5 right-1/5 w-18 h-18 bg-primary/12 animate-drift" 
+             style={{ clipPath: "polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)", animationDelay: "2.5s" }} />
+        <div className="absolute bottom-1/5 left-1/2 w-14 h-14 bg-accent/12 animate-drift" 
+             style={{ clipPath: "polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)", animationDelay: "1.8s" }} />
       </div>
     </section>
   );
