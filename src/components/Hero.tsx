@@ -44,9 +44,14 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button asChild size="lg" className="button-glow group">
-              <Link to="/projects">
+              <Link to="/case-studies">
                 View Case Studies
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="hover-lift">
+              <Link to="/projects">
+                Projects
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="hover-lift">
