@@ -215,6 +215,12 @@
 }
 
 @layer utilities {
+  /* Backdrop Blur Utilities */
+  .backdrop-blur-3xl {
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
+  }
+
   /* Custom Animations */
   @keyframes fade-in {
     from {
