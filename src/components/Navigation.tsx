@@ -29,37 +29,35 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed left-0 top-0 bottom-0 z-50 w-20">
-      {/* Desktop Sidebar */}
-      <div className="hidden md:flex h-full">
-        <div className="flex flex-col items-center justify-center h-full p-4">
-          <div className="flex flex-col items-center space-y-4 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl px-3 py-6 shadow-2xl shadow-black/20 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-50 relative overflow-hidden">
-            {navItems.map((item) => {
-              const IconComponent = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`relative p-3 rounded-full transition-all duration-300 group ${
-                    location.pathname === item.path
-                      ? "text-white bg-white/20 shadow-lg"
-                      : "text-white/70 hover:text-white hover:bg-white/10"
-                  }`}
-                >
-                  <IconComponent className="h-5 w-5 relative z-10" />
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </Link>
-              );
-            })}
-            <div className="h-px w-6 bg-white/20 my-2" />
-            <button
-              onClick={handleDownloadResume}
-              className="relative p-3 rounded-full transition-all duration-300 group text-white/70 hover:text-white hover:bg-white/10"
-            >
-              <Download className="h-5 w-5 relative z-10" />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-          </div>
+    <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-50">
+      {/* Desktop Floating Navigation */}
+      <div className="hidden md:flex">
+        <div className="flex flex-col items-center space-y-4 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl px-3 py-6 shadow-2xl shadow-black/20 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-b before:from-white/10 before:to-transparent before:opacity-50 relative overflow-hidden">
+          {navItems.map((item) => {
+            const IconComponent = item.icon;
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`relative p-3 rounded-full transition-all duration-300 group ${
+                  location.pathname === item.path
+                    ? "text-white bg-white/20 shadow-lg"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                <IconComponent className="h-5 w-5 relative z-10" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+            );
+          })}
+          <div className="h-px w-6 bg-white/20 my-2" />
+          <button
+            onClick={handleDownloadResume}
+            className="relative p-3 rounded-full transition-all duration-300 group text-white/70 hover:text-white hover:bg-white/10"
+          >
+            <Download className="h-5 w-5 relative z-10" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </button>
         </div>
       </div>
 
