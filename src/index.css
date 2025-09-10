@@ -390,6 +390,32 @@
     animation: twinkle 4s ease-in-out infinite;
   }
 
+  @keyframes orbital-rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbital-trail {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+  }
+
+  .animate-orbital-rotation {
+    animation: orbital-rotation 20s linear infinite;
+  }
+
+  .animate-orbital-trail {
+    animation: orbital-trail 10s ease-in-out infinite;
+  }
+
   /* Backdrop Blur */
   .backdrop-blur-glass {
     backdrop-filter: blur(16px) saturate(180%);

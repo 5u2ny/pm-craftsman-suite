@@ -1,53 +1,58 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [stars, setStars] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
-  const [sparks, setSparks] = useState<Array<{id: number, x: number, y: number, angle: number, velocity: number}>>([]);
-
-  useEffect(() => {
-    // Generate shooting stars - falling from top right corner
-    const generateStars = () => {
-      const newStars = Array.from({ length: 40 }, (_, i) => ({
-        id: i,
-        x: 80 + Math.random() * 20, // Start from top right area (80-100%)
-        y: -10 + Math.random() * 20, // Start above screen (-10% to 10%)
-        delay: Math.random() * 2
-      }));
-      setStars(newStars);
-    };
-
-    generateStars();
-    const interval = setInterval(generateStars, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleStarHit = (starId: number) => {
-    // Create realistic fire spark effect at profile picture location
-    const newSparks = Array.from({ length: 12 }, (_, i) => ({
-      id: Date.now() + i,
-      x: 50 + (Math.random() - 0.5) * 15, // Around center
-      y: 25 + (Math.random() - 0.5) * 8,  // Around profile picture area
-      angle: (Math.random() * 360), // Random direction
-      velocity: 0.5 + Math.random() * 1.5 // Random initial velocity
-    }));
-    
-    setSparks(prev => [...prev, ...newSparks]);
-
-    // Remove sparks after animation
-    setTimeout(() => {
-      setSparks(prev => prev.filter(spark => !newSparks.find(ns => ns.id === spark.id)));
-    }, 2000); // Longer duration for realistic fall
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Black background with subtle texture */}
+      {/* Black space background with subtle texture */}
       <div className="absolute inset-0 z-0 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-black to-slate-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-black to-slate-900/10" />
+        
+        {/* Subtle star field */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
+          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
+          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
+          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
+          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
+          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
+          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
+          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
+        </div>
+        
+        {/* Orbital Planet Element */}
+        <div className="absolute top-1/2 right-20 transform -translate-y-1/2">
+          <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            {/* Central Black Hole/Planet */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-40 lg:h-40 bg-black rounded-full border-4 border-orange-400/30 shadow-2xl">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-800 to-black"></div>
+            </div>
+            
+            {/* Orbital Ring */}
+            <div className="absolute inset-0 animate-orbital-rotation">
+              <div className="relative w-full h-full">
+                {/* Main orbital ring */}
+                <div className="absolute inset-0 rounded-full border-8 border-transparent bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 p-1">
+                  <div className="w-full h-full rounded-full bg-transparent border-4 border-transparent bg-gradient-to-r from-transparent via-orange-200/50 to-transparent"></div>
+                </div>
+                
+                {/* Inner glow effect */}
+                <div className="absolute inset-4 rounded-full border-2 border-orange-300/40 animate-pulse"></div>
+                
+                {/* Outer glow effect */}
+                <div className="absolute -inset-2 rounded-full border border-orange-400/20 animate-pulse" style={{ animationDelay: "1s" }}></div>
+              </div>
+            </div>
+            
+            {/* Trailing effect */}
+            <div className="absolute inset-0 animate-orbital-trail">
+              <div className="absolute top-1/2 right-0 w-24 h-2 bg-gradient-to-r from-orange-400/60 to-transparent rounded-full transform -translate-y-1/2"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Content */}
@@ -129,53 +134,6 @@ const Hero = () => {
             </Button>
           </div>
         </div>
-      </div>
-
-      {/* Shooting Stars */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {stars.map((star) => (
-          <div
-            key={star.id}
-            className="absolute w-1 h-1 bg-white rounded-full animate-shooting-star"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              animationDelay: `${star.delay}s`,
-              boxShadow: '0 0 6px 2px rgba(255, 255, 255, 0.6)'
-            }}
-            onAnimationIteration={() => {
-              // Check if star is near profile picture area (roughly center)
-              if (star.x > 35 && star.x < 65 && star.y > 15 && star.y < 45) {
-                handleStarHit(star.id);
-              }
-            }}
-          />
-        ))}
-
-        {/* Spark Effects */}
-        {sparks.map((spark) => (
-          <div
-            key={spark.id}
-            className="absolute w-1 h-1 bg-orange-400 rounded-full animate-fire-spark"
-            style={{
-              left: `${spark.x}%`,
-              top: `${spark.y}%`,
-              boxShadow: '0 0 6px 2px rgba(255, 165, 0, 0.8)',
-              '--spark-angle': `${spark.angle}deg`,
-              '--spark-velocity': spark.velocity
-            } as React.CSSProperties & { '--spark-angle': string; '--spark-velocity': number }}
-          />
-        ))}
-
-        {/* Background stars */}
-        <div className="absolute top-10 left-10 w-1 h-1 bg-white/40 rounded-full animate-twinkle" />
-        <div className="absolute top-20 right-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
-        <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/50 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
-        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-white/45 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
-        <div className="absolute top-40 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-60 right-40 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
-        <div className="absolute bottom-60 left-20 w-1 h-1 bg-white/50 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
       </div>
     </section>
   );
