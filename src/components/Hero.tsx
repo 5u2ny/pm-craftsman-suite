@@ -97,40 +97,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Clean background without geometric elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating triangular shapes */}
-        <div className="absolute top-1/4 left-10 w-16 h-16 bg-primary/10 transform rotate-45 animate-float" 
-             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }} />
-        <div className="absolute bottom-1/4 right-10 w-12 h-12 bg-accent/10 animate-float" 
-             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)", animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/3 w-10 h-10 bg-primary-glow/20 transform rotate-12 animate-float" 
-             style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)", animationDelay: "2s" }} />
-        
-        {/* Hexagonal drifting elements */}
-        <div className="absolute top-20 right-1/4 w-14 h-14 bg-primary/15 animate-drift" 
-             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)" }} />
-        <div className="absolute bottom-20 left-1/4 w-10 h-10 bg-accent/15 animate-drift" 
-             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)", animationDelay: "3s" }} />
-        <div className="absolute top-2/3 right-10 w-12 h-12 bg-primary-glow/10 animate-drift" 
-             style={{ clipPath: "polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)", animationDelay: "1.5s" }} />
-        
-        {/* Diamond-shaped pulsing elements */}
-        <div className="absolute top-1/3 left-1/2 w-20 h-20 bg-gradient-to-r from-primary/8 to-accent/8 animate-pulse-glow transform rotate-45" />
-        <div className="absolute bottom-1/3 right-1/3 w-16 h-16 bg-gradient-to-r from-accent/8 to-primary/8 animate-pulse-glow transform rotate-45" 
+        {/* Subtle gradient overlay effects only */}
+        <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-accent/3 rounded-full blur-3xl animate-pulse-glow" />
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-accent/3 to-primary/3 rounded-full blur-3xl animate-pulse-glow" 
              style={{ animationDelay: "2s" }} />
-        
-        {/* Star-shaped moving elements */}
-        <div className="absolute top-10 left-1/2 w-24 h-24 bg-gradient-to-br from-primary/6 to-transparent animate-drift" 
-             style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} />
-        <div className="absolute bottom-10 right-1/2 w-20 h-20 bg-gradient-to-tl from-accent/6 to-transparent animate-drift" 
-             style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)", animationDelay: "4s" }} />
-        
-        {/* Arrow-shaped elements */}
-        <div className="absolute top-1/5 right-1/5 w-18 h-18 bg-primary/12 animate-drift" 
-             style={{ clipPath: "polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)", animationDelay: "2.5s" }} />
-        <div className="absolute bottom-1/5 left-1/2 w-14 h-14 bg-accent/12 animate-drift" 
-             style={{ clipPath: "polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)", animationDelay: "1.8s" }} />
       </div>
     </section>
   );
