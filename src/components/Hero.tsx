@@ -97,11 +97,25 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/10 rounded-full animate-glow" />
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-accent/10 rounded-full animate-glow" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-primary-glow/20 rounded-full animate-glow" style={{ animationDelay: "2s" }} />
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating geometric shapes */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/10 rounded-full animate-float" />
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-accent/10 rounded-full animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-primary-glow/20 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+        
+        {/* Drifting elements */}
+        <div className="absolute top-20 right-1/4 w-8 h-8 bg-primary/15 rotate-45 animate-drift" />
+        <div className="absolute bottom-20 left-1/4 w-6 h-6 bg-accent/15 rounded-full animate-drift" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-2/3 right-10 w-10 h-10 bg-primary-glow/10 rotate-12 animate-drift" style={{ animationDelay: "1.5s" }} />
+        
+        {/* Pulsing glow effects */}
+        <div className="absolute top-1/3 left-1/2 w-32 h-32 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-xl animate-pulse-glow" />
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 bg-gradient-to-r from-accent/5 to-primary/5 rounded-full blur-xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
+        
+        {/* Moving gradient orbs */}
+        <div className="absolute top-10 left-1/2 w-40 h-40 bg-gradient-to-br from-primary/8 to-transparent rounded-full blur-2xl animate-drift" />
+        <div className="absolute bottom-10 right-1/2 w-36 h-36 bg-gradient-to-tl from-accent/8 to-transparent rounded-full blur-2xl animate-drift" style={{ animationDelay: "4s" }} />
       </div>
     </section>
   );
