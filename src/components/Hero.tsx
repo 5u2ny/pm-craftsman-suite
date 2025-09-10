@@ -5,59 +5,68 @@ import Profile4D from "@/components/Profile4D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black font-sans">
-      {/* Exact Kaisermann background recreation */}
-      <div className="absolute inset-0 z-0">
-        {/* Deep black base */}
-        <div className="absolute inset-0 bg-gray-950" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Black space background with subtle texture */}
+      <div className="absolute inset-0 z-0 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-black to-slate-900/10" />
         
-        {/* Large colored blurs exactly like kaisermann.me */}
-        <div className="absolute top-0 left-0 w-[800px] h-[600px] bg-purple-500/8 rounded-full blur-[120px] transform -translate-x-1/4 -translate-y-1/4" />
-        <div className="absolute top-1/4 right-0 w-[600px] h-[800px] bg-cyan-400/6 rounded-full blur-[100px] transform translate-x-1/3" />
-        <div className="absolute bottom-0 left-1/3 w-[700px] h-[500px] bg-pink-400/5 rounded-full blur-[110px] transform translate-y-1/4" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[600px] bg-blue-500/7 rounded-full blur-[90px]" />
-        
-        {/* Fine grain texture */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-        }} />
+        {/* Subtle star field - exactly like abirthakur.com */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
+          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
+          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
+          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
+          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
+          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
+          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
+          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
+          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
+          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
+          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
+          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
+          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
+          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
+          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
+          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
+          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
+          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
+        </div>
       </div>
 
-      {/* Apple liquid glass content container */}
+      {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main glass card */}
-        <div className="liquid-glass-card p-8 sm:p-12 lg:p-16 rounded-3xl animate-fade-in">
-          {/* Profile Picture */}
+        <div className="animate-fade-in">
+          {/* 4D Profile Picture */}
           <div className="mb-8 flex justify-center">
-            <div className="liquid-glass-frame p-2 rounded-full">
-              <Profile4D />
-            </div>
+            <Profile4D />
           </div>
           
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-light mb-6 tracking-tight leading-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block text-white mb-2 animate-slide-up">Sunny Soni</span>
-            <span className="text-white/80 animate-fade-in font-normal text-3xl sm:text-4xl lg:text-5xl" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
+            <span className="text-white animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-white/70 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
-            <span className="text-white/90 font-medium"> AI Product Manager</span> with experience building 
+            <span className="text-primary font-medium"> AI Product Manager</span> with experience building 
             0-to-1 products and driving growth through data-driven strategies.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button asChild size="lg" className="liquid-glass-button group">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Button asChild size="lg" className="button-glow group">
               <Link to="/about">
                 View Experience
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="liquid-glass-button-outline">
+            <Button asChild variant="outline" size="lg" className="hover-lift">
               <Link to="/case-studies">
                 Case Studies
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="liquid-glass-button-outline">
+            <Button asChild variant="outline" size="lg" className="hover-lift">
               <Link to="/projects">
                 Projects
               </Link>
@@ -69,7 +78,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:bg-white/5 transition-colors text-white/60 hover:text-white/90 rounded-full"
+              className="hover:text-primary transition-colors"
               asChild
             >
               <a href="mailto:sunny.mba@proton.me" aria-label="Email">
@@ -79,7 +88,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:bg-white/5 transition-colors text-white/60 hover:text-white/90 rounded-full"
+              className="hover:text-primary transition-colors"
               asChild
             >
               <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -89,7 +98,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:bg-white/5 transition-colors text-white/60 hover:text-white/90 rounded-full"
+              className="hover:text-primary transition-colors"
               asChild
             >
               <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
