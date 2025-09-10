@@ -1,106 +1,106 @@
-import { Award, Calendar, Building } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { ExternalLink, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Experience = () => {
   const experiences = [
     {
       role: "Lead AI Product Manager Intern",
-      company: "IPSERLAB (Dallas, TX)",
+      company: "IPSERLAB",
+      location: "Dallas, TX",
       period: "May 2025 - Ongoing",
+      website: "#",
       description: "Leading AI-powered travel planning platform development from 0-to-1 at stealth-stage startup, architecting multi-disciplinary teams and ownership models.",
-      achievements: [
-        "Promoted from AI Product Manager Intern in 4 weeks",
-        "Orchestrated complete 0-to-1 product discovery process", 
-        "Drove product velocity implementing RICE prioritization framework",
-        "Engineered asynchronous onboarding system for 20+ contributors"
-      ]
+      techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Team Leadership", "0-to-1 Development"]
     },
     {
       role: "Product Analyst (Growth Marketing Specialist)",
-      company: "ASANIFY (Kolkata, India)",
+      company: "ASANIFY",
+      location: "Kolkata, India", 
       period: "Sep 2022 - Aug 2023",
+      website: "#",
       description: "Spearheaded CRM automation and audience segmentation strategy for HR and Payroll automation software serving small to medium-sized businesses.",
-      achievements: [
-        "18% increase in revenue efficiency",
-        "27% boost in lead conversion",
-        "Engineered real-time onboarding dashboards in Tableau",
-        "Pioneered Product-Led Growth (PLG) inbound funnel"
-      ]
+      techStack: ["CRM Automation", "Tableau", "Product-Led Growth", "Revenue Optimization", "Lead Conversion"]
     },
     {
-      role: "Business Development Associate", 
-      company: "YOCKET (Mumbai, India)",
-      period: "Mar 2022 - Sep 2022",
+      role: "Business Development Associate",
+      company: "YOCKET", 
+      location: "Mumbai, India",
+      period: "Mar 2022 - Sep 2022", 
+      website: "#",
       description: "Collaborated with product team to redesign user qualification journeys for India's largest community-based platform for study-abroad aspirants.",
-      achievements: [
-        "35% improvement in conversion efficiency",
-        "Generated over $700K in revenue across two quarters",
-        "Executed data-driven activation strategies",
-        "Optimized conversion funnel leveraging LinkedIn data"
-      ]
+      techStack: ["User Journey Design", "LinkedIn Analytics", "Conversion Optimization", "Data-Driven Strategy"]
     },
     {
       role: "Product-led Growth Analyst (Growth Partner)",
-      company: "LEADLE (Chennai, India)", 
+      company: "LEADLE",
+      location: "Chennai, India",
       period: "Oct 2021 - Mar 2022",
+      website: "#", 
       description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback for B2B SaaS platform providing product-led growth tools and analytics.",
-      achievements: [
-        "20% boost in SQL volume",
-        "17% reduction in churn",
-        "Engineered automated lead capture system",
-        "Quadrupled booked meetings identifying top-performing channels"
-      ]
+      techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Growth Analytics", "User Activation"]
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
-            Professional Experience
+            Experience
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Building products that create value through strategic thinking and user-centered design
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            My professional journey and key roles. Click on a card to learn more about each position.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <Card key={index} className="card-gradient p-8 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="grid md:grid-cols-4 gap-6">
-                <div className="md:col-span-1">
-                  <div className="flex items-center mb-2">
-                    <Building className="h-5 w-5 text-primary mr-2" />
-                    <Badge variant="outline" className="text-xs">
-                      {exp.period}
-                    </Badge>
+            <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+                {/* Date */}
+                <div className="lg:col-span-1">
+                  <div className="flex items-center text-sm text-muted-foreground mb-2">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    {exp.period}
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{exp.role}</h3>
-                  <p className="text-primary font-medium">{exp.company}</p>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.achievements.map((achievement, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
-                        {achievement}
-                      </Badge>
-                    ))}
-                  </div>
+                  <a 
+                    href={exp.website}
+                    className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors"
+                  >
+                    Visit {exp.company} website
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
                 </div>
 
-                <div className="md:col-span-1 flex justify-center md:justify-end">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <Award className="h-8 w-8 text-primary" />
+                {/* Content */}  
+                <div className="lg:col-span-3">
+                  <div className="border-l-2 border-primary/20 pl-6 group-hover:border-primary/40 transition-colors">
+                    <h3 className="text-xl font-bold text-foreground mb-1">
+                      {exp.role}
+                    </h3>
+                    <p className="text-primary font-medium mb-3">
+                      {exp.company}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+                    
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {exp.techStack.map((tech, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <button className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors">
+                      View Details →
+                    </button>
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </div>
