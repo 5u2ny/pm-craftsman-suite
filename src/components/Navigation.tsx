@@ -37,43 +37,31 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="text-xl font-bold text-gradient hover:scale-105 transition-transform duration-200"
-          >
-            Sunny Soni
-          </Link>
-
+        <div className="flex justify-center items-center h-16">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-3 shadow-lg">
             {navItems.map((item) => {
               const IconComponent = item.icon;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-primary ${
+                  className={`p-3 rounded-xl transition-all duration-200 hover:bg-white/20 ${
                     location.pathname === item.path
-                      ? "text-primary"
-                      : "text-muted-foreground"
+                      ? "text-primary bg-white/20"
+                      : "text-muted-foreground hover:text-primary"
                   }`}
                 >
-                  <IconComponent className="h-4 w-4" />
-                  <span>{item.name}</span>
+                  <IconComponent className="h-5 w-5" />
                 </Link>
               );
             })}
-            <Button
+            <button
               onClick={handleDownloadResume}
-              variant="outline"
-              size="sm"
-              className="ml-4"
+              className="p-3 rounded-xl transition-all duration-200 hover:bg-white/20 text-muted-foreground hover:text-primary"
             >
-              <Download className="h-4 w-4 mr-2" />
-              Resume
-            </Button>
+              <Download className="h-5 w-5" />
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -92,7 +80,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-glass rounded-lg mt-2 shadow-lg">
+            <div className="flex justify-center items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 mx-4 shadow-lg">
               {navItems.map((item) => {
                 const IconComponent = item.icon;
                 return (
@@ -100,26 +88,22 @@ const Navigation = () => {
                     key={item.name}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-2 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+                    className={`p-3 rounded-xl transition-all duration-200 hover:bg-white/20 ${
                       location.pathname === item.path
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                        ? "text-primary bg-white/20"
+                        : "text-muted-foreground hover:text-primary"
                     }`}
                   >
-                    <IconComponent className="h-4 w-4" />
-                    <span>{item.name}</span>
+                    <IconComponent className="h-5 w-5" />
                   </Link>
                 );
               })}
-              <Button
+              <button
                 onClick={handleDownloadResume}
-                variant="outline"
-                size="sm"
-                className="w-full mt-2"
+                className="p-3 rounded-xl transition-all duration-200 hover:bg-white/20 text-muted-foreground hover:text-primary"
               >
-                <Download className="h-4 w-4 mr-2" />
-                Resume
-              </Button>
+                <Download className="h-5 w-5" />
+              </button>
             </div>
           </div>
         )}
