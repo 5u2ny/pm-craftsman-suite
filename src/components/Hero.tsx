@@ -8,19 +8,19 @@ const Hero = () => {
   const [sparks, setSparks] = useState<Array<{id: number, x: number, y: number}>>([]);
 
   useEffect(() => {
-    // Generate shooting stars
+    // Generate shooting stars - 5x more quantity
     const generateStars = () => {
-      const newStars = Array.from({ length: 8 }, (_, i) => ({
+      const newStars = Array.from({ length: 40 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        delay: Math.random() * 8
+        delay: Math.random() * 2 // 5x faster cycle
       }));
       setStars(newStars);
     };
 
     generateStars();
-    const interval = setInterval(generateStars, 10000);
+    const interval = setInterval(generateStars, 2000); // 5x faster regeneration
 
     return () => clearInterval(interval);
   }, []);
@@ -65,7 +65,7 @@ const Hero = () => {
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block text-white mb-2 animate-slide-up">Sunny Soni</span>
-            <span className="text-gradient animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
+            <span className="text-white animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">

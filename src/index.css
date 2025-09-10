@@ -342,7 +342,7 @@
   }
 
   .animate-shooting-star {
-    animation: shooting-star 3s linear infinite;
+    animation: shooting-star 0.6s linear infinite; /* 5x faster: 3s / 5 = 0.6s */
   }
 
   .animate-spark {
