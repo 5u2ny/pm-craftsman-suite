@@ -1,19 +1,51 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-bg.jpg";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [stars, setStars] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
+  const [sparks, setSparks] = useState<Array<{id: number, x: number, y: number}>>([]);
+
+  useEffect(() => {
+    // Generate shooting stars
+    const generateStars = () => {
+      const newStars = Array.from({ length: 8 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        delay: Math.random() * 8
+      }));
+      setStars(newStars);
+    };
+
+    generateStars();
+    const interval = setInterval(generateStars, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleStarHit = (starId: number) => {
+    // Create spark effect at profile picture location
+    const newSparks = Array.from({ length: 6 }, (_, i) => ({
+      id: Date.now() + i,
+      x: 50 + (Math.random() - 0.5) * 20, // Around center
+      y: 25 + (Math.random() - 0.5) * 10  // Around profile picture area
+    }));
+    
+    setSparks(prev => [...prev, ...newSparks]);
+
+    // Remove sparks after animation
+    setTimeout(() => {
+      setSparks(prev => prev.filter(spark => !newSparks.find(ns => ns.id === spark.id)));
+    }, 1000);
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Hero background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Black background with subtle texture */}
+      <div className="absolute inset-0 z-0 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-black to-slate-900/20" />
       </div>
 
       {/* Content */}
@@ -21,22 +53,22 @@ const Hero = () => {
         <div className="animate-fade-in">
           {/* Profile Picture */}
           <div className="mb-8 flex justify-center">
-            <div className="relative">
+            <div className="relative profile-frame">
               <img
                 src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png"
                 alt="Sunny Soni - AI Product Manager"
-                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-primary/20 shadow-xl"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-white/30 shadow-2xl"
               />
-              <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-glow"></div>
+              <div className="absolute inset-0 rounded-full border-2 border-white/50 animate-glow"></div>
             </div>
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2 animate-slide-up">Sunny Soni</span>
+            <span className="block text-white mb-2 animate-slide-up">Sunny Soni</span>
             <span className="text-gradient animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
             MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
             <span className="text-primary font-medium"> AI Product Manager</span> with experience building 
             0-to-1 products and driving growth through data-driven strategies.
@@ -97,25 +129,49 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Animated Motion Elements */}
+      {/* Shooting Stars */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating particles */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-primary/40 rounded-full animate-float" />
-        <div className="absolute top-32 right-20 w-1 h-1 bg-accent/50 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-primary-glow/30 rounded-full animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-10 w-2 h-2 bg-accent/40 rounded-full animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "0.5s" }} />
-        <div className="absolute top-40 left-1/3 w-2 h-2 bg-primary-glow/40 rounded-full animate-float" style={{ animationDelay: "1.5s" }} />
-        
-        {/* Drifting light streaks */}
-        <div className="absolute top-1/4 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-drift" />
-        <div className="absolute bottom-1/3 right-0 w-24 h-0.5 bg-gradient-to-l from-transparent via-accent/20 to-transparent animate-drift" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-2/3 left-1/4 w-20 h-0.5 bg-gradient-to-r from-transparent via-primary-glow/15 to-transparent animate-drift" style={{ animationDelay: "4s" }} />
-        
-        {/* Subtle gradient overlay effects */}
-        <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-accent/3 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-accent/3 to-primary/3 rounded-full blur-3xl animate-pulse-glow" 
-             style={{ animationDelay: "2s" }} />
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className="absolute w-1 h-1 bg-white rounded-full animate-shooting-star"
+            style={{
+              left: `${star.x}%`,
+              top: `${star.y}%`,
+              animationDelay: `${star.delay}s`,
+              boxShadow: '0 0 6px 2px rgba(255, 255, 255, 0.6)'
+            }}
+            onAnimationIteration={() => {
+              // Check if star is near profile picture area (roughly center)
+              if (star.x > 35 && star.x < 65 && star.y > 15 && star.y < 45) {
+                handleStarHit(star.id);
+              }
+            }}
+          />
+        ))}
+
+        {/* Spark Effects */}
+        {sparks.map((spark) => (
+          <div
+            key={spark.id}
+            className="absolute w-1 h-1 bg-yellow-300 rounded-full animate-spark"
+            style={{
+              left: `${spark.x}%`,
+              top: `${spark.y}%`,
+              boxShadow: '0 0 8px 2px rgba(255, 215, 0, 0.8)'
+            }}
+          />
+        ))}
+
+        {/* Background stars */}
+        <div className="absolute top-10 left-10 w-1 h-1 bg-white/40 rounded-full animate-twinkle" />
+        <div className="absolute top-20 right-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/50 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
+        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-white/45 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
+        <div className="absolute top-40 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-60 right-40 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
+        <div className="absolute bottom-60 left-20 w-1 h-1 bg-white/50 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
       </div>
     </section>
   );

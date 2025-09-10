@@ -282,6 +282,85 @@
     }
   }
 
+  @keyframes shooting-star {
+    0% {
+      transform: translateX(-100px) translateY(100px) rotate(45deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes spark {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: translate(var(--random-x, 10px), var(--random-y, -10px)) scale(1.2);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(var(--random-x2, -15px), var(--random-y2, -20px)) scale(0.8);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translate(var(--random-x3, 8px), var(--random-y3, -5px)) scale(0.4);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translate(var(--random-x4, 0px), var(--random-y4, 10px)) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    25% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+    75% {
+      opacity: 0.6;
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-shooting-star {
+    animation: shooting-star 3s linear infinite;
+  }
+
+  .animate-spark {
+    animation: spark 1s ease-out forwards;
+    --random-x: calc(var(--spark-rand, 0.5) * 20px - 10px);
+    --random-y: calc(var(--spark-rand, 0.5) * -30px - 10px);
+    --random-x2: calc(var(--spark-rand, 0.3) * -25px - 5px);
+    --random-y2: calc(var(--spark-rand, 0.7) * -35px - 15px);
+    --random-x3: calc(var(--spark-rand, 0.8) * 15px - 5px);
+    --random-y3: calc(var(--spark-rand, 0.2) * -15px - 5px);
+    --random-x4: calc(var(--spark-rand, 0.4) * 10px - 5px);
+    --random-y4: calc(var(--spark-rand, 0.9) * 20px - 10px);
+  }
+
+  .animate-twinkle {
+    animation: twinkle 4s ease-in-out infinite;
+  }
+
   /* Backdrop Blur */
   .backdrop-blur-glass {
     backdrop-filter: blur(16px) saturate(180%);
