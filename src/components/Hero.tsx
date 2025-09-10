@@ -1,6 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import Profile3D from "@/components/Profile3D";
 
 const Hero = () => {
   return (
@@ -37,15 +38,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* Profile Picture */}
+          {/* 3D Profile Picture */}
           <div className="mb-8 flex justify-center">
             <div className="relative profile-frame">
-              <img
-                src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png"
-                alt="Sunny Soni - AI Product Manager"
-                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-white/30 shadow-2xl"
-              />
-              <div className="absolute inset-0 rounded-full border-2 border-white/50 animate-glow"></div>
+              <Profile3D />
             </div>
           </div>
           
