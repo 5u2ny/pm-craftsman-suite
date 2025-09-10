@@ -43,7 +43,7 @@ const Experience = () => {
 
   return (
     <section className="py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
             Experience
@@ -53,53 +53,53 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {experiences.map((exp, index) => (
             <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-                {/* Date */}
-                <div className="lg:col-span-1">
-                  <div className="flex items-center text-sm text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    {exp.period}
-                  </div>
-                  <a 
-                    href={exp.website}
-                    className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors"
-                  >
-                    Visit {exp.company} website
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
-                </div>
-
-                {/* Content */}  
-                <div className="lg:col-span-3">
-                  <div className="border-l-2 border-primary/20 pl-6 group-hover:border-primary/40 transition-colors">
-                    <h3 className="text-xl font-bold text-foreground mb-1">
-                      {exp.role}
-                    </h3>
-                    <p className="text-primary font-medium mb-3">
-                      {exp.company}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {exp.description}
-                    </p>
-                    
-                    {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {exp.techStack.map((tech, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    
-                    <button className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors">
-                      View Details →
-                    </button>
-                  </div>
-                </div>
+              {/* Date */}
+              <div className="text-sm text-muted-foreground mb-2">
+                {exp.period}
               </div>
+              
+              {/* Company Website Link */}
+              <div className="mb-4">
+                <a 
+                  href={exp.website}
+                  className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors w-fit"
+                >
+                  Visit {exp.company} website
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
+
+              {/* Job Title */}
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                {exp.role}
+              </h3>
+              
+              {/* Company */}
+              <p className="text-lg text-primary font-medium mb-4">
+                {exp.company}
+              </p>
+              
+              {/* Description */}
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
+                {exp.description}
+              </p>
+              
+              {/* Tech Stack */}
+              <div className="space-y-2 mb-6">
+                {exp.techStack.map((tech, i) => (
+                  <div key={i} className="inline-block mr-4 mb-2 text-sm text-foreground">
+                    {tech}
+                  </div>
+                ))}
+              </div>
+              
+              {/* View Details */}
+              <button className="text-primary hover:text-primary/80 text-sm flex items-center gap-1 transition-colors">
+                View Details →
+              </button>
             </div>
           ))}
         </div>
