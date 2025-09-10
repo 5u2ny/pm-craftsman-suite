@@ -1,7 +1,7 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import Profile3D from "@/components/Profile3D";
+import Profile4D from "@/components/Profile4D";
 
 const Hero = () => {
   return (
@@ -38,11 +38,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* 3D Profile Picture */}
+          {/* 4D Profile Picture */}
           <div className="mb-8 flex justify-center">
-            <div className="relative profile-frame">
-              <Profile3D />
-            </div>
+            <Profile4D />
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
