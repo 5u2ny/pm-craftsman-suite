@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Home, FolderOpen, User, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -17,10 +17,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Projects", path: "/projects" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: Home },
+    { name: "Projects", path: "/case-studies", icon: FolderOpen },
+    { name: "About", path: "/about", icon: User },
+    { name: "Contact", path: "/contact", icon: Mail },
   ];
 
   const handleDownloadResume = () => {
@@ -48,19 +48,23 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                  location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-primary ${
+                    location.pathname === item.path
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  <IconComponent className="h-4 w-4" />
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
             <Button
               onClick={handleDownloadResume}
               variant="outline"
@@ -89,20 +93,24 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden animate-fade-in">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-glass rounded-lg mt-2 shadow-lg">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`flex items-center space-x-2 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+                      location.pathname === item.path
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                    }`}
+                  >
+                    <IconComponent className="h-4 w-4" />
+                    <span>{item.name}</span>
+                  </Link>
+                );
+              })}
               <Button
                 onClick={handleDownloadResume}
                 variant="outline"

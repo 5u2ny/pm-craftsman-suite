@@ -97,9 +97,22 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Clean background without geometric elements */}
+      {/* Animated Motion Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Subtle gradient overlay effects only */}
+        {/* Floating particles */}
+        <div className="absolute top-20 left-10 w-2 h-2 bg-primary/40 rounded-full animate-float" />
+        <div className="absolute top-32 right-20 w-1 h-1 bg-accent/50 rounded-full animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-40 left-1/4 w-3 h-3 bg-primary-glow/30 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 right-10 w-2 h-2 bg-accent/40 rounded-full animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "0.5s" }} />
+        <div className="absolute top-40 left-1/3 w-2 h-2 bg-primary-glow/40 rounded-full animate-float" style={{ animationDelay: "1.5s" }} />
+        
+        {/* Drifting light streaks */}
+        <div className="absolute top-1/4 left-0 w-32 h-0.5 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-drift" />
+        <div className="absolute bottom-1/3 right-0 w-24 h-0.5 bg-gradient-to-l from-transparent via-accent/20 to-transparent animate-drift" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-2/3 left-1/4 w-20 h-0.5 bg-gradient-to-r from-transparent via-primary-glow/15 to-transparent animate-drift" style={{ animationDelay: "4s" }} />
+        
+        {/* Subtle gradient overlay effects */}
         <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-gradient-to-r from-primary/3 to-accent/3 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-accent/3 to-primary/3 rounded-full blur-3xl animate-pulse-glow" 
              style={{ animationDelay: "2s" }} />
