@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 bg-black">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-black to-slate-900/10" />
         
-        {/* Subtle star field */}
+        {/* Subtle star field - exactly like abirthakur.com */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
           <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
@@ -21,37 +21,16 @@ const Hero = () => {
           <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
           <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
           <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
-        </div>
-        
-        {/* Orbital Planet Element */}
-        <div className="absolute top-1/2 right-20 transform -translate-y-1/2">
-          <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-            {/* Central Black Hole/Planet */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 lg:w-40 lg:h-40 bg-black rounded-full border-4 border-orange-400/30 shadow-2xl">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gray-800 to-black"></div>
-            </div>
-            
-            {/* Orbital Ring */}
-            <div className="absolute inset-0 animate-orbital-rotation">
-              <div className="relative w-full h-full">
-                {/* Main orbital ring */}
-                <div className="absolute inset-0 rounded-full border-8 border-transparent bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 p-1">
-                  <div className="w-full h-full rounded-full bg-transparent border-4 border-transparent bg-gradient-to-r from-transparent via-orange-200/50 to-transparent"></div>
-                </div>
-                
-                {/* Inner glow effect */}
-                <div className="absolute inset-4 rounded-full border-2 border-orange-300/40 animate-pulse"></div>
-                
-                {/* Outer glow effect */}
-                <div className="absolute -inset-2 rounded-full border border-orange-400/20 animate-pulse" style={{ animationDelay: "1s" }}></div>
-              </div>
-            </div>
-            
-            {/* Trailing effect */}
-            <div className="absolute inset-0 animate-orbital-trail">
-              <div className="absolute top-1/2 right-0 w-24 h-2 bg-gradient-to-r from-orange-400/60 to-transparent rounded-full transform -translate-y-1/2"></div>
-            </div>
-          </div>
+          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
+          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
+          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
+          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
+          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
+          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
+          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
+          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
+          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
+          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
         </div>
       </div>
 
