@@ -1,90 +1,97 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Hero background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
-      </div>
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Content */}
+          <div className="animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <span className="italic text-foreground">
+                Building AI products that solve problems with empathy and data
+              </span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
+              Hey there! I'm an AI Product Manager who's worked with everything from growth experiments 
+              to user research—building systems that improved conversion by 40%, reduced churn 
+              by 26%, and boosted engagement by 50%. Whether creating MVP strategies, 
+              conducting UX research, or building growth frameworks, I turn insights into 
+              products that drive measurable impact.
+            </p>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Sunny Soni</span>
-            <span className="text-gradient">AI Product Manager</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Building products that solve problems with empathy and data. 
-            <span className="text-primary font-medium"> AI-first Product Manager</span> specializing in 
-            strategy, UX research, and growth experimentation.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button asChild size="lg" className="button-glow group">
-              <Link to="/projects">
-                View Case Studies
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="hover-lift">
-              <Link to="/about">
-                About Me
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button asChild size="lg" className="button-glow">
+                <Link to="/projects">
+                  View Projects
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/contact">
+                  Resume
+                </Link>
+              </Button>
+            </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-primary transition-colors"
-              asChild
-            >
-              <a href="mailto:alex@example.com" aria-label="Email">
-                <Mail className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-primary transition-colors"
-              asChild
-            >
-              <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-primary transition-colors"
-              asChild
-            >
-              <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5" />
-              </a>
-            </Button>
+          {/* Right Content - Profile Section */}
+          <div className="flex flex-col items-center lg:items-end animate-fade-in">
+            <div className="relative mb-8">
+              <div className="w-80 h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl shadow-xl flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-primary/30 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-primary">SS</span>
+                  </div>
+                  <div className="text-muted-foreground text-sm">Professional photo coming soon</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center lg:text-right">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2 tracking-wider">
+                AI PRODUCT MANAGER
+              </h2>
+              <p className="text-lg text-primary font-medium mb-6">Sunny Soni</p>
+              
+              {/* Social Links */}
+              <div className="flex justify-center lg:justify-end space-x-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:text-primary hover:border-primary transition-colors"
+                  asChild
+                >
+                  <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:text-primary hover:border-primary transition-colors"
+                  asChild
+                >
+                  <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <Github className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="hover:text-primary hover:border-primary transition-colors"
+                  asChild
+                >
+                  <a href="mailto:sunny@example.com" aria-label="Email">
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-20 h-20 bg-primary/10 rounded-full animate-glow" />
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-accent/10 rounded-full animate-glow" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-primary-glow/20 rounded-full animate-glow" style={{ animationDelay: "2s" }} />
       </div>
     </section>
   );
