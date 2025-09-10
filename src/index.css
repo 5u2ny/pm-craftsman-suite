@@ -478,6 +478,40 @@
     }
   }
 
+  /* Kaisermann-style background effects */
+  .kaisermann-bg {
+    position: relative;
+  }
+
+  .kaisermann-noise {
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(120, 100, 240, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 100, 120, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 220, 240, 0.2) 0%, transparent 50%);
+    filter: blur(40px);
+  }
+
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -5%); }
+    20% { transform: translate(-10%, 5%); }
+    30% { transform: translate(5%, -10%); }
+    40% { transform: translate(-5%, 15%); }
+    50% { transform: translate(-10%, 5%); }
+    60% { transform: translate(15%, 0); }
+    70% { transform: translate(0, 10%); }
+    80% { transform: translate(-15%, 0); }
+    90% { transform: translate(10%, 5%); }
+  }
+
+  .animate-grain {
+    background-image: 
+      repeating-conic-gradient(from 0deg, transparent 0deg 1deg, rgba(255,255,255,0.03) 1deg 2deg),
+      repeating-linear-gradient(0deg, transparent 0px 2px, rgba(255,255,255,0.03) 2px 4px),
+      repeating-linear-gradient(90deg, transparent 0px 2px, rgba(255,255,255,0.03) 2px 4px);
+    animation: grain 8s steps(10) infinite;
+  }
+
   /* Backdrop Blur */
   .backdrop-blur-glass {
     backdrop-filter: blur(16px) saturate(180%);
