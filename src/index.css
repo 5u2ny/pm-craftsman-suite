@@ -430,32 +430,6 @@
     animation: profile-4d-float 6s ease-in-out infinite;
   }
 
-  .profile-4d-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform-style: preserve-3d;
-  }
-
-  .profile-4d-bg-1 {
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
-    transform: translateZ(-50px) scale(1.3);
-    animation: profile-4d-rotate-slow 20s linear infinite;
-  }
-
-  .profile-4d-bg-2 {
-    background: radial-gradient(circle, rgba(147, 51, 234, 0.08) 0%, transparent 70%);
-    transform: translateZ(-30px) scale(1.2);
-    animation: profile-4d-rotate-medium 15s linear infinite reverse;
-  }
-
-  .profile-4d-bg-3 {
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
-    transform: translateZ(-10px) scale(1.1);
-    animation: profile-4d-rotate-fast 10s linear infinite;
-  }
-
   .profile-4d-main {
     position: relative;
     width: 100%;
@@ -470,42 +444,8 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 
-      0 0 30px rgba(79, 70, 229, 0.4),
-      0 0 60px rgba(79, 70, 229, 0.2),
-      inset 0 0 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     transform: translateZ(0);
-  }
-
-  .profile-4d-hologram {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(
-      45deg,
-      transparent 30%, 
-      rgba(79, 70, 229, 0.1) 50%, 
-      transparent 70%
-    );
-    transform: translateZ(5px);
-    animation: profile-4d-hologram 3s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .profile-4d-glow {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 20px);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, transparent 70%);
-    transform: translateZ(-5px);
-    animation: profile-4d-pulse 4s ease-in-out infinite;
-    pointer-events: none;
   }
 
   @keyframes profile-4d-float {
@@ -535,43 +475,6 @@
     }
     75% {
       transform: rotateX(5deg) rotateY(8deg) rotateZ(1deg);
-    }
-  }
-
-  @keyframes profile-4d-rotate-slow {
-    from { transform: translateZ(-50px) scale(1.3) rotateZ(0deg); }
-    to { transform: translateZ(-50px) scale(1.3) rotateZ(360deg); }
-  }
-
-  @keyframes profile-4d-rotate-medium {
-    from { transform: translateZ(-30px) scale(1.2) rotateZ(0deg); }
-    to { transform: translateZ(-30px) scale(1.2) rotateZ(360deg); }
-  }
-
-  @keyframes profile-4d-rotate-fast {
-    from { transform: translateZ(-10px) scale(1.1) rotateZ(0deg); }
-    to { transform: translateZ(-10px) scale(1.1) rotateZ(360deg); }
-  }
-
-  @keyframes profile-4d-hologram {
-    0%, 100% {
-      opacity: 0.3;
-      transform: translateZ(5px) rotateZ(0deg);
-    }
-    50% {
-      opacity: 0.7;
-      transform: translateZ(5px) rotateZ(180deg);
-    }
-  }
-
-  @keyframes profile-4d-pulse {
-    0%, 100% {
-      transform: translateZ(-5px) scale(1);
-      opacity: 0.3;
-    }
-    50% {
-      transform: translateZ(-5px) scale(1.1);
-      opacity: 0.6;
     }
   }
 
