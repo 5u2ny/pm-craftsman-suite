@@ -19,6 +19,18 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
+          {/* Profile Picture */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <img
+                src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png"
+                alt="Sunny Soni - AI Product Manager"
+                className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-primary/20 shadow-xl"
+              />
+              <div className="absolute inset-0 rounded-full border-2 border-primary/40 animate-glow"></div>
+            </div>
+          </div>
+          
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block text-foreground mb-2">Sunny Soni</span>
             <span className="text-gradient">AI Product Manager</span>
