@@ -21,12 +21,6 @@ const Profile4D = () => {
           {/* Edge glow */}
           <div className="profile-4d-glow"></div>
         </div>
-        
-        {/* Floating particles */}
-        <div className="profile-4d-particle profile-4d-particle-1"></div>
-        <div className="profile-4d-particle profile-4d-particle-2"></div>
-        <div className="profile-4d-particle profile-4d-particle-3"></div>
-        <div className="profile-4d-particle profile-4d-particle-4"></div>
       </div>
     </div>
   );
