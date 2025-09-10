@@ -37,9 +37,9 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Building products that solve problems with empathy and data. 
-            <span className="text-primary font-medium"> AI-first Product Manager</span> specializing in 
-            strategy, UX research, and growth experimentation.
+            MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
+            <span className="text-primary font-medium"> AI Product Manager</span> with experience building 
+            0-to-1 products and driving growth through data-driven strategies.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -69,7 +69,7 @@ const Hero = () => {
               className="hover:text-primary transition-colors"
               asChild
             >
-              <a href="mailto:sunny@example.com" aria-label="Email">
+              <a href="mailto:sunny.mba@proton.me" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>

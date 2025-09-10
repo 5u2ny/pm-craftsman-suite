@@ -5,36 +5,51 @@ import { Badge } from "@/components/ui/badge";
 const Experience = () => {
   const experiences = [
     {
-      role: "Senior Product Manager",
-      company: "Cavo (Stealth AI Startup)",
-      period: "2023 - Present",
-      description: "Leading AI-powered travel planning product from 0 to 1, conducting extensive user research and building MVP with 85% user satisfaction rate.",
+      role: "Lead AI Product Manager Intern",
+      company: "IPSERLAB (Dallas, TX)",
+      period: "May 2025 - Ongoing",
+      description: "Leading AI-powered travel planning platform development from 0-to-1 at stealth-stage startup, architecting multi-disciplinary teams and ownership models.",
       achievements: [
-        "Launched MVP with 85% user satisfaction",
-        "Led cross-functional team of 12",
-        "Implemented AI-first product strategy"
+        "Promoted from AI Product Manager Intern in 4 weeks",
+        "Orchestrated complete 0-to-1 product discovery process", 
+        "Drove product velocity implementing RICE prioritization framework",
+        "Engineered asynchronous onboarding system for 20+ contributors"
       ]
     },
     {
-      role: "Product Manager",
-      company: "Risk Analytics Firm",
-      period: "2022 - 2023",
-      description: "Launched cybersecurity dashboard increasing analyst efficiency by 35%. Led cross-functional team of 8 engineers and designers.",
+      role: "Product Analyst (Growth Marketing Specialist)",
+      company: "ASANIFY (Kolkata, India)",
+      period: "Sep 2022 - Aug 2023",
+      description: "Spearheaded CRM automation and audience segmentation strategy for HR and Payroll automation software serving small to medium-sized businesses.",
       achievements: [
-        "35% increase in analyst efficiency",
-        "Led team of 8 professionals",
-        "Delivered on-time and under budget"
+        "18% increase in revenue efficiency",
+        "27% boost in lead conversion",
+        "Engineered real-time onboarding dashboards in Tableau",
+        "Pioneered Product-Led Growth (PLG) inbound funnel"
       ]
     },
     {
-      role: "Associate Product Manager",
-      company: "Growth Tech Inc",
-      period: "2021 - 2022",
-      description: "Drove growth experiments resulting in 23% increase in user activation. Specialized in B2B SaaS optimization and user onboarding.",
+      role: "Business Development Associate", 
+      company: "YOCKET (Mumbai, India)",
+      period: "Mar 2022 - Sep 2022",
+      description: "Collaborated with product team to redesign user qualification journeys for India's largest community-based platform for study-abroad aspirants.",
       achievements: [
-        "23% increase in user activation",
-        "Optimized B2B SaaS workflows",
-        "Implemented data-driven decisions"
+        "35% improvement in conversion efficiency",
+        "Generated over $700K in revenue across two quarters",
+        "Executed data-driven activation strategies",
+        "Optimized conversion funnel leveraging LinkedIn data"
+      ]
+    },
+    {
+      role: "Product-led Growth Analyst (Growth Partner)",
+      company: "LEADLE (Chennai, India)", 
+      period: "Oct 2021 - Mar 2022",
+      description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback for B2B SaaS platform providing product-led growth tools and analytics.",
+      achievements: [
+        "20% boost in SQL volume",
+        "17% reduction in churn",
+        "Engineered automated lead capture system",
+        "Quadrupled booked meetings identifying top-performing channels"
       ]
     }
   ];

@@ -7,40 +7,40 @@ const ToolsSkills = () => {
     {
       title: "Product Management",
       icon: Brain,
-      skills: ["Product Strategy", "Roadmapping", "User Research", "A/B Testing", "Analytics", "KPI Tracking"]
+      skills: ["Product Strategy & Roadmap", "User Growth", "E-commerce Funnel Optimization", "A/B Testing", "Data-Driven Decision Making", "CRO", "UI/UX Optimization"]
     },
     {
-      title: "Data & Analytics",
+      title: "Data & Analytics", 
       icon: BarChart3,
-      skills: ["SQL", "Python", "Tableau", "Google Analytics", "Mixpanel", "Amplitude", "Excel/Sheets"]
+      skills: ["SQL", "Python (Pandas, NumPy)", "Tableau", "Power BI", "Excel", "Amplitude", "Google Analytics", "JASP"]
     },
     {
-      title: "Design & Prototyping",
-      icon: Code,
-      skills: ["Figma", "Sketch", "Adobe Creative Suite", "Wireframing", "User Journey Mapping", "Design Systems"]
-    },
-    {
-      title: "Development",
-      icon: Database,
-      skills: ["HTML/CSS", "JavaScript", "React", "Node.js", "API Integration", "Git/GitHub"]
-    },
-    {
-      title: "AI/ML Tools",
+      title: "Technical & AI",
       icon: Zap,
-      skills: ["ChatGPT", "Claude", "Midjourney", "TensorFlow", "Python ML Libraries", "Prompt Engineering"]
+      skills: ["LLMs", "Generative AI", "RAG", "LangChain", "Prompt Engineering", "AI Product Strategy", "APIs", "Lovable.dev"]
     },
     {
-      title: "Collaboration",
+      title: "Development & Tools",
+      icon: Code,
+      skills: ["Python", "DBMS", "Data Warehouse & Data Mining", "Mobile Application Development", "Git/GitHub", "JIRA"]
+    },
+    {
+      title: "Design & Collaboration",
+      icon: Database,
+      skills: ["Figma", "Notion", "Trello", "NotebookLM", "Miro", "Slack", "ClickUp", "Wireframing"]
+    },
+    {
+      title: "Frameworks & Methodologies",
       icon: Users,
-      skills: ["Slack", "Notion", "Jira", "Asana", "Miro", "Confluence", "Linear"]
+      skills: ["Agile & Scrum", "Product Lifecycle Management", "User Research", "RICE & OKR Frameworks", "GTM Strategy", "Stakeholder Communication"]
     }
   ];
 
   const certifications = [
-    "Google Analytics Certified",
-    "Scrum Master Certified",
-    "AWS Cloud Practitioner",
-    "Product Management Certificate"
+    "Certified Scrum Product Owner (CSPO)",
+    "MBA in Business Analytics & Marketing (In Progress)",
+    "BTech in Computer Science Engineering",
+    "Data Analysis & IT Transformation Specialist"
   ];
 
   return (

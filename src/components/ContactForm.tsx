@@ -124,10 +124,10 @@ const ContactForm = () => {
           )}
         </Button>
 
-        <p className="text-sm text-muted-foreground text-center">
-          I typically respond within 24 hours. For urgent matters, 
-          feel free to reach out directly via email or LinkedIn.
-        </p>
+          <p className="text-sm text-muted-foreground text-center">
+            I typically respond within 24 hours. For urgent matters, 
+            feel free to reach out directly at sunny.mba@proton.me or LinkedIn.
+          </p>
       </form>
     </Card>
   );

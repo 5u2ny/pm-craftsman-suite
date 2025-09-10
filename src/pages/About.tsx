@@ -5,49 +5,57 @@ import { Badge } from "@/components/ui/badge";
 const About = () => {
   const skills = [
     {
-      category: "Product Strategy",
-      items: ["Product-Market Fit", "MVP Development", "Go-to-Market Strategy", "Roadmap Planning"]
+      category: "Product Management",
+      items: ["Product Strategy & Roadmap", "User Growth", "E-commerce Funnel Optimization", "A/B Testing", "Data-Driven Decision Making", "CRO", "UI/UX Optimization", "Agile & Scrum"]
     },
     {
-      category: "Research & Analytics",
-      items: ["User Research", "A/B Testing", "Data Analysis", "Behavioral Analytics"]
+      category: "Technical & AI",
+      items: ["LLMs", "Generative AI", "RAG", "LangChain", "Prompt Engineering", "AI Product Strategy", "APIs", "JIRA", "Figma"]
     },
     {
-      category: "AI/ML Product Management",
-      items: ["Machine Learning", "AI Ethics", "Model Evaluation", "AI Product Design"]
+      category: "Data & Analytics", 
+      items: ["SQL", "Python (Pandas, NumPy)", "Tableau", "Power BI", "Excel", "Amplitude", "Google Analytics", "JASP"]
     },
     {
-      category: "Leadership",
-      items: ["Cross-functional Teams", "Stakeholder Management", "Agile Methodology", "OKRs"]
+      category: "Leadership & Communication",
+      items: ["Product Lifecycle Management", "User Research", "RICE & OKR Frameworks", "GTM Strategy", "Stakeholder Communication", "Cross-functional Teams"]
     }
   ];
 
   const experience = [
     {
-      role: "Senior Product Manager",
-      company: "Cavo (Stealth AI Startup)",
-      period: "2023 - Present",
-      description: "Leading AI-powered travel planning product from 0 to 1, conducting extensive user research and building MVP with 85% user satisfaction rate."
+      role: "Lead AI Product Manager Intern",
+      company: "IPSERLAB (Stealth AI Startup)",
+      period: "May 2025 - Ongoing",
+      description: "Leading AI-powered travel planning platform development from 0-to-1, architecting multi-disciplinary teams and ownership models while earning promotion in 4 weeks."
     },
     {
-      role: "Product Manager",
-      company: "Risk Analytics Firm",
-      period: "2022 - 2023",
-      description: "Launched cybersecurity dashboard increasing analyst efficiency by 35%. Led cross-functional team of 8 engineers and designers."
+      role: "Product Analyst (Growth Marketing Specialist)",
+      company: "ASANIFY",
+      period: "Sep 2022 - Aug 2023",
+      description: "Spearheaded CRM automation and audience segmentation strategy driving 18% revenue efficiency increase and 27% boost in lead conversion for HR and Payroll automation software."
     },
     {
-      role: "Associate Product Manager",
-      company: "Growth Tech Inc",
-      period: "2021 - 2022",
-      description: "Drove growth experiments resulting in 23% increase in user activation. Specialized in B2B SaaS optimization and user onboarding."
+      role: "Business Development Associate",
+      company: "YOCKET",
+      period: "Mar 2022 - Sep 2022",
+      description: "Collaborated with product team to redesign user qualification journeys, optimizing conversion funnel and improving conversion efficiency by 35% for study-abroad platform."
+    },
+    {
+      role: "Product-led Growth Analyst",
+      company: "LEADLE",
+      period: "Oct 2021 - Mar 2022",
+      description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback, boosting SQL volume by 20% and cutting churn by 17% for B2B SaaS growth platform."
     }
   ];
 
   const achievements = [
-    "MBA from Top Business School (2023)",
-    "Increased product adoption by 40% across 3 different products",
-    "Led 5+ successful product launches from concept to market",
-    "Managed budgets totaling $2M+ in product development"
+    "MBA in Business Analytics & Marketing from William & Mary (Expected May 2026)",
+    "BTech in Computer Science Engineering from Karunya Institute (2017-2021)",
+    "Certified Scrum Product Owner (CSPO)",
+    "Drove 35% improvement in conversion efficiency across multiple platforms",
+    "Engineered automated systems reducing onboarding time by 3.5 days",
+    "Generated over $700K in revenue through data-driven activation strategies"
   ];
 
   return (
@@ -59,9 +67,9 @@ const About = () => {
             About Me
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a product manager who thrives at the intersection of technology, user experience, 
-            and business strategy. With a focus on AI-first products, I help companies build 
-            solutions that create genuine value for users and sustainable growth for businesses.
+            I'm an AI Product Manager and MBA candidate specializing in Business Analytics & Marketing. 
+            With experience spanning stealth AI startups to established SaaS platforms, I excel at 
+            building data-driven products that drive measurable growth and user engagement.
           </p>
         </div>
 
