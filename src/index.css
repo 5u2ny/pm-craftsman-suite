@@ -284,7 +284,7 @@
 
   @keyframes shooting-star {
     0% {
-      transform: translateX(-100px) translateY(100px) rotate(45deg);
+      transform: translateX(0) translateY(0) rotate(45deg);
       opacity: 0;
     }
     10% {
@@ -294,31 +294,56 @@
       opacity: 1;
     }
     100% {
-      transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg);
+      transform: translateX(-120vw) translateY(120vh) rotate(45deg);
       opacity: 0;
     }
   }
 
-  @keyframes spark {
+  @keyframes fire-spark {
     0% {
-      transform: translate(0, 0) scale(1);
+      transform: translate(0, 0) scale(1) rotate(0deg);
       opacity: 1;
+      background-color: #ff6b35;
     }
-    25% {
-      transform: translate(var(--random-x, 10px), var(--random-y, -10px)) scale(1.2);
+    15% {
+      transform: translate(
+        calc(cos(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 15px),
+        calc(sin(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 15px)
+      ) scale(1.1) rotate(var(--spark-angle, 0deg));
+      opacity: 0.9;
+      background-color: #ff8c42;
+    }
+    30% {
+      transform: translate(
+        calc(cos(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 25px),
+        calc(sin(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 25px + 10px)
+      ) scale(0.9) rotate(calc(var(--spark-angle, 0deg) + 45deg));
       opacity: 0.8;
+      background-color: #ffa94d;
     }
     50% {
-      transform: translate(var(--random-x2, -15px), var(--random-y2, -20px)) scale(0.8);
+      transform: translate(
+        calc(cos(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 30px),
+        calc(sin(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 30px + 25px)
+      ) scale(0.7) rotate(calc(var(--spark-angle, 0deg) + 90deg));
       opacity: 0.6;
+      background-color: #ffb347;
     }
     75% {
-      transform: translate(var(--random-x3, 8px), var(--random-y3, -5px)) scale(0.4);
-      opacity: 0.3;
+      transform: translate(
+        calc(cos(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 25px),
+        calc(sin(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 25px + 45px)
+      ) scale(0.5) rotate(calc(var(--spark-angle, 0deg) + 135deg));
+      opacity: 0.4;
+      background-color: #ffcc5c;
     }
     100% {
-      transform: translate(var(--random-x4, 0px), var(--random-y4, 10px)) scale(0);
+      transform: translate(
+        calc(cos(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 15px),
+        calc(sin(var(--spark-angle, 0deg)) * var(--spark-velocity, 1) * 15px + 60px)
+      ) scale(0.2) rotate(calc(var(--spark-angle, 0deg) + 180deg));
       opacity: 0;
+      background-color: #ffe066;
     }
   }
 
@@ -343,6 +368,10 @@
 
   .animate-shooting-star {
     animation: shooting-star 0.6s linear infinite; /* 5x faster: 3s / 5 = 0.6s */
+  }
+
+  .animate-fire-spark {
+    animation: fire-spark 2s ease-out forwards;
   }
 
   .animate-spark {

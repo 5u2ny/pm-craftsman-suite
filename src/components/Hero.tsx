@@ -5,32 +5,34 @@ import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [stars, setStars] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
-  const [sparks, setSparks] = useState<Array<{id: number, x: number, y: number}>>([]);
+  const [sparks, setSparks] = useState<Array<{id: number, x: number, y: number, angle: number, velocity: number}>>([]);
 
   useEffect(() => {
-    // Generate shooting stars - 5x more quantity
+    // Generate shooting stars - falling from top right corner
     const generateStars = () => {
       const newStars = Array.from({ length: 40 }, (_, i) => ({
         id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        delay: Math.random() * 2 // 5x faster cycle
+        x: 80 + Math.random() * 20, // Start from top right area (80-100%)
+        y: -10 + Math.random() * 20, // Start above screen (-10% to 10%)
+        delay: Math.random() * 2
       }));
       setStars(newStars);
     };
 
     generateStars();
-    const interval = setInterval(generateStars, 2000); // 5x faster regeneration
+    const interval = setInterval(generateStars, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
   const handleStarHit = (starId: number) => {
-    // Create spark effect at profile picture location
-    const newSparks = Array.from({ length: 6 }, (_, i) => ({
+    // Create realistic fire spark effect at profile picture location
+    const newSparks = Array.from({ length: 12 }, (_, i) => ({
       id: Date.now() + i,
-      x: 50 + (Math.random() - 0.5) * 20, // Around center
-      y: 25 + (Math.random() - 0.5) * 10  // Around profile picture area
+      x: 50 + (Math.random() - 0.5) * 15, // Around center
+      y: 25 + (Math.random() - 0.5) * 8,  // Around profile picture area
+      angle: (Math.random() * 360), // Random direction
+      velocity: 0.5 + Math.random() * 1.5 // Random initial velocity
     }));
     
     setSparks(prev => [...prev, ...newSparks]);
@@ -38,7 +40,7 @@ const Hero = () => {
     // Remove sparks after animation
     setTimeout(() => {
       setSparks(prev => prev.filter(spark => !newSparks.find(ns => ns.id === spark.id)));
-    }, 1000);
+    }, 2000); // Longer duration for realistic fall
   };
 
   return (
@@ -154,12 +156,14 @@ const Hero = () => {
         {sparks.map((spark) => (
           <div
             key={spark.id}
-            className="absolute w-1 h-1 bg-yellow-300 rounded-full animate-spark"
+            className="absolute w-1 h-1 bg-orange-400 rounded-full animate-fire-spark"
             style={{
               left: `${spark.x}%`,
               top: `${spark.y}%`,
-              boxShadow: '0 0 8px 2px rgba(255, 215, 0, 0.8)'
-            }}
+              boxShadow: '0 0 6px 2px rgba(255, 165, 0, 0.8)',
+              '--spark-angle': `${spark.angle}deg`,
+              '--spark-velocity': spark.velocity
+            } as React.CSSProperties & { '--spark-angle': string; '--spark-velocity': number }}
           />
         ))}
 
