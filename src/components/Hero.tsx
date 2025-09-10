@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Alex Chen</span>
+            <span className="block text-foreground mb-2">Sunny Soni</span>
             <span className="text-gradient">AI Product Manager</span>
           </h1>
           
@@ -52,7 +52,7 @@ const Hero = () => {
               className="hover:text-primary transition-colors"
               asChild
             >
-              <a href="mailto:alex@example.com" aria-label="Email">
+              <a href="mailto:sunny@example.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
             </Button>
@@ -62,7 +62,7 @@ const Hero = () => {
               className="hover:text-primary transition-colors"
               asChild
             >
-              <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
@@ -72,7 +72,7 @@ const Hero = () => {
               className="hover:text-primary transition-colors"
               asChild
             >
-              <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
             </Button>
