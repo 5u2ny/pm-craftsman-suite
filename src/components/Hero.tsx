@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
@@ -70,6 +70,17 @@ const Hero = () => {
               <Link to="/projects">
                 Projects
               </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3"
+              onClick={() => {
+                // This would trigger a resume download
+                console.log("Download resume clicked");
+              }}
+            >
+              <Download className="mr-2 h-5 w-5" />
+              Resume
             </Button>
           </div>
 
