@@ -32,48 +32,51 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border/50 shadow-sm"
+          ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-lg"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo - simpler design */}
           <Link
             to="/"
-            className="text-xl font-bold text-gradient hover:scale-105 transition-transform duration-200"
+            className="text-xl font-bold text-foreground hover:text-accent transition-colors duration-200"
           >
             Sunny Soni
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              const IconComponent = item.icon;
+          {/* Desktop Navigation - pill style like reference */}
+          <div className="hidden md:flex items-center bg-muted/20 backdrop-blur-lg rounded-full px-6 py-2 border border-border/30">
+            {navItems.map((item, index) => {
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-accent px-3 py-2 rounded-md ${
+                  className={`px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-full ${
                     location.pathname === item.path
                       ? "text-accent bg-accent/10"
-                      : "text-muted-foreground"
-                  }`}
+                      : "text-muted-foreground hover:text-foreground"
+                  } ${index > 0 ? 'ml-2' : ''}`}
                 >
-                  <IconComponent className="h-4 w-4" />
                   <span>{item.name}</span>
                 </Link>
               );
             })}
+          </div>
+          
+          {/* Resume button separate from nav pill */}
+          <div className="hidden md:block">
             <Button
               onClick={handleDownloadResume}
               variant="outline"
               size="sm"
-              className="ml-4 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+              className="border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300"
             >
               <Download className="h-4 w-4 mr-2" />
               Resume
             </Button>
+
           </div>
 
           {/* Mobile menu button */}

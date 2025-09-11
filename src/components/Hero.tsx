@@ -5,70 +5,60 @@ import Profile4D from "@/components/Profile4D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-background">
-      {/* Subtle background gradient */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Animated background pattern similar to reference */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5" />
+        {/* Animated lines pattern */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.1 }}>
+          <defs>
+            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" className="text-primary"/>
+        </svg>
         
-        {/* Subtle star field - exactly like abirthakur.com */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
-          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
-          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
-          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
-          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
-          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
-          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
-          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
-          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
-          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
-          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
-          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
-          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
-          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
-          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
-          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
-          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
-          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
-          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
-        </div>
+        {/* Floating animated elements */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-accent/30 rounded-full animate-float" />
+        <div className="absolute top-40 right-32 w-3 h-3 bg-primary/20 rounded-full animate-drift" style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-accent/40 rounded-full animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/2 right-20 w-2 h-2 bg-primary/30 rounded-full animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute bottom-32 right-1/3 w-3 h-3 bg-accent/20 rounded-full animate-drift" style={{ animationDelay: "0.5s" }} />
+        <div className="absolute top-60 left-1/3 w-1 h-1 bg-primary/40 rounded-full animate-pulse" style={{ animationDelay: "1.5s" }} />
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* 4D Profile Picture */}
-          <div className="mb-8 flex justify-center">
-            <Profile4D />
+          {/* Remove 4D Profile Picture for cleaner look like reference */}
+          
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 tracking-tight leading-none">
+            <span className="block text-foreground mb-4 animate-slide-up">
+              AI Product Manager
+            </span>
+            <span className="text-foreground/80 animate-fade-in text-5xl sm:text-6xl lg:text-7xl" style={{ animationDelay: "0.5s" }}>
+              & Full Stack Strategist
+            </span>
+          </h1>
+          <div className="mb-8">
+            <p className="text-xl sm:text-2xl text-accent font-medium mb-2">
+              Building Intelligent, Scalable Products with AI
+            </p>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-2 animate-slide-up">Sunny Soni</span>
-            <span className="text-gradient animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
-            MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
-            <span className="text-accent font-semibold"> AI Product Manager</span> with experience building 
-            0-to-1 products and driving growth through data-driven strategies.
+          <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
+            Hi! I'm <span className="text-foreground font-semibold">Sunny Soni</span>, a passionate AI Product Manager crafting the future of 
+            business applications with cutting-edge AI technology and data-driven strategies.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button asChild size="lg" className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white border-0 px-8 py-3 text-lg font-medium transition-all duration-300 group">
               <Link to="/about">
-                View Experience
+                Explore My Work
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-accent hover:text-white transition-all duration-300">
-              <Link to="/case-studies">
-                Case Studies
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-primary hover:text-white transition-all duration-300">
-              <Link to="/projects">
-                Projects
               </Link>
             </Button>
           </div>
