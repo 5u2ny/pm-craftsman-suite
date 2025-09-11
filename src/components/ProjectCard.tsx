@@ -27,8 +27,8 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card
-      className={`group hover-lift glass-card overflow-hidden ${
-        featured ? "border-primary/30 shadow-glow-primary" : ""
+      className={`group hover-lift overflow-hidden card-gradient border ${
+        featured ? "border-primary/20" : "border-border"
       }`}
     >
       {/* Image */}
@@ -52,10 +52,10 @@ const ProjectCard = ({
       {/* Content */}
       <div className="p-6">
         <div className="mb-3">
-          <h3 className="text-xl font-semibold text-foreground group-hover:text-gradient-primary transition-all duration-300 mb-2">
+          <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
             {title}
           </h3>
-          <p className="text-sm font-medium text-gradient-primary mb-2">{tagline}</p>
+          <p className="text-sm font-medium text-primary mb-2">{tagline}</p>
           <p className="text-muted-foreground text-sm leading-relaxed">
             {description}
           </p>
@@ -87,7 +87,7 @@ const ProjectCard = ({
         </div>
 
         {/* CTA */}
-        <Button asChild variant="outline" size="sm" className="w-full group/btn btn-glass">
+        <Button asChild variant="outline" size="sm" className="w-full group/btn">
           <Link to={`/projects/${slug}`}>
             View Case Study
             <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

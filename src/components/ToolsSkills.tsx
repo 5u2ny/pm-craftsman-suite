@@ -44,7 +44,7 @@ const ToolsSkills = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 bg-gradient-to-b from-muted/20 to-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
@@ -59,7 +59,7 @@ const ToolsSkills = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={category.title} className="glass-card p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={category.title} className="card-gradient p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
                     <IconComponent className="h-5 w-5 text-primary" />
@@ -79,7 +79,7 @@ const ToolsSkills = () => {
         </div>
 
         {/* Certifications */}
-        <Card className="glass-card p-8 animate-slide-up" style={{ animationDelay: "0.6s" }}>
+        <Card className="card-gradient p-8 animate-slide-up" style={{ animationDelay: "0.6s" }}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-foreground mb-6">Certifications & Credentials</h3>
             <div className="flex flex-wrap justify-center gap-3">
