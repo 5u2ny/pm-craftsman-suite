@@ -48,7 +48,15 @@ const ProjectsShowcase = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Motion Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-20 left-8 w-36 h-36 border border-primary/6 rounded-full animate-drift"></div>
+        <div className="absolute bottom-32 right-12 w-24 h-24 border border-accent/12 rounded-lg animate-float transform rotate-12"></div>
+        <div className="absolute top-1/2 right-8 w-32 h-32 bg-gradient-to-br from-primary/4 to-transparent rounded-full blur-xl animate-pulse-glow"></div>
+        <div className="absolute top-40 left-1/3 w-px h-32 bg-gradient-to-b from-transparent via-accent/20 to-transparent animate-slide-up" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute bottom-40 right-1/4 w-px h-28 bg-gradient-to-t from-transparent via-primary/15 to-transparent animate-fade-in" style={{ animationDelay: "3s" }}></div>
+      </div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">

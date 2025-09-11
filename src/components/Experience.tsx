@@ -42,7 +42,15 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Motion Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-10 right-10 w-24 h-24 border border-primary/8 rounded-full animate-orbital-rotation"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 border border-accent/10 rounded-lg animate-float transform rotate-12"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-primary/12 rounded-full animate-drift"></div>
+        <div className="absolute top-20 left-1/2 w-px h-20 bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-slide-up"></div>
+        <div className="absolute bottom-20 right-1/3 w-px h-16 bg-gradient-to-t from-transparent via-accent/15 to-transparent animate-fade-in"></div>
+      </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">

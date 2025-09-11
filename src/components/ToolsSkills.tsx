@@ -44,7 +44,15 @@ const ToolsSkills = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/20 to-background">
+    <section className="py-20 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
+      {/* Motion Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-16 left-16 w-40 h-40 bg-gradient-to-br from-primary/3 to-transparent rounded-full blur-2xl animate-pulse-glow"></div>
+        <div className="absolute bottom-16 right-16 w-48 h-48 bg-gradient-to-tl from-accent/4 to-transparent rounded-full blur-3xl animate-drift"></div>
+        <div className="absolute top-1/3 right-20 w-20 h-20 border border-primary/10 rounded-lg animate-float transform rotate-45"></div>
+        <div className="absolute bottom-1/3 left-20 w-28 h-28 border border-accent/8 rounded-full animate-orbital-rotation"></div>
+        <div className="absolute top-1/2 left-1/2 w-px h-24 bg-gradient-to-b from-primary/15 via-transparent to-accent/10 animate-twinkle"></div>
+      </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">

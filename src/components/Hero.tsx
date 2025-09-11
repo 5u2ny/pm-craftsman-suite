@@ -6,11 +6,29 @@ import Profile4D from "@/components/Profile4D";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-background">
-      {/* Subtle background gradient */}
+      {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/15 rounded-lg animate-drift transform rotate-45"></div>
+        <div className="absolute bottom-32 left-1/4 w-40 h-40 border border-primary/8 rounded-full animate-orbital-rotation"></div>
+        <div className="absolute bottom-40 right-1/3 w-28 h-28 border border-accent/12 rounded-lg animate-pulse-glow transform rotate-12"></div>
+        <div className="absolute top-1/2 left-8 w-20 h-20 border border-primary/15 rounded-full animate-twinkle"></div>
+        
+        {/* Gradient orbs */}
+        <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-3xl animate-drift"></div>
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-to-bl from-primary/8 to-transparent rounded-full blur-2xl animate-float"></div>
+        
+        {/* Moving lines */}
+        <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-slide-up" style={{ animationDelay: "0s" }}></div>
+        <div className="absolute top-0 right-1/3 w-px h-24 bg-gradient-to-b from-transparent via-accent/25 to-transparent animate-slide-up" style={{ animationDelay: "2s" }}></div>
+        <div className="absolute top-0 left-2/3 w-px h-28 bg-gradient-to-b from-transparent via-primary/15 to-transparent animate-slide-up" style={{ animationDelay: "4s" }}></div>
+        
+        {/* Subtle background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5" />
         
-        {/* Subtle star field - exactly like abirthakur.com */}
+        {/* Enhanced star field */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
           <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
