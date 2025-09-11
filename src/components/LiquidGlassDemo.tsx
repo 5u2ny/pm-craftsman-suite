@@ -3,23 +3,7 @@ import LiquidGlassCard from "./LiquidGlassCard";
 
 const LiquidGlassDemo = () => {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
-      {/* SVG Filter for Gooey Effect */}
-      <svg width="0" height="0" className="absolute">
-        <defs>
-          <filter id="gooey-filter">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-              result="gooey"
-            />
-            <feBlend in="SourceGraphic" in2="gooey" />
-          </filter>
-        </defs>
-      </svg>
-
+    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">

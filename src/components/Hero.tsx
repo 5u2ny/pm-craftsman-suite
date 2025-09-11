@@ -5,36 +5,7 @@ import Profile4D from "@/components/Profile4D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Black space background with subtle texture */}
-      <div className="absolute inset-0 z-0 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/10 via-black to-slate-900/10" />
-        
-        {/* Subtle star field - exactly like abirthakur.com */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
-          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
-          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
-          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
-          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
-          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
-          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
-          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
-          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
-          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
-          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
-          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
-          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
-          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
-          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
-          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
-          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
-          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
-          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
-        </div>
-      </div>
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
