@@ -37,10 +37,7 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div></div>
-
+        <div className="flex justify-center items-center h-16 relative">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
@@ -60,10 +57,19 @@ const Navigation = () => {
                 </Link>
               );
             })}
+            <Button
+              onClick={handleDownloadResume}
+              variant="outline"
+              size="sm"
+              className="ml-4"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Resume
+            </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden absolute right-0">
             <Button
               variant="ghost"
               size="sm"
