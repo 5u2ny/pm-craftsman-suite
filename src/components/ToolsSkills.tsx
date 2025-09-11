@@ -1,4 +1,4 @@
-import { Code2, Database, BarChart3, Users2, Zap, Brain, Award, Star } from "lucide-react";
+import { Code2, Database, BarChart3, Users2, Zap, Brain } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -34,13 +34,6 @@ const ToolsSkills = () => {
       icon: Users2,
       skills: ["Agile & Scrum", "Product Lifecycle Management", "User Research", "RICE & OKR Frameworks", "GTM Strategy", "Stakeholder Communication"]
     }
-  ];
-
-  const certifications = [
-    "Certified Scrum Product Owner (CSPO)",
-    "MBA in Business Analytics & Marketing (In Progress)",
-    "BTech in Computer Science Engineering",
-    "Data Analysis & IT Transformation Specialist"
   ];
 
   return (
@@ -90,29 +83,6 @@ const ToolsSkills = () => {
             );
           })}
         </div>
-
-        {/* Certifications */}
-        <Card className="card-gradient p-8 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.9s" }}>
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-6">
-              <Award className="h-6 w-6 text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">Certifications & Credentials</h3>
-            </div>
-            <div className="flex flex-wrap justify-center gap-3">
-              {certifications.map((cert, index) => (
-                <Badge 
-                  key={cert} 
-                  variant="outline" 
-                  className="px-4 py-2 hover-scale transition-all duration-300 flex items-center gap-2"
-                  style={{ animationDelay: `${0.9 + (index * 0.1)}s` }}
-                >
-                  <Star className="h-3 w-3 text-primary" />
-                  {cert}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </Card>
       </div>
     </section>
   );
