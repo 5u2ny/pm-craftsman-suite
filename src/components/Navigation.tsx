@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
+      className={`fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
         isScrolled
           ? "backdrop-blur-3xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full"
           : "backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.02)] rounded-full"
@@ -41,10 +41,10 @@ const Navigation = () => {
         boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.05)'
       }}
     >
-      <div className="px-8 py-3">
+      <div className="px-4 py-2">
         <div className="flex justify-center items-center h-16">
           {/* Navigation Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
 
             {navItems.map((item) => {
               const IconComponent = item.icon;
@@ -52,7 +52,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative p-3 rounded-full transition-all duration-300 group ${
+                  className={`relative p-2 rounded-full transition-all duration-300 group ${
                     location.pathname === item.path
                       ? "text-white shadow-[0_4px_16px_rgba(255,255,255,0.1)]"
                       : "text-white/60 hover:text-white/90"
@@ -64,7 +64,7 @@ const Navigation = () => {
                       : 'transparent'
                   }}
                 >
-                  <IconComponent className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  <IconComponent className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
                   {/* Ultra-subtle glass highlight */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
