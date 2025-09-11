@@ -1,4 +1,4 @@
-import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2 } from "lucide-react";
+import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -49,13 +49,117 @@ const About = () => {
     }
   ];
 
+  const education = [
+    {
+      degree: "Master of Business Administration (MBA)",
+      field: "Business Analytics & Marketing",
+      institution: "William & Mary",
+      period: "2024 - 2026 (Expected)",
+      status: "In Progress"
+    },
+    {
+      degree: "Bachelor of Technology (BTech)",
+      field: "Computer Science Engineering",
+      institution: "Karunya Institute of Technology and Sciences",
+      period: "2017 - 2021",
+      status: "Completed"
+    }
+  ];
+
+  const certifications = [
+    {
+      name: "AI Fluency for Students",
+      issuer: "Anthropic",
+      date: "Aug 2025",
+      category: "AI & Machine Learning"
+    },
+    {
+      name: "AI Fluency Framework & Foundations",
+      issuer: "Anthropic", 
+      date: "Aug 2025",
+      category: "AI & Machine Learning"
+    },
+    {
+      name: "Certified Scrum Product Owner (CSPO)",
+      issuer: "Scrum Alliance",
+      date: "Nov 2024",
+      category: "Product Management"
+    },
+    {
+      name: "MBA Math Quantitative Skills Course",
+      issuer: "MBA Math",
+      date: "Aug 2024",
+      category: "Analytics"
+    },
+    {
+      name: "Business Analytics",
+      issuer: "upGrad",
+      date: "Dec 2023",
+      category: "Analytics"
+    },
+    {
+      name: "Verified International Academic Qualifications",
+      issuer: "World Education Services",
+      date: "Aug 2023",
+      category: "Education"
+    },
+    {
+      name: "Marketing Analytics",
+      issuer: "Coursera",
+      date: "May 2021",
+      category: "Marketing"
+    },
+    {
+      name: "Excel Skills for Business: Essentials",
+      issuer: "Coursera",
+      date: "May 2020",
+      category: "Analytics"
+    },
+    {
+      name: "Successful Negotiations: Essential Strategies and Skills",
+      issuer: "Coursera",
+      date: "Feb 2020",
+      category: "Business Skills"
+    },
+    {
+      name: "Automation Anywhere University Essential Level Prep. Courses",
+      issuer: "Automation Anywhere",
+      date: "Jan 2020",
+      category: "Technology"
+    },
+    {
+      name: "IT Academy: Cloud and Virtualization Concepts",
+      issuer: "VMware",
+      date: "Jan 2020",
+      category: "Technology"
+    },
+    {
+      name: "IT Academy: Network Virtualization Concepts",
+      issuer: "VMware",
+      date: "Jan 2020",
+      category: "Technology"
+    },
+    {
+      name: "IT Academy: Software Defined Storage Concepts",
+      issuer: "VMware",
+      date: "Jan 2020",
+      category: "Technology"
+    },
+    {
+      name: "Wharton Online: Introduction to Marketing",
+      issuer: "Coursera",
+      date: "Jan 2020",
+      category: "Marketing"
+    }
+  ];
+
   const achievements = [
-    "MBA in Business Analytics & Marketing from William & Mary (Expected May 2026)",
-    "BTech in Computer Science Engineering from Karunya Institute (2017-2021)",
-    "Certified Scrum Product Owner (CSPO)",
     "Drove 35% improvement in conversion efficiency across multiple platforms",
     "Engineered automated systems reducing onboarding time by 3.5 days",
-    "Generated over $700K in revenue through data-driven activation strategies"
+    "Generated over $700K in revenue through data-driven activation strategies",
+    "Led AI-powered travel planning platform development from 0-to-1",
+    "Spearheaded CRM automation driving 18% revenue efficiency increase",
+    "Optimized user activation paths boosting SQL volume by 20%"
   ];
 
   return (
@@ -127,15 +231,47 @@ const About = () => {
           </div>
         </div>
 
-        {/* Experience */}
+        {/* Education */}
         <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <GraduationCap className="h-6 w-6 text-primary mr-2" />
+            Education
+          </h2>
+          <div className="space-y-6">
+            {education.map((edu, index) => (
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
+                    <p className="text-primary font-medium">{edu.field}</p>
+                    <p className="text-muted-foreground text-sm">{edu.institution}</p>
+                  </div>
+                  <div className="mt-2 md:mt-0 flex flex-col md:items-end">
+                    <Badge variant="outline" className="mb-2 hover-scale transition-all duration-300">
+                      {edu.period}
+                    </Badge>
+                    <Badge 
+                      variant={edu.status === "Completed" ? "default" : "secondary"} 
+                      className="hover-scale transition-all duration-300"
+                    >
+                      {edu.status}
+                    </Badge>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Experience */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <Award className="h-6 w-6 text-primary mr-2" />
             Experience
           </h2>
           <div className="space-y-6">
             {experience.map((job, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.3 + (index * 0.1)}s` }}>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{job.role}</h3>
@@ -151,16 +287,42 @@ const About = () => {
           </div>
         </div>
 
+        {/* Certifications */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <Award className="h-6 w-6 text-primary mr-2" />
+            Certifications
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="card-gradient p-4 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.4 + (index * 0.05)}s` }}>
+                <div className="flex justify-between items-start mb-3">
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">{cert.name}</h4>
+                    <p className="text-primary font-medium text-sm">{cert.issuer}</p>
+                  </div>
+                  <Badge variant="outline" className="text-xs hover-scale transition-all duration-300 ml-2">
+                    {cert.date}
+                  </Badge>
+                </div>
+                <Badge variant="secondary" className="text-xs">
+                  {cert.category}
+                </Badge>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Key Achievements */}
-        <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <div className="animate-slide-up" style={{ animationDelay: "0.5s" }}>
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <BookOpen className="h-6 w-6 text-primary mr-2" />
             Key Achievements
           </h2>
-          <Card className="card-gradient p-6 animate-scale-in hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.3s" }}>
+          <Card className="card-gradient p-6 animate-scale-in hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.5s" }}>
             <div className="grid md:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}>
+                <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.5 + (index * 0.05)}s` }}>
                   <CheckCircle2 className="w-4 h-4 text-success mt-1 mr-3 flex-shrink-0" />
                   <p className="text-muted-foreground">{achievement}</p>
                 </div>
@@ -170,7 +332,7 @@ const About = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <p className="text-muted-foreground mb-4">
             Interested in collaborating or learning more about my work?
           </p>
