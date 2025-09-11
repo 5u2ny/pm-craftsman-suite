@@ -29,19 +29,11 @@ const Navigation = () => {
   };
 
   return (
-    <nav
-      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-full"
-      style={{
-        backdropFilter: 'blur(80px) saturate(2.5) brightness(1.1)',
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))',
-        border: '1px solid rgba(255,255,255,0.03)',
-        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.02), 0 20px 40px rgba(0,0,0,0.02), 0 8px 16px rgba(0,0,0,0.01)'
-      }}
-    >
-      <div className="px-3 py-1">
+    <nav className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 rounded-full border border-white/20">
+      <div className="px-4 py-2">
         <div className="flex justify-center items-center h-16">
           {/* Navigation Icons */}
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-2">
 
             {navItems.map((item) => {
               const IconComponent = item.icon;
@@ -49,21 +41,13 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative p-1.5 rounded-full transition-all duration-300 group ${
+                  className={`p-2 rounded-full transition-all duration-300 ${
                     location.pathname === item.path
-                      ? "text-white/15"
-                      : "text-white/8 hover:text-white/12"
+                      ? "text-white bg-white/20"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
                   }`}
-                  style={{
-                    backdropFilter: location.pathname === item.path ? 'blur(40px)' : 'none',
-                    background: location.pathname === item.path 
-                      ? 'linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005))'
-                      : 'transparent'
-                  }}
                 >
-                  <IconComponent className="h-3.5 w-3.5 transition-transform duration-300 group-hover:scale-110" />
-                  {/* Glass highlight */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/1 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <IconComponent className="h-4 w-4" />
                 </Link>
               );
             })}
