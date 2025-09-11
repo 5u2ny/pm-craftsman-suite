@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, FolderOpen, User, Mail } from "lucide-react";
+import { Menu, X, Download, Home, FolderOpen, User, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -17,49 +17,72 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "About", path: "/about", icon: User },
+    { name: "Home", path: "/", icon: Home },
     { name: "Projects", path: "/case-studies", icon: FolderOpen },
-    { name: "Experience", path: "/", icon: Home },
+    { name: "About", path: "/about", icon: User },
     { name: "Contact", path: "/contact", icon: Mail },
   ];
+
+  const handleDownloadResume = () => {
+    // This would trigger a resume download
+    console.log("Download resume clicked");
+  };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-lg"
+          ? "bg-background/90 backdrop-blur-md border-b border-border/50 shadow-sm"
           : "bg-transparent"
       }`}
-      style={{ backgroundColor: isScrolled ? 'rgba(10, 14, 26, 0.8)' : 'transparent' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16 relative">
-          {/* Centered navigation pill exactly like reference */}
-          <div className="hidden md:flex items-center bg-gray-800/50 backdrop-blur-lg rounded-full px-1 py-1 border border-gray-700/50">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="text-xl font-bold text-gradient hover:scale-105 transition-transform duration-200"
+          >
+            Sunny Soni
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
+              const IconComponent = item.icon;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-6 py-3 text-sm font-medium transition-all duration-200 rounded-full ${
+                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-accent px-3 py-2 rounded-md ${
                     location.pathname === item.path
-                      ? "text-white bg-gray-700"
-                      : "text-gray-400 hover:text-white hover:bg-gray-700/50"
+                      ? "text-accent bg-accent/10"
+                      : "text-muted-foreground"
                   }`}
                 >
+                  <IconComponent className="h-4 w-4" />
                   <span>{item.name}</span>
                 </Link>
               );
             })}
+            <Button
+              onClick={handleDownloadResume}
+              variant="outline"
+              size="sm"
+              className="ml-4 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Resume
+            </Button>
           </div>
-          
+
           {/* Mobile menu button */}
-          <div className="md:hidden absolute right-4">
+          <div className="md:hidden">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-gray-400 hover:text-white"
+              className="p-2"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -69,23 +92,34 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800/95 backdrop-blur-lg rounded-lg mt-2 shadow-lg border border-gray-700/50 mx-4">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-border/50">
               {navItems.map((item) => {
+                const IconComponent = item.icon;
                 return (
                   <Link
                     key={item.name}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+                    className={`flex items-center space-x-2 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                       location.pathname === item.path
-                        ? "text-white bg-gray-700"
-                        : "text-gray-400 hover:text-white hover:bg-gray-700/50"
+                        ? "text-accent bg-accent/10"
+                        : "text-muted-foreground hover:text-accent hover:bg-accent/10"
                     }`}
                   >
+                    <IconComponent className="h-4 w-4" />
                     <span>{item.name}</span>
                   </Link>
                 );
               })}
+              <Button
+                onClick={handleDownloadResume}
+                variant="outline"
+                size="sm"
+                className="w-full mt-2"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Resume
+              </Button>
             </div>
           </div>
         )}

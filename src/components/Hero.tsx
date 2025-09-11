@@ -1,53 +1,111 @@
-import cityscapeTexture from "@/assets/cityscape-texture.jpg";
-import natureTexture from "@/assets/nature-texture.jpg";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import Profile4D from "@/components/Profile4D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-neutral-50">
-      {/* Background Silhouettes */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {/* Left Silhouette - Cityscape */}
-        <div 
-          className="absolute left-10 top-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 opacity-20"
-          style={{
-            clipPath: "circle(50% at center)",
-            backgroundImage: `url(${cityscapeTexture})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "grayscale(100%) contrast(1.2)"
-          }}
-        />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-background">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5" />
         
-        {/* Right Silhouette - Nature */}
-        <div 
-          className="absolute right-10 top-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 opacity-20"
-          style={{
-            clipPath: "circle(50% at center)",
-            backgroundImage: `url(${natureTexture})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "grayscale(100%) contrast(1.2)"
-          }}
-        />
-      </div>
-
-      {/* Main Profile Photo */}
-      <div className="relative z-10 mb-8">
-        <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl">
-          <img 
-            src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png" 
-            alt="Sunny Soni Profile" 
-            className="w-full h-full object-cover"
-          />
+        {/* Subtle star field - exactly like abirthakur.com */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
+          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
+          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
+          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
+          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
+          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
+          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
+          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
+          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
+          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
+          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
+          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
+          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
+          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
+          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
+          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
+          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
+          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
         </div>
       </div>
 
-      {/* Tagline Banner */}
-      <div className="relative z-10 w-full">
-        <div className="bg-red-400 py-6 px-8">
-          <h1 className="text-white text-xl lg:text-2xl xl:text-3xl font-bold tracking-widest text-center">
-            LOGICALLY MINDED // CREATIVE AT HEART
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="animate-fade-in">
+          {/* 4D Profile Picture */}
+          <div className="mb-8 flex justify-center">
+            <Profile4D />
+          </div>
+          
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+            <span className="block text-foreground mb-2 animate-slide-up">Sunny Soni</span>
+            <span className="text-gradient animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
+          
+          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
+            MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
+            <span className="text-accent font-semibold"> AI Product Manager</span> with experience building 
+            0-to-1 products and driving growth through data-driven strategies.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Button asChild size="lg" className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3">
+              <Link to="/about">
+                View Experience
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-accent hover:text-white transition-all duration-300">
+              <Link to="/case-studies">
+                Case Studies
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-primary hover:text-white transition-all duration-300">
+              <Link to="/projects">
+                Projects
+              </Link>
+            </Button>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center space-x-6">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3"
+              asChild
+            >
+              <a href="mailto:sunny.mba@proton.me" aria-label="Email">
+                <Mail className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3"
+              asChild
+            >
+              <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3"
+              asChild
+            >
+              <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Github className="h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
