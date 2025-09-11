@@ -5,7 +5,7 @@ const Profile4D = () => {
         {/* Main profile image only */}
         <div className="profile-4d-main">
           <img
-            src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png"
+            src="/lovable-uploads/e6e2e060-2301-4141-918e-10083389c853.png"
             alt="Sunny Soni - AI Product Manager"
             className="profile-4d-image"
           />
