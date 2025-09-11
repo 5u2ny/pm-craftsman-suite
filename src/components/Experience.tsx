@@ -1,4 +1,4 @@
-import { ExternalLink, Calendar, MapPin, Building2 } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Building2, Briefcase, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Experience = () => {
@@ -42,92 +42,138 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Motion Background Elements */}
+    <section className="py-24 bg-background relative overflow-hidden">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-10 right-10 w-24 h-24 border border-primary/8 rounded-full animate-orbital-rotation"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 border border-accent/10 rounded-lg animate-float transform rotate-12"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-primary/12 rounded-full animate-drift"></div>
-        <div className="absolute top-20 left-1/2 w-px h-20 bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-slide-up"></div>
-        <div className="absolute bottom-20 right-1/3 w-px h-16 bg-gradient-to-t from-transparent via-accent/15 to-transparent animate-fade-in"></div>
+        {/* Floating geometric shapes */}
+        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-l from-accent/8 to-primary/8 rounded-xl rotate-45 animate-bounce"></div>
+        
+        {/* Orbital rings */}
+        <div className="absolute top-1/4 right-1/4 w-48 h-48 border border-primary/10 rounded-full animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-36 h-36 border border-accent/10 rounded-full animate-spin-reverse"></div>
+        
+        {/* Gradient lines */}
+        <div className="absolute top-40 left-1/3 w-px h-32 bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-fade-in-out"></div>
+        <div className="absolute bottom-40 right-1/3 w-px h-24 bg-gradient-to-t from-transparent via-accent/25 to-transparent animate-fade-in-out-delay"></div>
+        
+        {/* Floating dots */}
+        <div className="absolute top-60 left-20 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+        <div className="absolute bottom-60 right-32 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
       </div>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
-            Experience
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-card/50 backdrop-blur-sm rounded-full border border-border/50">
+            <Briefcase className="h-5 w-5 text-primary" />
+            <span className="text-sm font-medium text-muted-foreground">Professional Journey</span>
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            <span className="text-gradient font-display">Experience</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            My professional journey and key roles. Click on a card to learn more about each position.
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Transforming ideas into reality through strategic product management and data-driven growth
           </p>
         </div>
 
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <div 
-              key={index} 
-              className="group animate-slide-up bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/70 transition-all duration-500 border border-border/50 hover:border-primary/20 hover:shadow-xl hover-lift" 
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex-1">
-                  {/* Company and Date */}
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-3">
-                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                      {exp.role}
-                    </h3>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
-                      {exp.period}
-                    </div>
-                  </div>
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-primary/20 via-accent/40 to-primary/20 animate-draw-line"></div>
+          
+          {/* Experience Cards */}
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div 
+                key={index}
+                className="relative group animate-slide-up"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                {/* Timeline Dot */}
+                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-all duration-300 z-10">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full animate-ping opacity-20"></div>
+                </div>
+                
+                {/* Experience Card */}
+                <div className="ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border border-border/50 group-hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:bg-card/80 group-hover:-translate-y-2">
                   
-                  {/* Company */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center gap-2">
-                      <Building2 className="h-4 w-4 text-primary" />
-                      <p className="text-lg text-accent font-semibold">
-                        {exp.company}
-                      </p>
+                  {/* Card Header */}
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
+                    <div className="flex-1">
+                      {/* Role Title */}
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">
+                        {exp.role}
+                      </h3>
+                      
+                      {/* Company Info */}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                            <Building2 className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-lg font-semibold text-accent">{exp.company}</p>
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <MapPin className="h-4 w-4" />
+                              <span>{exp.location}</span>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full border border-accent/20">
+                          <Calendar className="h-4 w-4 text-accent" />
+                          <span className="text-sm font-medium text-accent">{exp.period}</span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <MapPin className="h-3 w-3" />
-                      <span>{exp.location}</span>
+                    
+                    {/* Growth Icon */}
+                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
+                      <TrendingUp className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
                     </div>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                     {exp.description}
                   </p>
                   
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3 mb-6">
                     {exp.techStack.map((tech, i) => (
                       <Badge 
                         key={i} 
                         variant="secondary" 
-                        className="text-xs bg-accent/10 text-accent border-accent/20 hover-scale transition-all duration-300"
-                        style={{ animationDelay: `${(index * 0.2) + (i * 0.05)}s` }}
+                        className="px-3 py-1 text-sm bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 hover:scale-105 transition-all duration-300 font-medium"
+                        style={{ animationDelay: `${(index * 0.15) + (i * 0.05)}s` }}
                       >
                         {tech}
                       </Badge>
                     ))}
                   </div>
-                </div>
-                
-                {/* View Details */}
-                <div className="flex items-center justify-between mt-4 md:mt-0 md:flex-col md:items-end gap-2">
-                  <a 
-                    href={exp.website}
-                    className="text-accent hover:text-accent/80 text-sm flex items-center gap-1 transition-all duration-300 hover-scale story-link"
-                  >
-                    Visit website
-                    <ExternalLink className="h-3 w-3" />
-                  </a>
+                  
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span>Impact driven results</span>
+                    </div>
+                    
+                    <a 
+                      href={exp.website}
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-accent/80 bg-accent/10 hover:bg-accent/20 rounded-lg transition-all duration-300 hover:scale-105 group/link"
+                    >
+                      <span>Learn more</span>
+                      <ExternalLink className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
