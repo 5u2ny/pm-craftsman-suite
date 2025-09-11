@@ -40,11 +40,23 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed font-medium animate-slide-up" style={{ animationDelay: "0.8s" }}>
-            MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
-            <span className="text-accent font-semibold"> AI Product Manager</span> with experience building 
-            0-to-1 products and driving growth through data-driven strategies.
-          </p>
+          <div className="max-w-4xl mx-auto text-center animate-slide-up" style={{ animationDelay: "1.8s" }}>
+            <div className="space-y-4">
+              <p className="text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
+                MBA candidate at <span className="text-accent font-semibold">William & Mary</span> specializing in 
+                <span className="text-accent font-semibold"> Business Analytics & Marketing</span>
+              </p>
+              <div className="flex items-center justify-center">
+                <div className="h-px w-12 bg-accent/30"></div>
+                <div className="mx-4 w-2 h-2 bg-accent/40 rounded-full"></div>
+                <div className="h-px w-12 bg-accent/30"></div>
+              </div>
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                <span className="text-accent font-medium">AI Product Manager</span> with experience building 
+                0-to-1 products and driving growth through data-driven strategies
+              </p>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: "1s" }}>
             <Button asChild size="lg" className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3 hover-scale">
