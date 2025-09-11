@@ -1,14 +1,16 @@
-import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Send, FileDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
-import ElegantMotionBackground from "@/components/ElegantMotionBackground";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/20">
-      {/* Elegant Motion Background */}
-      <ElegantMotionBackground />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Ultra Clean Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.015] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.02] rounded-full blur-3xl"></div>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -58,7 +60,7 @@ const Hero = () => {
                 console.log("Download resume clicked");
               }}
             >
-              <Download className="mr-2 h-5 w-5" />
+              <FileDown className="mr-2 h-5 w-5" />
               Resume
             </Button>
           </div>
@@ -72,7 +74,7 @@ const Hero = () => {
               asChild
             >
               <a href="mailto:sunny.mba@proton.me" aria-label="Email">
-                <Mail className="h-5 w-5" />
+                <Send className="h-5 w-5" />
               </a>
             </Button>
             <Button
