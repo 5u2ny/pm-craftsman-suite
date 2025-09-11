@@ -64,7 +64,7 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
             {/* Contact Methods */}
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4">
                 Other Ways to Reach Me
               </h3>
@@ -97,7 +97,7 @@ const Contact = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
                 <Clock className="h-5 w-5 text-primary mr-2" />
                 Currently Open To
@@ -113,7 +113,7 @@ const Contact = () => {
             </Card>
 
             {/* Location & Response Time */}
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <div className="flex items-center mb-3">
                 <MapPin className="h-5 w-5 text-primary mr-2" />
                 <span className="font-medium text-foreground">San Francisco Bay Area</span>
@@ -137,7 +137,7 @@ const Contact = () => {
             Frequently Asked Questions
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="font-semibold text-foreground mb-2">
                 What type of roles are you looking for?
               </h3>
@@ -146,7 +146,7 @@ const Contact = () => {
                 particularly those working on AI/ML products or consumer-facing platforms.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="font-semibold text-foreground mb-2">
                 Do you offer consulting services?
               </h3>
@@ -155,7 +155,7 @@ const Contact = () => {
                 MVP scoping, and product-market fit validation on a project basis.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="font-semibold text-foreground mb-2">
                 Can you speak at events?
               </h3>
@@ -164,7 +164,7 @@ const Contact = () => {
                 user research methodologies, and building data-driven product culture.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
               <h3 className="font-semibold text-foreground mb-2">
                 Do you mentor other PMs?
               </h3>

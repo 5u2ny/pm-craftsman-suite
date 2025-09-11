@@ -29,7 +29,7 @@ const ContactForm = () => {
 
   if (isSubmitted) {
     return (
-      <Card className="card-gradient p-8 text-center animate-fade-in">
+      <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-8 text-center animate-fade-in">
         <CheckCircle className="h-16 w-16 text-success mx-auto mb-4" />
         <h3 className="text-xl font-semibold mb-2">Message Sent Successfully!</h3>
         <p className="text-muted-foreground mb-6">
@@ -46,7 +46,7 @@ const ContactForm = () => {
   }
 
   return (
-    <Card className="card-gradient p-8">
+    <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">

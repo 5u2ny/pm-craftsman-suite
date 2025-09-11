@@ -74,7 +74,7 @@ const About = () => {
         </div>
 
         {/* Philosophy */}
-        <Card className="card-gradient p-8 mb-12 animate-slide-up">
+        <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-8 mb-12 animate-slide-up">
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div>
               <Brain className="h-8 w-8 text-primary mx-auto mb-3" />
@@ -108,7 +108,7 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skillSet, index) => (
-              <Card key={skillSet.category} className="card-gradient p-6">
+              <Card key={skillSet.category} className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
                 <h3 className="font-semibold text-foreground mb-4">{skillSet.category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {skillSet.items.map((skill) => (
@@ -130,7 +130,7 @@ const About = () => {
           </h2>
           <div className="space-y-6">
             {experience.map((job, index) => (
-              <Card key={index} className="card-gradient p-6">
+              <Card key={index} className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{job.role}</h3>
@@ -152,7 +152,7 @@ const About = () => {
             <BookOpen className="h-6 w-6 text-primary mr-2" />
             Key Achievements
           </h2>
-          <Card className="card-gradient p-6">
+          <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6">
             <div className="grid md:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
                 <div key={index} className="flex items-start">
