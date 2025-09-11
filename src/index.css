@@ -2,38 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Professional PM Portfolio Design System */
+/* Modern Developer Portfolio Design System */
 
 @layer base {
   :root {
     /* Core Colors */
-    --background: 252 255% 99%;
-    --foreground: 230 15% 15%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     /* Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 230 15% 15%;
-    --surface: 240 20% 98%;
-    --surface-foreground: 230 15% 15%;
+    --card-foreground: 240 10% 3.9%;
+    --surface: 210 40% 98%;
+    --surface-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 15% 15%;
+    --popover-foreground: 240 10% 3.9%;
 
     /* Brand Colors */
-    --primary: 0 0% 9%;
+    --primary: 240 6% 10%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 0 0% 20%;
+    --primary-glow: 240 5% 26%;
     
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 10% 4%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 240 5% 11%;
 
-    --accent: 0 0% 15%;
+    --accent: 210 50% 50%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 0 0% 85%;
+    --accent-light: 210 40% 70%;
 
     /* Utility Colors */
-    --muted: 240 10% 95%;
-    --muted-foreground: 230 10% 50%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 240 4% 46%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -45,15 +45,15 @@
     --warning-foreground: 0 0% 100%;
 
     /* Interactive */
-    --border: 240 15% 90%;
-    --input: 240 15% 90%;
-    --ring: 0 0% 9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 240 6% 10%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 9%) 0%, hsl(0, 0%, 15%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(240, 10%, 98%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(240, 5%, 96%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(0, 0%, 15%) 0%, hsl(0, 0%, 9%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240, 6%, 10%) 0%, hsl(240, 5%, 26%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210, 50%, 50%) 0%, hsl(210, 50%, 40%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0, 0%, 0% / 0.05);
@@ -74,33 +74,33 @@
 
   .dark {
     /* Core Colors */
-    --background: 230 25% 8%;
-    --foreground: 240 20% 95%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
     /* Surface Colors */
-    --card: 230 20% 12%;
-    --card-foreground: 240 20% 95%;
-    --surface: 230 15% 10%;
-    --surface-foreground: 240 20% 95%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --surface: 240 6% 10%;
+    --surface-foreground: 0 0% 98%;
 
-    --popover: 230 20% 12%;
-    --popover-foreground: 240 20% 95%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
     /* Brand Colors */
     --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --primary-foreground: 240 6% 10%;
     --primary-glow: 0 0% 80%;
     
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 240 5% 90%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
 
-    --accent: 0 0% 85%;
-    --accent-foreground: 0 0% 9%;
-    --accent-light: 0 0% 20%;
+    --accent: 210 50% 50%;
+    --accent-foreground: 240 6% 10%;
+    --accent-light: 210 50% 30%;
 
     /* Utility Colors */
-    --muted: 230 15% 15%;
-    --muted-foreground: 240 10% 60%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -112,15 +112,15 @@
     --warning-foreground: 0 0% 0%;
 
     /* Interactive */
-    --border: 230 15% 20%;
-    --input: 230 15% 20%;
-    --ring: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 212 72% 59%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 98%) 0%, hsl(0, 0%, 85%) 100%);
-    --gradient-surface: linear-gradient(180deg, hsl(0, 0%, 9%) 0%, hsl(240, 5%, 12%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(240, 5%, 15%) 0%, hsl(240, 5%, 18%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(0, 0%, 85%) 0%, hsl(0, 0%, 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 98%) 0%, hsl(210, 50%, 50%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 6%, 10%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(240, 4%, 16%) 0%, hsl(240, 6%, 10%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210, 50%, 50%) 0%, hsl(210, 50%, 40%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0, 0%, 0% / 0.3);
@@ -138,7 +138,8 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: var(--gradient-surface);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
   }
 
   html {

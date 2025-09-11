@@ -32,7 +32,7 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-glass shadow-md"
+          ? "bg-background/90 backdrop-blur-md border-b border-border/50 shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -54,9 +54,9 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-primary ${
+                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 hover:text-accent px-3 py-2 rounded-md ${
                     location.pathname === item.path
-                      ? "text-primary"
+                      ? "text-accent bg-accent/10"
                       : "text-muted-foreground"
                   }`}
                 >
@@ -69,7 +69,7 @@ const Navigation = () => {
               onClick={handleDownloadResume}
               variant="outline"
               size="sm"
-              className="ml-4"
+              className="ml-4 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
             >
               <Download className="h-4 w-4 mr-2" />
               Resume
@@ -92,7 +92,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-glass rounded-lg mt-2 shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-card/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-border/50">
               {navItems.map((item) => {
                 const IconComponent = item.icon;
                 return (
@@ -102,8 +102,8 @@ const Navigation = () => {
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center space-x-2 px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                       location.pathname === item.path
-                        ? "text-primary bg-primary/10"
-                        : "text-muted-foreground hover:text-primary hover:bg-muted"
+                        ? "text-accent bg-accent/10"
+                        : "text-muted-foreground hover:text-accent hover:bg-accent/10"
                     }`}
                   >
                     <IconComponent className="h-4 w-4" />
