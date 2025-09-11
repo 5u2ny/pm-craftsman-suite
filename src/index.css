@@ -545,12 +545,13 @@
     animation: draw-line-reverse 18s ease-in-out infinite;
   }
 
-  /* Enhanced 4D Profile Effect */
+  /* Enhanced 4D Profile Effect with "Coming Out" Animation */
   .profile-4d-container {
     perspective: 1200px;
     transform-style: preserve-3d;
     width: 200px;
     height: 200px;
+    position: relative;
   }
 
   .profile-4d-wrapper {
@@ -578,17 +579,36 @@
     box-shadow: 
       0 8px 32px rgba(0, 0, 0, 0.12),
       0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateZ(0);
-    transition: all 0.3s ease;
+    transform: translateZ(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.02);
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Frame Background Effect */
+  .profile-4d-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.02));
+    transform: translateZ(-10px) scale(1.05);
+    transition: all 0.4s ease;
+    z-index: 1;
   }
 
   .profile-4d-image:hover {
-    transform: translateZ(10px) scale(1.02);
+    transform: translateZ(40px) scale(1.02);
     box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.15),
-      0 6px 24px rgba(0, 0, 0, 0.1);
+      0 20px 60px rgba(0, 0, 0, 0.2),
+      0 8px 32px rgba(0, 0, 0, 0.15);
     border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .profile-4d-main:hover::before {
+    transform: translateZ(-15px) scale(1.1);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.04));
   }
 
   @keyframes profile-4d-float {

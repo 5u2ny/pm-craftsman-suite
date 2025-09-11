@@ -21,10 +21,10 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-2 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <span className="block text-foreground mb-2 animate-slide-up font-serif font-bold" style={{ animationDelay: "0.4s" }}>
               Sunny Soni
             </span>
-            <span className="text-gradient animate-fade-in hover-scale" style={{ animationDelay: "0.6s" }}>
+            <span className="text-gradient animate-fade-in hover-scale font-display font-medium tracking-wide" style={{ animationDelay: "0.6s" }}>
               AI Product Manager
             </span>
           </h1>
