@@ -35,8 +35,8 @@ const Hero = () => {
                 </span>
               ))}
             </span>
-            <span className="text-gradient animate-fade-in hover-scale font-display font-medium tracking-wide" style={{ animationDelay: "0.6s" }}>
-              AI Product Manager
+            <span className="text-gradient font-mono font-medium tracking-wider text-2xl sm:text-3xl lg:text-4xl animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-accent" style={{ animationDelay: "1.2s" }}>
+              <span className="typewriter-text">AI Product Manager</span>
             </span>
           </h1>
           

@@ -580,6 +580,38 @@
     opacity: 0;
   }
 
+  @keyframes typewriter {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 100%;
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes blink-cursor {
+    0%, 50% {
+      border-right-color: hsl(var(--accent));
+    }
+    51%, 100% {
+      border-right-color: transparent;
+    }
+  }
+
+  .animate-typewriter {
+    animation: typewriter 2.5s steps(18) forwards, blink-cursor 1s step-end infinite 2.5s;
+    width: 0;
+    display: inline-block;
+  }
+
+  .typewriter-text {
+    display: inline;
+  }
+
   /* Enhanced 4D Profile Effect with "Coming Out" Animation */
   .profile-4d-container {
     perspective: 1200px;
