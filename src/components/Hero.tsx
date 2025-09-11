@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, Briefcase } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, Briefcase, FolderOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
@@ -80,7 +80,7 @@ const Hero = () => {
               
               <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
                 <Link to="/projects" className="flex items-center gap-2">
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <FolderOpen className="h-5 w-5 transition-transform group-hover:scale-110" />
                   <span className="font-medium">Projects</span>
                 </Link>
               </Button>
