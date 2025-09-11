@@ -21,8 +21,19 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-2 animate-slide-up font-serif font-bold" style={{ animationDelay: "0.4s" }}>
-              Sunny Soni
+            <span className="block text-foreground mb-2 font-display font-semibold tracking-tight animate-name-reveal" style={{ animationDelay: "0.4s" }}>
+              {"Sunny Soni".split("").map((letter, index) => (
+                <span 
+                  key={index}
+                  className="inline-block animate-letter-drop"
+                  style={{ 
+                    animationDelay: `${0.5 + index * 0.08}s`,
+                    animationFillMode: 'both'
+                  }}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </span>
+              ))}
             </span>
             <span className="text-gradient animate-fade-in hover-scale font-display font-medium tracking-wide" style={{ animationDelay: "0.6s" }}>
               AI Product Manager

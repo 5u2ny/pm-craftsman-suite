@@ -545,6 +545,41 @@
     animation: draw-line-reverse 18s ease-in-out infinite;
   }
 
+  @keyframes name-reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes letter-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px) rotateX(90deg);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translateY(10px) rotateX(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateX(0deg);
+    }
+  }
+
+  .animate-name-reveal {
+    animation: name-reveal 0.8s ease-out forwards;
+  }
+
+  .animate-letter-drop {
+    animation: letter-drop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+  }
+
   /* Enhanced 4D Profile Effect with "Coming Out" Animation */
   .profile-4d-container {
     perspective: 1200px;
