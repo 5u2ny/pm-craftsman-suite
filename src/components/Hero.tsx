@@ -88,37 +88,60 @@ const Hero = () => {
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 animate-slide-up" style={{ animationDelay: "1.2s" }}>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3 hover-scale"
-              asChild
-            >
-              <a href="mailto:sunny.mba@proton.me" aria-label="Email">
-                <Send className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3 hover-scale"
-              asChild
-            >
-              <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hover:text-accent hover:bg-accent/10 transition-all duration-300 rounded-full p-3 hover-scale"
-              asChild
-            >
-              <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Github className="h-5 w-5" />
-              </a>
-            </Button>
+          <div className="flex items-center justify-center gap-8 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+            <div className="flex items-center gap-6">
+              <div className="group relative">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  asChild
+                >
+                  <a href="mailto:sunny.mba@proton.me" aria-label="Email">
+                    <Send className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                  </a>
+                </Button>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <span className="text-xs text-muted-foreground font-medium">Email</span>
+                </div>
+              </div>
+
+              <div className="h-8 w-px bg-muted-foreground/20"></div>
+
+              <div className="group relative">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  asChild
+                >
+                  <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <Linkedin className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                  </a>
+                </Button>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <span className="text-xs text-muted-foreground font-medium">LinkedIn</span>
+                </div>
+              </div>
+
+              <div className="h-8 w-px bg-muted-foreground/20"></div>
+
+              <div className="group relative">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  asChild
+                >
+                  <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <Github className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                  </a>
+                </Button>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <span className="text-xs text-muted-foreground font-medium">GitHub</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
