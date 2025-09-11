@@ -64,7 +64,7 @@ const Navigation = () => {
               onClick={handleDownloadResume}
               variant="outline"
               size="sm"
-              className="ml-4 border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
+              className="border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
             >
               <Download className="h-4 w-4 mr-2" />
               Resume
