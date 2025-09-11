@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Download, Home, FolderOpen, User, Mail } from "lucide-react";
+import { Menu, X, FileDown, House, Briefcase, UserCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -17,10 +17,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", path: "/", icon: Home },
-    { name: "Projects", path: "/case-studies", icon: FolderOpen },
-    { name: "About", path: "/about", icon: User },
-    { name: "Contact", path: "/contact", icon: Mail },
+    { name: "Home", path: "/", icon: House },
+    { name: "Projects", path: "/case-studies", icon: Briefcase },
+    { name: "About", path: "/about", icon: UserCircle },
+    { name: "Contact", path: "/contact", icon: MessageSquare },
   ];
 
   const handleDownloadResume = () => {
@@ -52,7 +52,7 @@ const Navigation = () => {
                       : "text-muted-foreground"
                   }`}
                 >
-                  <IconComponent className="h-4 w-4" />
+                  <IconComponent className="h-5 w-5 stroke-2" />
                   <span>{item.name}</span>
                 </Link>
               );
@@ -67,7 +67,7 @@ const Navigation = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-6 w-6 stroke-2" /> : <Menu className="h-6 w-6 stroke-2" />}
             </Button>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Navigation = () => {
                         : "text-muted-foreground hover:text-accent hover:bg-accent/10"
                     }`}
                   >
-                    <IconComponent className="h-4 w-4" />
+                    <IconComponent className="h-5 w-5 stroke-2" />
                     <span>{item.name}</span>
                   </Link>
                 );
@@ -100,7 +100,7 @@ const Navigation = () => {
                 size="sm"
                 className="w-full mt-2"
               >
-                <Download className="h-4 w-4 mr-2" />
+                <FileDown className="h-5 w-5 stroke-2 mr-2" />
                 Resume
               </Button>
             </div>
