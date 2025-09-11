@@ -137,9 +137,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply antialiased;
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
+    background-color: #0a0e1a;
+    color: #ffffff;
   }
 
   html {
