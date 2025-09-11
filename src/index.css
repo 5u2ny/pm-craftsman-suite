@@ -478,71 +478,152 @@
     }
   }
 
-  /* Apple Liquid Glass Effects */
-  .liquid-glass-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Kaisermann-style background effects */
+  .kaisermann-grain {
+    background-image: 
+      repeating-conic-gradient(from 0deg, transparent 0deg 1deg, rgba(255,255,255,0.02) 1deg 2deg),
+      repeating-linear-gradient(0deg, transparent 0px 1px, rgba(255,255,255,0.02) 1px 2px),
+      repeating-linear-gradient(90deg, transparent 0px 1px, rgba(255,255,255,0.02) 1px 2px);
+    filter: contrast(1.5) brightness(0.8);
+    animation: grain-move 8s steps(10) infinite;
   }
 
-  .liquid-glass-card:hover {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  @keyframes grain-move {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-2%, -2%); }
+    20% { transform: translate(-4%, 2%); }
+    30% { transform: translate(2%, -4%); }
+    40% { transform: translate(-2%, 6%); }
+    50% { transform: translate(-4%, 2%); }
+    60% { transform: translate(6%, 0); }
+    70% { transform: translate(0, 4%); }
+    80% { transform: translate(-6%, 0); }
+    90% { transform: translate(4%, 2%); }
   }
 
-  .liquid-glass-frame {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+  /* AI Glitch Text Effects */
+  .ai-glitch-text {
+    position: relative;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 
+      0.05em 0 0 #00ffff,
+      -0.03em -0.04em 0 #ff00ff,
+      0.025em 0.04em 0 #ffff00;
+    animation: ai-glitch 4s infinite linear alternate-reverse;
   }
 
-  .liquid-glass-frame:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+  .ai-glitch-text::before,
+  .ai-glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .liquid-glass-button {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .ai-glitch-text::before {
+    animation: ai-glitch-top 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    color: #00ffff;
   }
 
-  .liquid-glass-button:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  .ai-glitch-text::after {
+    animation: ai-glitch-bottom 1.5s infinite linear alternate-reverse;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    color: #ff00ff;
   }
 
-  .liquid-glass-button-outline {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.8);
+  .ai-glitch-text-secondary {
+    position: relative;
+    color: #00ffff;
     font-weight: 400;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 
+      0.03em 0 0 #ff00ff,
+      -0.03em 0 0 #ffff00;
+    animation: ai-glitch-subtle 6s infinite linear alternate-reverse;
   }
 
-  .liquid-glass-button-outline:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.25);
-    color: white;
-    transform: translateY(-1px);
+  .ai-glitch-text-secondary::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ff00ff;
+    animation: ai-glitch-secondary 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 44%, 100% 44%, 100% 56%, 0 56%);
+  }
+
+  @keyframes ai-glitch {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+      transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    1%, 48% {
+      transform: translate3d(random(-5px, 5px), random(-5px, 5px), 0) rotateX(random(-5deg, 5deg));
+      filter: blur(random(0px, 2px));
+    }
+    49% {
+      transform: translate3d(random(-5px, 5px), random(-10px, 10px), 0);
+    }
+  }
+
+  @keyframes ai-glitch-top {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    1% {
+      transform: translate3d(-2px, -3px, 0);
+    }
+    48% {
+      transform: translate3d(3px, -1px, 0);
+    }
+    49% {
+      transform: translate3d(-1px, 2px, 0);
+    }
+  }
+
+  @keyframes ai-glitch-bottom {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    1% {
+      transform: translate3d(2px, 1px, 0);
+    }
+    48% {
+      transform: translate3d(-1px, 3px, 0);
+    }
+    49% {
+      transform: translate3d(1px, -2px, 0);
+    }
+  }
+
+  @keyframes ai-glitch-subtle {
+    0%, 99%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    33% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    66% {
+      transform: translate3d(1px, 0, 0);
+    }
+  }
+
+  @keyframes ai-glitch-secondary {
+    0%, 99%, 100% {
+      transform: translate3d(0, 0, 0);
+    }
+    33% {
+      transform: translate3d(1px, 0, 0);
+    }
+    66% {
+      transform: translate3d(-1px, 0, 0);
+    }
   }
 
   /* Backdrop Blur */
