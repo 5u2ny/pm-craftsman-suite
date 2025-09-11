@@ -59,7 +59,7 @@ const ToolsSkills = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={category.title} className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={category.title} className="glass-card p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
                     <IconComponent className="h-5 w-5 text-primary" />
@@ -79,7 +79,7 @@ const ToolsSkills = () => {
         </div>
 
         {/* Certifications */}
-        <Card className="bg-white/[0.02] backdrop-blur-[40px] border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:via-white/5 before:to-transparent before:opacity-60 after:absolute after:inset-0 after:bg-gradient-to-t after:from-white/10 after:to-transparent after:opacity-30 relative backdrop-saturate-150 p-8 animate-slide-up" style={{ animationDelay: "0.6s" }}>
+        <Card className="glass-card p-8 animate-slide-up" style={{ animationDelay: "0.6s" }}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-foreground mb-6">Certifications & Credentials</h3>
             <div className="flex flex-wrap justify-center gap-3">

@@ -55,7 +55,7 @@ const Navigation = () => {
           variant="ghost"
           size="sm"
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-full text-white/70 hover:text-white hover:bg-white/10"
+          className="p-2 glass-nav text-white/70 hover:text-white hover:bg-white/10"
         >
           {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </Button>

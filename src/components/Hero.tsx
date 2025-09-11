@@ -15,29 +15,29 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-white mb-2 animate-slide-up">Sunny Soni</span>
-            <span className="text-white animate-fade-in" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
+            <span className="block text-gradient-hero mb-2 animate-slide-up">Sunny Soni</span>
+            <span className="text-white/90 animate-fade-in font-light tracking-wide" style={{ animationDelay: "0.5s" }}>AI Product Manager</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed font-light">
             MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
-            <span className="text-primary font-medium"> AI Product Manager</span> with experience building 
+            <span className="text-gradient-primary font-medium"> AI Product Manager</span> with experience building 
             0-to-1 products and driving growth through data-driven strategies.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button asChild size="lg" className="button-glow group">
+            <Button asChild size="lg" className="btn-glass btn-glow group">
               <Link to="/about">
                 View Experience
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="hover-lift">
+            <Button asChild variant="outline" size="lg" className="btn-glass hover-lift">
               <Link to="/case-studies">
                 Case Studies
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="hover-lift">
+            <Button asChild variant="outline" size="lg" className="btn-glass hover-lift">
               <Link to="/projects">
                 Projects
               </Link>
@@ -49,7 +49,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary-glow transition-colors hover-scale"
               asChild
             >
               <a href="mailto:sunny.mba@proton.me" aria-label="Email">
@@ -59,7 +59,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary-glow transition-colors hover-scale"
               asChild
             >
               <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -69,7 +69,7 @@ const Hero = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary-glow transition-colors hover-scale"
               asChild
             >
               <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
