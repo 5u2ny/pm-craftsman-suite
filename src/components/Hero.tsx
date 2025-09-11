@@ -2,54 +2,53 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
+import AIMotionBackground from "@/components/AIMotionBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-background">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 z-0">
-        {/* Floating geometric shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 border border-accent/15 rounded-lg animate-drift transform rotate-45"></div>
-        <div className="absolute bottom-32 left-1/4 w-40 h-40 border border-primary/8 rounded-full animate-orbital-rotation"></div>
-        <div className="absolute bottom-40 right-1/3 w-28 h-28 border border-accent/12 rounded-lg animate-pulse-glow transform rotate-12"></div>
-        <div className="absolute top-1/2 left-8 w-20 h-20 border border-primary/15 rounded-full animate-twinkle"></div>
+      {/* AI Neural Network Background */}
+      <AIMotionBackground />
+      
+      {/* Holographic Data Layers */}
+      <div className="absolute inset-0 z-1">
+        {/* Scanning lines */}
+        <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-scanning-line top-1/4"></div>
+        <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent animate-scanning-line top-2/3" style={{ animationDelay: "3s" }}></div>
         
-        {/* Gradient orbs */}
-        <div className="absolute top-16 right-16 w-64 h-64 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl animate-pulse-glow"></div>
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-3xl animate-drift"></div>
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-to-bl from-primary/8 to-transparent rounded-full blur-2xl animate-float"></div>
+        {/* Data grid overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `
+            linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+        }}></div>
         
-        {/* Moving lines */}
-        <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-slide-up" style={{ animationDelay: "0s" }}></div>
-        <div className="absolute top-0 right-1/3 w-px h-24 bg-gradient-to-b from-transparent via-accent/25 to-transparent animate-slide-up" style={{ animationDelay: "2s" }}></div>
-        <div className="absolute top-0 left-2/3 w-px h-28 bg-gradient-to-b from-transparent via-primary/15 to-transparent animate-slide-up" style={{ animationDelay: "4s" }}></div>
+        {/* AI Processing indicators */}
+        <div className="absolute top-20 right-20">
+          <div className="flex items-center space-x-2 text-xs font-mono text-primary/60">
+            <div className="w-2 h-2 bg-primary/60 rounded-full animate-pulse"></div>
+            <span>AI_PROCESSING...</span>
+          </div>
+        </div>
         
-        {/* Subtle background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5" />
+        <div className="absolute bottom-20 left-20">
+          <div className="flex items-center space-x-2 text-xs font-mono text-accent/60">
+            <div className="w-2 h-2 bg-accent/60 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
+            <span>NEURAL_SYNC: 98.7%</span>
+          </div>
+        </div>
         
-        {/* Enhanced star field */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-1 h-1 bg-white/20 rounded-full animate-twinkle" />
-          <div className="absolute top-32 right-32 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "1s" }} />
-          <div className="absolute bottom-40 left-1/4 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/2 right-20 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "3s" }} />
-          <div className="absolute bottom-32 right-1/3 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.5s" }} />
-          <div className="absolute top-60 left-1/3 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "1.5s" }} />
-          <div className="absolute top-80 right-1/4 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "2.5s" }} />
-          <div className="absolute bottom-60 left-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "4s" }} />
-          <div className="absolute top-1/3 left-10 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "3.5s" }} />
-          <div className="absolute bottom-1/4 right-10 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "2.8s" }} />
-          <div className="absolute top-16 left-1/2 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.2s" }} />
-          <div className="absolute bottom-16 left-16 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "3.2s" }} />
-          <div className="absolute top-40 right-16 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "0.8s" }} />
-          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "4.5s" }} />
-          <div className="absolute top-24 left-1/5 w-1 h-1 bg-white/40 rounded-full animate-twinkle" style={{ animationDelay: "2.2s" }} />
-          <div className="absolute bottom-24 right-1/5 w-1 h-1 bg-white/25 rounded-full animate-twinkle" style={{ animationDelay: "1.8s" }} />
-          <div className="absolute top-2/3 left-20 w-1 h-1 bg-white/30 rounded-full animate-twinkle" style={{ animationDelay: "3.8s" }} />
-          <div className="absolute top-1/4 right-1/2 w-1 h-1 bg-white/20 rounded-full animate-twinkle" style={{ animationDelay: "0.3s" }} />
-          <div className="absolute bottom-2/3 right-24 w-1 h-1 bg-white/35 rounded-full animate-twinkle" style={{ animationDelay: "4.2s" }} />
-          <div className="absolute top-48 left-3/4 w-1 h-1 bg-white/15 rounded-full animate-twinkle" style={{ animationDelay: "2.7s" }} />
+        {/* Floating code snippets */}
+        <div className="absolute top-32 left-16 font-mono text-xs text-primary/20 animate-float">
+          <div>def predict_user_intent():</div>
+          <div className="ml-4">return model.inference()</div>
+        </div>
+        
+        <div className="absolute bottom-32 right-16 font-mono text-xs text-accent/20 animate-drift">
+          <div>{"{ accuracy: 0.94,"}</div>
+          <div>{"  confidence: 0.89 }"}</div>
         </div>
       </div>
 

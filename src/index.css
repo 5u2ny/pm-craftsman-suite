@@ -456,6 +456,24 @@
     animation: slow-drift 30s ease-in-out infinite;
   }
 
+  @keyframes scanning-line {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-scanning-line {
+    animation: scanning-line 8s ease-in-out infinite;
+  }
+
   /* Enhanced 4D Profile Effect */
   .profile-4d-container {
     perspective: 1200px;
