@@ -46,20 +46,20 @@ const ContactForm = () => {
   }
 
   return (
-    <Card className="card-gradient p-8">
+    <Card className="card-gradient p-8 animate-fade-in hover-lift transition-all duration-500 hover:shadow-xl">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
+          <div className="space-y-2 animate-slide-up" style={{ animationDelay: "0.1s" }}>
             <Label htmlFor="name">Name *</Label>
             <Input
               id="name"
               name="name"
               required
               placeholder="Your name"
-              className="bg-background/50"
+              className="bg-background/50 transition-all duration-300 focus:scale-105"
             />
           </div>
-          <div className="space-y-2">
+          <div className="space-y-2 animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <Label htmlFor="email">Email *</Label>
             <Input
               id="email"
@@ -67,33 +67,33 @@ const ContactForm = () => {
               type="email"
               required
               placeholder="your.email@example.com"
-              className="bg-background/50"
+              className="bg-background/50 transition-all duration-300 focus:scale-105"
             />
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <Label htmlFor="company">Company</Label>
           <Input
             id="company"
             name="company"
             placeholder="Your company (optional)"
-            className="bg-background/50"
+            className="bg-background/50 transition-all duration-300 focus:scale-105"
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 animate-slide-up" style={{ animationDelay: "0.4s" }}>
           <Label htmlFor="subject">Subject *</Label>
           <Input
             id="subject"
             name="subject"
             required
             placeholder="What would you like to discuss?"
-            className="bg-background/50"
+            className="bg-background/50 transition-all duration-300 focus:scale-105"
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 animate-slide-up" style={{ animationDelay: "0.5s" }}>
           <Label htmlFor="message">Message *</Label>
           <Textarea
             id="message"
@@ -101,14 +101,15 @@ const ContactForm = () => {
             required
             rows={5}
             placeholder="Tell me about your project, role, or collaboration opportunity..."
-            className="bg-background/50 resize-none"
+            className="bg-background/50 resize-none transition-all duration-300 focus:scale-105"
           />
         </div>
 
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full button-glow"
+          className="w-full button-glow hover-scale animate-fade-in"
+          style={{ animationDelay: "0.6s" }}
           size="lg"
         >
           {isSubmitting ? (
@@ -124,7 +125,7 @@ const ContactForm = () => {
           )}
         </Button>
 
-          <p className="text-sm text-muted-foreground text-center">
+          <p className="text-sm text-muted-foreground text-center animate-fade-in" style={{ animationDelay: "0.7s" }}>
             I typically respond within 24 hours. For urgent matters, 
             feel free to reach out directly at sunny.mba@proton.me or LinkedIn.
           </p>

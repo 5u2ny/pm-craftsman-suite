@@ -108,11 +108,16 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skillSet, index) => (
-              <Card key={skillSet.category} className="card-gradient p-6">
+              <Card key={skillSet.category} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.1 + (index * 0.1)}s` }}>
                 <h3 className="font-semibold text-foreground mb-4">{skillSet.category}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skillSet.items.map((skill) => (
-                    <Badge key={skill} variant="secondary">
+                  {skillSet.items.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill} 
+                      variant="secondary"
+                      className="hover-scale transition-all duration-300"
+                      style={{ animationDelay: `${0.1 + (index * 0.1) + (skillIndex * 0.02)}s` }}
+                    >
                       {skill}
                     </Badge>
                   ))}
@@ -130,13 +135,13 @@ const About = () => {
           </h2>
           <div className="space-y-6">
             {experience.map((job, index) => (
-              <Card key={index} className="card-gradient p-6">
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{job.role}</h3>
                     <p className="text-primary font-medium">{job.company}</p>
                   </div>
-                  <Badge variant="outline" className="mt-2 md:mt-0">
+                  <Badge variant="outline" className="mt-2 md:mt-0 hover-scale transition-all duration-300">
                     {job.period}
                   </Badge>
                 </div>
@@ -152,10 +157,10 @@ const About = () => {
             <BookOpen className="h-6 w-6 text-primary mr-2" />
             Key Achievements
           </h2>
-          <Card className="card-gradient p-6">
+          <Card className="card-gradient p-6 animate-scale-in hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.3s" }}>
             <div className="grid md:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}>
                   <div className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0" />
                   <p className="text-muted-foreground">{achievement}</p>
                 </div>
@@ -165,13 +170,13 @@ const About = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 animate-fade-in">
+        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.5s" }}>
           <p className="text-muted-foreground mb-4">
             Interested in collaborating or learning more about my work?
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors"
+            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-all duration-300 story-link hover-scale"
           >
             Let's connect
             <span className="ml-2">→</span>

@@ -75,12 +75,13 @@ const Projects = () => {
           </p>
           
           {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map((category) => (
+          <div className="flex flex-wrap justify-center gap-2 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            {categories.map((category, index) => (
               <Badge 
                 key={category}
                 variant={category === "All Projects" ? "default" : "secondary"}
-                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-scale"
+                style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}
               >
                 {category}
               </Badge>
@@ -102,13 +103,13 @@ const Projects = () => {
         </div>
 
         {/* Process Overview */}
-        <div className="bg-gradient-card rounded-2xl p-8 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <div className="bg-gradient-card rounded-2xl p-8 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl" style={{ animationDelay: "0.4s" }}>
           <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
             My Product Management Process
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.5s" }}>
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
                 <span className="text-primary font-bold">1</span>
               </div>
               <h3 className="font-semibold mb-2">Problem Discovery</h3>
@@ -116,8 +117,8 @@ const Projects = () => {
                 User research, market analysis, and stakeholder interviews
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.6s" }}>
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
                 <span className="text-primary font-bold">2</span>
               </div>
               <h3 className="font-semibold mb-2">Research & Validation</h3>
@@ -125,8 +126,8 @@ const Projects = () => {
                 Hypothesis testing, prototype validation, and data analysis
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.7s" }}>
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
                 <span className="text-primary font-bold">3</span>
               </div>
               <h3 className="font-semibold mb-2">Solution Design</h3>
@@ -134,8 +135,8 @@ const Projects = () => {
                 MVP scoping, technical requirements, and go-to-market strategy
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+            <div className="text-center animate-scale-in" style={{ animationDelay: "0.8s" }}>
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
                 <span className="text-primary font-bold">4</span>
               </div>
               <h3 className="font-semibold mb-2">Measure & Iterate</h3>

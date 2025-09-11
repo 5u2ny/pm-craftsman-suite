@@ -62,17 +62,17 @@ const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <div className="space-y-6 animate-slide-up" style={{ animationDelay: "0.2s" }}>
             {/* Contact Methods */}
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20">
               <h3 className="text-lg font-semibold text-foreground mb-4">
                 Other Ways to Reach Me
               </h3>
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
-                  <div key={index} className="flex items-start space-x-3">
+                  <div key={index} className="flex items-start space-x-3 animate-slide-up" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover-scale transition-all duration-300">
                         <method.icon className="h-5 w-5 text-primary" />
                       </div>
                     </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                       <Button
                         variant="link"
                         asChild
-                        className="p-0 h-auto text-sm text-primary hover:text-primary/80"
+                        className="p-0 h-auto text-sm text-primary hover:text-primary/80 story-link"
                       >
                         <a href={method.action} target="_blank" rel="noopener noreferrer">
                           {method.value}
@@ -97,14 +97,14 @@ const Contact = () => {
             </Card>
 
             {/* Availability */}
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20 animate-slide-up" style={{ animationDelay: "0.5s" }}>
               <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
                 <Clock className="h-5 w-5 text-primary mr-2" />
                 Currently Open To
               </h3>
               <div className="space-y-3">
                 {availability.map((item, index) => (
-                  <div key={index} className="flex items-start">
+                  <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.5 + (index * 0.05)}s` }}>
                     <div className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0" />
                     <p className="text-sm text-muted-foreground">{item}</p>
                   </div>
@@ -113,7 +113,7 @@ const Contact = () => {
             </Card>
 
             {/* Location & Response Time */}
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20 animate-scale-in" style={{ animationDelay: "0.7s" }}>
               <div className="flex items-center mb-3">
                 <MapPin className="h-5 w-5 text-primary mr-2" />
                 <span className="font-medium text-foreground">San Francisco Bay Area</span>
@@ -137,7 +137,7 @@ const Contact = () => {
             Frequently Asked Questions
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.3s" }}>
               <h3 className="font-semibold text-foreground mb-2">
                 What type of roles are you looking for?
               </h3>
@@ -146,7 +146,7 @@ const Contact = () => {
                 particularly those working on AI/ML products or consumer-facing platforms.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.4s" }}>
               <h3 className="font-semibold text-foreground mb-2">
                 Do you offer consulting services?
               </h3>
@@ -155,7 +155,7 @@ const Contact = () => {
                 MVP scoping, and product-market fit validation on a project basis.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.5s" }}>
               <h3 className="font-semibold text-foreground mb-2">
                 Can you speak at events?
               </h3>
@@ -164,7 +164,7 @@ const Contact = () => {
                 user research methodologies, and building data-driven product culture.
               </p>
             </Card>
-            <Card className="card-gradient p-6">
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.6s" }}>
               <h3 className="font-semibold text-foreground mb-2">
                 Do you mentor other PMs?
               </h3>

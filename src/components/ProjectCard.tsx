@@ -27,8 +27,8 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card
-      className={`group hover-lift overflow-hidden card-gradient border ${
-        featured ? "border-primary/20" : "border-border"
+      className={`group hover-lift overflow-hidden card-gradient border transition-all duration-500 hover:shadow-2xl animate-fade-in ${
+        featured ? "border-primary/20 shadow-lg" : "border-border"
       }`}
     >
       {/* Image */}
@@ -36,17 +36,28 @@ const ProjectCard = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
         {featured && (
-          <div className="absolute top-4 left-4">
-            <Badge className="bg-primary text-primary-foreground">
+          <div className="absolute top-4 left-4 animate-scale-in">
+            <Badge className="bg-primary text-primary-foreground shadow-lg">
               <TrendingUp className="w-3 h-3 mr-1" />
               Featured
             </Badge>
           </div>
         )}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+          <Button
+            size="sm"
+            className="bg-white/90 text-black hover:bg-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500"
+            asChild
+          >
+            <Link to={`/projects/${slug}`}>
+              View Details
+            </Link>
+          </Button>
+        </div>
       </div>
 
       {/* Content */}
@@ -69,7 +80,7 @@ const ProjectCard = ({
             </h4>
             <div className="space-y-1">
               {metrics.slice(0, 2).map((metric, index) => (
-                <p key={index} className="text-sm text-success font-medium">
+                <p key={index} className="text-sm text-success font-medium animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
                   • {metric}
                 </p>
               ))}
@@ -79,15 +90,20 @@ const ProjectCard = ({
 
         {/* Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {tags.slice(0, 3).map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
+          {tags.slice(0, 3).map((tag, index) => (
+            <Badge 
+              key={tag} 
+              variant="secondary" 
+              className="text-xs hover-scale transition-all duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               {tag}
             </Badge>
           ))}
         </div>
 
         {/* CTA */}
-        <Button asChild variant="outline" size="sm" className="w-full group/btn">
+        <Button asChild variant="outline" size="sm" className="w-full group/btn hover-scale border-2">
           <Link to={`/projects/${slug}`}>
             View Case Study
             <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />

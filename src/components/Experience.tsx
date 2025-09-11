@@ -55,12 +55,16 @@ const Experience = () => {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="group animate-fade-in bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/70 transition-all duration-300 border border-border/50" style={{ animationDelay: `${index * 0.1}s` }}>
+            <div 
+              key={index} 
+              className="group animate-slide-up bg-card/50 backdrop-blur-sm rounded-xl p-6 hover:bg-card/70 transition-all duration-500 border border-border/50 hover:border-primary/20 hover:shadow-xl hover-lift" 
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="flex-1">
                   {/* Company and Date */}
                   <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-3">
-                    <h3 className="text-xl font-bold text-foreground">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                       {exp.role}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -85,7 +89,12 @@ const Experience = () => {
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {exp.techStack.map((tech, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs bg-accent/10 text-accent border-accent/20">
+                      <Badge 
+                        key={i} 
+                        variant="secondary" 
+                        className="text-xs bg-accent/10 text-accent border-accent/20 hover-scale transition-all duration-300"
+                        style={{ animationDelay: `${(index * 0.2) + (i * 0.05)}s` }}
+                      >
                         {tech}
                       </Badge>
                     ))}
@@ -96,7 +105,7 @@ const Experience = () => {
                 <div className="flex items-center justify-between mt-4 md:mt-0 md:flex-col md:items-end gap-2">
                   <a 
                     href={exp.website}
-                    className="text-accent hover:text-accent/80 text-sm flex items-center gap-1 transition-colors"
+                    className="text-accent hover:text-accent/80 text-sm flex items-center gap-1 transition-all duration-300 hover-scale story-link"
                   >
                     Visit website
                     <ExternalLink className="h-3 w-3" />

@@ -59,16 +59,21 @@ const ToolsSkills = () => {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (
-              <Card key={category.title} className="card-gradient p-6 animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card key={category.title} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${index * 0.15}s` }}>
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3 hover-scale transition-all duration-300">
                     <IconComponent className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="text-xs">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill} 
+                      variant="secondary" 
+                      className="text-xs hover-scale transition-all duration-300"
+                      style={{ animationDelay: `${(index * 0.15) + (skillIndex * 0.05)}s` }}
+                    >
                       {skill}
                     </Badge>
                   ))}
@@ -79,12 +84,17 @@ const ToolsSkills = () => {
         </div>
 
         {/* Certifications */}
-        <Card className="card-gradient p-8 animate-slide-up" style={{ animationDelay: "0.6s" }}>
+        <Card className="card-gradient p-8 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.9s" }}>
           <div className="text-center">
             <h3 className="text-2xl font-bold text-foreground mb-6">Certifications & Credentials</h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {certifications.map((cert) => (
-                <Badge key={cert} variant="outline" className="px-4 py-2">
+              {certifications.map((cert, index) => (
+                <Badge 
+                  key={cert} 
+                  variant="outline" 
+                  className="px-4 py-2 hover-scale transition-all duration-300"
+                  style={{ animationDelay: `${0.9 + (index * 0.1)}s` }}
+                >
                   {cert}
                 </Badge>
               ))}
