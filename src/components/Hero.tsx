@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Send, FileDown } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
@@ -45,34 +45,46 @@ const Hero = () => {
             AI Product Manager with experience building 0-to-1 products and driving growth through data-driven strategies.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: "1s" }}>
-            <Button asChild size="lg" className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3 hover-scale">
-              <Link to="/about">
-                View Experience
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-accent hover:text-white transition-all duration-300 hover-scale">
-              <Link to="/case-studies">
-                Case Studies
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 hover:bg-primary hover:text-white transition-all duration-300 hover-scale">
-              <Link to="/projects">
-                Projects
-              </Link>
-            </Button>
-            <Button 
-              size="lg" 
-              className="bg-gradient-accent text-white hover:opacity-90 shadow-lg hover:shadow-xl transition-all duration-300 group px-8 py-3 hover-scale"
-              onClick={() => {
-                // This would trigger a resume download
-                console.log("Download resume clicked");
-              }}
-            >
-              <FileDown className="mr-2 h-5 w-5" />
-              Resume
-            </Button>
+          <div className="flex flex-col items-center gap-6 mb-12">
+            {/* Primary Actions */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "1s" }}>
+              <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 font-medium">
+                <Link to="/about" className="flex items-center gap-3">
+                  <Eye className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  View Experience
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium"
+                onClick={() => {
+                  console.log("Download resume clicked");
+                }}
+              >
+                <FileDown className="h-5 w-5 mr-3 transition-transform group-hover:scale-110" />
+                Download Resume
+              </Button>
+            </div>
+
+            {/* Secondary Actions */}
+            <div className="flex gap-4 animate-slide-up" style={{ animationDelay: "1.2s" }}>
+              <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
+                <Link to="/case-studies" className="flex items-center gap-2">
+                  <Briefcase className="h-5 w-5 transition-transform group-hover:scale-110" />
+                  <span className="font-medium">Case Studies</span>
+                </Link>
+              </Button>
+              
+              <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
+                <Link to="/projects" className="flex items-center gap-2">
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <span className="font-medium">Projects</span>
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Social Links */}
