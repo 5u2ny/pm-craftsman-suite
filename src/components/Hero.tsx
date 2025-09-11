@@ -2,54 +2,21 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
-import AIMotionBackground from "@/components/AIMotionBackground";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-surface to-background">
-      {/* AI Neural Network Background */}
-      <AIMotionBackground />
-      
-      {/* Holographic Data Layers */}
-      <div className="absolute inset-0 z-1">
-        {/* Scanning lines */}
-        <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-scanning-line top-1/4"></div>
-        <div className="absolute w-full h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent animate-scanning-line top-2/3" style={{ animationDelay: "3s" }}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/20">
+      {/* Clean Minimalist Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Subtle floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.02] rounded-full blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.03] rounded-full blur-3xl animate-float"></div>
         
-        {/* Data grid overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
+        {/* Minimal grid overlay */}
+        <div className="absolute inset-0 opacity-[0.008]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)`,
+          backgroundSize: '60px 60px',
         }}></div>
-        
-        {/* AI Processing indicators */}
-        <div className="absolute top-20 right-20">
-          <div className="flex items-center space-x-2 text-xs font-mono text-primary/60">
-            <div className="w-2 h-2 bg-primary/60 rounded-full animate-pulse"></div>
-            <span>AI_PROCESSING...</span>
-          </div>
-        </div>
-        
-        <div className="absolute bottom-20 left-20">
-          <div className="flex items-center space-x-2 text-xs font-mono text-accent/60">
-            <div className="w-2 h-2 bg-accent/60 rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-            <span>NEURAL_SYNC: 98.7%</span>
-          </div>
-        </div>
-        
-        {/* Floating code snippets */}
-        <div className="absolute top-32 left-16 font-mono text-xs text-primary/20 animate-float">
-          <div>def predict_user_intent():</div>
-          <div className="ml-4">return model.inference()</div>
-        </div>
-        
-        <div className="absolute bottom-32 right-16 font-mono text-xs text-accent/20 animate-drift">
-          <div>{"{ accuracy: 0.94,"}</div>
-          <div>{"  confidence: 0.89 }"}</div>
-        </div>
       </div>
 
       {/* Content */}
