@@ -2,22 +2,13 @@ import { ArrowRight, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
+import ElegantMotionBackground from "@/components/ElegantMotionBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-muted/20">
-      {/* Clean Minimalist Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Subtle floating orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.02] rounded-full blur-3xl animate-pulse-glow"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.03] rounded-full blur-3xl animate-float"></div>
-        
-        {/* Minimal grid overlay */}
-        <div className="absolute inset-0 opacity-[0.008]" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)`,
-          backgroundSize: '60px 60px',
-        }}></div>
-      </div>
+      {/* Elegant Motion Background */}
+      <ElegantMotionBackground />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

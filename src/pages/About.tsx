@@ -1,4 +1,4 @@
-import { Brain, Target, Users, TrendingUp, Award, BookOpen } from "lucide-react";
+import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -84,7 +84,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <Users className="h-8 w-8 text-primary mx-auto mb-3" />
+              <Users2 className="h-8 w-8 text-primary mx-auto mb-3" />
               <h3 className="font-semibold mb-2">User-Centric</h3>
               <p className="text-sm text-muted-foreground">
                 Building with empathy and deep understanding of user needs
@@ -161,7 +161,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
                 <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}>
-                  <div className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-success mt-1 mr-3 flex-shrink-0" />
                   <p className="text-muted-foreground">{achievement}</p>
                 </div>
               ))}
