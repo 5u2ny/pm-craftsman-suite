@@ -57,15 +57,6 @@ const Navigation = () => {
                 </Link>
               );
             })}
-            <Button
-              onClick={handleDownloadResume}
-              variant="outline"
-              size="sm"
-              className="ml-4"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Resume
-            </Button>
           </div>
 
           {/* Mobile menu button */}
