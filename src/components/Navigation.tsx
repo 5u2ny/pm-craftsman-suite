@@ -32,13 +32,13 @@ const Navigation = () => {
     <nav
       className={`fixed top-8 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/20 backdrop-blur-2xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.1)] rounded-full"
-          : "bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full"
+          ? "backdrop-blur-3xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.05)] rounded-full"
+          : "backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.02)] rounded-full"
       }`}
       style={{
-        backdropFilter: 'blur(40px) saturate(1.8)',
-        background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2), 0 8px 32px rgba(0,0,0,0.1)'
+        backdropFilter: 'blur(60px) saturate(2)',
+        background: 'linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01))',
+        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.05)'
       }}
     >
       <div className="px-8 py-3">
@@ -54,19 +54,19 @@ const Navigation = () => {
                   to={item.path}
                   className={`relative p-3 rounded-full transition-all duration-300 group ${
                     location.pathname === item.path
-                      ? "bg-white/30 text-white shadow-[0_4px_16px_rgba(255,255,255,0.2)]"
-                      : "text-white/70 hover:text-white hover:bg-white/20"
+                      ? "text-white shadow-[0_4px_16px_rgba(255,255,255,0.1)]"
+                      : "text-white/60 hover:text-white/90"
                   }`}
                   style={{
-                    backdropFilter: location.pathname === item.path ? 'blur(20px)' : 'none',
+                    backdropFilter: location.pathname === item.path ? 'blur(30px)' : 'none',
                     background: location.pathname === item.path 
-                      ? 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1))'
+                      ? 'linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02))'
                       : 'transparent'
                   }}
                 >
                   <IconComponent className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                  {/* Liquid glass highlight effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Ultra-subtle glass highlight */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </Link>
               );
             })}
