@@ -1,53 +1,53 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import cityscapeTexture from "@/assets/cityscape-texture.jpg";
+import natureTexture from "@/assets/nature-texture.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#0a0e1a' }}>
-      {/* Animated background pattern exactly like reference */}
-      <div className="absolute inset-0 z-0">
-        {/* Diagonal lines pattern */}
-        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.03 }}>
-          <defs>
-            <pattern id="diagonalLines" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="60" x2="60" y2="0" stroke="white" strokeWidth="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#diagonalLines)"/>
-        </svg>
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-neutral-50">
+      {/* Background Silhouettes */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Left Silhouette - Cityscape */}
+        <div 
+          className="absolute left-10 top-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 opacity-20"
+          style={{
+            clipPath: "circle(50% at center)",
+            backgroundImage: `url(${cityscapeTexture})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "grayscale(100%) contrast(1.2)"
+          }}
+        />
+        
+        {/* Right Silhouette - Nature */}
+        <div 
+          className="absolute right-10 top-1/2 -translate-y-1/2 w-80 h-80 lg:w-96 lg:h-96 opacity-20"
+          style={{
+            clipPath: "circle(50% at center)",
+            backgroundImage: `url(${natureTexture})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "grayscale(100%) contrast(1.2)"
+          }}
+        />
       </div>
 
-      {/* Content - exactly matching reference layout */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">          
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold mb-8 tracking-tight leading-none text-white">
-            <span className="block mb-2">
-              AI Product Manager
-            </span>
-            <span className="block text-gray-300">
-              & Full Stack Strategist
-            </span>
-          </h1>
-          
-          <div className="mb-12">
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light tracking-wide">
-              Building <span className="text-white">Intelligent</span>, <span className="text-white">Scalable</span> <span className="text-green-400">Products</span> with AI
-            </p>
-          </div>
-          
-          <p className="text-lg sm:text-xl text-gray-500 mb-16 max-w-3xl mx-auto leading-relaxed">
-            Hi! I'm <span className="text-white font-medium">Sunny Soni</span>, a passionate AI Product Manager crafting the future of web applications with cutting-edge AI technology.
-          </p>
+      {/* Main Profile Photo */}
+      <div className="relative z-10 mb-8">
+        <div className="w-64 h-64 lg:w-80 lg:h-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl">
+          <img 
+            src="/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png" 
+            alt="Sunny Soni Profile" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
-          <div className="flex justify-center">
-            <Button asChild size="lg" className="bg-transparent border border-gray-600 text-white hover:bg-gray-800 px-8 py-4 text-lg font-medium transition-all duration-300 group rounded-lg">
-              <Link to="/about">
-                Explore My Work
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
+      {/* Tagline Banner */}
+      <div className="relative z-10 w-full">
+        <div className="bg-red-400 py-6 px-8">
+          <h1 className="text-white text-xl lg:text-2xl xl:text-3xl font-bold tracking-widest text-center">
+            LOGICALLY MINDED // CREATIVE AT HEART
+          </h1>
         </div>
       </div>
     </section>
