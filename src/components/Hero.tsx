@@ -97,7 +97,7 @@ const Hero = () => {
                   className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
                   asChild
                 >
-                  <a href="mailto:sunny.mba@proton.me" aria-label="Email">
+                  <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
                     <Send className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
                   </a>
                 </Button>
@@ -115,7 +115,7 @@ const Hero = () => {
                   className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
                   asChild
                 >
-                  <a href="https://linkedin.com/in/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <Linkedin className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
                   </a>
                 </Button>

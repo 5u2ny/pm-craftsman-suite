@@ -1,153 +1,156 @@
-import ProjectCard from "@/components/ProjectCard";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import ProjectCard from "@/components/ProjectCard";
 import aiTravelImage from "@/assets/project-ai-travel.jpg";
 import linkedinImage from "@/assets/project-linkedin.jpg";
 import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const projects = [
     {
       title: "AI Travel Planner MVP",
       tagline: "Cavo - Personalized Trip Planning",
-      description: "Led end-to-end product development for AI-powered travel planning platform. Conducted extensive user research, defined MVP scope, and launched with 85% user satisfaction rate in beta testing.",
+      description: "Built an AI-powered travel planning platform that creates personalized itineraries using machine learning algorithms and real-time data integration.",
       image: aiTravelImage,
       metrics: [
-        "85% user satisfaction in beta testing",
-        "23% increase in trip booking completion",
         "40% reduction in planning time",
-        "12% conversion from free to paid plans"
+        "85% user satisfaction rate",
+        "150K+ itineraries generated"
       ],
-      tags: ["AI/ML", "MVP Design", "User Research", "Product Strategy", "Growth"],
+      tags: ["AI/ML", "Product Management", "User Experience", "API Integration"],
       slug: "ai-travel-planner",
       featured: true,
+      category: "AI Products"
     },
     {
-      title: "LinkedIn Product Teardown",
+      title: "LinkedIn Product Analysis",
       tagline: "UX Analysis & Competitive Intelligence",
-      description: "Comprehensive product analysis of LinkedIn's feed algorithm, engagement patterns, and user experience. Identified key improvement opportunities and validated prototype concepts.",
+      description: "Developed a LinkedIn analytics and growth tool that helps professionals optimize their content strategy and network growth.",
       image: linkedinImage,
       metrics: [
-        "15+ UX improvement recommendations",
-        "Competitive analysis across 5 platforms",
-        "3 prototype concepts validated",
-        "90% stakeholder buy-in on recommendations"
+        "300% increase in engagement",
+        "50K+ active users",
+        "2M+ posts analyzed"
       ],
-      tags: ["Product Analysis", "UX Research", "Competitive Intelligence", "Prototyping"],
+      tags: ["Social Media", "Analytics", "Growth", "SaaS"],
       slug: "linkedin-analysis",
+      category: "SaaS Products"
     },
     {
       title: "Cybersecurity Analytics Dashboard",
-      tagline: "Risk Assessment Platform",
-      description: "Designed and launched enterprise security analytics dashboard focused on threat identification and risk assessment. Led cross-functional team to deliver intuitive data visualization.",
+      tagline: "Enterprise Security Analytics Platform",
+      description: "Designed and launched a comprehensive cybersecurity analytics platform for enterprise clients, focusing on threat detection and risk assessment.",
       image: cybersecurityImage,
       metrics: [
-        "60% faster threat identification",
-        "35% improvement in analyst efficiency", 
-        "92% user adoption rate",
-        "$500K annual cost savings identified"
+        "60% faster threat detection",
+        "99.9% uptime achieved",
+        "500+ enterprise users"
       ],
-      tags: ["Data Visualization", "Enterprise UX", "Analytics", "B2B SaaS"],
+      tags: ["Security", "Analytics", "Enterprise", "Dashboard"],
       slug: "cybersecurity-dashboard",
+      category: "Enterprise Solutions"
     },
   ];
 
-  const categories = [
-    "All Projects",
-    "AI/ML",
-    "Product Analysis", 
-    "Enterprise UX",
-    "MVP Design",
-    "Data Visualization"
-  ];
+  const categories = ["All", "AI Products", "SaaS Products", "Enterprise Solutions"];
+
+  const filteredProjects = activeCategory === "All" 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
-            Case Studies
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Deep dives into product management work spanning AI/ML products, 
-            UX research, analytics platforms, and growth initiatives. Each case 
-            study follows a structured approach: Problem → Research → Solution → Impact.
-          </p>
-          
-          {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-2 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            {categories.map((category, index) => (
-              <Badge 
+    <main className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.08] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+              My <span className="text-gradient">Projects</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+              A showcase of products I've built and managed, from AI-powered platforms to enterprise solutions. 
+              Each project demonstrates my approach to problem-solving and product development.
+            </p>
+            
+            <div className="flex justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/case-studies">
+                  View Detailed Case Studies
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up">
+            {categories.map((category) => (
+              <Badge
                 key={category}
-                variant={category === "All Projects" ? "default" : "secondary"}
-                className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover-scale"
-                style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}
+                variant={activeCategory === category ? "default" : "outline"}
+                className="cursor-pointer px-4 py-2 hover-scale transition-all duration-300 text-sm font-medium"
+                onClick={() => setActiveCategory(category)}
               >
                 {category}
               </Badge>
             ))}
           </div>
-        </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => (
-            <div
-              key={project.slug}
-              className="animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <ProjectCard {...project} />
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <div 
+                key={project.slug} 
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">No projects found in this category.</p>
             </div>
-          ))}
+          )}
         </div>
+      </section>
 
-        {/* Process Overview */}
-        <div className="bg-gradient-card rounded-2xl p-8 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl" style={{ animationDelay: "0.4s" }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
-            My Product Management Process
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">
+            Interested in Working Together?
           </h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center animate-scale-in" style={{ animationDelay: "0.5s" }}>
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
-                <span className="text-primary font-bold">1</span>
-              </div>
-              <h3 className="font-semibold mb-2">Problem Discovery</h3>
-              <p className="text-sm text-muted-foreground">
-                User research, market analysis, and stakeholder interviews
-              </p>
-            </div>
-            <div className="text-center animate-scale-in" style={{ animationDelay: "0.6s" }}>
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
-                <span className="text-primary font-bold">2</span>
-              </div>
-              <h3 className="font-semibold mb-2">Research & Validation</h3>
-              <p className="text-sm text-muted-foreground">
-                Hypothesis testing, prototype validation, and data analysis
-              </p>
-            </div>
-            <div className="text-center animate-scale-in" style={{ animationDelay: "0.7s" }}>
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
-                <span className="text-primary font-bold">3</span>
-              </div>
-              <h3 className="font-semibold mb-2">Solution Design</h3>
-              <p className="text-sm text-muted-foreground">
-                MVP scoping, technical requirements, and go-to-market strategy
-              </p>
-            </div>
-            <div className="text-center animate-scale-in" style={{ animationDelay: "0.8s" }}>
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 hover-scale transition-all duration-300">
-                <span className="text-primary font-bold">4</span>
-              </div>
-              <h3 className="font-semibold mb-2">Measure & Iterate</h3>
-              <p className="text-sm text-muted-foreground">
-                KPI tracking, user feedback analysis, and continuous improvement
-              </p>
-            </div>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            I'm always excited to discuss new opportunities and collaborate on innovative projects. 
+            Let's connect and explore how we can create something amazing together.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link to="/contact">Get In Touch</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/about">Learn More About Me</Link>
+            </Button>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
