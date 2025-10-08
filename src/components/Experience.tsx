@@ -129,11 +129,6 @@ const Experience = () => {
                         </div>
                       </div>
                     </div>
-                    
-                    {/* Growth Icon */}
-                    <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl group-hover:from-primary/20 group-hover:to-accent/20 transition-all duration-300">
-                      <TrendingUp className="h-6 w-6 text-primary group-hover:scale-110 transition-transform" />
-                    </div>
                   </div>
                   
                   {/* Description */}
