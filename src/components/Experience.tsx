@@ -1,4 +1,4 @@
-import { ExternalLink, Calendar, MapPin, Building2, Briefcase, TrendingUp } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Experience = () => {
@@ -6,36 +6,40 @@ const Experience = () => {
     {
       role: "Lead AI Product Manager Intern",
       company: "IPSERLAB",
+      logo: "/logos/ipserlab-logo.png",
       location: "Dallas, TX",
       period: "May 2025 - Ongoing",
-      website: "#",
+      website: "https://www.ipserlab.com/",
       description: "Leading AI-powered travel planning platform development from 0-to-1 at stealth-stage startup, architecting multi-disciplinary teams and ownership models.",
       techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Team Leadership", "0-to-1 Development"]
     },
     {
       role: "Product Analyst (Growth Marketing Specialist)",
       company: "ASANIFY",
+      logo: "/logos/asanify-logo.png",
       location: "Kolkata, India", 
       period: "Sep 2022 - Aug 2023",
-      website: "#",
+      website: "https://asanify.com/",
       description: "Spearheaded CRM automation and audience segmentation strategy for HR and Payroll automation software serving small to medium-sized businesses.",
       techStack: ["CRM Automation", "Tableau", "Product-Led Growth", "Revenue Optimization", "Lead Conversion"]
     },
     {
       role: "Business Development Associate",
-      company: "YOCKET", 
+      company: "YOCKET",
+      logo: "/logos/yocket-logo.png", 
       location: "Mumbai, India",
       period: "Mar 2022 - Sep 2022", 
-      website: "#",
+      website: "https://yocket.com/",
       description: "Collaborated with product team to redesign user qualification journeys for India's largest community-based platform for study-abroad aspirants.",
       techStack: ["User Journey Design", "LinkedIn Analytics", "Conversion Optimization", "Data-Driven Strategy"]
     },
     {
       role: "Product-led Growth Analyst (Growth Partner)",
       company: "LEADLE",
+      logo: "/logos/leadle-logo.png",
       location: "Chennai, India",
       period: "Oct 2021 - Mar 2022",
-      website: "#", 
+      website: "https://www.leadlehq.com/", 
       description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback for B2B SaaS platform providing product-led growth tools and analytics.",
       techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Growth Analytics", "User Activation"]
     }
@@ -111,11 +115,27 @@ const Experience = () => {
                       {/* Company Info */}
                       <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
                         <div className="flex items-center gap-3">
-                          <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                            <Building2 className="h-5 w-5 text-primary" />
-                          </div>
+                          <a 
+                            href={exp.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors hover:scale-110 duration-300"
+                          >
+                            <img 
+                              src={exp.logo} 
+                              alt={`${exp.company} logo`}
+                              className="h-10 w-10 object-contain"
+                            />
+                          </a>
                           <div>
-                            <p className="text-lg font-semibold text-accent">{exp.company}</p>
+                            <a 
+                              href={exp.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-lg font-semibold text-accent hover:text-accent/80 transition-colors"
+                            >
+                              {exp.company}
+                            </a>
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <MapPin className="h-4 w-4" />
                               <span>{exp.location}</span>
