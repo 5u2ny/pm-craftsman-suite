@@ -10,11 +10,27 @@ import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
 import openaiLogo from "@/assets/openai-logo.png";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
 import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
+import energyoneObImage from "@/assets/energyone-ob.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "EnergyOne America Employee Performance & Commitment",
+      tagline: "MBA Organizational Behavior, Fall 2024",
+      description: "Served as Behavioral Research Contributor, conducting field interviews and OB analysis for a leading insulation contractor. Analyzed organizational behavior and employee engagement to surface insights and recommend improvement strategies.",
+      image: energyoneObImage,
+      metrics: [
+        "Conducted qualitative employee interviews across multiple roles",
+        "Applied OB frameworks at group and organizational level",
+        "Developed phased rollout roadmap for satisfaction gains"
+      ],
+      tags: ["Organizational Behavior", "Employee Engagement", "Qualitative Research", "Change Management"],
+      slug: "energyone-organizational-behavior",
+      category: "MBA Research",
+      pdfLink: "/projects/OB.pdf"
+    },
     {
       title: "Reconnaissance Healthcare Cyber Risk Assessment",
       tagline: "MBA Sprint Week, Spring 2025",

@@ -14,6 +14,7 @@ import MBAResearch from "./pages/MBAResearch";
 import OpenAIStrategy from "./pages/OpenAIStrategy";
 import SouthKoreaEconomy from "./pages/SouthKoreaEconomy";
 import CyberRiskAssessment from "./pages/CyberRiskAssessment";
+import EnergyOneOB from "./pages/EnergyOneOB";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/projects/openai-competitive-strategy" element={<OpenAIStrategy />} />
           <Route path="/projects/south-korea-economic-policy" element={<SouthKoreaEconomy />} />
           <Route path="/projects/cyber-risk-assessment" element={<CyberRiskAssessment />} />
+          <Route path="/projects/energyone-organizational-behavior" element={<EnergyOneOB />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects/:slug" element={<CaseStudy />} />
