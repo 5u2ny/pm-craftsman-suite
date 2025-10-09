@@ -11,11 +11,27 @@ import openaiLogo from "@/assets/openai-logo.png";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
 import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
 import energyoneObImage from "@/assets/energyone-ob.jpg";
+import airlinesDataImage from "@/assets/airlines-data-analysis.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Airlines Customer Satisfaction Analysis",
+      tagline: "MBA Data Analysis Project, Fall 2024",
+      description: "Served as Data Analyst and Visual Storytelling Owner, performing all statistical modeling and building the insight presentation from scratch. Executed a data-driven study on airline service ratings using a Kaggle dataset with 5,000 samples to identify predictors of satisfaction and recommend quality improvements.",
+      image: airlinesDataImage,
+      metrics: [
+        "Applied t-tests, ANOVA, and regression via JASP for hypothesis testing",
+        "Identified service class as strongest predictor of check-in satisfaction",
+        "Built predictive models for satisfaction across customer segments"
+      ],
+      tags: ["Data Analysis", "Statistical Modeling", "JASP", "Hypothesis Testing", "Predictive Analytics"],
+      slug: "airlines-customer-satisfaction",
+      category: "MBA Research",
+      pdfLink: "/projects/DataAnalysis.pdf"
+    },
     {
       title: "EnergyOne America Employee Performance & Commitment",
       tagline: "MBA Organizational Behavior, Fall 2024",
