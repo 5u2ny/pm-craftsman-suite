@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp, FileDown } from "lucide-react";
+import { ArrowRight, FileDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +12,6 @@ interface ProjectCardProps {
   metrics: string[];
   tags: string[];
   slug: string;
-  featured?: boolean;
   pdfLink?: string;
 }
 
@@ -24,14 +23,11 @@ const ProjectCard = ({
   metrics,
   tags,
   slug,
-  featured = false,
   pdfLink,
 }: ProjectCardProps) => {
   return (
     <Card
-      className={`group hover-lift overflow-hidden card-gradient border transition-all duration-500 hover:shadow-2xl animate-fade-in ${
-        featured ? "border-primary/20 shadow-lg" : "border-border"
-      }`}
+      className="group hover-lift overflow-hidden card-gradient border border-border transition-all duration-500 hover:shadow-2xl animate-fade-in"
     >
       {/* Image */}
       <div className="relative overflow-hidden">
@@ -41,14 +37,6 @@ const ProjectCard = ({
           className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
-        {featured && (
-          <div className="absolute top-4 left-4 animate-scale-in">
-            <Badge className="bg-primary text-primary-foreground shadow-lg">
-              <TrendingUp className="w-3 h-3 mr-1" />
-              Featured
-            </Badge>
-          </div>
-        )}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
           <Button
             size="sm"
