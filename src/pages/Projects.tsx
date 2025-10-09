@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ProjectCard from "@/components/ProjectCard";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
-import openaiLogo from "@/assets/openai-logo.png";
+import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
 import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
 import energyoneObImage from "@/assets/energyone-ob.jpg";
@@ -19,7 +19,7 @@ const Projects = () => {
     {
       title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
       tagline: "Undergraduate Research, Spring 2021",
-      description: "Worked as Machine Learning Analyst, focusing on data clustering and segmentation strategy. Built a segmentation model using k-Means on 8,950 customer records to identify behavior-based clusters for targeted product campaigns.",
+      description: "Developed a machine learning customer segmentation model for retail stores using Python and k-Means clustering algorithms. Analyzed 8,950 customer records to identify seven distinct behavioral segments including high-value VIPs, revolvers, and low-tenure customers. Provided actionable insights for targeted marketing campaigns and loyalty optimization strategies based on credit behavior patterns.",
       image: retailSegmentationImage,
       metrics: [
         "Implemented Python-based k-Means model for 7 behavioral clusters",
@@ -33,7 +33,7 @@ const Projects = () => {
     {
       title: "Brewscovery – Craft Beer Subscription Model",
       tagline: "MBA Sprint Week, Fall 2024",
-      description: "Served as Market Strategy Designer and Presentation/Media Developer, co-owning GTM development, financial modeling, and building the final pitch deck and demo video. Co-developed a scalable, investor-ready subscription strategy for Brewscovery, targeting niche D2C beer markets with focus on GTM, influencer outreach, and financial validation.",
+      description: "Created a comprehensive business strategy for a craft beer subscription service targeting D2C markets. Led market strategy design, financial modeling, and GTM development including influencer partnerships and regional growth playbooks. Built complete financial forecasts projecting $4.8M revenue and $1.5M profit in Year 1 with 10,000 subscribers. Selected as Top 4 team to pitch to Domino's Global Strategy Chief.",
       image: brewscoveryImage,
       metrics: [
         "Built forecast model for 10K subscribers and $1.5M profit in Year 1",
@@ -48,7 +48,7 @@ const Projects = () => {
     {
       title: "Airlines Customer Satisfaction Analysis",
       tagline: "MBA Data Analysis Project, Fall 2024",
-      description: "Served as Data Analyst and Visual Storytelling Owner, performing all statistical modeling and building the insight presentation from scratch. Executed a data-driven study on airline service ratings using a Kaggle dataset with 5,000 samples to identify predictors of satisfaction and recommend quality improvements.",
+      description: "Conducted comprehensive statistical analysis on airline customer satisfaction using a Kaggle dataset of 5,000 samples from 129,880 records. Applied t-tests, ANOVA, and regression analysis via JASP to test four hypotheses about factors affecting satisfaction. Identified service class as the strongest predictor of check-in satisfaction and developed actionable recommendations for improving economy class experience.",
       image: airlinesDataImage,
       metrics: [
         "Applied t-tests, ANOVA, and regression via JASP for hypothesis testing",
@@ -63,7 +63,7 @@ const Projects = () => {
     {
       title: "EnergyOne America Employee Performance & Commitment",
       tagline: "MBA Organizational Behavior, Fall 2024",
-      description: "Served as Behavioral Research Contributor, conducting field interviews and OB analysis for a leading insulation contractor. Analyzed organizational behavior and employee engagement to surface insights and recommend improvement strategies.",
+      description: "Conducted organizational behavior research for EnergyOne America, a leading insulation contractor, focusing on employee performance and commitment. Performed qualitative field interviews across multiple roles and applied OB frameworks at group and organizational levels. Developed a phased implementation roadmap with recommendations for improving employee satisfaction, engagement, and retention based on behavioral insights.",
       image: energyoneObImage,
       metrics: [
         "Conducted qualitative employee interviews across multiple roles",
@@ -78,7 +78,7 @@ const Projects = () => {
     {
       title: "Reconnaissance Healthcare Cyber Risk Assessment",
       tagline: "MBA Sprint Week, Spring 2025",
-      description: "Served as Risk Modeling Analyst and Executive Deck Developer, leading FAIR-based risk quantification and board-level presentation design. Led cyber risk modeling for a simulated healthcare provider, using FAIR to evaluate PHI/PII threats, ransomware risks, and vendor dependencies.",
+      description: "Led comprehensive cyber risk assessment for a simulated healthcare provider using FAIR (Factor Analysis of Information Risk) methodology. Quantified risks related to PHI/PII breaches, ransomware attacks, and third-party vendor dependencies. Developed board-level executive presentation proposing $1M security investment with projected $17M reduction in annualized cyber loss and $546M in protected value.",
       image: cyberRiskImage,
       metrics: [
         "Applied FAIR to quantify risk magnitude and breach probability",
@@ -93,7 +93,7 @@ const Projects = () => {
     {
       title: "South Korea Demographic Transition & Economic Policy",
       tagline: "MBA Business, Govt & Global Economy, Spring 2025",
-      description: "Served as Data & Policy Researcher and Presentation Design Lead, conducting analytics-driven policy analysis assessing South Korea's aging population and its effects on labor share, productivity, and GDP growth.",
+      description: "Analyzed South Korea's demographic transition and its economic implications using multi-source data from KOSIS, KOSTAT, and World Bank. Built regression models to assess impacts on labor share, productivity, and GDP growth. Developed comprehensive policy recommendations addressing aging population challenges including workforce development, immigration reform, and social support systems to sustain economic growth.",
       image: southKoreaEconomy,
       metrics: [
         "Regression models built",
@@ -108,8 +108,8 @@ const Projects = () => {
     {
       title: "OpenAI ChatGPT Competitive Strategy",
       tagline: "MBA Global Competitive Strategy, Spring 2025",
-      description: "Served as Lead Strategist & Research Contributor, completing a multi-phase strategic analysis and implementation plan focused on OpenAI's ChatGPT Strategic Business Unit using PESTEL, Porter's Five Forces, VRIO, and SWOT frameworks.",
-      image: openaiLogo,
+      description: "Developed comprehensive three-phase strategic analysis for OpenAI's ChatGPT business unit using multiple business frameworks. Conducted external analysis with PESTEL and Porter's Five Forces, internal assessment with VRIO framework, and SWOT analysis. Created detailed strategy development plan and implementation roadmap addressing competitive positioning, market opportunities, and sustainable competitive advantages in the AI industry.",
+      image: openaiStrategyImage,
       metrics: [
         "Multi-framework strategic analysis",
         "Competitive positioning assessment",
@@ -127,7 +127,7 @@ const Projects = () => {
     {
       title: "Colonial Williamsburg Marketing Research",
       tagline: "MBA Marketing Research, Spring 2025",
-      description: "Served as Research Design Lead and Predictive Modeling Contributor, collaborating on a full-cycle marketing research plan to support visitor engagement strategy for Colonial Williamsburg. Developed 3-stage research framework and defined visitor segments to guide marketing strategy.",
+      description: "Designed and executed full-cycle marketing research project for Colonial Williamsburg to enhance visitor engagement. Developed three-stage research framework combining qualitative and quantitative methods, analyzed 43 survey respondents, and applied predictive modeling to identify distinct visitor segments. Delivered actionable insights and strategic recommendations for targeted marketing campaigns and visitor experience optimization.",
       image: colonialWilliamsburgImage,
       metrics: [
         "3-stage research framework developed",

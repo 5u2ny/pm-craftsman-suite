@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, FileDown, Calendar, Target, TrendingUp, Shield, Users } from "lucide-react";
-import openaiLogo from "@/assets/openai-logo.png";
+import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 
 const OpenAIStrategy = () => {
   const pdfs = [
@@ -70,7 +70,7 @@ const OpenAIStrategy = () => {
             </div>
 
             <div className="flex justify-center">
-              <img src={openaiLogo} alt="OpenAI" className="w-64 h-auto" />
+              <img src={openaiStrategyImage} alt="OpenAI ChatGPT Strategy" className="w-full h-auto rounded-lg shadow-2xl" />
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const OpenAIStrategy = () => {
                   </div>
                 </div>
                 <Button asChild className="w-full" size="sm">
-                  <a href={pdf.url} target="_blank" rel="noopener noreferrer" download>
+                  <a href={pdf.url} target="_blank" rel="noopener noreferrer">
                     Download PDF
                   </a>
                 </Button>

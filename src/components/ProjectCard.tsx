@@ -106,7 +106,7 @@ const ProjectCard = ({
                   size="sm" 
                   className="w-full group/btn hover-scale"
                 >
-                  <a href={pdf.url} target="_blank" rel="noopener noreferrer" download>
+                  <a href={pdf.url} target="_blank" rel="noopener noreferrer">
                     {pdf.name}
                     <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
                   </a>
@@ -132,8 +132,8 @@ const ProjectCard = ({
                 size="sm" 
                 className="w-full group/btn hover-scale"
               >
-                <a href={pdfLink} target="_blank" rel="noopener noreferrer" download>
-                  Download Research PDF
+                <a href={pdfLink} target="_blank" rel="noopener noreferrer">
+                  Download PDF
                   <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
                 </a>
               </Button>
