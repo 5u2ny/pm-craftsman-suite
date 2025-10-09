@@ -13,11 +13,26 @@ import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
 import energyoneObImage from "@/assets/energyone-ob.jpg";
 import airlinesDataImage from "@/assets/airlines-data-analysis.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
+import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
+      tagline: "Undergraduate Research, Spring 2021",
+      description: "Worked as Machine Learning Analyst, focusing on data clustering and segmentation strategy. Built a segmentation model using k-Means on 8,950 customer records to identify behavior-based clusters for targeted product campaigns.",
+      image: retailSegmentationImage,
+      metrics: [
+        "Implemented Python-based k-Means model for 7 behavioral clusters",
+        "Labeled segments including Revolvers, VIPs, and Low-Tenure customers",
+        "Highlighted two high-credit segments ideal for targeted offers"
+      ],
+      tags: ["Python", "Machine Learning", "K-Means", "Customer Segmentation"],
+      slug: "retail-customer-segmentation",
+      category: "Undergrad"
+    },
     {
       title: "Brewscovery – Craft Beer Subscription Model",
       tagline: "MBA Sprint Week, Fall 2024",
@@ -30,7 +45,7 @@ const Projects = () => {
       ],
       tags: ["Marketing Strategy", "Financial Modeling", "GTM Strategy", "Subscription Business"],
       slug: "brewscovery-subscription",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/BeerProject.pdf"
     },
     {
@@ -45,7 +60,7 @@ const Projects = () => {
       ],
       tags: ["Data Analysis", "Statistical Modeling", "JASP", "Hypothesis Testing", "Predictive Analytics"],
       slug: "airlines-customer-satisfaction",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/DataAnalysis.pdf"
     },
     {
@@ -60,7 +75,7 @@ const Projects = () => {
       ],
       tags: ["Organizational Behavior", "Employee Engagement", "Qualitative Research", "Change Management"],
       slug: "energyone-organizational-behavior",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/OB.pdf"
     },
     {
@@ -75,7 +90,7 @@ const Projects = () => {
       ],
       tags: ["Quantitative Risk Analysis", "Cyber Risk Modeling", "FAIR Analysis", "Healthcare Security"],
       slug: "cyber-risk-assessment",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/Cyber_Risk_Assessment.pdf"
     },
     {
@@ -90,7 +105,7 @@ const Projects = () => {
       ],
       tags: ["Economic Analysis", "Demographic Forecasting", "Regression Analysis", "Policy Research"],
       slug: "south-korea-economic-policy",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/Econ.pdf"
     },
     {
@@ -105,7 +120,7 @@ const Projects = () => {
       ],
       tags: ["Business Frameworks", "Competitive Strategy", "Market Positioning", "Strategic Planning"],
       slug: "openai-competitive-strategy",
-      category: "MBA Research",
+      category: "MBA",
       pdfLinks: [
         { name: "Phase 1: External & Internal Analysis", url: "/projects/GP1.pdf" },
         { name: "Phase 2: Strategy Development", url: "/projects/GP2.pdf" },
@@ -124,7 +139,7 @@ const Projects = () => {
       ],
       tags: ["Marketing Research", "Predictive Modeling", "Survey Design", "Statistical Analysis"],
       slug: "mba-marketing-research",
-      category: "MBA Research",
+      category: "MBA",
       pdfLink: "/projects/Marketing_Research_Project.pdf"
     },
     {
@@ -171,7 +186,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "MBA Research", "AI Products", "SaaS Products", "Enterprise Solutions"];
+  const categories = ["All", "MBA", "Undergrad", "AI Products", "SaaS Products", "Enterprise Solutions"];
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
