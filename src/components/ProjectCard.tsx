@@ -54,12 +54,12 @@ const ProjectCard = ({
 
       {/* Content */}
       <div className="p-6 flex-1 flex flex-col">
-        <div className="mb-3 flex-1">
+        <div className="mb-4 flex-1">
           <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
             {title}
           </h3>
           <p className="text-sm font-medium text-primary mb-2">{tagline}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+          <p className="text-muted-foreground text-sm leading-relaxed">
             {description}
           </p>
         </div>
