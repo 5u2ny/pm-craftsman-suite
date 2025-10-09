@@ -1,4 +1,4 @@
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, TrendingUp, FileDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +13,7 @@ interface ProjectCardProps {
   tags: string[];
   slug: string;
   featured?: boolean;
+  pdfLink?: string;
 }
 
 const ProjectCard = ({
@@ -24,6 +25,7 @@ const ProjectCard = ({
   tags,
   slug,
   featured = false,
+  pdfLink,
 }: ProjectCardProps) => {
   return (
     <Card
@@ -103,12 +105,41 @@ const ProjectCard = ({
         </div>
 
         {/* CTA */}
-        <Button asChild variant="outline" size="sm" className="w-full group/btn hover-scale border-2">
-          <Link to={`/projects/${slug}`}>
-            View Case Study
-            <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-          </Link>
-        </Button>
+        <div className="flex flex-col gap-2">
+          {pdfLink ? (
+            <>
+              <Button 
+                asChild 
+                variant="default" 
+                size="sm" 
+                className="w-full group/btn hover-scale"
+              >
+                <a href={pdfLink} target="_blank" rel="noopener noreferrer" download>
+                  Download Research PDF
+                  <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
+                </a>
+              </Button>
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm" 
+                className="w-full group/btn hover-scale border-2"
+              >
+                <Link to={`/projects/${slug}`}>
+                  View Details
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </>
+          ) : (
+            <Button asChild variant="outline" size="sm" className="w-full group/btn hover-scale border-2">
+              <Link to={`/projects/${slug}`}>
+                View Case Study
+                <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
     </Card>
   );

@@ -6,11 +6,28 @@ import ProjectCard from "@/components/ProjectCard";
 import aiTravelImage from "@/assets/project-ai-travel.jpg";
 import linkedinImage from "@/assets/project-linkedin.jpg";
 import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
+import mbaResearchImage from "@/assets/project-mba-research.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Colonial Williamsburg Marketing Research",
+      tagline: "MBA Marketing Research, Spring 2025",
+      description: "Served as Research Design Lead and Predictive Modeling Contributor, collaborating on a full-cycle marketing research plan to support visitor engagement strategy for Colonial Williamsburg. Developed 3-stage research framework and defined visitor segments to guide marketing strategy.",
+      image: mbaResearchImage,
+      metrics: [
+        "3-stage research framework developed",
+        "43 survey respondents analyzed",
+        "Multiple visitor segments identified"
+      ],
+      tags: ["Marketing Research", "Predictive Modeling", "Survey Design", "Statistical Analysis"],
+      slug: "mba-marketing-research",
+      featured: true,
+      category: "MBA Research",
+      pdfLink: "/projects/Marketing_Research_Project.pdf"
+    },
     {
       title: "AI Travel Planner MVP",
       tagline: "Cavo - Personalized Trip Planning",
@@ -56,7 +73,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "AI Products", "SaaS Products", "Enterprise Solutions"];
+  const categories = ["All", "MBA Research", "AI Products", "SaaS Products", "Enterprise Solutions"];
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
