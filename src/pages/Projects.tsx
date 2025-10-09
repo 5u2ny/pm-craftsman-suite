@@ -8,11 +8,27 @@ import linkedinImage from "@/assets/project-linkedin.jpg";
 import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
 import openaiLogo from "@/assets/openai-logo.png";
+import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "South Korea Demographic Transition & Economic Policy",
+      tagline: "MBA Business, Govt & Global Economy, Spring 2025",
+      description: "Served as Data & Policy Researcher and Presentation Design Lead, conducting analytics-driven policy analysis assessing South Korea's aging population and its effects on labor share, productivity, and GDP growth.",
+      image: southKoreaEconomy,
+      metrics: [
+        "Regression models built",
+        "Multi-source data analysis (KOSIS, KOSTAT, World Bank)",
+        "Policy recommendations delivered"
+      ],
+      tags: ["Economic Analysis", "Demographic Forecasting", "Regression Analysis", "Policy Research"],
+      slug: "south-korea-economic-policy",
+      category: "MBA Research",
+      pdfLink: "/projects/Econ.pdf"
+    },
     {
       title: "OpenAI ChatGPT Competitive Strategy",
       tagline: "MBA Global Competitive Strategy, Spring 2025",
