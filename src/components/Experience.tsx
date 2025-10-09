@@ -4,14 +4,37 @@ import { Badge } from "@/components/ui/badge";
 const Experience = () => {
   const experiences = [
     {
+      role: "Cybersecurity Research Coordinator",
+      company: "RESPONDR",
+      logo: "/logos/respondr-logo.png",
+      location: "United States (Remote)",
+      period: "Jun 2025 - Aug 2025",
+      website: "#",
+      description: "Part-time cybersecurity research position focusing on SOC Type II compliance and regulatory infrastructure assessments.",
+      achievements: [
+        "Conducting cybersecurity risk assessments for SoC Type II Compliance",
+        "Evaluating startup-level infrastructure readiness against regulatory benchmarks and compliance requirements",
+        "Supporting the development of mitigation recommendations and control strategies to reduce risk exposure across data, access, and process layers"
+      ],
+      techStack: ["SOC Type II", "Risk Assessment", "Compliance", "Cybersecurity", "Infrastructure Evaluation"]
+    },
+    {
       role: "Lead AI Product Manager Intern",
       company: "IPSERLAB",
       logo: "/logos/ipserlab-logo.png",
       location: "Dallas, TX",
       period: "May 2025 - Ongoing",
       website: "https://www.ipserlab.com/",
-      description: "Leading AI-powered travel planning platform development from 0-to-1 at stealth-stage startup, architecting multi-disciplinary teams and ownership models.",
-      techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Team Leadership", "0-to-1 Development"]
+      description: "Promoted to Lead AI Product Manager within 4 weeks. Leading 0-to-1 development of AI-powered travel planning platform at stealth-stage startup.",
+      achievements: [
+        "Championed the 0-to-1 development by architecting multi-disciplinary teams and ownership models, earning promotion in 4 weeks",
+        "Orchestrated complete product discovery process from user research and problem framing to persona mapping",
+        "Directed product strategy under the CTO, delivering 10+ core artifacts (roadmap, PRD, technical specs) that accelerated initial build phase by 25%",
+        "Steered end-to-end execution of 5 agile sprint cycles, crafting 50+ user stories that cut developer clarification cycles by 40%",
+        "Drove product velocity by implementing RICE prioritization framework, enabling high-impact feature delivery within 3 weeks and cutting backlog churn by 35%",
+        "Engineered asynchronous onboarding system for 20+ contributors, slashing onboarding time by 3.5 days and reducing support queries by 63%"
+      ],
+      techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Agile/Scrum", "Team Leadership", "0-to-1 Development"]
     },
     {
       role: "Product Analyst (Growth Marketing Specialist)",
@@ -20,8 +43,13 @@ const Experience = () => {
       location: "Kolkata, India", 
       period: "Sep 2022 - Aug 2023",
       website: "https://asanify.com/",
-      description: "Spearheaded CRM automation and audience segmentation strategy for HR and Payroll automation software serving small to medium-sized businesses.",
-      techStack: ["CRM Automation", "Tableau", "Product-Led Growth", "Revenue Optimization", "Lead Conversion"]
+      description: "Drove growth and revenue optimization for HR and Payroll automation software serving small to medium-sized businesses.",
+      achievements: [
+        "Spearheaded CRM automation and audience segmentation strategy driving 18% increase in revenue efficiency and 27% boost in lead conversion",
+        "Engineered real-time onboarding dashboards in Tableau to pinpoint user drop-off patterns, accelerating product analytics reporting by 31%",
+        "Pioneered Product-Led Growth (PLG) inbound funnel leveraging LinkedIn data, resulting in 14% ARR increase and 19% improvement in onboarding retention"
+      ],
+      techStack: ["CRM Automation", "Tableau", "Product-Led Growth", "Revenue Optimization", "Lead Conversion", "User Analytics"]
     },
     {
       role: "Business Development Associate",
@@ -30,8 +58,12 @@ const Experience = () => {
       location: "Mumbai, India",
       period: "Mar 2022 - Sep 2022", 
       website: "https://yocket.com/",
-      description: "Collaborated with product team to redesign user qualification journeys for India's largest community-based platform for study-abroad aspirants.",
-      techStack: ["User Journey Design", "LinkedIn Analytics", "Conversion Optimization", "Data-Driven Strategy"]
+      description: "Optimized conversion funnels and activation strategies for India's largest community-based platform for study-abroad aspirants.",
+      achievements: [
+        "Collaborated directly with product team to redesign user qualification journeys, improving conversion efficiency by 35%",
+        "Executed data-driven activation strategies based on user profiles and CRM signals, generating over $700K in revenue across two quarters"
+      ],
+      techStack: ["User Journey Design", "CRM Strategy", "Conversion Optimization", "Data-Driven Strategy", "Funnel Optimization"]
     },
     {
       role: "Product-led Growth Analyst (Growth Partner)",
@@ -40,8 +72,12 @@ const Experience = () => {
       location: "Chennai, India",
       period: "Oct 2021 - Mar 2022",
       website: "https://www.leadlehq.com/", 
-      description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback for B2B SaaS platform providing product-led growth tools and analytics.",
-      techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Growth Analytics", "User Activation"]
+      description: "Optimized user activation and lead generation for B2B SaaS platform providing product-led growth tools and analytics.",
+      achievements: [
+        "Optimized user activation paths by analyzing churn signals and MVP-stage feedback, boosting SQL volume by 20% and cutting churn by 17%",
+        "Engineered automated lead capture system integrated with GA dashboards, which quadrupled booked meetings and identified top-performing acquisition channels"
+      ],
+      techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Google Analytics", "User Activation", "Growth Analytics"]
     }
   ];
 
@@ -152,9 +188,24 @@ const Experience = () => {
                   </div>
                   
                   {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-base mb-4">
                     {exp.description}
                   </p>
+                  
+                  {/* Achievements */}
+                  {exp.achievements && (
+                    <ul className="space-y-3 mb-6">
+                      {exp.achievements.map((achievement, i) => (
+                        <li 
+                          key={i} 
+                          className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed"
+                        >
+                          <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                          <span>{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-3 mb-6">
