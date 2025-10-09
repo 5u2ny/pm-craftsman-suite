@@ -19,7 +19,7 @@ const Projects = () => {
     {
       title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
       tagline: "Undergraduate Research, Spring 2021",
-      description: "Developed a machine learning customer segmentation model for retail stores using Python and k-Means clustering algorithms. Analyzed 8,950 customer records to identify seven distinct behavioral segments including high-value VIPs, revolvers, and low-tenure customers. Provided actionable insights for targeted marketing campaigns and loyalty optimization strategies based on credit behavior patterns.",
+      description: "Built a Python-based k-Means clustering model analyzing 8,950 retail customer records to identify seven behavioral segments. Labeled high-value groups including VIPs and Revolvers, then highlighted two high-credit segments ideal for targeted campaigns.",
       image: retailSegmentationImage,
       metrics: [
         "Implemented Python-based k-Means model for 7 behavioral clusters",
@@ -33,7 +33,7 @@ const Projects = () => {
     {
       title: "Brewscovery – Craft Beer Subscription Model",
       tagline: "MBA Sprint Week, Fall 2024",
-      description: "Created a comprehensive business strategy for a craft beer subscription service targeting D2C markets. Led market strategy design, financial modeling, and GTM development including influencer partnerships and regional growth playbooks. Built complete financial forecasts projecting $4.8M revenue and $1.5M profit in Year 1 with 10,000 subscribers. Selected as Top 4 team to pitch to Domino's Global Strategy Chief.",
+      description: "Designed investor-ready craft beer subscription strategy with complete financial modeling projecting $4.8M revenue and $1.5M Year 1 profit. Led GTM development with influencer partnerships and built the final pitch deck. Selected as Top 4 team to present to Domino's Global Strategy Chief.",
       image: brewscoveryImage,
       metrics: [
         "Built forecast model for 10K subscribers and $1.5M profit in Year 1",
@@ -48,7 +48,7 @@ const Projects = () => {
     {
       title: "Airlines Customer Satisfaction Analysis",
       tagline: "MBA Data Analysis Project, Fall 2024",
-      description: "Conducted comprehensive statistical analysis on airline customer satisfaction using a Kaggle dataset of 5,000 samples from 129,880 records. Applied t-tests, ANOVA, and regression analysis via JASP to test four hypotheses about factors affecting satisfaction. Identified service class as the strongest predictor of check-in satisfaction and developed actionable recommendations for improving economy class experience.",
+      description: "Analyzed 5,000 airline customer records using JASP statistical software with t-tests, ANOVA, and regression models. Identified service class as strongest satisfaction predictor and found no gender correlation with baggage handling. Delivered recommendations for economy class improvements.",
       image: airlinesDataImage,
       metrics: [
         "Applied t-tests, ANOVA, and regression via JASP for hypothesis testing",
@@ -63,7 +63,7 @@ const Projects = () => {
     {
       title: "EnergyOne America Employee Performance & Commitment",
       tagline: "MBA Organizational Behavior, Fall 2024",
-      description: "Conducted organizational behavior research for EnergyOne America, a leading insulation contractor, focusing on employee performance and commitment. Performed qualitative field interviews across multiple roles and applied OB frameworks at group and organizational levels. Developed a phased implementation roadmap with recommendations for improving employee satisfaction, engagement, and retention based on behavioral insights.",
+      description: "Conducted field research for insulation contractor analyzing employee performance and engagement through qualitative interviews. Applied organizational behavior frameworks at group and company levels. Created phased implementation roadmap for satisfaction improvements.",
       image: energyoneObImage,
       metrics: [
         "Conducted qualitative employee interviews across multiple roles",
@@ -78,7 +78,7 @@ const Projects = () => {
     {
       title: "Reconnaissance Healthcare Cyber Risk Assessment",
       tagline: "MBA Sprint Week, Spring 2025",
-      description: "Led comprehensive cyber risk assessment for a simulated healthcare provider using FAIR (Factor Analysis of Information Risk) methodology. Quantified risks related to PHI/PII breaches, ransomware attacks, and third-party vendor dependencies. Developed board-level executive presentation proposing $1M security investment with projected $17M reduction in annualized cyber loss and $546M in protected value.",
+      description: "Applied FAIR methodology to assess healthcare cybersecurity risks including PHI breaches and ransomware threats. Quantified threat scenarios and built board-level presentation proposing $1M investment to reduce annual cyber loss by $17M while protecting $546M in value.",
       image: cyberRiskImage,
       metrics: [
         "Applied FAIR to quantify risk magnitude and breach probability",
@@ -93,7 +93,7 @@ const Projects = () => {
     {
       title: "South Korea Demographic Transition & Economic Policy",
       tagline: "MBA Business, Govt & Global Economy, Spring 2025",
-      description: "Analyzed South Korea's demographic transition and its economic implications using multi-source data from KOSIS, KOSTAT, and World Bank. Built regression models to assess impacts on labor share, productivity, and GDP growth. Developed comprehensive policy recommendations addressing aging population challenges including workforce development, immigration reform, and social support systems to sustain economic growth.",
+      description: "Built regression models using KOSIS, KOSTAT, and World Bank data to analyze South Korea's aging population impact on labor, productivity, and GDP. Developed policy recommendations for workforce development, immigration reform, and social support systems.",
       image: southKoreaEconomy,
       metrics: [
         "Regression models built",
@@ -108,7 +108,7 @@ const Projects = () => {
     {
       title: "OpenAI ChatGPT Competitive Strategy",
       tagline: "MBA Global Competitive Strategy, Spring 2025",
-      description: "Developed comprehensive three-phase strategic analysis for OpenAI's ChatGPT business unit using multiple business frameworks. Conducted external analysis with PESTEL and Porter's Five Forces, internal assessment with VRIO framework, and SWOT analysis. Created detailed strategy development plan and implementation roadmap addressing competitive positioning, market opportunities, and sustainable competitive advantages in the AI industry.",
+      description: "Completed three-phase strategic analysis for OpenAI ChatGPT using PESTEL, Porter's Five Forces, VRIO, and SWOT frameworks. Developed competitive positioning strategy and implementation roadmap focused on plugin infrastructure and ethical AI leadership.",
       image: openaiStrategyImage,
       metrics: [
         "Multi-framework strategic analysis",
@@ -127,7 +127,7 @@ const Projects = () => {
     {
       title: "Colonial Williamsburg Marketing Research",
       tagline: "MBA Marketing Research, Spring 2025",
-      description: "Designed and executed full-cycle marketing research project for Colonial Williamsburg to enhance visitor engagement. Developed three-stage research framework combining qualitative and quantitative methods, analyzed 43 survey respondents, and applied predictive modeling to identify distinct visitor segments. Delivered actionable insights and strategic recommendations for targeted marketing campaigns and visitor experience optimization.",
+      description: "Led full-cycle marketing research for Colonial Williamsburg with three-stage framework combining qualitative and quantitative methods. Analyzed 43 survey responses using predictive modeling to identify visitor segments and deliver targeted marketing recommendations.",
       image: colonialWilliamsburgImage,
       metrics: [
         "3-stage research framework developed",
