@@ -11,6 +11,7 @@ import energyoneObImage from "@/assets/energyone-ob.jpg";
 import airlinesDataImage from "@/assets/airlines-data-analysis.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
+import seismixImage from "@/assets/seismix-project.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -28,6 +29,20 @@ const Projects = () => {
       ],
       tags: ["Python", "Machine Learning", "K-Means", "Customer Segmentation"],
       slug: "retail-customer-segmentation",
+      category: "Undergrad"
+    },
+    {
+      title: "Seismix – Earthquake Detection MVP",
+      tagline: "Undergraduate Project, Karunya University, Sep 2018 - Jan 2019",
+      description: "Led 5-member team developing earthquake detection MVP using Arduino hardware, sensors, and Java/C++ backend. Awarded 1st prize among 60+ teams for innovation and execution.",
+      image: seismixImage,
+      metrics: [
+        "Integrated accelerometer-based detection with alert thresholds",
+        "Built visualization using Processing IDE for x-y-z tremor plotting",
+        "Awarded 1st prize among 60+ teams for innovation and execution"
+      ],
+      tags: ["IoT", "Arduino", "Python", "Hardware Integration"],
+      slug: "seismix-earthquake-detection",
       category: "Undergrad"
     },
     {
