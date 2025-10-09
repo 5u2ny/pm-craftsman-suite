@@ -4,21 +4,6 @@ import { Badge } from "@/components/ui/badge";
 const Experience = () => {
   const experiences = [
     {
-      role: "Cybersecurity Research Coordinator",
-      company: "RESPONDR",
-      logo: "/logos/respondr-logo.png",
-      location: "United States (Remote)",
-      period: "Jun 2025 - Aug 2025",
-      website: "#",
-      description: "Part-time cybersecurity research position focusing on SOC Type II compliance and regulatory infrastructure assessments.",
-      achievements: [
-        "Conducting cybersecurity risk assessments for SoC Type II Compliance",
-        "Evaluating startup-level infrastructure readiness against regulatory benchmarks and compliance requirements",
-        "Supporting the development of mitigation recommendations and control strategies to reduce risk exposure across data, access, and process layers"
-      ],
-      techStack: ["SOC Type II", "Risk Assessment", "Compliance", "Cybersecurity", "Infrastructure Evaluation"]
-    },
-    {
       role: "Lead AI Product Manager Intern",
       company: "IPSERLAB",
       logo: "/logos/ipserlab-logo.png",
@@ -35,6 +20,21 @@ const Experience = () => {
         "Engineered asynchronous onboarding system for 20+ contributors, slashing onboarding time by 3.5 days and reducing support queries by 63%"
       ],
       techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Agile/Scrum", "Team Leadership", "0-to-1 Development"]
+    },
+    {
+      role: "Cybersecurity Research Coordinator",
+      company: "RESPONDR",
+      logo: "/logos/respondr-logo.png",
+      location: "United States (Remote)",
+      period: "Jun 2025 - Aug 2025",
+      website: "#",
+      description: "Part-time cybersecurity research position focusing on SOC Type II compliance and regulatory infrastructure assessments.",
+      achievements: [
+        "Conducting cybersecurity risk assessments for SoC Type II Compliance",
+        "Evaluating startup-level infrastructure readiness against regulatory benchmarks and compliance requirements",
+        "Supporting the development of mitigation recommendations and control strategies to reduce risk exposure across data, access, and process layers"
+      ],
+      techStack: ["SOC Type II", "Risk Assessment", "Compliance", "Cybersecurity", "Infrastructure Evaluation"]
     },
     {
       role: "Product Analyst (Growth Marketing Specialist)",
