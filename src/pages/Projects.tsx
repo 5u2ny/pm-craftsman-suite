@@ -12,11 +12,27 @@ import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
 import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
 import energyoneObImage from "@/assets/energyone-ob.jpg";
 import airlinesDataImage from "@/assets/airlines-data-analysis.jpg";
+import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Brewscovery – Craft Beer Subscription Model",
+      tagline: "MBA Sprint Week, Fall 2024",
+      description: "Served as Market Strategy Designer and Presentation/Media Developer, co-owning GTM development, financial modeling, and building the final pitch deck and demo video. Co-developed a scalable, investor-ready subscription strategy for Brewscovery, targeting niche D2C beer markets with focus on GTM, influencer outreach, and financial validation.",
+      image: brewscoveryImage,
+      metrics: [
+        "Built forecast model for 10K subscribers and $1.5M profit in Year 1",
+        "Led scenario planning with upside projections up to $9.6M",
+        "Selected as Top 4 team for final pitch to Domino's Global Strategy Chief"
+      ],
+      tags: ["Marketing Strategy", "Financial Modeling", "GTM Strategy", "Subscription Business"],
+      slug: "brewscovery-subscription",
+      category: "MBA Research",
+      pdfLink: "/projects/BeerProject.pdf"
+    },
     {
       title: "Airlines Customer Satisfaction Analysis",
       tagline: "MBA Data Analysis Project, Fall 2024",

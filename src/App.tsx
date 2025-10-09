@@ -16,6 +16,7 @@ import SouthKoreaEconomy from "./pages/SouthKoreaEconomy";
 import CyberRiskAssessment from "./pages/CyberRiskAssessment";
 import EnergyOneOB from "./pages/EnergyOneOB";
 import AirlinesDataAnalysis from "./pages/AirlinesDataAnalysis";
+import BrewscoveryProject from "./pages/BrewscoveryProject";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/projects/cyber-risk-assessment" element={<CyberRiskAssessment />} />
           <Route path="/projects/energyone-organizational-behavior" element={<EnergyOneOB />} />
           <Route path="/projects/airlines-customer-satisfaction" element={<AirlinesDataAnalysis />} />
+          <Route path="/projects/brewscovery-subscription" element={<BrewscoveryProject />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects/:slug" element={<CaseStudy />} />
