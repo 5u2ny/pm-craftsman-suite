@@ -29,7 +29,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card
-      className="group hover-lift overflow-hidden card-gradient border border-border transition-all duration-500 hover:shadow-2xl animate-fade-in"
+      className="group hover-lift overflow-hidden card-gradient border border-border transition-all duration-500 hover:shadow-2xl animate-fade-in h-full flex flex-col"
     >
       {/* Image */}
       <div className="relative overflow-hidden">
@@ -53,13 +53,13 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <div className="mb-3">
-          <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="mb-3 flex-1">
+          <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
             {title}
           </h3>
           <p className="text-sm font-medium text-primary mb-2">{tagline}</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
             {description}
           </p>
         </div>
@@ -152,7 +152,7 @@ const ProjectCard = ({
           ) : (
             <Button asChild variant="outline" size="sm" className="w-full group/btn hover-scale border-2">
               <Link to={`/projects/${slug}`}>
-                View Case Study
+                View Details
                 <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </Button>

@@ -3,9 +3,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ProjectCard from "@/components/ProjectCard";
-import aiTravelImage from "@/assets/project-ai-travel.jpg";
-import linkedinImage from "@/assets/project-linkedin.jpg";
-import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
 import openaiLogo from "@/assets/openai-logo.png";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
@@ -142,51 +139,9 @@ const Projects = () => {
       category: "MBA",
       pdfLink: "/projects/Marketing_Research_Project.pdf"
     },
-    {
-      title: "AI Travel Planner MVP",
-      tagline: "Cavo - Personalized Trip Planning",
-      description: "Built an AI-powered travel planning platform that creates personalized itineraries using machine learning algorithms and real-time data integration.",
-      image: aiTravelImage,
-      metrics: [
-        "40% reduction in planning time",
-        "85% user satisfaction rate",
-        "150K+ itineraries generated"
-      ],
-      tags: ["AI/ML", "Product Management", "User Experience", "API Integration"],
-      slug: "ai-travel-planner",
-      category: "AI Products"
-    },
-    {
-      title: "LinkedIn Product Analysis",
-      tagline: "UX Analysis & Competitive Intelligence",
-      description: "Developed a LinkedIn analytics and growth tool that helps professionals optimize their content strategy and network growth.",
-      image: linkedinImage,
-      metrics: [
-        "300% increase in engagement",
-        "50K+ active users",
-        "2M+ posts analyzed"
-      ],
-      tags: ["Social Media", "Analytics", "Growth", "SaaS"],
-      slug: "linkedin-analysis",
-      category: "SaaS Products"
-    },
-    {
-      title: "Cybersecurity Analytics Dashboard",
-      tagline: "Enterprise Security Analytics Platform",
-      description: "Designed and launched a comprehensive cybersecurity analytics platform for enterprise clients, focusing on threat detection and risk assessment.",
-      image: cybersecurityImage,
-      metrics: [
-        "60% faster threat detection",
-        "99.9% uptime achieved",
-        "500+ enterprise users"
-      ],
-      tags: ["Security", "Analytics", "Enterprise", "Dashboard"],
-      slug: "cybersecurity-dashboard",
-      category: "Enterprise Solutions"
-    },
   ];
 
-  const categories = ["All", "MBA", "Undergrad", "AI Products", "SaaS Products", "Enterprise Solutions"];
+  const categories = ["All", "MBA", "Undergrad"];
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
@@ -207,17 +162,9 @@ const Projects = () => {
               My <span className="text-gradient">Projects</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              A showcase of products I've built and managed, from AI-powered platforms to enterprise solutions. 
-              Each project demonstrates my approach to problem-solving and product development.
+              A showcase of research projects and academic work from my MBA and undergraduate studies. 
+              Each project demonstrates analytical thinking, strategic planning, and data-driven problem-solving.
             </p>
-            
-            <div className="flex justify-center gap-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/case-studies">
-                  View Detailed Case Studies
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -240,7 +187,7 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
             {filteredProjects.map((project, index) => (
               <div 
                 key={project.slug} 
