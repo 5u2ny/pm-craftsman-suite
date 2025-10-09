@@ -204,7 +204,7 @@ const Experience = () => {
                             key={i} 
                             className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item"
                           >
-                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
+                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
                             <span className="flex-1">
                               {parts.map((part, idx) => {
                                 // Check if this part is a number
