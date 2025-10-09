@@ -9,11 +9,27 @@ import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
 import openaiLogo from "@/assets/openai-logo.png";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
+import cyberRiskImage from "@/assets/cyber-risk-assessment.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Reconnaissance Healthcare Cyber Risk Assessment",
+      tagline: "MBA Sprint Week, Spring 2025",
+      description: "Served as Risk Modeling Analyst and Executive Deck Developer, leading FAIR-based risk quantification and board-level presentation design. Led cyber risk modeling for a simulated healthcare provider, using FAIR to evaluate PHI/PII threats, ransomware risks, and vendor dependencies.",
+      image: cyberRiskImage,
+      metrics: [
+        "Applied FAIR to quantify risk magnitude and breach probability",
+        "Proposed a $1M investment plan with $546M protected value",
+        "Projected $17M reduction in annualized cyber loss"
+      ],
+      tags: ["Quantitative Risk Analysis", "Cyber Risk Modeling", "FAIR Analysis", "Healthcare Security"],
+      slug: "cyber-risk-assessment",
+      category: "MBA Research",
+      pdfLink: "/projects/Cyber_Risk_Assessment.pdf"
+    },
     {
       title: "South Korea Demographic Transition & Economic Policy",
       tagline: "MBA Business, Govt & Global Economy, Spring 2025",
