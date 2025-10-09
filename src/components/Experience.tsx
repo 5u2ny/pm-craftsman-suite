@@ -194,16 +194,36 @@ const Experience = () => {
                   
                   {/* Achievements */}
                   {exp.achievements && (
-                    <ul className="space-y-3 mb-6">
-                      {exp.achievements.map((achievement, i) => (
-                        <li 
-                          key={i} 
-                          className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed"
-                        >
-                          <div className="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
+                    <ul className="space-y-2.5 mb-6">
+                      {exp.achievements.map((achievement, i) => {
+                        // Extract and highlight numbers
+                        const parts = achievement.split(/(\d+[\d,.\$KM%+]*[\w]*)/g);
+                        
+                        return (
+                          <li 
+                            key={i} 
+                            className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item"
+                          >
+                            <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
+                            <span className="flex-1">
+                              {parts.map((part, idx) => {
+                                // Check if this part is a number
+                                if (/^\d+[\d,.\$KM%+]*[\w]*$/.test(part)) {
+                                  return (
+                                    <span
+                                      key={idx}
+                                      className="font-bold text-primary hover:text-accent transition-colors cursor-default inline-block hover:scale-110 duration-200"
+                                    >
+                                      {part}
+                                    </span>
+                                  );
+                                }
+                                return <span key={idx}>{part}</span>;
+                              })}
+                            </span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                   
