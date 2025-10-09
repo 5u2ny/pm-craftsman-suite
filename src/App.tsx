@@ -11,6 +11,7 @@ import CaseStudies from "./pages/CaseStudies";
 import Contact from "./pages/Contact";
 import CaseStudy from "./pages/CaseStudy";
 import MBAResearch from "./pages/MBAResearch";
+import OpenAIStrategy from "./pages/OpenAIStrategy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/mba-marketing-research" element={<MBAResearch />} />
+          <Route path="/projects/openai-competitive-strategy" element={<OpenAIStrategy />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects/:slug" element={<CaseStudy />} />

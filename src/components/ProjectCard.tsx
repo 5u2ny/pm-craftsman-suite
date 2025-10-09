@@ -13,6 +13,7 @@ interface ProjectCardProps {
   tags: string[];
   slug: string;
   pdfLink?: string;
+  pdfLinks?: Array<{ name: string; url: string }>;
 }
 
 const ProjectCard = ({
@@ -24,6 +25,7 @@ const ProjectCard = ({
   tags,
   slug,
   pdfLink,
+  pdfLinks,
 }: ProjectCardProps) => {
   return (
     <Card
@@ -94,7 +96,35 @@ const ProjectCard = ({
 
         {/* CTA */}
         <div className="flex flex-col gap-2">
-          {pdfLink ? (
+          {pdfLinks ? (
+            <>
+              {pdfLinks.map((pdf, index) => (
+                <Button 
+                  key={index}
+                  asChild 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full group/btn hover-scale"
+                >
+                  <a href={pdf.url} target="_blank" rel="noopener noreferrer" download>
+                    {pdf.name}
+                    <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
+                  </a>
+                </Button>
+              ))}
+              <Button 
+                asChild 
+                variant="outline" 
+                size="sm" 
+                className="w-full group/btn hover-scale border-2"
+              >
+                <Link to={`/projects/${slug}`}>
+                  View Details
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </>
+          ) : pdfLink ? (
             <>
               <Button 
                 asChild 

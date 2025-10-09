@@ -7,11 +7,31 @@ import aiTravelImage from "@/assets/project-ai-travel.jpg";
 import linkedinImage from "@/assets/project-linkedin.jpg";
 import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
+import openaiLogo from "@/assets/openai-logo.png";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "OpenAI ChatGPT Competitive Strategy",
+      tagline: "MBA Global Competitive Strategy, Spring 2025",
+      description: "Served as Lead Strategist & Research Contributor, completing a multi-phase strategic analysis and implementation plan focused on OpenAI's ChatGPT Strategic Business Unit using PESTEL, Porter's Five Forces, VRIO, and SWOT frameworks.",
+      image: openaiLogo,
+      metrics: [
+        "Multi-framework strategic analysis",
+        "Competitive positioning assessment",
+        "Implementation roadmap developed"
+      ],
+      tags: ["Business Frameworks", "Competitive Strategy", "Market Positioning", "Strategic Planning"],
+      slug: "openai-competitive-strategy",
+      category: "MBA Research",
+      pdfLinks: [
+        { name: "Phase 1: External & Internal Analysis", url: "/projects/GP1.pdf" },
+        { name: "Phase 2: Strategy Development", url: "/projects/GP2.pdf" },
+        { name: "Phase 3: Implementation Plan", url: "/projects/GP3.pdf" }
+      ]
+    },
     {
       title: "Colonial Williamsburg Marketing Research",
       tagline: "MBA Marketing Research, Spring 2025",
