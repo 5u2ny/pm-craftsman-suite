@@ -51,17 +51,9 @@ const Hero = () => {
               {"Sunny Soni".split("").map((letter, index) => (
                 <span 
                   key={index}
-                  className="inline-block animate-letter-drop cursor-pointer transition-all duration-300 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:animate-glow-pulse hover:drop-shadow-[0_0_15px_hsl(var(--primary))]"
-                  style={{ 
-                    animationDelay: `${0.5 + index * 0.08}s`,
-                    animationFillMode: 'both'
-                  }}
+                  className="inline-block cursor-pointer transition-all duration-300 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:animate-glow-pulse hover:drop-shadow-[0_0_15px_hsl(var(--primary))]"
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.animation = 'none';
-                    setTimeout(() => {
-                      e.currentTarget.style.animation = '';
-                      e.currentTarget.classList.add('animate-letter-bounce');
-                    }, 10);
+                    e.currentTarget.classList.add('animate-letter-bounce');
                   }}
                   onAnimationEnd={(e) => {
                     if (e.animationName.includes('bounce')) {
@@ -73,12 +65,12 @@ const Hero = () => {
                 </span>
               ))}
             </span>
-            <span className="text-gradient font-mono font-medium tracking-wider text-2xl sm:text-3xl lg:text-4xl animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-accent" style={{ animationDelay: "1.2s" }}>
+            <span className="text-gradient font-display font-semibold tracking-wide text-2xl sm:text-3xl lg:text-4xl animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-accent" style={{ animationDelay: "1.2s" }}>
               <span className="typewriter-text">AI Product Manager</span>
             </span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: "0.8s" }}>
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed font-sans animate-slide-up" style={{ animationDelay: "0.8s" }}>
             MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
             AI Product Manager with experience building 0-to-1 products and driving growth through data-driven strategies.
           </p>
