@@ -11,37 +11,31 @@ const ToolsSkills = () => {
     {
       title: "Product Management",
       icon: Brain,
-      color: "from-purple-500/20 to-pink-500/20",
       skills: ["Product Strategy & Roadmap", "User Growth", "E-commerce Funnel Optimization", "A/B Testing", "Data-Driven Decision Making", "CRO", "UI/UX Optimization"]
     },
     {
       title: "Data & Analytics", 
       icon: BarChart3,
-      color: "from-blue-500/20 to-cyan-500/20",
       skills: ["SQL", "Python (Pandas, NumPy)", "Tableau", "Power BI", "Excel", "Amplitude", "Google Analytics", "JASP"]
     },
     {
       title: "Technical & AI",
       icon: Zap,
-      color: "from-yellow-500/20 to-orange-500/20",
       skills: ["LLMs", "Generative AI", "RAG", "LangChain", "Prompt Engineering", "AI Product Strategy", "APIs", "Lovable.dev"]
     },
     {
       title: "Development & Tools",
       icon: Code2,
-      color: "from-green-500/20 to-emerald-500/20",
       skills: ["Python", "DBMS", "Data Warehouse & Data Mining", "Mobile Application Development", "Git/GitHub", "JIRA"]
     },
     {
       title: "Design & Collaboration",
       icon: Database,
-      color: "from-red-500/20 to-rose-500/20",
       skills: ["Figma", "Notion", "Trello", "NotebookLM", "Miro", "Slack", "ClickUp", "Wireframing"]
     },
     {
       title: "Frameworks & Methodologies",
       icon: Users2,
-      color: "from-indigo-500/20 to-violet-500/20",
       skills: ["Agile & Scrum", "Product Lifecycle Management", "User Research", "RICE & OKR Frameworks", "GTM Strategy", "Stakeholder Communication"]
     }
   ];
@@ -107,8 +101,8 @@ const ToolsSkills = () => {
                 style={{ animationDelay: `${index * 0.15}s` }}
                 onClick={() => handleCategoryClick(category.title)}
               >
-                {/* Gradient overlay on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                {/* Subtle hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-center mb-4">
