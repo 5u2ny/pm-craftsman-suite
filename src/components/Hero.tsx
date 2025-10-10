@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, FolderOpen } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Send, FileDown, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
@@ -60,22 +60,12 @@ const Hero = () => {
                 size="lg" 
                 variant="outline"
                 className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium"
-                onClick={() => {
-                  console.log("Download resume clicked");
-                }}
+                asChild
               >
-                <FileDown className="h-5 w-5 mr-3 transition-transform group-hover:scale-110" />
-                Download Resume
-              </Button>
-            </div>
-
-            {/* Secondary Actions */}
-            <div className="flex gap-4 animate-slide-up" style={{ animationDelay: "1.2s" }}>
-              <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
-                <Link to="/projects" className="flex items-center gap-2">
-                  <FolderOpen className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="font-medium">Projects</span>
-                </Link>
+                <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf">
+                  <FileDown className="h-5 w-5 mr-3 transition-transform group-hover:scale-110" />
+                  Download Resume
+                </a>
               </Button>
             </div>
           </div>

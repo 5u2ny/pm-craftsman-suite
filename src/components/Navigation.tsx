@@ -24,8 +24,7 @@ const Navigation = () => {
   ];
 
   const handleDownloadResume = () => {
-    // This would trigger a resume download
-    console.log("Download resume clicked");
+    window.open('/Sunny_Soni_Resume.pdf', '_blank');
   };
 
   return (
