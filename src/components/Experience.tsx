@@ -170,10 +170,23 @@ const Experience = () => {
                         {exp.role}
                       </h3>
                       
-                      {/* Date Badge - Always visible and right-aligned */}
-                      <div className="flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full border border-accent/20 shrink-0 self-start sm:self-auto">
-                        <Calendar className="h-4 w-4 text-accent" />
-                        <span className="text-sm font-medium text-accent whitespace-nowrap">{exp.period}</span>
+                      {/* Date Badge - Enhanced with interactivity */}
+                      <div className="group/date relative flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-accent/10 via-accent/15 to-accent/10 rounded-full border border-accent/30 shrink-0 self-start sm:self-auto hover:border-accent/50 hover:shadow-lg hover:shadow-accent/20 hover:scale-105 transition-all duration-300 cursor-default overflow-hidden">
+                        {/* Animated background glow */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/20 to-transparent opacity-0 group-hover/date:opacity-100 group-hover/date:animate-shimmer transition-opacity"></div>
+                        
+                        {/* Calendar icon with animation */}
+                        <Calendar className="h-4 w-4 text-accent group-hover/date:rotate-12 group-hover/date:scale-110 transition-all duration-300 relative z-10" />
+                        
+                        {/* Period text with gradient on hover */}
+                        <span className="text-sm font-semibold text-accent whitespace-nowrap relative z-10 group-hover/date:text-transparent group-hover/date:bg-clip-text group-hover/date:bg-gradient-to-r group-hover/date:from-accent group-hover/date:to-primary transition-all duration-300">
+                          {exp.period}
+                        </span>
+                        
+                        {/* Pulse indicator for ongoing positions */}
+                        {exp.period.includes('Ongoing') || exp.period.includes('Present') && (
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse relative z-10 shadow-lg shadow-green-500/50"></div>
+                        )}
                       </div>
                     </div>
                     
