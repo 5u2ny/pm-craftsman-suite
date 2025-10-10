@@ -96,58 +96,66 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center justify-center gap-8 animate-slide-up" style={{ animationDelay: "1.4s" }}>
-            <div className="flex items-center gap-6">
-              <div className="group relative">
+          {/* Enhanced Social Links */}
+          <div className="flex items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+            <div className="flex items-center gap-4 p-4 bg-card/40 backdrop-blur-sm rounded-2xl border border-border/50 shadow-lg">
+              {/* Email Button */}
+              <div className="group/social relative">
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  className="relative h-16 w-16 rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:from-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
                   asChild
                 >
                   <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
-                    <Send className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover/social:from-primary/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
+                    <Send className="h-6 w-6 text-muted-foreground group-hover/social:text-primary transition-all duration-300 relative z-10 group-hover/social:rotate-12 group-hover/social:scale-110" />
                   </a>
                 </Button>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <span className="text-xs text-muted-foreground font-medium">Email</span>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
+                  <span className="text-xs text-foreground font-semibold bg-primary/10 px-3 py-1 rounded-full border border-primary/20 whitespace-nowrap">Email Me</span>
                 </div>
               </div>
 
-              <div className="h-8 w-px bg-muted-foreground/20"></div>
+              {/* Animated Divider */}
+              <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent animate-pulse"></div>
 
-              <div className="group relative">
+              {/* LinkedIn Button */}
+              <div className="group/social relative">
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  className="relative h-16 w-16 rounded-xl border-2 border-accent/20 bg-gradient-to-br from-accent/5 to-transparent hover:border-accent hover:from-accent/10 hover:to-accent/5 hover:shadow-lg hover:shadow-accent/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
                   asChild
                 >
                   <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <Linkedin className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover/social:from-accent/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
+                    <Linkedin className="h-6 w-6 text-muted-foreground group-hover/social:text-accent transition-all duration-300 relative z-10 group-hover/social:scale-110 group-hover/social:rotate-6" />
                   </a>
                 </Button>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <span className="text-xs text-muted-foreground font-medium">LinkedIn</span>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
+                  <span className="text-xs text-foreground font-semibold bg-accent/10 px-3 py-1 rounded-full border border-accent/20 whitespace-nowrap">Connect</span>
                 </div>
               </div>
 
-              <div className="h-8 w-px bg-muted-foreground/20"></div>
+              {/* Animated Divider */}
+              <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent animate-pulse"></div>
 
-              <div className="group relative">
+              {/* GitHub Button */}
+              <div className="group/social relative">
                 <Button
                   variant="ghost"
                   size="lg"
-                  className="relative h-14 w-14 rounded-full border-2 border-muted-foreground/20 hover:border-accent hover:bg-accent/10 transition-all duration-300 p-0"
+                  className="relative h-16 w-16 rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:from-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
                   asChild
                 >
                   <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <Github className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover/social:from-primary/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
+                    <Github className="h-6 w-6 text-muted-foreground group-hover/social:text-primary transition-all duration-300 relative z-10 group-hover/social:scale-110 group-hover/social:-rotate-12" />
                   </a>
                 </Button>
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <span className="text-xs text-muted-foreground font-medium">GitHub</span>
+                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
+                  <span className="text-xs text-foreground font-semibold bg-primary/10 px-3 py-1 rounded-full border border-primary/20 whitespace-nowrap">View Code</span>
                 </div>
               </div>
             </div>

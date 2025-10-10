@@ -155,6 +155,10 @@ export default {
           "0%": { transform: "translate(0, 0)" },
           "100%": { transform: "translate(4rem, 4rem)" },
         },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -171,6 +175,7 @@ export default {
         "ping-slow": "ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite",
         "ping-slower": "ping-slower 4s cubic-bezier(0, 0, 0.2, 1) infinite",
         "grid-move": "grid-move 20s linear infinite",
+        "pulse-slow": "pulse-slow 3s ease-in-out infinite",
       },
     },
   },
