@@ -213,89 +213,15 @@ const About = () => {
           </div>
         </Card>
 
-        {/* Hobbies */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.05s" }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
-            <Heart className="h-6 w-6 text-primary mr-2" />
-            Hobbies & Interests
-          </h2>
-          <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {hobbies.map((hobby, index) => {
-                const IconComponent = { ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio }[hobby.icon];
-                return (
-                  <div key={hobby.name} className="flex items-center gap-3 animate-fade-in" style={{ animationDelay: `${0.05 + (index * 0.03)}s` }}>
-                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />}
-                    <span className="text-sm text-muted-foreground">{hobby.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-          </Card>
-        </div>
-
-        {/* Skills */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
-            <TrendingUp className="h-6 w-6 text-primary mr-2" />
-            Core Competencies
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {skills.map((skillSet, index) => (
-              <Card key={skillSet.category} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.1 + (index * 0.1)}s` }}>
-                <h3 className="font-semibold text-foreground mb-4">{skillSet.category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillSet.items.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary"
-                      className="hover-scale transition-all duration-300"
-                      style={{ animationDelay: `${0.1 + (index * 0.1) + (skillIndex * 0.02)}s` }}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
-            <Award className="h-6 w-6 text-primary mr-2" />
-            Certifications
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="card-gradient p-4 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.05)}s` }}>
-                <div className="flex justify-between items-start mb-3">
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">{cert.name}</h4>
-                    <p className="text-primary font-medium text-sm">{cert.issuer}</p>
-                  </div>
-                  <Badge variant="outline" className="text-xs hover-scale transition-all duration-300 ml-2">
-                    {cert.date}
-                  </Badge>
-                </div>
-                <Badge variant="secondary" className="text-xs">
-                  {cert.category}
-                </Badge>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Education */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.05s" }}>
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <GraduationCap className="h-6 w-6 text-primary mr-2" />
             Education
           </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.3 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.05 + (index * 0.1)}s` }}>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div className="flex items-start gap-4 flex-1">
                     {edu.logo && (
@@ -365,6 +291,80 @@ const About = () => {
                     ))}
                   </div>
                 )}
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Hobbies */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <Heart className="h-6 w-6 text-primary mr-2" />
+            Hobbies & Interests
+          </h2>
+          <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {hobbies.map((hobby, index) => {
+                const IconComponent = { ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio }[hobby.icon];
+                return (
+                  <div key={hobby.name} className="flex items-center gap-3 animate-fade-in" style={{ animationDelay: `${0.05 + (index * 0.03)}s` }}>
+                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />}
+                    <span className="text-sm text-muted-foreground">{hobby.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </Card>
+        </div>
+
+        {/* Skills */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <TrendingUp className="h-6 w-6 text-primary mr-2" />
+            Core Competencies
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {skills.map((skillSet, index) => (
+              <Card key={skillSet.category} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
+                <h3 className="font-semibold text-foreground mb-4">{skillSet.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillSet.items.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill} 
+                      variant="secondary"
+                      className="hover-scale transition-all duration-300"
+                      style={{ animationDelay: `${0.2 + (index * 0.1) + (skillIndex * 0.02)}s` }}
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <Award className="h-6 w-6 text-primary mr-2" />
+            Certifications
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <Card key={index} className="card-gradient p-4 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}>
+                <div className="flex justify-between items-start mb-3">
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">{cert.name}</h4>
+                    <p className="text-primary font-medium text-sm">{cert.issuer}</p>
+                  </div>
+                  <Badge variant="outline" className="text-xs hover-scale transition-all duration-300 ml-2">
+                    {cert.date}
+                  </Badge>
+                </div>
+                <Badge variant="secondary" className="text-xs">
+                  {cert.category}
+                </Badge>
               </Card>
             ))}
           </div>
