@@ -8,22 +8,22 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex.chen@example.com",
-      action: "mailto:alex.chen@example.com",
+      value: "sunnysoni.mba@proton.me",
+      action: "mailto:sunnysoni.mba@proton.me",
       description: "Best for detailed project discussions"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "/in/alexchen-pm",
-      action: "https://linkedin.com/in/alexchen-pm",
+      value: "/in/sunnysonimba",
+      action: "https://linkedin.com/in/sunnysonimba",
       description: "Let's connect professionally"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "@alexchen",
-      action: "https://github.com/alexchen",
+      value: "@sunnysoni",
+      action: "https://github.com/sunnysoni",
       description: "Check out my technical projects"
     }
   ];
