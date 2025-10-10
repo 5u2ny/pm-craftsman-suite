@@ -42,9 +42,6 @@ const Recommendations = () => {
               <div className="mb-4">
                 <h3 className="text-lg font-semibold text-foreground">{rec.name}</h3>
                 <p className="text-sm text-primary font-medium">{rec.title}</p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {rec.date} • {rec.relationship}
-                </p>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                 {rec.text}
