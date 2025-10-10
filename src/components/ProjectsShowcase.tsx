@@ -1,11 +1,13 @@
 import ProjectCard from "./ProjectCard";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
 const ProjectsShowcase = () => {
+  const navigate = useNavigate();
+
   const projects = [
     {
       title: "Brewscovery – Craft Beer Subscription Model",
@@ -70,11 +72,13 @@ const ProjectsShowcase = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="group hover-scale" asChild>
-            <Link to="/projects">
-              View All Projects
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          <Button 
+            size="lg" 
+            className="group hover-scale"
+            onClick={() => navigate('/projects')}
+          >
+            View All Projects
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
       </div>
