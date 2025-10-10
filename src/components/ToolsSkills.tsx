@@ -1,8 +1,12 @@
 import { Code2, Database, BarChart3, Users2, Zap, Brain } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 const ToolsSkills = () => {
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
   const skillCategories = [
     {
       title: "Product Management",
@@ -36,6 +40,18 @@ const ToolsSkills = () => {
     }
   ];
 
+  const toggleSkill = (skill: string) => {
+    setSelectedSkills(prev => 
+      prev.includes(skill) 
+        ? prev.filter(s => s !== skill)
+        : [...prev, skill]
+    );
+  };
+
+  const handleCategoryClick = (categoryTitle: string) => {
+    setActiveCategory(prev => prev === categoryTitle ? null : categoryTitle);
+  };
+
   return (
     <section className="py-12 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
       {/* Motion Background Elements */}
@@ -54,30 +70,58 @@ const ToolsSkills = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A comprehensive toolkit for building and scaling successful products
           </p>
+          {selectedSkills.length > 0 && (
+            <p className="text-sm text-primary mt-2">
+              {selectedSkills.length} skill{selectedSkills.length > 1 ? 's' : ''} selected
+            </p>
+          )}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon;
+            const isActive = activeCategory === category.title;
             return (
-              <Card key={category.title} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${index * 0.15}s` }}>
+              <Card 
+                key={category.title} 
+                className={`card-gradient p-6 animate-slide-up transition-all duration-500 cursor-pointer ${
+                  isActive 
+                    ? 'ring-2 ring-primary shadow-2xl scale-105 hover:scale-105' 
+                    : 'hover-lift hover:shadow-xl hover:border-primary/20'
+                }`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+                onClick={() => handleCategoryClick(category.title)}
+              >
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mr-3 hover-scale transition-all duration-300">
-                    <IconComponent className="h-5 w-5 text-primary" />
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 ${
+                    isActive ? 'bg-primary text-primary-foreground scale-110' : 'bg-primary/10 hover-scale'
+                  }`}>
+                    <IconComponent className={`h-5 w-5 ${isActive ? 'text-primary-foreground' : 'text-primary'}`} />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className="text-xs hover-scale transition-all duration-300"
-                      style={{ animationDelay: `${(index * 0.15) + (skillIndex * 0.05)}s` }}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+                  {category.skills.map((skill, skillIndex) => {
+                    const isSelected = selectedSkills.includes(skill);
+                    return (
+                      <Badge 
+                        key={skill} 
+                        variant={isSelected ? "default" : "secondary"}
+                        className={`text-xs transition-all duration-300 cursor-pointer ${
+                          isSelected 
+                            ? 'ring-2 ring-primary/50 scale-105' 
+                            : 'hover-scale hover:bg-primary/20'
+                        }`}
+                        style={{ animationDelay: `${(index * 0.15) + (skillIndex * 0.05)}s` }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleSkill(skill);
+                        }}
+                      >
+                        {skill}
+                      </Badge>
+                    );
+                  })}
                 </div>
               </Card>
             );
