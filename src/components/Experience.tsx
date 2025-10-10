@@ -1,6 +1,23 @@
-import { ExternalLink, Calendar, MapPin, Briefcase } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+
 const Experience = () => {
+  const [expandedCards, setExpandedCards] = useState<number[]>([0]); // First card expanded by default
+  const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
+
+  const toggleCard = (index: number) => {
+    setExpandedCards(prev => 
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const handleCompanyClick = (company: string) => {
+    setSelectedCompany(prev => prev === company ? null : company);
+  };
+
   const experiences = [{
     role: "Lead AI Product Manager Intern",
     company: "IPSERLAB",
@@ -113,100 +130,155 @@ const Experience = () => {
           
           {/* Experience Cards */}
           <div className="space-y-12">
-            {experiences.map((exp, index) => <div key={index} className="relative group animate-slide-up" style={{
+            {experiences.map((exp, index) => {
+              const isExpanded = expandedCards.includes(index);
+              const isSelected = selectedCompany === exp.company;
+              
+              return <div key={index} className="relative group animate-slide-up" style={{
             animationDelay: `${index * 0.15}s`
           }}>
                 {/* Timeline Dot */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full border-4 border-background shadow-lg group-hover:scale-125 transition-all duration-300 z-10">
+                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-300 z-10 cursor-pointer ${
+                  isSelected 
+                    ? 'bg-primary scale-150 shadow-primary/50' 
+                    : 'bg-gradient-to-r from-primary to-accent group-hover:scale-125'
+                }`}
+                onClick={() => handleCompanyClick(exp.company)}
+                >
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full animate-ping opacity-20"></div>
                 </div>
                 
                 {/* Experience Card */}
-                <div className="ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border border-border/50 group-hover:border-primary/30 transition-all duration-500 hover:shadow-2xl hover:bg-card/80 group-hover:-translate-y-2">
+                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 hover:shadow-2xl cursor-pointer ${
+                  isSelected
+                    ? 'border-primary shadow-2xl ring-2 ring-primary/30 scale-[1.02]'
+                    : 'border-border/50 hover:border-primary/30 hover:bg-card/80 hover:-translate-y-2'
+                }`}
+                onClick={() => toggleCard(index)}
+                >
                   
                   {/* Card Header */}
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
-                    <div className="flex-1">
+                  <div className="flex flex-col gap-4 mb-6">
+                    {/* Top Row: Role and Date */}
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       {/* Role Title */}
-                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors mb-3 leading-tight">
+                      <h3 className={`text-2xl font-bold leading-tight transition-colors ${
+                        isExpanded ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                      }`}>
                         {exp.role}
                       </h3>
                       
-                      {/* Company Info */}
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
-                        <div className="flex items-center gap-3">
-                          <a href={exp.website} target="_blank" rel="noopener noreferrer" className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors hover:scale-110 duration-300">
-                            <img src={exp.logo} alt={`${exp.company} logo`} className="h-10 w-10 object-contain" />
-                          </a>
-                          <div>
-                            <a href={exp.website} target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-accent hover:text-accent/80 transition-colors">
-                              {exp.company}
-                            </a>
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <MapPin className="h-4 w-4" />
-                              <span>{exp.location}</span>
-                            </div>
-                          </div>
+                      {/* Date Badge - Always visible and right-aligned */}
+                      <div className="flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full border border-accent/20 shrink-0 self-start sm:self-auto">
+                        <Calendar className="h-4 w-4 text-accent" />
+                        <span className="text-sm font-medium text-accent whitespace-nowrap">{exp.period}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Company Info Row */}
+                    <div className="flex items-center gap-3">
+                      <a 
+                        href={exp.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="p-2 bg-primary/10 rounded-lg hover:bg-primary/20 transition-colors hover:scale-110 duration-300"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <img src={exp.logo} alt={`${exp.company} logo`} className="h-10 w-10 object-contain" />
+                      </a>
+                      <div className="flex-1">
+                        <a 
+                          href={exp.website} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-lg font-semibold text-accent hover:text-accent/80 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {exp.company}
+                        </a>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <MapPin className="h-4 w-4" />
+                          <span>{exp.location}</span>
                         </div>
-                        
-                        <div className="flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full border border-accent/20">
-                          <Calendar className="h-4 w-4 text-accent" />
-                          <span className="text-sm font-medium text-accent">{exp.period}</span>
-                        </div>
+                      </div>
+                      
+                      {/* Expand/Collapse Indicator */}
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        {isExpanded ? (
+                          <>
+                            <span className="hidden sm:inline">Collapse</span>
+                            <ChevronUp className="h-5 w-5 transition-transform" />
+                          </>
+                        ) : (
+                          <>
+                            <span className="hidden sm:inline">Expand</span>
+                            <ChevronDown className="h-5 w-5 transition-transform" />
+                          </>
+                        )}
                       </div>
                     </div>
                   </div>
                   
-                  {/* Description */}
-                  <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                    {exp.description}
-                  </p>
-                  
-                  {/* Achievements */}
-                  {exp.achievements && <ul className="space-y-2.5 mb-6">
-                      {exp.achievements.map((achievement, i) => {
-                  // Extract and highlight numbers
-                  const parts = achievement.split(/(\d+[\d,.\$KM%+]*[\w]*)/g);
-                  return <li key={i} className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item">
-                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
-                            <span className="flex-1">
-                              {parts.map((part, idx) => {
-                        // Check if this part is a number
-                        if (/^\d+[\d,.\$KM%+]*[\w]*$/.test(part)) {
-                          return <span key={idx} className="font-bold text-primary hover:text-accent transition-colors cursor-default inline-block hover:scale-110 duration-200">
-                                      {part}
-                                    </span>;
-                        }
-                        return <span key={idx}>{part}</span>;
-                      })}
-                            </span>
-                          </li>;
-                })}
-                    </ul>}
-                  
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-3 mb-6">
-                    {exp.techStack.map((tech, i) => <Badge key={i} variant="secondary" className="px-3 py-1 text-sm bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 hover:scale-105 transition-all duration-300 font-medium" style={{
-                  animationDelay: `${index * 0.15 + i * 0.05}s`
-                }}>
-                        {tech}
-                      </Badge>)}
+                  {/* Expandable Content */}
+                  <div className={`transition-all duration-500 overflow-hidden ${
+                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    {/* Description */}
+                    <p className="text-muted-foreground leading-relaxed text-base mb-4">
+                      {exp.description}
+                    </p>
+                    
+                    {/* Achievements */}
+                    {exp.achievements && <ul className="space-y-2.5 mb-6">
+                        {exp.achievements.map((achievement, i) => {
+                    // Extract and highlight numbers
+                    const parts = achievement.split(/(\d+[\d,.\$KM%+]*[\w]*)/g);
+                    return <li key={i} className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item">
+                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
+                              <span className="flex-1">
+                                {parts.map((part, idx) => {
+                          // Check if this part is a number
+                          if (/^\d+[\d,.\$KM%+]*[\w]*$/.test(part)) {
+                            return <span key={idx} className="font-bold text-primary hover:text-accent transition-colors cursor-default inline-block hover:scale-110 duration-200">
+                                        {part}
+                                      </span>;
+                          }
+                          return <span key={idx}>{part}</span>;
+                        })}
+                              </span>
+                            </li>;
+                  })}
+                      </ul>}
+                    
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      {exp.techStack.map((tech, i) => <Badge key={i} variant="secondary" className="px-3 py-1 text-sm bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 hover:scale-105 transition-all duration-300 font-medium" style={{
+                    animationDelay: `${index * 0.15 + i * 0.05}s`
+                  }}>
+                          {tech}
+                        </Badge>)}
+                    </div>
+                    
+                    {/* Footer */}
+                    {exp.company !== "William & Mary - Mason School of Business" && exp.company !== "RESPONDR" && <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                          <span>Impact driven results</span>
+                        </div>
+                        
+                        <a 
+                          href={exp.website} 
+                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-accent/80 bg-accent/10 hover:bg-accent/20 rounded-lg transition-all duration-300 hover:scale-105 group/link"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span>Learn more</span>
+                          <ExternalLink className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
+                        </a>
+                      </div>}
                   </div>
-                  
-                  {/* Footer */}
-                  {exp.company !== "William & Mary - Mason School of Business" && exp.company !== "RESPONDR" && <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span>Impact driven results</span>
-                      </div>
-                      
-                      <a href={exp.website} className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-accent/80 bg-accent/10 hover:bg-accent/20 rounded-lg transition-all duration-300 hover:scale-105 group/link">
-                        <span>Learn more</span>
-                        <ExternalLink className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                      </a>
-                    </div>}
                 </div>
-              </div>)}
+              </div>
+            })}
           </div>
         </div>
       </div>
