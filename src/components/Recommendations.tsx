@@ -5,7 +5,7 @@ const Recommendations = () => {
   const recommendations = [
     {
       name: "Edward A. Ipser, Jr.",
-      title: "Managing Partner at Coactify",
+      title: "Founder of IpserLab | Managing Partner at Coactify",
       relationship: "managed Sunny directly",
       date: "August 7, 2025",
       text: "At IpserLab, Sunny led the startup team from conceptualization through early implementation to apply artificial intelligence to the domain of travel. This included: execution, assembling and managing cross-functional teams across frontend, backend, prompt engineering, analytics, and product management. In this role, I oversaw product discovery, defined user personas, facilitated feasibility assessments, and validated the core product hypothesis.\n\nHe oversaw product discovery, defined user personas, facilitated feasibility assessments, and validated the core product hypothesis. He worked directly with other team leads and authored key strategy and execution documents, including the roadmap, PRD, and technical specifications. He guided multiple agile sprints, driving clarity through structured documentation and streamlining cross-team workflows. He introduced a prioritization framework to focus execution on high-impact features and created onboarding systems that improved internal knowledge transfer and contributor ramp-up. Through daily check-ins and weekly syncs, He ensured alignment across all execution teams while leading pre-build research and coordination to maintain roadmap momentum,\n\nI was fortunate that I was able to rely on Sunny to manage so much so well."
