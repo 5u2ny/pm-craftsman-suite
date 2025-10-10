@@ -96,66 +96,103 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Enhanced Social Links */}
-          <div className="flex items-center justify-center gap-6 animate-slide-up" style={{ animationDelay: "1.4s" }}>
-            <div className="flex items-center gap-4 p-4 bg-card/40 backdrop-blur-sm rounded-2xl border border-border/50 shadow-lg">
-              {/* Email Button */}
-              <div className="group/social relative">
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="relative h-16 w-16 rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:from-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
-                  asChild
-                >
-                  <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover/social:from-primary/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
-                    <Send className="h-6 w-6 text-muted-foreground group-hover/social:text-primary transition-all duration-300 relative z-10 group-hover/social:rotate-12 group-hover/social:scale-110" />
-                  </a>
-                </Button>
-                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
-                  <span className="text-xs text-foreground font-semibold bg-primary/10 px-3 py-1 rounded-full border border-primary/20 whitespace-nowrap">Email Me</span>
+          {/* Redesigned Interactive Social Links */}
+          <div className="flex items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+            {/* Email Button */}
+            <div className="group/social relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
+                asChild
+              >
+                <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
+                  {/* Ripple effect */}
+                  <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
+                  
+                  {/* Animated border glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-[-2px] bg-gradient-to-r from-primary via-accent to-primary rounded-2xl animate-spin-slow blur-sm"></div>
+                  </div>
+                  
+                  <Send className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-12 group-hover:scale-125" />
+                </a>
+              </Button>
+              
+              {/* Enhanced tooltip */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-md opacity-50"></div>
+                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
+                    Email Me
+                  </span>
                 </div>
               </div>
+            </div>
 
-              {/* Animated Divider */}
-              <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent animate-pulse"></div>
-
-              {/* LinkedIn Button */}
-              <div className="group/social relative">
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="relative h-16 w-16 rounded-xl border-2 border-accent/20 bg-gradient-to-br from-accent/5 to-transparent hover:border-accent hover:from-accent/10 hover:to-accent/5 hover:shadow-lg hover:shadow-accent/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent/0 to-accent/0 group-hover/social:from-accent/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
-                    <Linkedin className="h-6 w-6 text-muted-foreground group-hover/social:text-accent transition-all duration-300 relative z-10 group-hover/social:scale-110 group-hover/social:rotate-6" />
-                  </a>
-                </Button>
-                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
-                  <span className="text-xs text-foreground font-semibold bg-accent/10 px-3 py-1 rounded-full border border-accent/20 whitespace-nowrap">Connect</span>
+            {/* LinkedIn Button */}
+            <div className="group/social relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
+                asChild
+              >
+                <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  {/* Ripple effect */}
+                  <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
+                  
+                  {/* Animated border glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-[-2px] bg-gradient-to-r from-accent via-primary to-accent rounded-2xl animate-spin-slow blur-sm"></div>
+                  </div>
+                  
+                  <Linkedin className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:rotate-6" />
+                </a>
+              </Button>
+              
+              {/* Enhanced tooltip */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary blur-md opacity-50"></div>
+                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-accent to-primary px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
+                    Connect on LinkedIn
+                  </span>
                 </div>
               </div>
+            </div>
 
-              {/* Animated Divider */}
-              <div className="h-12 w-px bg-gradient-to-b from-transparent via-border to-transparent animate-pulse"></div>
-
-              {/* GitHub Button */}
-              <div className="group/social relative">
-                <Button
-                  variant="ghost"
-                  size="lg"
-                  className="relative h-16 w-16 rounded-xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary hover:from-primary/10 hover:to-primary/5 hover:shadow-lg hover:shadow-primary/20 transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-1"
-                  asChild
-                >
-                  <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover/social:from-primary/20 group-hover/social:to-transparent rounded-xl transition-all duration-500 animate-pulse-slow"></div>
-                    <Github className="h-6 w-6 text-muted-foreground group-hover/social:text-primary transition-all duration-300 relative z-10 group-hover/social:scale-110 group-hover/social:-rotate-12" />
-                  </a>
-                </Button>
-                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-1 transition-all duration-300">
-                  <span className="text-xs text-foreground font-semibold bg-primary/10 px-3 py-1 rounded-full border border-primary/20 whitespace-nowrap">View Code</span>
+            {/* GitHub Button */}
+            <div className="group/social relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
+                asChild
+              >
+                <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  {/* Ripple effect */}
+                  <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
+                  
+                  {/* Animated border glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-[-2px] bg-gradient-to-r from-primary via-accent to-primary rounded-2xl animate-spin-slow blur-sm"></div>
+                  </div>
+                  
+                  <Github className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:-rotate-12" />
+                </a>
+              </Button>
+              
+              {/* Enhanced tooltip */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-md opacity-50"></div>
+                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
+                    View on GitHub
+                  </span>
                 </div>
               </div>
             </div>
