@@ -193,6 +193,7 @@ const About = () => {
       name: "National Black MBA Association",
       role: "Student Member",
       period: "Aug 2024 - Present",
+      logo: "/logos/nbmbaa-logo.png",
       description: "Engage with a national network of future business leaders. Leverage access to speaker series, strategy case events, and peer learning forums to expand leadership, decision-making, and market awareness."
     }
   ];
