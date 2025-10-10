@@ -98,7 +98,7 @@ const Experience = () => {
           
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            <span className="text-gradient font-display">Experience</span>
+            <span className="text-gradient font-display">Work Experience</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
