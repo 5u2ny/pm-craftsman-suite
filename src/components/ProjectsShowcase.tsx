@@ -70,15 +70,12 @@ const ProjectsShowcase = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
-            Want to see more detailed case studies?
-          </p>
-          <Link to="/projects">
-            <Button size="lg" className="group hover-scale">
+          <Button size="lg" className="group hover-scale" asChild>
+            <Link to="/projects">
               View All Projects
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
