@@ -1,4 +1,4 @@
-import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart } from "lucide-react";
+import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart, Trophy, Building2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -56,7 +56,6 @@ const About = () => {
       institution: "Karunya Institute of Technology and Sciences",
       period: "Jul 2017 - May 2021",
       status: "Completed",
-      grade: "3.81/4.00",
       logo: "/logos/karunya-logo.png",
       activities: [
         "Event Head – WARTECH 2019 (Tech Fest)",
@@ -171,6 +170,33 @@ const About = () => {
     "Optimized user activation paths boosting SQL volume by 20%"
   ];
 
+  const awards = [
+    {
+      title: "Innovation Day",
+      issuer: "Karunya Institute of Technology and Sciences",
+      date: "Apr 2019",
+      logo: "/logos/karunya-logo.png",
+      description: "Developed Seismix, an IoT-based earthquake detection system using Arduino, ADXL335 sensors, and a real-time Java/C++ backend. The system identified seismic activity by monitoring axis-based vibration thresholds and visualizing movement patterns through Processing IDE. Recognized for combining hardware logic with user-focused alert presentation, earning 1st place among 50+ technical projects."
+    }
+  ];
+
+  const organizations = [
+    {
+      name: "MBAA",
+      role: "Co-VP IT & AI Club",
+      period: "Aug 2024 - Present",
+      institution: "William & Mary – Raymond A. Mason School of Business",
+      logo: "/logos/wm-logo.png",
+      description: "Lead initiatives that make GenAI, automation, and data tools more accessible for MBA students. Plan and execute speaker sessions, workshops, and hands-on learning formats focused on AI's real-world product and business applications."
+    },
+    {
+      name: "National Black MBA Association",
+      role: "Student Member",
+      period: "Aug 2024 - Present",
+      description: "Engage with a national network of future business leaders. Leverage access to speaker series, strategy case events, and peer learning forums to expand leadership, decision-making, and market awareness."
+    }
+  ];
+
   return (
     <div className="min-h-screen pt-20 pb-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -235,9 +261,6 @@ const About = () => {
                       <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
                       <p className="text-primary font-medium">{edu.field}</p>
                       <p className="text-muted-foreground text-sm">{edu.institution}</p>
-                      {edu.grade && (
-                        <p className="text-muted-foreground text-sm font-medium mt-1">Grade: {edu.grade}</p>
-                      )}
                     </div>
                   </div>
                   <div className="mt-2 md:mt-0 flex flex-col md:items-end gap-2">
@@ -371,7 +394,7 @@ const About = () => {
         </div>
 
         {/* Key Achievements */}
-        <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.4s" }}>
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <BookOpen className="h-6 w-6 text-primary mr-2" />
             Key Achievements
@@ -386,6 +409,75 @@ const About = () => {
               ))}
             </div>
           </Card>
+        </div>
+
+        {/* Awards */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.45s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <Trophy className="h-6 w-6 text-primary mr-2" />
+            Honors & Awards
+          </h2>
+          <div className="space-y-4">
+            {awards.map((award, index) => (
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.45 + (index * 0.1)}s` }}>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                  <div className="flex items-start gap-4 flex-1">
+                    {award.logo && (
+                      <img 
+                        src={award.logo} 
+                        alt={`${award.issuer} logo`}
+                        className="w-12 h-12 object-contain flex-shrink-0"
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">{award.title}</h3>
+                      <p className="text-muted-foreground text-sm">Issued by {award.issuer}</p>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                    {award.date}
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{award.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Organizations */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <Building2 className="h-6 w-6 text-primary mr-2" />
+            Organizations
+          </h2>
+          <div className="space-y-4">
+            {organizations.map((org, index) => (
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.5 + (index * 0.1)}s` }}>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                  <div className="flex items-start gap-4 flex-1">
+                    {org.logo && (
+                      <img 
+                        src={org.logo} 
+                        alt={`${org.name} logo`}
+                        className="w-12 h-12 object-contain flex-shrink-0"
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">{org.name}</h3>
+                      <p className="text-primary font-medium text-sm">{org.role}</p>
+                      {org.institution && (
+                        <p className="text-muted-foreground text-sm mt-1">{org.institution}</p>
+                      )}
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                    {org.period}
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{org.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
