@@ -47,14 +47,26 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-2 font-display font-semibold tracking-tight animate-name-reveal" style={{ animationDelay: "0.4s" }}>
+            <span className="block text-foreground mb-2 font-hero font-extrabold tracking-tight" style={{ animationDelay: "0.4s" }}>
               {"Sunny Soni".split("").map((letter, index) => (
                 <span 
                   key={index}
-                  className="inline-block animate-letter-drop"
+                  className="inline-block animate-letter-drop cursor-pointer transition-all duration-300 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:animate-glow-pulse hover:drop-shadow-[0_0_15px_hsl(var(--primary))]"
                   style={{ 
                     animationDelay: `${0.5 + index * 0.08}s`,
                     animationFillMode: 'both'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.animation = 'none';
+                    setTimeout(() => {
+                      e.currentTarget.style.animation = '';
+                      e.currentTarget.classList.add('animate-letter-bounce');
+                    }, 10);
+                  }}
+                  onAnimationEnd={(e) => {
+                    if (e.animationName.includes('bounce')) {
+                      e.currentTarget.classList.remove('animate-letter-bounce');
+                    }
                   }}
                 >
                   {letter === " " ? "\u00A0" : letter}
