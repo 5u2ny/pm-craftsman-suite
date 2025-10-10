@@ -124,14 +124,15 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-foreground text-center mb-8">
             Frequently Asked Questions
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.3s" }}>
               <h3 className="font-semibold text-foreground mb-2">
                 What type of roles are you looking for?
               </h3>
               <p className="text-sm text-muted-foreground">
-                I'm interested in Senior PM or Lead PM roles at growth-stage companies, 
-                particularly those working on AI/ML products or consumer-facing platforms.
+                I'm open to Product Manager, Associate Product Manager, Product Management Analyst, 
+                Technical Product Manager, Project Manager, Program Manager, Associate Technology Consultant, 
+                IT Consultant, and AI Consultant positions.
               </p>
             </Card>
             <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.4s" }}>
@@ -141,24 +142,6 @@ const Contact = () => {
               <p className="text-sm text-muted-foreground">
                 Yes, I provide product strategy consulting for AI/ML products, 
                 MVP scoping, and product-market fit validation on a project basis.
-              </p>
-            </Card>
-            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.5s" }}>
-              <h3 className="font-semibold text-foreground mb-2">
-                Can you speak at events?
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Absolutely! I love sharing insights about AI product management, 
-                user research methodologies, and building data-driven product culture.
-              </p>
-            </Card>
-            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.6s" }}>
-              <h3 className="font-semibold text-foreground mb-2">
-                Do you mentor other PMs?
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Yes, I mentor aspiring and junior PMs. I'm particularly passionate 
-                about helping people transition into product management from other fields.
               </p>
             </Card>
           </div>
