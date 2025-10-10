@@ -1,5 +1,5 @@
 import ProjectCard from "./ProjectCard";
-import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
+import { Link } from "react-router-dom";
 import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
@@ -32,23 +32,10 @@ const ProjectsShowcase = () => {
       tags: ["Business Frameworks", "Competitive Strategy", "Market Positioning", "Strategic Planning"],
       slug: "openai-competitive-strategy",
     },
-    {
-      title: "Colonial Williamsburg Marketing Research",
-      tagline: "MBA Marketing Research, Spring 2025",
-      description: "Led three-stage marketing research combining qualitative and quantitative methods. Analyzed 43 survey responses with predictive modeling to identify visitor segments.",
-      image: colonialWilliamsburgImage,
-      metrics: [
-        "3-stage research framework developed",
-        "43 survey respondents analyzed",
-        "Multiple visitor segments identified"
-      ],
-      tags: ["Marketing Research", "Predictive Modeling", "Survey Design", "Statistical Analysis"],
-      slug: "mba-marketing-research",
-    },
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Motion Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-8 w-36 h-36 border border-primary/6 rounded-full animate-drift"></div>
@@ -68,7 +55,7 @@ const ProjectsShowcase = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={project.slug}
@@ -84,13 +71,13 @@ const ProjectsShowcase = () => {
           <p className="text-muted-foreground mb-4">
             Want to see more detailed case studies?
           </p>
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors"
           >
             View All Projects
             <span className="ml-2">→</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@ const ToolsSkills = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
+    <section className="py-12 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
       {/* Motion Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-16 left-16 w-40 h-40 bg-gradient-to-br from-primary/3 to-transparent rounded-full blur-2xl animate-pulse-glow"></div>

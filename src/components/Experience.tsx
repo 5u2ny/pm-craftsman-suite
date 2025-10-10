@@ -72,7 +72,7 @@ const Experience = () => {
     achievements: ["Optimized user activation paths by analyzing churn signals and MVP-stage feedback, boosting SQL volume by 20% and cutting churn by 17%", "Engineered automated lead capture system integrated with GA dashboards, which quadrupled booked meetings and identified top-performing acquisition channels"],
     techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Google Analytics", "User Activation", "Growth Analytics"]
   }];
-  return <section className="py-24 bg-background relative overflow-hidden">
+  return <section className="py-12 bg-background relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Floating geometric shapes */}
