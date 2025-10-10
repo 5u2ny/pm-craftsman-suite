@@ -116,23 +116,6 @@ const Contact = () => {
                 ))}
               </div>
             </Card>
-
-            {/* Location & Response Time */}
-            <Card className="card-gradient p-6 hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20 animate-scale-in" style={{ animationDelay: "0.7s" }}>
-              <div className="flex items-center mb-3">
-                <MapPin className="h-5 w-5 text-primary mr-2" />
-                <span className="font-medium text-foreground">San Francisco Bay Area</span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                Pacific Time Zone (PST/PDT)
-              </p>
-              <div className="flex items-center">
-                <Clock className="h-5 w-5 text-success mr-2" />
-                <span className="text-sm text-success font-medium">
-                  Typically responds within 24 hours
-                </span>
-              </div>
-            </Card>
           </div>
         </div>
 
