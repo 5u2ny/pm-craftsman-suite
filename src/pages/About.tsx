@@ -1,4 +1,4 @@
-import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart, Trophy, Building2 } from "lucide-react";
+import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart, Trophy, Building2, HandHeart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -183,7 +183,7 @@ const About = () => {
   const organizations = [
     {
       name: "MBAA",
-      role: "Co-VP IT & AI Club",
+      role: "VP of IT & AI Club",
       period: "Aug 2024 - Present",
       institution: "William & Mary – Raymond A. Mason School of Business",
       logo: "/logos/wm-logo.png",
@@ -194,6 +194,21 @@ const About = () => {
       role: "Student Member",
       period: "Aug 2024 - Present",
       description: "Engage with a national network of future business leaders. Leverage access to speaker series, strategy case events, and peer learning forums to expand leadership, decision-making, and market awareness."
+    }
+  ];
+
+  const volunteerExperience = [
+    {
+      role: "Student Volunteer",
+      organization: "National Service Scheme",
+      period: "Jul 2017 - May 2020",
+      category: "Social Services",
+      logo: "/logos/nss-logo.png",
+      description: [
+        "Participated in community development initiatives including rural outreach, hygiene awareness, and digital literacy campaigns",
+        "Contributed to organizing events focused on education access, environmental responsibility, and public health",
+        "Developed early leadership, coordination, and stakeholder communication skills in resource-limited environments"
+      ]
     }
   ];
 
@@ -475,6 +490,47 @@ const About = () => {
                   </Badge>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{org.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Volunteer Experience */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.55s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <HandHeart className="h-6 w-6 text-primary mr-2" />
+            Volunteer Experience
+          </h2>
+          <div className="space-y-4">
+            {volunteerExperience.map((volunteer, index) => (
+              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.55 + (index * 0.1)}s` }}>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                  <div className="flex items-start gap-4 flex-1">
+                    {volunteer.logo && (
+                      <img 
+                        src={volunteer.logo} 
+                        alt={`${volunteer.organization} logo`}
+                        className="w-12 h-12 object-contain flex-shrink-0"
+                      />
+                    )}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">{volunteer.role}</h3>
+                      <p className="text-primary font-medium text-sm">{volunteer.organization}</p>
+                      <p className="text-muted-foreground text-xs mt-1">{volunteer.category}</p>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                    {volunteer.period}
+                  </Badge>
+                </div>
+                <ul className="space-y-2 pl-16">
+                  {volunteer.description.map((item, idx) => (
+                    <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                      <span className="text-primary mr-2">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </Card>
             ))}
           </div>
