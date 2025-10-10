@@ -29,7 +29,7 @@ const About = () => {
       institution: "William & Mary – Raymond A. Mason School of Business",
       period: "Aug 2024 - May 2026",
       status: "In Progress",
-      logo: "/lovable-uploads/e6e2e060-2301-4141-918e-10083389c853.png",
+      logo: "/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png",
       activities: ["MBAA"],
       highlights: [
         "Applying product skills in a real-world AI PM internship at IpserLab, owning UX, prompts, and user feedback loops",
@@ -45,7 +45,7 @@ const About = () => {
       period: "Jul 2017 - May 2021",
       status: "Completed",
       grade: "3.81/4.00",
-      logo: "/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png",
+      logo: "/lovable-uploads/e6e2e060-2301-4141-918e-10083389c853.png",
       activities: [
         "Event Head – WARTECH 2019 (Tech Fest)",
         "IT & Finance Head – Computer Society of India, Karunya Chapter",
