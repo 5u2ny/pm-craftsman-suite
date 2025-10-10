@@ -1,4 +1,4 @@
-import { Code2, Database, BarChart3, Users2, Zap, Brain } from "lucide-react";
+import { Code2, Database, BarChart3, Users2, Zap, Brain, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
@@ -11,31 +11,37 @@ const ToolsSkills = () => {
     {
       title: "Product Management",
       icon: Brain,
+      color: "from-purple-500/20 to-pink-500/20",
       skills: ["Product Strategy & Roadmap", "User Growth", "E-commerce Funnel Optimization", "A/B Testing", "Data-Driven Decision Making", "CRO", "UI/UX Optimization"]
     },
     {
       title: "Data & Analytics", 
       icon: BarChart3,
+      color: "from-blue-500/20 to-cyan-500/20",
       skills: ["SQL", "Python (Pandas, NumPy)", "Tableau", "Power BI", "Excel", "Amplitude", "Google Analytics", "JASP"]
     },
     {
       title: "Technical & AI",
       icon: Zap,
+      color: "from-yellow-500/20 to-orange-500/20",
       skills: ["LLMs", "Generative AI", "RAG", "LangChain", "Prompt Engineering", "AI Product Strategy", "APIs", "Lovable.dev"]
     },
     {
       title: "Development & Tools",
       icon: Code2,
+      color: "from-green-500/20 to-emerald-500/20",
       skills: ["Python", "DBMS", "Data Warehouse & Data Mining", "Mobile Application Development", "Git/GitHub", "JIRA"]
     },
     {
       title: "Design & Collaboration",
       icon: Database,
+      color: "from-red-500/20 to-rose-500/20",
       skills: ["Figma", "Notion", "Trello", "NotebookLM", "Miro", "Slack", "ClickUp", "Wireframing"]
     },
     {
       title: "Frameworks & Methodologies",
       icon: Users2,
+      color: "from-indigo-500/20 to-violet-500/20",
       skills: ["Agile & Scrum", "Product Lifecycle Management", "User Research", "RICE & OKR Frameworks", "GTM Strategy", "Stakeholder Communication"]
     }
   ];
@@ -62,18 +68,27 @@ const ToolsSkills = () => {
         <div className="absolute bottom-1/3 left-20 w-28 h-28 border border-accent/8 rounded-full animate-orbital-rotation"></div>
         <div className="absolute top-1/2 left-1/2 w-px h-24 bg-gradient-to-b from-primary/15 via-transparent to-accent/10 animate-twinkle"></div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
-            Tools & Skills
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for building and scaling successful products
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+            <h2 className="text-3xl sm:text-4xl font-bold text-gradient">
+              Interactive Skills Explorer
+            </h2>
+            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
+          </div>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-3">
+            Click categories and skills to explore my toolkit
+          </p>
+          <p className="text-sm text-muted-foreground/70 italic">
+            💡 Tip: Click any category card or skill badge to interact
           </p>
           {selectedSkills.length > 0 && (
-            <p className="text-sm text-primary mt-2">
-              {selectedSkills.length} skill{selectedSkills.length > 1 ? 's' : ''} selected
-            </p>
+            <div className="mt-4 animate-fade-in">
+              <Badge variant="default" className="text-sm px-4 py-2 animate-scale-in">
+                ✨ {selectedSkills.length} skill{selectedSkills.length > 1 ? 's' : ''} selected
+              </Badge>
+            </div>
           )}
         </div>
 
@@ -84,49 +99,86 @@ const ToolsSkills = () => {
             return (
               <Card 
                 key={category.title} 
-                className={`card-gradient p-6 animate-slide-up transition-all duration-500 cursor-pointer ${
+                className={`card-gradient p-6 animate-slide-up transition-all duration-500 cursor-pointer group relative overflow-hidden ${
                   isActive 
-                    ? 'ring-2 ring-primary shadow-2xl scale-105 hover:scale-105' 
-                    : 'hover-lift hover:shadow-xl hover:border-primary/20'
+                    ? 'ring-2 ring-primary shadow-2xl scale-[1.02] border-primary/50' 
+                    : 'hover-lift hover:shadow-xl hover:border-primary/20 hover:scale-[1.01]'
                 }`}
                 style={{ animationDelay: `${index * 0.15}s` }}
                 onClick={() => handleCategoryClick(category.title)}
               >
-                <div className="flex items-center mb-4">
-                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 transition-all duration-300 ${
-                    isActive ? 'bg-primary text-primary-foreground scale-110' : 'bg-primary/10 hover-scale'
-                  }`}>
-                    <IconComponent className={`h-5 w-5 ${isActive ? 'text-primary-foreground' : 'text-primary'}`} />
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center mb-4">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-3 transition-all duration-500 ${
+                      isActive 
+                        ? 'bg-primary text-primary-foreground scale-110 rotate-12' 
+                        : 'bg-primary/10 group-hover:scale-110 group-hover:rotate-6'
+                    }`}>
+                      <IconComponent className={`h-6 w-6 transition-all duration-300 ${
+                        isActive ? 'text-primary-foreground' : 'text-primary'
+                      }`} />
+                    </div>
+                    <h3 className={`text-lg font-semibold transition-colors duration-300 ${
+                      isActive ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                    }`}>
+                      {category.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => {
-                    const isSelected = selectedSkills.includes(skill);
-                    return (
-                      <Badge 
-                        key={skill} 
-                        variant={isSelected ? "default" : "secondary"}
-                        className={`text-xs transition-all duration-300 cursor-pointer ${
-                          isSelected 
-                            ? 'ring-2 ring-primary/50 scale-105' 
-                            : 'hover-scale hover:bg-primary/20'
-                        }`}
-                        style={{ animationDelay: `${(index * 0.15) + (skillIndex * 0.05)}s` }}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          toggleSkill(skill);
-                        }}
-                      >
-                        {skill}
-                      </Badge>
-                    );
-                  })}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => {
+                      const isSelected = selectedSkills.includes(skill);
+                      return (
+                        <Badge 
+                          key={skill} 
+                          variant={isSelected ? "default" : "secondary"}
+                          className={`text-xs transition-all duration-300 cursor-pointer relative ${
+                            isSelected 
+                              ? 'ring-2 ring-primary/50 scale-105 shadow-lg animate-bounce-once' 
+                              : 'hover:scale-110 hover:bg-primary/30 hover:shadow-md'
+                          }`}
+                          style={{ animationDelay: `${(index * 0.15) + (skillIndex * 0.05)}s` }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSkill(skill);
+                          }}
+                        >
+                          {isSelected && <span className="mr-1">✓</span>}
+                          {skill}
+                        </Badge>
+                      );
+                    })}
+                  </div>
                 </div>
               </Card>
             );
           })}
         </div>
+
+        {/* Selected Skills Summary */}
+        {selectedSkills.length > 0 && (
+          <Card className="card-gradient p-6 animate-fade-in">
+            <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+              <Sparkles className="h-5 w-5 text-primary" />
+              Your Selected Skills
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {selectedSkills.map((skill, idx) => (
+                <Badge 
+                  key={skill}
+                  variant="default"
+                  className="text-sm animate-slide-up cursor-pointer hover:scale-105 transition-transform"
+                  style={{ animationDelay: `${idx * 0.05}s` }}
+                  onClick={() => toggleSkill(skill)}
+                >
+                  {skill} ✕
+                </Badge>
+              ))}
+            </div>
+          </Card>
+        )}
       </div>
     </section>
   );
