@@ -144,6 +144,22 @@ const Contact = () => {
                 MVP scoping, and product-market fit validation on a project basis.
               </p>
             </Card>
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.5s" }}>
+              <h3 className="font-semibold text-foreground mb-2">
+                Are you open to relocation?
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Yes, I am open to relocating anywhere in the United States for the right opportunity.
+              </p>
+            </Card>
+            <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.6s" }}>
+              <h3 className="font-semibold text-foreground mb-2">
+                What type of employment are you seeking?
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                I am looking for full-time roles only at this time.
+              </p>
+            </Card>
           </div>
         </div>
       </div>
