@@ -51,7 +51,7 @@ const Experience = () => {
     achievements: ["Conducting cybersecurity risk assessments for SoC Type II Compliance", "Evaluating startup-level infrastructure readiness against regulatory benchmarks and compliance requirements", "Supporting the development of mitigation recommendations and control strategies to reduce risk exposure across data, access, and process layers"],
     techStack: ["SOC Type II", "Risk Assessment", "Compliance", "Cybersecurity", "Infrastructure Evaluation"]
   }, {
-    role: "Product Analyst (Growth Marketing Specialist)",
+    role: "Product Analyst",
     company: "ASANIFY",
     logo: "/logos/asanify-logo.png",
     location: "Kolkata, India",
@@ -71,7 +71,7 @@ const Experience = () => {
     achievements: ["Collaborated directly with product team to redesign user qualification journeys, improving conversion efficiency by 35%", "Executed data-driven activation strategies based on user profiles and CRM signals, generating over $700K in revenue across two quarters"],
     techStack: ["User Journey Design", "CRM Strategy", "Conversion Optimization", "Data-Driven Strategy", "Funnel Optimization"]
   }, {
-    role: "Product-led Growth Analyst (Growth Partner)",
+    role: "Product-led Growth Analyst",
     company: "LEADLE",
     logo: "/logos/leadle-logo.png",
     location: "Chennai, India",
@@ -134,22 +134,29 @@ const Experience = () => {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-300 z-10 cursor-pointer ${
+                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-500 z-10 cursor-pointer ${
                   isSelected 
-                    ? 'bg-primary scale-150 shadow-primary/50' 
+                    ? 'bg-primary scale-150 shadow-primary/50 shadow-2xl ring-4 ring-primary/20' 
+                    : isExpanded
+                    ? 'bg-gradient-to-r from-primary to-accent scale-125 shadow-accent/50'
                     : 'bg-gradient-to-r from-primary to-accent group-hover:scale-125'
                 }`}
                 onClick={() => handleCompanyClick(exp.company)}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full animate-ping opacity-20"></div>
+                  <div className={`absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 ${
+                    isExpanded ? 'animate-ping' : ''
+                  }`}></div>
                 </div>
                 
                 {/* Experience Card */}
-                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 ${
+                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 cursor-pointer ${
                   isSelected
-                    ? 'border-primary shadow-2xl ring-2 ring-primary/30 scale-[1.02]'
+                    ? 'border-primary shadow-2xl ring-2 ring-primary/30 scale-[1.02] bg-card/90'
+                    : isExpanded
+                    ? 'border-primary/50 shadow-xl ring-1 ring-primary/10 scale-[1.01] bg-card/80 -translate-y-1'
                     : 'border-border/50 hover:border-primary/30 hover:bg-card/80 hover:shadow-2xl hover:-translate-y-2'
                 }`}
+                onClick={() => handleCompanyClick(exp.company)}
                 >
                   
                   {/* Card Header */}
@@ -196,21 +203,6 @@ const Experience = () => {
                           <span>{exp.location}</span>
                         </div>
                       </div>
-                      
-                      {/* Hover Indicator */}
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        {isExpanded ? (
-                          <>
-                            <span className="hidden sm:inline">Expanded</span>
-                            <ChevronUp className="h-5 w-5 transition-transform" />
-                          </>
-                        ) : (
-                          <>
-                            <span className="hidden sm:inline">Hover to expand</span>
-                            <ChevronDown className="h-5 w-5 transition-transform" />
-                          </>
-                        )}
-                      </div>
                     </div>
                   </div>
                   
@@ -228,13 +220,17 @@ const Experience = () => {
                         {exp.achievements.map((achievement, i) => {
                     // Extract and highlight numbers
                     const parts = achievement.split(/(\d+[\d,.\$KM%+]*[\w]*)/g);
-                    return <li key={i} className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item">
-                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
-                              <span className="flex-1">
+                    return <li 
+                              key={i} 
+                              className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item animate-fade-in"
+                              style={{ animationDelay: `${index * 0.15 + i * 0.08}s` }}
+                            >
+                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-150 group-hover/item:shadow-lg group-hover/item:shadow-primary/50 transition-all duration-300"></div>
+                              <span className="flex-1 group-hover/item:translate-x-1 transition-transform duration-300">
                                 {parts.map((part, idx) => {
                           // Check if this part is a number
                           if (/^\d+[\d,.\$KM%+]*[\w]*$/.test(part)) {
-                            return <span key={idx} className="font-bold text-primary hover:text-accent transition-colors cursor-default inline-block hover:scale-110 duration-200">
+                            return <span key={idx} className="font-bold text-primary group-hover/item:text-accent transition-colors cursor-default inline-block hover:scale-110 duration-200">
                                         {part}
                                       </span>;
                           }
@@ -247,9 +243,14 @@ const Experience = () => {
                     
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-3 mb-6">
-                      {exp.techStack.map((tech, i) => <Badge key={i} variant="secondary" className="px-3 py-1 text-sm bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 hover:scale-105 transition-all duration-300 font-medium" style={{
-                    animationDelay: `${index * 0.15 + i * 0.05}s`
-                  }}>
+                      {exp.techStack.map((tech, i) => <Badge 
+                          key={i} 
+                          variant="secondary" 
+                          className="px-3 py-1 text-sm bg-accent/10 text-accent border-accent/20 hover:bg-accent/20 hover:scale-110 hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5 transition-all duration-300 font-medium animate-fade-in cursor-pointer" 
+                          style={{
+                            animationDelay: `${index * 0.15 + i * 0.05}s`
+                          }}
+                        >
                           {tech}
                         </Badge>)}
                     </div>
