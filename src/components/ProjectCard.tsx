@@ -29,7 +29,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Card
-      className="group hover-lift overflow-hidden card-gradient border border-border transition-all duration-500 hover:shadow-2xl animate-fade-in h-full flex flex-col"
+      className="group hover-lift overflow-hidden card-gradient border border-border transition-all duration-500 hover:shadow-2xl hover:border-primary/30 animate-fade-in h-full flex flex-col hover:-translate-y-2"
     >
       {/* Image */}
       <div className="relative overflow-hidden">
@@ -104,9 +104,9 @@ const ProjectCard = ({
                   asChild 
                   variant="default" 
                   size="sm" 
-                  className="w-full group/btn hover-scale"
+                  className="w-full group/btn hover-scale hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
                 >
-                  <a href={pdf.url} target="_blank" rel="noopener noreferrer">
+                  <a href={pdf.url} download={pdf.url.split('/').pop()}>
                     {pdf.name}
                     <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
                   </a>
@@ -130,9 +130,9 @@ const ProjectCard = ({
                 asChild 
                 variant="default" 
                 size="sm" 
-                className="w-full group/btn hover-scale"
+                className="w-full group/btn hover-scale hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
               >
-                <a href={pdfLink} target="_blank" rel="noopener noreferrer">
+                <a href={pdfLink} download={pdfLink.split('/').pop()}>
                   Download PDF
                   <FileDown className="ml-2 h-4 w-4 group-hover/btn:translate-y-0.5 transition-transform" />
                 </a>

@@ -214,8 +214,20 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-float-slow"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+        <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+        <div className="absolute top-60 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float-slow"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
@@ -229,26 +241,26 @@ const About = () => {
         </div>
 
         {/* Philosophy */}
-        <Card className="card-gradient p-8 mb-12 animate-slide-up">
+        <Card className="card-gradient p-8 mb-12 animate-slide-up hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
           <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-              <Brain className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Data-Driven</h3>
-              <p className="text-sm text-muted-foreground">
+            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Brain className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+              <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">Data-Driven</h3>
+              <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Every decision backed by user research and quantitative analysis
               </p>
             </div>
-            <div>
-              <Users2 className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">User-Centric</h3>
-              <p className="text-sm text-muted-foreground">
+            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Users2 className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+              <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">User-Centric</h3>
+              <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Building with empathy and deep understanding of user needs
               </p>
             </div>
-            <div>
-              <Target className="h-8 w-8 text-primary mx-auto mb-3" />
-              <h3 className="font-semibold mb-2">Impact-Focused</h3>
-              <p className="text-sm text-muted-foreground">
+            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Target className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+              <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">Impact-Focused</h3>
+              <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Measuring success through meaningful business and user outcomes
               </p>
             </div>
@@ -346,9 +358,9 @@ const About = () => {
               {hobbies.map((hobby, index) => {
                 const IconComponent = { ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio }[hobby.icon];
                 return (
-                  <div key={hobby.name} className="flex items-center gap-3 animate-fade-in" style={{ animationDelay: `${0.05 + (index * 0.03)}s` }}>
-                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0" />}
-                    <span className="text-sm text-muted-foreground">{hobby.name}</span>
+                  <div key={hobby.name} className="flex items-center gap-3 animate-fade-in group/hobby hover-scale hover:bg-primary/5 p-2 rounded-lg transition-all duration-300" style={{ animationDelay: `${0.05 + (index * 0.03)}s` }}>
+                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0 group-hover/hobby:scale-110 group-hover/hobby:rotate-12 transition-all duration-300" />}
+                    <span className="text-sm text-muted-foreground group-hover/hobby:text-foreground transition-colors">{hobby.name}</span>
                   </div>
                 );
               })}

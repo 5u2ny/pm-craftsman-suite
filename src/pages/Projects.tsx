@@ -164,11 +164,22 @@ const Projects = () => {
 
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
+      {/* Hero Section with Enhanced Background */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.08] rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Floating gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.08] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.04] rounded-full blur-3xl animate-float-slow"></div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute top-20 right-20 w-24 h-24 border border-primary/10 rounded-lg rotate-45 animate-spin-slow"></div>
+          <div className="absolute bottom-32 left-16 w-20 h-20 border border-accent/15 rounded-full animate-spin-reverse"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+          <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+          <div className="absolute top-60 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float-slow"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -189,12 +200,17 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Badge
                 key={category}
                 variant={activeCategory === category ? "default" : "outline"}
-                className="cursor-pointer px-4 py-2 hover-scale transition-all duration-300 text-sm font-medium"
+                className={`cursor-pointer px-6 py-2.5 hover-scale transition-all duration-300 text-sm font-medium ${
+                  activeCategory === category 
+                    ? 'shadow-lg shadow-primary/30 scale-105' 
+                    : 'hover:shadow-md hover:border-primary/50'
+                }`}
                 onClick={() => setActiveCategory(category)}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {category}
               </Badge>
@@ -222,21 +238,27 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground">
+      {/* Enhanced Call to Action */}
+      <section className="relative py-20 bg-gradient-to-br from-primary/5 to-accent/5 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground animate-fade-in">
             Interested in Working Together?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up" style={{ animationDelay: "0.2s" }}>
             I'm always excited to discuss new opportunities and collaborate on innovative projects. 
             Let's connect and explore how we can create something amazing together.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
+            <Button asChild size="lg" className="hover-scale hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
               <Link to="/contact">Get In Touch</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="hover-scale hover:shadow-lg transition-all duration-300">
               <Link to="/about">Learn More About Me</Link>
             </Button>
           </div>

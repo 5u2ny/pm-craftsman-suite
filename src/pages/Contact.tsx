@@ -41,8 +41,19 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-float-slow"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+        <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
@@ -75,10 +86,10 @@ const Contact = () => {
               </h3>
               <div className="space-y-4">
                 {contactMethods.map((method, index) => (
-                  <div key={index} className="flex items-start space-x-3 animate-slide-up" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
+                  <div key={index} className="flex items-start space-x-3 animate-slide-up group/contact" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover-scale transition-all duration-300">
-                        <method.icon className="h-5 w-5 text-primary" />
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover-scale hover:bg-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                        <method.icon className="h-5 w-5 text-primary group-hover/contact:scale-110 transition-transform" />
                       </div>
                     </div>
                     <div className="flex-1">
@@ -109,9 +120,9 @@ const Contact = () => {
               </h3>
               <div className="space-y-3">
                 {availability.map((item, index) => (
-                  <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.5 + (index * 0.05)}s` }}>
-                    <div className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground">{item}</p>
+                  <div key={index} className="flex items-start animate-slide-up group/avail hover:translate-x-1 transition-all duration-300" style={{ animationDelay: `${0.5 + (index * 0.05)}s` }}>
+                    <div className="w-2 h-2 bg-success rounded-full mt-2 mr-3 flex-shrink-0 group-hover/avail:animate-pulse" />
+                    <p className="text-sm text-muted-foreground group-hover/avail:text-foreground transition-colors">{item}</p>
                   </div>
                 ))}
               </div>
