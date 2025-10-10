@@ -48,7 +48,7 @@ const ProjectsShowcase = () => {
         <div className="absolute top-40 left-1/3 w-px h-32 bg-gradient-to-b from-transparent via-accent/20 to-transparent animate-slide-up" style={{ animationDelay: "1s" }}></div>
         <div className="absolute bottom-40 right-1/4 w-px h-28 bg-gradient-to-t from-transparent via-primary/15 to-transparent animate-fade-in" style={{ animationDelay: "3s" }}></div>
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Featured Projects & Case Studies
@@ -71,10 +71,10 @@ const ProjectsShowcase = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 relative z-20">
           <Button 
             size="lg" 
-            className="group hover-scale"
+            className="group hover:scale-105 transition-all duration-300 cursor-pointer"
             onClick={() => navigate('/projects')}
           >
             View All Projects
