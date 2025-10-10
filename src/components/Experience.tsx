@@ -3,16 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
 const Experience = () => {
-  const [expandedCards, setExpandedCards] = useState<number[]>([0]); // First card expanded by default
+  const [hoveredCard, setHoveredCard] = useState<number | null>(0); // First card hovered by default
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
-
-  const toggleCard = (index: number) => {
-    setExpandedCards(prev => 
-      prev.includes(index)
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
-  };
 
   const handleCompanyClick = (company: string) => {
     setSelectedCompany(prev => prev === company ? null : company);
@@ -131,12 +123,16 @@ const Experience = () => {
           {/* Experience Cards */}
           <div className="space-y-12">
             {experiences.map((exp, index) => {
-              const isExpanded = expandedCards.includes(index);
+              const isExpanded = hoveredCard === index;
               const isSelected = selectedCompany === exp.company;
               
-              return <div key={index} className="relative group animate-slide-up" style={{
-            animationDelay: `${index * 0.15}s`
-          }}>
+              return <div 
+                key={index} 
+                className="relative group animate-slide-up" 
+                style={{ animationDelay: `${index * 0.15}s` }}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
                 {/* Timeline Dot */}
                 <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-300 z-10 cursor-pointer ${
                   isSelected 
@@ -149,12 +145,11 @@ const Experience = () => {
                 </div>
                 
                 {/* Experience Card */}
-                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 hover:shadow-2xl cursor-pointer ${
+                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 ${
                   isSelected
                     ? 'border-primary shadow-2xl ring-2 ring-primary/30 scale-[1.02]'
-                    : 'border-border/50 hover:border-primary/30 hover:bg-card/80 hover:-translate-y-2'
+                    : 'border-border/50 hover:border-primary/30 hover:bg-card/80 hover:shadow-2xl hover:-translate-y-2'
                 }`}
-                onClick={() => toggleCard(index)}
                 >
                   
                   {/* Card Header */}
@@ -202,16 +197,16 @@ const Experience = () => {
                         </div>
                       </div>
                       
-                      {/* Expand/Collapse Indicator */}
+                      {/* Hover Indicator */}
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         {isExpanded ? (
                           <>
-                            <span className="hidden sm:inline">Collapse</span>
+                            <span className="hidden sm:inline">Expanded</span>
                             <ChevronUp className="h-5 w-5 transition-transform" />
                           </>
                         ) : (
                           <>
-                            <span className="hidden sm:inline">Expand</span>
+                            <span className="hidden sm:inline">Hover to expand</span>
                             <ChevronDown className="h-5 w-5 transition-transform" />
                           </>
                         )}

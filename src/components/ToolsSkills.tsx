@@ -64,15 +64,11 @@ const ToolsSkills = () => {
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-gradient">
-              Interactive Skills Explorer
-            </h2>
-            <Sparkles className="h-6 w-6 text-primary animate-pulse" />
-          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
+            Tools & Skills
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-3">
-            Click categories and skills to explore my toolkit
+            A comprehensive toolkit for building and scaling successful products
           </p>
           <p className="text-sm text-muted-foreground/70 italic">
             💡 Tip: Click any category card or skill badge to interact
