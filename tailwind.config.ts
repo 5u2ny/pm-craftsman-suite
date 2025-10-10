@@ -115,12 +115,62 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "50%": { transform: "translateY(-20px) translateX(10px)" },
+        },
+        "float-delay": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px) scale(1)" },
+          "50%": { transform: "translateY(-30px) translateX(-15px) scale(1.1)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-15px) rotate(5deg)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "spin-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+        "fade-in-out": {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
+        "fade-in-out-delay": {
+          "0%, 100%": { opacity: "0" },
+          "25%, 75%": { opacity: "1" },
+        },
+        "ping-slow": {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(1.5)", opacity: "0" },
+        },
+        "ping-slower": {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(2)", opacity: "0" },
+        },
+        "grid-move": {
+          "0%": { transform: "translate(0, 0)" },
+          "100%": { transform: "translate(4rem, 4rem)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "bounce-once": "bounce-once 0.5s ease-in-out",
         "shimmer": "shimmer 2s linear infinite",
+        "float": "float 6s ease-in-out infinite",
+        "float-delay": "float-delay 8s ease-in-out infinite",
+        "float-slow": "float-slow 10s ease-in-out infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
+        "spin-reverse": "spin-reverse 15s linear infinite",
+        "fade-in-out": "fade-in-out 4s ease-in-out infinite",
+        "fade-in-out-delay": "fade-in-out-delay 5s ease-in-out infinite",
+        "ping-slow": "ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "ping-slower": "ping-slower 4s cubic-bezier(0, 0, 0.2, 1) infinite",
+        "grid-move": "grid-move 20s linear infinite",
       },
     },
   },

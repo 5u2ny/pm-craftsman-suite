@@ -6,10 +6,36 @@ import Profile4D from "@/components/Profile4D";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Ultra Clean Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.015] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.02] rounded-full blur-3xl"></div>
+      {/* Dynamic Animated Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Large gradient orbs with floating animation */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.03] rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.04] rounded-full blur-3xl animate-float-delay"></div>
+        <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-primary/[0.02] rounded-full blur-3xl animate-float-slow"></div>
+        
+        {/* Rotating geometric shapes */}
+        <div className="absolute top-20 right-20 w-32 h-32 border border-primary/10 rounded-lg rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-32 left-16 w-24 h-24 border border-accent/15 rounded-full animate-spin-reverse"></div>
+        <div className="absolute top-1/3 left-1/4 w-20 h-20 border-2 border-primary/8 rotate-12 animate-pulse"></div>
+        
+        {/* Floating particles */}
+        <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+        <div className="absolute top-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+        <div className="absolute bottom-40 left-1/3 w-2 h-2 bg-primary/50 rounded-full animate-float-slow"></div>
+        <div className="absolute top-1/2 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float"></div>
+        <div className="absolute bottom-60 right-1/2 w-3 h-3 bg-primary/35 rounded-full animate-float-delay"></div>
+        
+        {/* Animated lines */}
+        <div className="absolute top-1/4 left-1/2 w-px h-32 bg-gradient-to-b from-transparent via-primary/20 to-transparent animate-fade-in-out"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-px h-24 bg-gradient-to-t from-transparent via-accent/25 to-transparent animate-fade-in-out-delay"></div>
+        <div className="absolute top-1/3 right-1/4 w-40 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-fade-in-out"></div>
+        
+        {/* Pulsing rings */}
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 border border-primary/5 rounded-full animate-ping-slow"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-48 h-48 border border-accent/8 rounded-full animate-ping-slower"></div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--primary)/0.02)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--primary)/0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)] animate-grid-move"></div>
       </div>
 
       {/* Content */}
