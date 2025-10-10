@@ -1,49 +1,49 @@
 import ProjectCard from "./ProjectCard";
-import aiTravelImage from "@/assets/project-ai-travel.jpg";
-import linkedinImage from "@/assets/project-linkedin.jpg";
-import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
+import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
+import openaiStrategyImage from "@/assets/openai-strategy.jpg";
+import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
 const ProjectsShowcase = () => {
   const projects = [
     {
-      title: "AI Travel Planner MVP",
-      tagline: "Cavo - Personalized Trip Planning",
-      description: "Led product strategy for AI-powered travel planning platform, conducting user research and designing MVP that validates product-market fit.",
-      image: aiTravelImage,
+      title: "Brewscovery – Craft Beer Subscription Model",
+      tagline: "MBA Sprint Week, Fall 2024",
+      description: "Designed investor-ready craft beer subscription with financial projections of $4.8M revenue and $1.5M Year 1 profit. Top 4 team selected to present to Domino's Chief.",
+      image: brewscoveryImage,
       metrics: [
-        "85% user satisfaction in beta testing",
-        "23% increase in trip booking completion",
-        "40% reduction in planning time"
+        "Built forecast model for 10K subscribers and $1.5M profit in Year 1",
+        "Led scenario planning with upside projections up to $9.6M",
+        "Selected as Top 4 team for final pitch to Domino's Global Strategy Chief"
       ],
-      tags: ["AI/ML", "MVP Design", "User Research", "Product Strategy"],
-      slug: "ai-travel-planner",
+      tags: ["Marketing Strategy", "Financial Modeling", "GTM Strategy", "Subscription Business"],
+      slug: "brewscovery-subscription",
       featured: true,
     },
     {
-      title: "LinkedIn Product Teardown",
-      tagline: "UX Analysis & Competitive Intelligence",
-      description: "Comprehensive analysis of LinkedIn's feed algorithm and engagement patterns, identifying key improvement opportunities.",
-      image: linkedinImage,
+      title: "OpenAI ChatGPT Competitive Strategy",
+      tagline: "MBA Global Competitive Strategy, Spring 2025",
+      description: "Three-phase strategic analysis using PESTEL, Porter's Five Forces, VRIO, and SWOT. Developed implementation roadmap focused on plugin infrastructure and ethical AI leadership.",
+      image: openaiStrategyImage,
       metrics: [
-        "15+ UX improvement recommendations",
-        "Competitive analysis across 5 platforms",
-        "3 prototype concepts validated"
+        "Multi-framework strategic analysis",
+        "Competitive positioning assessment",
+        "Implementation roadmap developed"
       ],
-      tags: ["Product Analysis", "UX Research", "Competitive Intelligence"],
-      slug: "linkedin-analysis",
+      tags: ["Business Frameworks", "Competitive Strategy", "Market Positioning", "Strategic Planning"],
+      slug: "openai-competitive-strategy",
     },
     {
-      title: "Cybersecurity Dashboard",
-      tagline: "Risk Assessment Analytics Platform",
-      description: "Designed and launched security analytics dashboard for enterprise risk assessment, focusing on data visualization and user experience.",
-      image: cybersecurityImage,
+      title: "Colonial Williamsburg Marketing Research",
+      tagline: "MBA Marketing Research, Spring 2025",
+      description: "Led three-stage marketing research combining qualitative and quantitative methods. Analyzed 43 survey responses with predictive modeling to identify visitor segments.",
+      image: colonialWilliamsburgImage,
       metrics: [
-        "60% faster threat identification",
-        "35% improvement in analyst efficiency",
-        "92% user adoption rate"
+        "3-stage research framework developed",
+        "43 survey respondents analyzed",
+        "Multiple visitor segments identified"
       ],
-      tags: ["Data Visualization", "Enterprise UX", "Analytics"],
-      slug: "cybersecurity-dashboard",
+      tags: ["Marketing Research", "Predictive Modeling", "Survey Design", "Statistical Analysis"],
+      slug: "mba-marketing-research",
     },
   ];
 
@@ -60,11 +60,11 @@ const ProjectsShowcase = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Featured Case Studies
+            Featured Projects & Case Studies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Product management work spanning AI/ML products, UX research, 
-            and data-driven growth initiatives.
+            A selection of academic research projects and strategic analyses 
+            from my MBA program demonstrating analytical and strategic thinking.
           </p>
         </div>
 
