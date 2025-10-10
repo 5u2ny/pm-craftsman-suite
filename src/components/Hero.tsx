@@ -70,10 +70,41 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed font-sans animate-slide-up" style={{ animationDelay: "0.8s" }}>
-            MBA candidate at William & Mary specializing in Business Analytics & Marketing. 
-            AI Product Manager with experience building 0-to-1 products and driving growth through data-driven strategies.
-          </p>
+          <div className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed font-sans space-y-3">
+            <p className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
+              <span className="text-muted-foreground">MBA candidate at </span>
+              <span className="font-semibold text-foreground hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105 inline-block">
+                William & Mary
+              </span>
+              <span className="text-muted-foreground"> specializing in </span>
+              <span className="font-semibold text-accent hover:text-accent/80 transition-all duration-300 cursor-pointer hover:scale-105 inline-block">
+                Business Analytics
+              </span>
+              <span className="text-muted-foreground"> & </span>
+              <span className="font-semibold text-accent hover:text-accent/80 transition-all duration-300 cursor-pointer hover:scale-105 inline-block">
+                Marketing
+              </span>
+              <span className="text-muted-foreground">.</span>
+            </p>
+            <p className="animate-fade-in" style={{ animationDelay: "1s" }}>
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 cursor-pointer inline-block hover:scale-105">
+                AI Product Manager
+              </span>
+              <span className="text-muted-foreground"> with experience building </span>
+              <span className="font-semibold text-foreground hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105 inline-block px-2 py-1 hover:bg-primary/10 rounded">
+                0-to-1 products
+              </span>
+              <span className="text-muted-foreground"> and driving </span>
+              <span className="font-semibold text-foreground hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105 inline-block px-2 py-1 hover:bg-primary/10 rounded">
+                growth
+              </span>
+              <span className="text-muted-foreground"> through </span>
+              <span className="font-semibold text-foreground hover:text-primary transition-all duration-300 cursor-pointer hover:scale-105 inline-block px-2 py-1 hover:bg-primary/10 rounded">
+                data-driven strategies
+              </span>
+              <span className="text-muted-foreground">.</span>
+            </p>
+          </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
             {/* Primary Actions */}
