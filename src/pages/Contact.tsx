@@ -29,10 +29,15 @@ const Contact = () => {
   ];
 
   const availability = [
-    "Product Management roles (Senior PM / Lead PM level)",
-    "Consulting on AI/ML product strategy",
-    "Speaking at product management events",
-    "Mentoring aspiring PMs"
+    "Product Manager",
+    "Associate Product Manager",
+    "Product Management Analyst",
+    "Technical Product Manager",
+    "Project Manager",
+    "Program Manager",
+    "Associate Technology Consultant",
+    "IT Consultant",
+    "AI Consultant"
   ];
 
   return (
