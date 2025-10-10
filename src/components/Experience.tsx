@@ -22,6 +22,35 @@ const Experience = () => {
       techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Agile/Scrum", "Team Leadership", "0-to-1 Development"]
     },
     {
+      role: "Graduate Teaching Assistant",
+      company: "William & Mary - Mason School of Business",
+      logo: "/logos/wm-logo.png",
+      location: "Williamsburg, VA",
+      period: "Aug 2025 - Present",
+      website: "https://mason.wm.edu/",
+      description: "Supporting undergraduate students in Business Statistics, Excel, Visualization, and Python through comprehensive academic assistance.",
+      achievements: [
+        "Assist undergraduate students in Business Statistics, Excel, Visualization, and Python by helping them understand concepts, complete assignments, and apply analytical techniques effectively",
+        "Provide academic support outside class through one-on-one guidance, troubleshooting code and formulas, and clarifying analytical methods to strengthen student understanding"
+      ],
+      techStack: ["Python", "Excel", "Business Statistics", "Data Visualization", "Teaching", "Academic Support"]
+    },
+    {
+      role: "Graduate Research Assistant",
+      company: "William & Mary - Mason School of Business",
+      logo: "/logos/wm-logo.png",
+      location: "Williamsburg, VA",
+      period: "May 2025 - Aug 2025",
+      website: "https://mason.wm.edu/",
+      description: "Developed automated cybersecurity assessment pipeline and benchmarking dashboards for NIST control compliance analysis across multiple companies.",
+      achievements: [
+        "Developed an automated cybersecurity assessment pipeline in Python to clean, reshape, and analyze NIST control compliance data across 12+ companies, improving accuracy and analysis speed by 40%",
+        "Designed multi-level benchmarking dashboards to compare maritime vs non-maritime firms, revealing sector-wide gaps in personnel security and information integrity controls through penalty-weighted scoring",
+        "Integrated demographic and performance datasets to visualize compliance trends by company size, location, and industry enabling actionable insights and targeted recommendations for underperforming firms"
+      ],
+      techStack: ["Python", "Cybersecurity", "NIST Compliance", "Data Analysis", "Dashboard Design", "Research"]
+    },
+    {
       role: "Cybersecurity Research Coordinator",
       company: "RESPONDR",
       logo: "/logos/respondr-logo.png",
