@@ -163,15 +163,12 @@ export default {
         "letter-drop": {
           "0%": { 
             opacity: "0", 
-            transform: "translateY(-30px) rotateX(-90deg) scale(0.5)",
-            filter: "blur(4px)"
-          },
-          "50%": { 
-            transform: "translateY(5px) rotateX(0deg) scale(1.05)",
+            transform: "translateX(-20px) scale(0.8)",
+            filter: "blur(8px)"
           },
           "100%": { 
             opacity: "1", 
-            transform: "translateY(0) rotateX(0deg) scale(1)",
+            transform: "translateX(0) scale(1)",
             filter: "blur(0px)"
           },
         },
@@ -206,7 +203,7 @@ export default {
         "ping-slower": "ping-slower 4s cubic-bezier(0, 0, 0.2, 1) infinite",
         "grid-move": "grid-move 20s linear infinite",
         "pulse-slow": "pulse-slow 3s ease-in-out infinite",
-        "letter-drop": "letter-drop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "letter-drop": "letter-drop 0.6s ease-out forwards",
         "letter-bounce": "letter-bounce 0.6s ease-in-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
       },
