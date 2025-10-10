@@ -29,14 +29,14 @@ const About = () => {
       institution: "William & Mary – Raymond A. Mason School of Business",
       period: "Aug 2024 - May 2026",
       status: "In Progress",
-      activities: "MBAA",
-      focus: "Product Management, GenAI, UX Strategy, and Data-Driven Decision-Making",
+      logo: "/lovable-uploads/e6e2e060-2301-4141-918e-10083389c853.png",
+      activities: ["MBAA"],
       highlights: [
         "Applying product skills in a real-world AI PM internship at IpserLab, owning UX, prompts, and user feedback loops",
         "Actively developing skills in GTM strategy, prompt engineering, and rapid prototyping",
         "VP of AI & IT Club"
       ],
-      skills: ["Product Management", "Data-driven Decision Making", "GenAI", "UX Strategy"]
+      skills: ["Product Management", "Data-driven Decision Making"]
     },
     {
       degree: "Bachelor of Technology - BTech",
@@ -45,7 +45,14 @@ const About = () => {
       period: "Jul 2017 - May 2021",
       status: "Completed",
       grade: "3.81/4.00",
-      activities: "Event Head – WARTECH 2019 (Tech Fest), IT & Finance Head – Computer Society of India, Karunya Chapter, Volunteer – NSS (National Service Scheme) – Social impact & campus engagement, Team Coordinator – KEMT, South India's largest high school sports event, Member – Photography Club",
+      logo: "/lovable-uploads/0f13ee40-077e-4d69-89e9-bd5ad2a19290.png",
+      activities: [
+        "Event Head – WARTECH 2019 (Tech Fest)",
+        "IT & Finance Head – Computer Society of India, Karunya Chapter",
+        "Volunteer – NSS (National Service Scheme) – Social impact & campus engagement",
+        "Team Coordinator – KEMT, South India's largest high school sports event",
+        "Member – Photography Club"
+      ],
       highlights: [
         "Focused on computer systems, software engineering, and applied problem-solving",
         "Innovation Day Winner (2020) – Recognized for technical innovation and user-first system design",
@@ -231,13 +238,22 @@ const About = () => {
             {education.map((edu, index) => (
               <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
-                    <p className="text-primary font-medium">{edu.field}</p>
-                    <p className="text-muted-foreground text-sm">{edu.institution}</p>
-                    {edu.grade && (
-                      <p className="text-muted-foreground text-sm font-medium mt-1">Grade: {edu.grade}</p>
+                  <div className="flex items-start gap-4 flex-1">
+                    {edu.logo && (
+                      <img 
+                        src={edu.logo} 
+                        alt={`${edu.institution} logo`}
+                        className="w-12 h-12 object-contain flex-shrink-0"
+                      />
                     )}
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
+                      <p className="text-primary font-medium">{edu.field}</p>
+                      <p className="text-muted-foreground text-sm">{edu.institution}</p>
+                      {edu.grade && (
+                        <p className="text-muted-foreground text-sm font-medium mt-1">Grade: {edu.grade}</p>
+                      )}
+                    </div>
                   </div>
                   <div className="mt-2 md:mt-0 flex flex-col md:items-end gap-2">
                     <Badge variant="outline" className="hover-scale transition-all duration-300">
@@ -252,23 +268,22 @@ const About = () => {
                   </div>
                 </div>
                 
-                {edu.activities && (
-                  <div className="mb-3">
-                    <p className="text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground">Activities and societies:</span> {edu.activities}
-                    </p>
-                  </div>
-                )}
-                
-                {edu.focus && (
-                  <div className="mb-3 p-3 bg-primary/5 rounded-lg border border-primary/10">
-                    <p className="text-sm font-medium text-primary mb-1">Focus:</p>
-                    <p className="text-sm text-foreground">{edu.focus}</p>
+                {edu.activities && edu.activities.length > 0 && (
+                  <div className="mb-4 pl-16">
+                    <p className="text-sm font-medium text-foreground mb-2">Activities and societies:</p>
+                    <ul className="space-y-1.5">
+                      {edu.activities.map((activity, actIdx) => (
+                        <li key={actIdx} className="text-sm text-muted-foreground flex items-start">
+                          <span className="text-primary mr-2">•</span>
+                          <span>{activity}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
                 
                 {edu.highlights && edu.highlights.length > 0 && (
-                  <div className="mb-4 space-y-2">
+                  <div className="mb-4 pl-16 space-y-2">
                     {edu.highlights.map((highlight, idx) => (
                       <div key={idx} className="flex items-start">
                         <CheckCircle2 className="w-4 h-4 text-success mt-0.5 mr-2 flex-shrink-0" />
@@ -279,7 +294,7 @@ const About = () => {
                 )}
                 
                 {edu.skills && edu.skills.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 pl-16">
                     {edu.skills.map((skill, skillIdx) => (
                       <Badge 
                         key={skillIdx} 
