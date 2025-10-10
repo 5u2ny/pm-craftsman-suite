@@ -216,15 +216,10 @@ const About = () => {
   return (
     <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-float-slow"></div>
-        
-        {/* Floating particles */}
-        <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
-        <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
-        <div className="absolute top-60 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float-slow"></div>
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -241,24 +236,24 @@ const About = () => {
         </div>
 
         {/* Philosophy */}
-        <Card className="card-gradient p-8 mb-12 animate-slide-up hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
+        <Card className="card-gradient p-8 mb-12 animate-fade-in hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
           <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
-              <Brain className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+            <div className="group/phil hover:scale-105 hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Brain className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 transition-transform duration-300" />
               <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">Data-Driven</h3>
               <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Every decision backed by user research and quantitative analysis
               </p>
             </div>
-            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
-              <Users2 className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+            <div className="group/phil hover:scale-105 hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Users2 className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 transition-transform duration-300" />
               <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">User-Centric</h3>
               <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Building with empathy and deep understanding of user needs
               </p>
             </div>
-            <div className="group/phil hover-scale hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
-              <Target className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 group-hover/phil:rotate-6 transition-all duration-300" />
+            <div className="group/phil hover:scale-105 hover:bg-primary/5 p-4 rounded-xl transition-all duration-300">
+              <Target className="h-8 w-8 text-primary mx-auto mb-3 group-hover/phil:scale-110 transition-transform duration-300" />
               <h3 className="font-semibold mb-2 group-hover/phil:text-primary transition-colors">Impact-Focused</h3>
               <p className="text-sm text-muted-foreground group-hover/phil:text-foreground transition-colors">
                 Measuring success through meaningful business and user outcomes
@@ -268,21 +263,21 @@ const About = () => {
         </Card>
 
         {/* Education */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.05s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <GraduationCap className="h-6 w-6 text-primary mr-2" />
             Education
           </h2>
           <div className="space-y-6">
             {education.map((edu, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.05 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div className="flex items-start gap-4 flex-1">
                     {edu.logo && (
                       <img 
                         src={edu.logo} 
                         alt={`${edu.institution} logo`}
-                        className="w-12 h-12 object-contain flex-shrink-0"
+                        className="w-12 h-12 object-contain flex-shrink-0 transition-transform duration-300 hover:scale-110"
                       />
                     )}
                     <div>
@@ -292,12 +287,12 @@ const About = () => {
                     </div>
                   </div>
                   <div className="mt-2 md:mt-0 flex flex-col md:items-end gap-2">
-                    <Badge variant="outline" className="hover-scale transition-all duration-300">
+                    <Badge variant="outline" className="hover:scale-105 transition-all duration-300">
                       {edu.period}
                     </Badge>
                     <Badge 
                       variant={edu.status === "Completed" ? "default" : "secondary"} 
-                      className="hover-scale transition-all duration-300"
+                      className="hover:scale-105 transition-all duration-300"
                     >
                       {edu.status}
                     </Badge>
@@ -335,7 +330,7 @@ const About = () => {
                       <Badge 
                         key={skillIdx} 
                         variant="secondary"
-                        className="hover-scale transition-all duration-300 text-xs"
+                        className="hover:scale-105 transition-all duration-300 text-xs"
                       >
                         {skill}
                       </Badge>
@@ -348,18 +343,18 @@ const About = () => {
         </div>
 
         {/* Hobbies */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.1s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <Heart className="h-6 w-6 text-primary mr-2" />
             Hobbies & Interests
           </h2>
-          <Card className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20">
+          <Card className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {hobbies.map((hobby, index) => {
+              {hobbies.map((hobby) => {
                 const IconComponent = { ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio }[hobby.icon];
                 return (
-                  <div key={hobby.name} className="flex items-center gap-3 animate-fade-in group/hobby hover-scale hover:bg-primary/5 p-2 rounded-lg transition-all duration-300" style={{ animationDelay: `${0.05 + (index * 0.03)}s` }}>
-                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0 group-hover/hobby:scale-110 group-hover/hobby:rotate-12 transition-all duration-300" />}
+                  <div key={hobby.name} className="flex items-center gap-3 group/hobby hover:scale-105 hover:bg-primary/5 p-2 rounded-lg transition-all duration-300">
+                    {IconComponent && <IconComponent className="h-5 w-5 text-primary flex-shrink-0 group-hover/hobby:scale-110 transition-transform duration-300" />}
                     <span className="text-sm text-muted-foreground group-hover/hobby:text-foreground transition-colors">{hobby.name}</span>
                   </div>
                 );
@@ -369,22 +364,21 @@ const About = () => {
         </div>
 
         {/* Skills */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <TrendingUp className="h-6 w-6 text-primary mr-2" />
             Core Competencies
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skillSet, index) => (
-              <Card key={skillSet.category} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
+              <Card key={skillSet.category} className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <h3 className="font-semibold text-foreground mb-4">{skillSet.category}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {skillSet.items.map((skill, skillIndex) => (
+                  {skillSet.items.map((skill) => (
                     <Badge 
                       key={skill} 
                       variant="secondary"
-                      className="hover-scale transition-all duration-300"
-                      style={{ animationDelay: `${0.2 + (index * 0.1) + (skillIndex * 0.02)}s` }}
+                      className="hover:scale-105 transition-all duration-300"
                     >
                       {skill}
                     </Badge>
@@ -396,20 +390,20 @@ const About = () => {
         </div>
 
         {/* Certifications */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <Award className="h-6 w-6 text-primary mr-2" />
             Certifications
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
-              <Card key={index} className="card-gradient p-4 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.3 + (index * 0.05)}s` }}>
+              <Card key={index} className="card-gradient p-4 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex-1">
                     <h4 className="font-semibold text-foreground text-sm leading-tight mb-1">{cert.name}</h4>
                     <p className="text-primary font-medium text-sm">{cert.issuer}</p>
                   </div>
-                  <Badge variant="outline" className="text-xs hover-scale transition-all duration-300 ml-2">
+                  <Badge variant="outline" className="text-xs hover:scale-105 transition-all duration-300 ml-2">
                     {cert.date}
                   </Badge>
                 </div>
@@ -422,15 +416,15 @@ const About = () => {
         </div>
 
         {/* Key Achievements */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <BookOpen className="h-6 w-6 text-primary mr-2" />
             Key Achievements
           </h2>
-          <Card className="card-gradient p-6 animate-scale-in hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: "0.4s" }}>
+          <Card className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
             <div className="grid md:grid-cols-2 gap-4">
               {achievements.map((achievement, index) => (
-                <div key={index} className="flex items-start animate-slide-up" style={{ animationDelay: `${0.4 + (index * 0.05)}s` }}>
+                <div key={index} className="flex items-start">
                   <CheckCircle2 className="w-4 h-4 text-success mt-1 mr-3 flex-shrink-0" />
                   <p className="text-muted-foreground">{achievement}</p>
                 </div>
@@ -440,21 +434,21 @@ const About = () => {
         </div>
 
         {/* Awards */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.45s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <Trophy className="h-6 w-6 text-primary mr-2" />
             Honors & Awards
           </h2>
           <div className="space-y-4">
             {awards.map((award, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.45 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div className="flex items-start gap-4 flex-1">
                     {award.logo && (
                       <img 
                         src={award.logo} 
                         alt={`${award.issuer} logo`}
-                        className="w-12 h-12 object-contain flex-shrink-0"
+                        className="w-12 h-12 object-contain flex-shrink-0 transition-transform duration-300 hover:scale-110"
                       />
                     )}
                     <div>
@@ -462,7 +456,7 @@ const About = () => {
                       <p className="text-muted-foreground text-sm">Issued by {award.issuer}</p>
                     </div>
                   </div>
-                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                  <Badge variant="outline" className="hover:scale-105 transition-all duration-300 mt-2 md:mt-0">
                     {award.date}
                   </Badge>
                 </div>
@@ -473,21 +467,21 @@ const About = () => {
         </div>
 
         {/* Organizations */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <Building2 className="h-6 w-6 text-primary mr-2" />
             Organizations
           </h2>
           <div className="space-y-4">
             {organizations.map((org, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.5 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div className="flex items-start gap-4 flex-1">
                     {org.logo && (
                       <img 
                         src={org.logo} 
                         alt={`${org.name} logo`}
-                        className="w-12 h-12 object-contain flex-shrink-0"
+                        className="w-12 h-12 object-contain flex-shrink-0 transition-transform duration-300 hover:scale-110"
                       />
                     )}
                     <div>
@@ -498,7 +492,7 @@ const About = () => {
                       )}
                     </div>
                   </div>
-                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                  <Badge variant="outline" className="hover:scale-105 transition-all duration-300 mt-2 md:mt-0">
                     {org.period}
                   </Badge>
                 </div>
@@ -509,21 +503,21 @@ const About = () => {
         </div>
 
         {/* Volunteer Experience */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.55s" }}>
+        <div className="mb-12 animate-fade-in">
           <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
             <HandHeart className="h-6 w-6 text-primary mr-2" />
             Volunteer Experience
           </h2>
           <div className="space-y-4">
             {volunteerExperience.map((volunteer, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.55 + (index * 0.1)}s` }}>
+              <Card key={index} className="card-gradient p-6 hover:scale-[1.02] transition-all duration-500 hover:shadow-xl hover:border-primary/20">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                   <div className="flex items-start gap-4 flex-1">
                     {volunteer.logo && (
                       <img 
                         src={volunteer.logo} 
                         alt={`${volunteer.organization} logo`}
-                        className="w-12 h-12 object-contain flex-shrink-0"
+                        className="w-12 h-12 object-contain flex-shrink-0 transition-transform duration-300 hover:scale-110"
                       />
                     )}
                     <div>
@@ -532,7 +526,7 @@ const About = () => {
                       <p className="text-muted-foreground text-xs mt-1">{volunteer.category}</p>
                     </div>
                   </div>
-                  <Badge variant="outline" className="hover-scale transition-all duration-300 mt-2 md:mt-0">
+                  <Badge variant="outline" className="hover:scale-105 transition-all duration-300 mt-2 md:mt-0">
                     {volunteer.period}
                   </Badge>
                 </div>
@@ -550,13 +544,13 @@ const About = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        <div className="text-center mt-16 animate-fade-in">
           <p className="text-muted-foreground mb-4">
             Interested in collaborating or learning more about my work?
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-all duration-300 story-link hover-scale"
+            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-all duration-300 hover:scale-105"
           >
             Let's connect
             <span className="ml-2">→</span>
