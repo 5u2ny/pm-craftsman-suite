@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, Briefcase, FolderOpen } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Send, FileDown, Eye, FolderOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
@@ -71,13 +71,6 @@ const Hero = () => {
 
             {/* Secondary Actions */}
             <div className="flex gap-4 animate-slide-up" style={{ animationDelay: "1.2s" }}>
-              <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
-                <Link to="/case-studies" className="flex items-center gap-2">
-                  <Briefcase className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  <span className="font-medium">Case Studies</span>
-                </Link>
-              </Button>
-              
               <Button asChild variant="ghost" size="lg" className="group hover:bg-accent/10 transition-all duration-300 px-6 py-3">
                 <Link to="/projects" className="flex items-center gap-2">
                   <FolderOpen className="h-5 w-5 transition-transform group-hover:scale-110" />
