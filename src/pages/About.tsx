@@ -22,47 +22,37 @@ const About = () => {
     }
   ];
 
-  const experience = [
-    {
-      role: "Lead AI Product Manager Intern",
-      company: "IPSERLAB (Stealth AI Startup)",
-      period: "May 2025 - Ongoing",
-      description: "Leading AI-powered travel planning platform development from 0-to-1, architecting multi-disciplinary teams and ownership models while earning promotion in 4 weeks."
-    },
-    {
-      role: "Product Analyst (Growth Marketing Specialist)",
-      company: "ASANIFY",
-      period: "Sep 2022 - Aug 2023",
-      description: "Spearheaded CRM automation and audience segmentation strategy driving 18% revenue efficiency increase and 27% boost in lead conversion for HR and Payroll automation software."
-    },
-    {
-      role: "Business Development Associate",
-      company: "YOCKET",
-      period: "Mar 2022 - Sep 2022",
-      description: "Collaborated with product team to redesign user qualification journeys, optimizing conversion funnel and improving conversion efficiency by 35% for study-abroad platform."
-    },
-    {
-      role: "Product-led Growth Analyst",
-      company: "LEADLE",
-      period: "Oct 2021 - Mar 2022",
-      description: "Optimized user activation paths analyzing churn signals and MVP-stage feedback, boosting SQL volume by 20% and cutting churn by 17% for B2B SaaS growth platform."
-    }
-  ];
-
   const education = [
     {
-      degree: "Master of Business Administration (MBA)",
+      degree: "Master of Business Administration - MBA",
       field: "Business Analytics & Marketing",
-      institution: "William & Mary",
-      period: "2024 - 2026 (Expected)",
-      status: "In Progress"
+      institution: "William & Mary – Raymond A. Mason School of Business",
+      period: "Aug 2024 - May 2026",
+      status: "In Progress",
+      activities: "MBAA",
+      focus: "Product Management, GenAI, UX Strategy, and Data-Driven Decision-Making",
+      highlights: [
+        "Applying product skills in a real-world AI PM internship at IpserLab, owning UX, prompts, and user feedback loops",
+        "Actively developing skills in GTM strategy, prompt engineering, and rapid prototyping",
+        "VP of AI & IT Club"
+      ],
+      skills: ["Product Management", "Data-driven Decision Making", "GenAI", "UX Strategy"]
     },
     {
-      degree: "Bachelor of Technology (BTech)",
-      field: "Computer Science Engineering",
+      degree: "Bachelor of Technology - BTech",
+      field: "Computer Science and Engineering",
       institution: "Karunya Institute of Technology and Sciences",
-      period: "2017 - 2021",
-      status: "Completed"
+      period: "Jul 2017 - May 2021",
+      status: "Completed",
+      grade: "3.81/4.00",
+      activities: "Event Head – WARTECH 2019 (Tech Fest), IT & Finance Head – Computer Society of India, Karunya Chapter, Volunteer – NSS (National Service Scheme) – Social impact & campus engagement, Team Coordinator – KEMT, South India's largest high school sports event, Member – Photography Club",
+      highlights: [
+        "Focused on computer systems, software engineering, and applied problem-solving",
+        "Innovation Day Winner (2020) – Recognized for technical innovation and user-first system design",
+        "Gained early exposure to user-facing solutions and backend logic, foundation for later product thinking",
+        "Developed strong technical grounding in Python, SQL, and system architecture"
+      ],
+      skills: ["Problem Solving", "Leadership", "Python", "SQL", "System Architecture"]
     }
   ];
 
@@ -240,14 +230,17 @@ const About = () => {
           <div className="space-y-6">
             {education.map((edu, index) => (
               <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.2 + (index * 0.1)}s` }}>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
                     <p className="text-primary font-medium">{edu.field}</p>
                     <p className="text-muted-foreground text-sm">{edu.institution}</p>
+                    {edu.grade && (
+                      <p className="text-muted-foreground text-sm font-medium mt-1">Grade: {edu.grade}</p>
+                    )}
                   </div>
-                  <div className="mt-2 md:mt-0 flex flex-col md:items-end">
-                    <Badge variant="outline" className="mb-2 hover-scale transition-all duration-300">
+                  <div className="mt-2 md:mt-0 flex flex-col md:items-end gap-2">
+                    <Badge variant="outline" className="hover-scale transition-all duration-300">
                       {edu.period}
                     </Badge>
                     <Badge 
@@ -258,30 +251,46 @@ const About = () => {
                     </Badge>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Experience */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
-            <Award className="h-6 w-6 text-primary mr-2" />
-            Experience
-          </h2>
-          <div className="space-y-6">
-            {experience.map((job, index) => (
-              <Card key={index} className="card-gradient p-6 animate-slide-up hover-lift transition-all duration-500 hover:shadow-xl hover:border-primary/20" style={{ animationDelay: `${0.3 + (index * 0.1)}s` }}>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">{job.role}</h3>
-                    <p className="text-primary font-medium">{job.company}</p>
+                
+                {edu.activities && (
+                  <div className="mb-3">
+                    <p className="text-sm text-muted-foreground">
+                      <span className="font-medium text-foreground">Activities and societies:</span> {edu.activities}
+                    </p>
                   </div>
-                  <Badge variant="outline" className="mt-2 md:mt-0 hover-scale transition-all duration-300">
-                    {job.period}
-                  </Badge>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">{job.description}</p>
+                )}
+                
+                {edu.focus && (
+                  <div className="mb-3 p-3 bg-primary/5 rounded-lg border border-primary/10">
+                    <p className="text-sm font-medium text-primary mb-1">Focus:</p>
+                    <p className="text-sm text-foreground">{edu.focus}</p>
+                  </div>
+                )}
+                
+                {edu.highlights && edu.highlights.length > 0 && (
+                  <div className="mb-4 space-y-2">
+                    {edu.highlights.map((highlight, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <CheckCircle2 className="w-4 h-4 text-success mt-0.5 mr-2 flex-shrink-0" />
+                        <p className="text-sm text-muted-foreground">{highlight}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {edu.skills && edu.skills.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {edu.skills.map((skill, skillIdx) => (
+                      <Badge 
+                        key={skillIdx} 
+                        variant="secondary"
+                        className="hover-scale transition-all duration-300 text-xs"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
               </Card>
             ))}
           </div>
