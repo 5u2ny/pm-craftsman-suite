@@ -1,5 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
@@ -68,15 +70,14 @@ const ProjectsShowcase = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
+          <p className="text-muted-foreground mb-6">
             Want to see more detailed case studies?
           </p>
-          <Link
-            to="/projects"
-            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-colors"
-          >
-            View All Projects
-            <span className="ml-2">→</span>
+          <Link to="/projects">
+            <Button size="lg" className="group hover-scale">
+              View All Projects
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </Link>
         </div>
       </div>
