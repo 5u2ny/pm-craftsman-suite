@@ -70,24 +70,9 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed space-y-4">
+          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
             <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.8s" }}>
-              <span className="text-foreground font-semibold">MBA Candidate</span> at William & Mary, specializing in{" "}
-              <span className="text-primary font-semibold">Business Analytics</span>
-            </p>
-            
-            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "1s" }}>
-              <span className="text-foreground font-semibold">B.Tech</span> in Computer Science & Engineering
-            </p>
-            
-            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "1.2s" }}>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent font-bold">
-                AI Product Manager
-              </span>{" "}
-              with experience building{" "}
-              <span className="text-foreground font-semibold">0-to-1 products</span> and driving{" "}
-              <span className="text-foreground font-semibold">growth</span> through{" "}
-              <span className="text-foreground font-semibold">data-driven strategies</span>
+              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
             </p>
           </div>
 
