@@ -129,20 +129,20 @@ const CavoAiTravel = () => {
               <div className="h-px w-12 bg-primary"></div>
               <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Overview</h2>
             </div>
-            <h3 className="group cursor-default text-center text-5xl sm:text-6xl lg:text-7xl font-hero font-black text-foreground mb-12 leading-[1.1] tracking-tight hover:tracking-normal transition-all duration-500">
-              <span className="text-gradient block w-full transform hover:scale-105 hover:animate-glow-pulse transition-all duration-300">
-                Emotionally Intelligent Travel Companion
-              </span>
-            </h3>
-            <div className="max-w-4xl mx-auto">
-              <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed text-center">
-                Cavo redefines how travelers plan and emotionally navigate trips. As Lead AI Product Manager, 
-                I'm driving the 0-to-1 product vision—combining AI, design, and user empathy to create a 
-                context-aware travel assistant that adapts to mood, intent, and location. The product integrates 
-                multi-agent LLMs, emotional-safety logic, and dynamic itinerary generation to deliver real-time, 
-                adaptive experiences.
-              </p>
-            </div>
+          </div>
+          <h3 className="group cursor-default text-center text-5xl sm:text-6xl lg:text-7xl font-hero font-black text-foreground mb-12 leading-[1.1] tracking-tight hover:tracking-normal transition-all duration-500 px-4">
+            <span className="text-gradient block w-full transform hover:scale-105 hover:animate-glow-pulse transition-all duration-300">
+              Emotionally Intelligent Travel Companion
+            </span>
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed text-center">
+              Cavo redefines how travelers plan and emotionally navigate trips. As Lead AI Product Manager, 
+              I'm driving the 0-to-1 product vision—combining AI, design, and user empathy to create a 
+              context-aware travel assistant that adapts to mood, intent, and location. The product integrates 
+              multi-agent LLMs, emotional-safety logic, and dynamic itinerary generation to deliver real-time, 
+              adaptive experiences.
+            </p>
           </div>
         </div>
       </section>
