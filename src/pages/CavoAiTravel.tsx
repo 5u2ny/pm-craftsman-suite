@@ -8,7 +8,6 @@ import cavoWelcomeImage from "@/assets/cavo-welcome-ui.png";
 import cavoChatImage from "@/assets/cavo-chat-ui.png";
 import cavoEnergyImage from "@/assets/cavo-energy-modal.png";
 import cavoItineraryImage from "@/assets/cavo-itinerary-real.png";
-import cavoActivitiesImage from "@/assets/cavo-activities-ui.png";
 
 const CavoAiTravel = () => {
   const tags = ["AI Product Management", "UX Strategy", "Prompt Engineering", "Product Development"];
@@ -196,12 +195,6 @@ const CavoAiTravel = () => {
               <img src={cavoItineraryImage} alt="Cavo Itinerary View" className="w-full h-auto" />
               <CardContent className="pt-4">
                 <p className="text-sm text-muted-foreground text-center">Daily Itinerary</p>
-              </CardContent>
-            </Card>
-            <Card className="overflow-hidden hover-lift transition-all duration-300">
-              <img src={cavoActivitiesImage} alt="Cavo Activities" className="w-full h-auto" />
-              <CardContent className="pt-4">
-                <p className="text-sm text-muted-foreground text-center">Activity Recommendations</p>
               </CardContent>
             </Card>
           </div>
