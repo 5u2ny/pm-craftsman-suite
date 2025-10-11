@@ -46,7 +46,7 @@ const Hero = () => {
             <Profile4D />
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-3 tracking-tight">
             <span className="block text-foreground mb-2 font-hero font-extrabold tracking-tight" style={{
             animationDelay: "0.4s"
           }}>
