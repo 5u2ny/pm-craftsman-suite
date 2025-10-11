@@ -159,7 +159,7 @@ const CavoAiTravel = () => {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-12 animate-fade-in">
               <Sparkles className="h-7 w-7 text-primary animate-pulse" />
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Our Vision</h2>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Vision</h2>
               <Sparkles className="h-7 w-7 text-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
             </div>
             
