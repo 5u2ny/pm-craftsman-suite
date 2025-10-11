@@ -75,14 +75,14 @@ const Hero = () => {
           </div>
 
           {/* Redesigned Interactive Social Links */}
-          <div className="flex items-center justify-center gap-4 animate-slide-up" style={{
+          <div className="flex flex-wrap items-center justify-center gap-4 animate-slide-up" style={{
           animationDelay: "1.4s"
         }}>
             {/* Email Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
-                <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
+              <Button variant="ghost" size="lg" className="relative h-14 px-6 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden group" asChild>
+                <a href="mailto:sunnysoni.mba@proton.me" className="flex items-center gap-3">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
                   
@@ -91,26 +91,17 @@ const Hero = () => {
                     <div className="absolute inset-[-2px] bg-gradient-to-r from-primary via-accent to-primary rounded-2xl animate-spin-slow blur-sm"></div>
                   </div>
                   
-                  <Send className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-12 group-hover:scale-125" />
+                  <Send className="h-5 w-5 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-12" />
+                  <span className="relative z-10 font-medium text-muted-foreground group-hover:text-white transition-all duration-300">Email Me</span>
                 </a>
               </Button>
-              
-              {/* Enhanced tooltip */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-md opacity-50"></div>
-                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
-                    Email Me
-                  </span>
-                </div>
-              </div>
             </div>
 
             {/* LinkedIn Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
-                <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Button variant="ghost" size="lg" className="relative h-14 px-6 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden group" asChild>
+                <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
                   
@@ -119,26 +110,17 @@ const Hero = () => {
                     <div className="absolute inset-[-2px] bg-gradient-to-r from-accent via-primary to-accent rounded-2xl animate-spin-slow blur-sm"></div>
                   </div>
                   
-                  <Linkedin className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:rotate-6" />
+                  <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-6" />
+                  <span className="relative z-10 font-medium text-muted-foreground group-hover:text-white transition-all duration-300">LinkedIn</span>
                 </a>
               </Button>
-              
-              {/* Enhanced tooltip */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary blur-md opacity-50"></div>
-                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-accent to-primary px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
-                    Connect on LinkedIn
-                  </span>
-                </div>
-              </div>
             </div>
 
             {/* GitHub Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
-                <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Button variant="ghost" size="lg" className="relative h-14 px-6 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden group" asChild>
+                <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
                   
@@ -147,26 +129,17 @@ const Hero = () => {
                     <div className="absolute inset-[-2px] bg-gradient-to-r from-primary via-accent to-primary rounded-2xl animate-spin-slow blur-sm"></div>
                   </div>
                   
-                  <Github className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:-rotate-12" />
+                  <Github className="h-5 w-5 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:-rotate-12" />
+                  <span className="relative z-10 font-medium text-muted-foreground group-hover:text-white transition-all duration-300">GitHub</span>
                 </a>
               </Button>
-              
-              {/* Enhanced tooltip */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-md opacity-50"></div>
-                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
-                    View on GitHub
-                  </span>
-                </div>
-              </div>
             </div>
 
             {/* Download Resume Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
-                <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf" aria-label="Download Resume">
+              <Button variant="ghost" size="lg" className="relative h-14 px-6 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden group" asChild>
+                <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf" className="flex items-center gap-3">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
                   
@@ -175,19 +148,10 @@ const Hero = () => {
                     <div className="absolute inset-[-2px] bg-gradient-to-r from-accent via-primary to-accent rounded-2xl animate-spin-slow blur-sm"></div>
                   </div>
                   
-                  <FileDown className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:rotate-12" />
+                  <FileDown className="h-5 w-5 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:rotate-12" />
+                  <span className="relative z-10 font-medium text-muted-foreground group-hover:text-white transition-all duration-300">Resume</span>
                 </a>
               </Button>
-              
-              {/* Enhanced tooltip */}
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary blur-md opacity-50"></div>
-                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-accent to-primary px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
-                    Download Resume
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
