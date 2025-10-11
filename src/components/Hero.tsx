@@ -62,42 +62,12 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-5xl mx-auto leading-relaxed group/text relative px-6 animate-fade-in" style={{
+          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-muted-foreground animate-fade-in transition-colors duration-300 hover:text-foreground" style={{
             animationDelay: "0.8s"
           }}>
-            {/* Multiple animated background layers */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-2xl opacity-0 group-hover/text:opacity-100 transition-all duration-1000 animate-pulse"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl opacity-0 group-hover/text:opacity-100 transition-opacity duration-700"></div>
-            
-            {/* Decorative corner accents */}
-            <div className="absolute -top-2 -left-2 w-16 h-16 border-l-2 border-t-2 border-primary/20 rounded-tl-2xl opacity-0 group-hover/text:opacity-100 transition-all duration-500"></div>
-            <div className="absolute -bottom-2 -right-2 w-16 h-16 border-r-2 border-b-2 border-accent/20 rounded-br-2xl opacity-0 group-hover/text:opacity-100 transition-all duration-500 delay-100"></div>
-            
-            <div className="relative p-8 sm:p-10 lg:p-12 rounded-3xl border-2 border-border/50 bg-card/20 backdrop-blur-md transition-all duration-700 group-hover/text:border-primary/30 group-hover/text:bg-card/40 group-hover/text:shadow-2xl group-hover/text:shadow-primary/10 group-hover/text:scale-[1.02]">
-              {/* Animated gradient text with staggered word animations */}
-              <p className="text-center font-medium tracking-wide">
-                {("AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.").split(' ').map((word, index) => (
-                  <span 
-                    key={index}
-                    className="inline-block relative transition-all duration-500 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:font-bold cursor-default mr-2 text-muted-foreground group-hover/text:text-foreground animate-fade-in"
-                    style={{
-                      animationDelay: `${0.9 + index * 0.03}s`
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.textShadow = '0 0 20px hsl(var(--primary))';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.textShadow = 'none';
-                    }}
-                  >
-                    {word}
-                  </span>
-                ))}
-              </p>
-              
-              {/* Animated underline accent */}
-              <div className="mt-6 h-1 w-0 bg-gradient-to-r from-primary via-accent to-primary rounded-full mx-auto transition-all duration-1000 group-hover/text:w-full"></div>
-            </div>
+              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
+            </p>
           </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
@@ -212,6 +182,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
 };
 export default Hero;
