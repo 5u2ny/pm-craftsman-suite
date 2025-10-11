@@ -47,12 +47,12 @@ const CavoAiTravel = () => {
     <div className="min-h-screen bg-background">
       {/* Back Navigation */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        <Link to="/projects">
-          <Button variant="ghost" className="group hover:bg-muted/50 transition-all duration-300 flex items-center gap-2">
+        <Button variant="ghost" asChild className="group hover:bg-muted/50 transition-all duration-300">
+          <Link to="/projects">
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             <span>Back to Projects</span>
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </div>
 
       {/* Hero Section - Full Width Image */}
