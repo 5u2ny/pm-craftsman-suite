@@ -184,10 +184,9 @@ const CavoAiTravel = () => {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-12 animate-fade-in">
-              <Sparkles className="h-7 w-7 text-primary animate-pulse" />
+            <div className="flex items-center gap-3 mb-16 animate-fade-in">
+              <div className="h-px w-12 bg-primary"></div>
               <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Vision</h2>
-              <Sparkles className="h-7 w-7 text-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
             </div>
             
             <div className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-2 border-primary/20 rounded-3xl p-12 sm:p-16 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 cursor-default animate-scale-in">
@@ -204,16 +203,16 @@ const CavoAiTravel = () => {
                 </span>
               </p>
               
-              <div className="mt-8 flex justify-center gap-8 text-muted-foreground">
+              <div className="mt-8 flex flex-wrap justify-center gap-6 sm:gap-8 text-muted-foreground">
                 <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Personalized</span>
                 </div>
-                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300" style={{ animationDelay: "0.2s" }}>
+                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Adaptive</span>
                 </div>
-                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300" style={{ animationDelay: "0.4s" }}>
+                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
                   <span className="text-sm font-medium">Intelligent</span>
                 </div>
