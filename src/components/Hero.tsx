@@ -40,13 +40,13 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* 4D Profile Picture */}
-          <div className="mb-8 flex justify-center animate-scale-in" style={{
+          <div className="mb-6 flex justify-center animate-scale-in" style={{
           animationDelay: "0.2s"
         }}>
             <Profile4D />
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-3 tracking-tight">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 tracking-tight">
             <span className="block text-foreground mb-2 font-hero font-extrabold tracking-tight" style={{
             animationDelay: "0.4s"
           }}>
@@ -62,7 +62,7 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto font-display">
+          <div className="text-lg sm:text-xl mb-6 max-w-3xl mx-auto font-display">
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
               
@@ -96,10 +96,6 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="flex flex-col items-center gap-6 mb-12">
-            {/* Primary Actions */}
           </div>
 
           {/* Redesigned Interactive Social Links */}
