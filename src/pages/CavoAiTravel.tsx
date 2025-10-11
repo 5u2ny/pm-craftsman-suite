@@ -26,10 +26,6 @@ const CavoAiTravel = () => {
       description: "Stores local trip context for persistent, low-latency responses"
     },
     {
-      title: "Collaborative Planning",
-      description: "Real-time co-planning between friends using AI suggestions and preference matching"
-    },
-    {
       title: "Zero-Budget MVP Architecture",
       description: "Built using LangChain, open APIs, and modular prompt systems for scalable iteration"
     }
