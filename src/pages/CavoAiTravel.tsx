@@ -86,35 +86,50 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Project Meta */}
-      <section className="border-y border-border/50 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl">
-            <div className="group cursor-default">
-              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
-                  <Calendar className="h-5 w-5" />
+      <section className="border-y border-border/50 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/5"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <Calendar className="h-6 w-6 text-primary" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors duration-300">Timeline</span>
                 </div>
-                <span className="text-sm font-semibold uppercase tracking-wider">Timeline</span>
+                <p className="text-2xl text-foreground font-bold font-hero">May 2025 - Ongoing</p>
+                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
-              <p className="text-xl text-foreground font-medium">May 2025 - Ongoing</p>
             </div>
-            <div className="group cursor-default">
-              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
-                  <Briefcase className="h-5 w-5" />
+
+            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                    <Briefcase className="h-6 w-6 text-accent" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors duration-300">Organization</span>
                 </div>
-                <span className="text-sm font-semibold uppercase tracking-wider">Organization</span>
+                <p className="text-2xl text-foreground font-bold font-hero">IpserLab</p>
+                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-accent to-primary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
-              <p className="text-xl text-foreground font-medium">IpserLab</p>
             </div>
-            <div className="group cursor-default">
-              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
-                  <Users className="h-5 w-5" />
+
+            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors duration-300">Role</span>
                 </div>
-                <span className="text-sm font-semibold uppercase tracking-wider">Role</span>
+                <p className="text-2xl text-foreground font-bold font-hero">Lead AI Product Manager</p>
+                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
-              <p className="text-xl text-foreground font-medium">Lead AI Product Manager</p>
             </div>
           </div>
         </div>
