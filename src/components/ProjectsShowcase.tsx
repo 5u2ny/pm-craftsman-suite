@@ -11,7 +11,7 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       title: "Cavo – AI Travel Companion",
-      tagline: "AI Product Management | IpserLab, May 2025 – Ongoing",
+      tagline: "AI Product Management • IpserLab, May 2025 Ongoing",
       description: "Leading 0-to-1 development of an AI-powered travel companion that personalizes trips using emotional-safety logic, multi-agent LLMs, and dynamic itinerary generation.",
       image: cavoHeroImage,
       metrics: [

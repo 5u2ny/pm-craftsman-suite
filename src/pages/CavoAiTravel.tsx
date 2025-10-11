@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import cavoHeroImage from "@/assets/cavo-hero.jpg";
+import cavoWelcomeImage from "@/assets/cavo-welcome-ui.png";
+import cavoChatImage from "@/assets/cavo-chat-ui.png";
+import cavoEnergyImage from "@/assets/cavo-energy-modal.png";
+import cavoItineraryImage from "@/assets/cavo-itinerary-ui.png";
+import cavoActivitiesImage from "@/assets/cavo-activities-ui.png";
 
 const CavoAiTravel = () => {
   const tags = ["AI Product Management", "UX Strategy", "Prompt Engineering", "Product Development"];
@@ -49,7 +54,7 @@ const CavoAiTravel = () => {
   const roadmap = [
     {
       phase: "Phase 1: MVP Development",
-      timeline: "May–Aug 2025",
+      timeline: "May - Aug 2025",
       description: "Core conversational logic, emotion modes, and prototype UI"
     },
     {
@@ -59,7 +64,7 @@ const CavoAiTravel = () => {
     },
     {
       phase: "Phase 3: Beta Launch",
-      timeline: "Oct–Dec 2025",
+      timeline: "Oct - Dec 2025",
       description: "Web interface + AI-assisted trip planning demo for early partners"
     }
   ];
@@ -80,10 +85,10 @@ const CavoAiTravel = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-foreground">
-            Cavo – <span className="text-gradient">AI Travel Companion</span>
+            Cavo <span className="text-gradient">AI Travel Companion</span>
           </h1>
           <p className="text-xl text-primary mb-6 font-medium">
-            AI Product Management | UX Strategy | Prompt Engineering | Product Development
+            AI Product Management • UX Strategy • Prompt Engineering • Product Development
           </p>
           
           {/* Tags */}
@@ -133,7 +138,7 @@ const CavoAiTravel = () => {
             <p className="text-lg leading-relaxed mb-4">
               Cavo is an AI-powered travel companion being developed to redefine how travelers plan, personalize, 
               and emotionally navigate trips. As Lead AI Product Manager, I am driving the 0-to-1 product vision, 
-              strategy, and build execution—combining AI, design, and user empathy to create a context-aware travel 
+              strategy, and build execution combining AI, design, and user empathy to create a context-aware travel 
               assistant that adapts to user mood, intent, and location.
             </p>
             <p className="text-lg leading-relaxed">
@@ -156,11 +161,50 @@ const CavoAiTravel = () => {
           <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
             <CardContent className="pt-6">
               <p className="text-xl font-medium text-foreground leading-relaxed">
-                To create a personalized AI travel partner that offers emotional and contextual assistance—helping 
+                To create a personalized AI travel partner that offers emotional and contextual assistance helping 
                 users plan, discover, and adapt trips with intelligence, empathy, and precision.
               </p>
             </CardContent>
           </Card>
+        </section>
+
+        <div className="border-t border-border my-12"></div>
+
+        {/* Product Screenshots */}
+        <section className="mb-16 animate-slide-up">
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Product Interface</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <Card className="overflow-hidden hover-lift transition-all duration-300">
+              <img src={cavoWelcomeImage} alt="Cavo Welcome Screen" className="w-full h-auto" />
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground text-center">Welcome & Mode Selection</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover-lift transition-all duration-300">
+              <img src={cavoChatImage} alt="Cavo Chat Interface" className="w-full h-auto" />
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground text-center">Conversational Planning</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover-lift transition-all duration-300">
+              <img src={cavoEnergyImage} alt="Cavo Energy Modal" className="w-full h-auto" />
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground text-center">Energy Level Adaptation</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover-lift transition-all duration-300">
+              <img src={cavoItineraryImage} alt="Cavo Itinerary View" className="w-full h-auto" />
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground text-center">Daily Itinerary</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover-lift transition-all duration-300">
+              <img src={cavoActivitiesImage} alt="Cavo Activities" className="w-full h-auto" />
+              <CardContent className="pt-4">
+                <p className="text-sm text-muted-foreground text-center">Activity Recommendations</p>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         <div className="border-t border-border my-12"></div>
