@@ -76,11 +76,7 @@ const Hero = () => {
             animationDelay: "1s"
           }}>
               <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 font-medium">
-                <Link to="/about" className="flex items-center gap-3">
-                  <Eye className="h-5 w-5 transition-transform group-hover:scale-110" />
-                  View Experience
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                
               </Button>
               
               <Button size="lg" variant="outline" className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium" asChild>
@@ -182,6 +178,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section>;
 };
 export default Hero;
