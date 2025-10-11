@@ -50,6 +50,9 @@ const ToolsSkills = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gradient mb-4">
             Tools & Skills
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Technologies and expertise I use to bring products to life
+          </p>
           
           
           {selectedSkills.length > 0 && <div className="mt-4 animate-fade-in">
