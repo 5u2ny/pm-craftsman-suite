@@ -64,19 +64,77 @@ const Hero = () => {
           
           <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
             <div className="relative group">
-              {/* Subtle glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl"></div>
+              {/* Animated gradient glow */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl"></div>
               
-              <div className="relative bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-8 sm:p-10 group-hover:border-primary/20 transition-all duration-500 animate-fade-in" style={{
+              {/* Floating accent elements */}
+              <div className="absolute -top-3 -right-3 w-24 h-24 bg-primary/5 rounded-full blur-2xl animate-float opacity-50"></div>
+              <div className="absolute -bottom-3 -left-3 w-32 h-32 bg-accent/5 rounded-full blur-2xl animate-float-delay opacity-50"></div>
+              
+              <div className="relative bg-gradient-to-br from-card/50 via-card/30 to-card/50 backdrop-blur-md border border-border/50 rounded-3xl p-8 sm:p-10 group-hover:border-primary/30 group-hover:shadow-xl group-hover:shadow-primary/5 transition-all duration-700 overflow-hidden animate-fade-in" style={{
                 animationDelay: "0.8s"
               }}>
-                <p className="text-foreground/90 leading-relaxed mb-6">
-                  <span className="font-bold text-primary">AI Product Manager</span> blending technical depth with business insight to craft intelligent, user-centric products. Currently pursuing an <span className="font-semibold text-accent">MBA in Business Analytics</span> at <span className="font-semibold text-primary">William & Mary</span>, with a foundation in <span className="font-semibold text-accent">Computer Science</span>.
-                </p>
+                {/* Subtle animated background pattern */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.05),transparent_50%)]"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--accent)/0.05),transparent_50%)]"></div>
+                </div>
                 
-                <p className="text-foreground/80 leading-relaxed">
-                  I focus on building purposeful <span className="font-semibold text-accent">AI experiences</span> that connect <span className="font-semibold text-primary">data, design, and impact</span> — turning <span className="font-semibold text-accent">complex problems</span> into <span className="font-semibold text-primary">simple, scalable solutions</span> people genuinely value.
-                </p>
+                {/* Corner accent lines */}
+                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-primary/20 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-accent/20 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                
+                <div className="relative z-10 space-y-6">
+                  <p className="text-foreground/90 leading-relaxed animate-fade-in" style={{ animationDelay: "1s" }}>
+                    <span className="inline-block font-bold text-xl sm:text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-default">
+                      AI Product Manager
+                    </span>
+                    {" "}blending{" "}
+                    <span className="inline-block font-semibold text-accent hover:scale-105 hover:text-primary transition-all duration-300 cursor-default">
+                      technical depth
+                    </span>
+                    {" "}with{" "}
+                    <span className="inline-block font-semibold text-primary hover:scale-105 hover:text-accent transition-all duration-300 cursor-default">
+                      business insight
+                    </span>
+                    {" "}to craft intelligent, user-centric products. Currently pursuing an{" "}
+                    <span className="inline-block font-semibold text-primary hover:scale-105 transition-all duration-300 cursor-default">
+                      MBA in Business Analytics
+                    </span>
+                    {" "}at{" "}
+                    <span className="inline-block font-semibold text-accent hover:scale-105 transition-all duration-300 cursor-default">
+                      William & Mary
+                    </span>
+                    , with a foundation in{" "}
+                    <span className="inline-block font-semibold text-primary hover:scale-105 transition-all duration-300 cursor-default">
+                      Computer Science
+                    </span>
+                    .
+                  </p>
+                  
+                  {/* Animated divider */}
+                  <div className="relative h-px w-0 group-hover:w-full transition-all duration-1000 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+                  
+                  <p className="text-foreground/85 leading-relaxed animate-fade-in" style={{ animationDelay: "1.2s" }}>
+                    I focus on building purposeful{" "}
+                    <span className="inline-block font-semibold text-accent hover:scale-105 hover:text-primary transition-all duration-300 cursor-default">
+                      AI experiences
+                    </span>
+                    {" "}that connect{" "}
+                    <span className="inline-block font-semibold text-primary hover:scale-105 hover:text-accent transition-all duration-300 cursor-default">
+                      data, design, and impact
+                    </span>
+                    {" "}— turning{" "}
+                    <span className="inline-block font-semibold text-accent hover:scale-105 hover:text-primary transition-all duration-300 cursor-default">
+                      complex problems
+                    </span>
+                    {" "}into{" "}
+                    <span className="inline-block font-semibold text-primary hover:scale-105 hover:text-accent transition-all duration-300 cursor-default">
+                      simple, scalable solutions
+                    </span>
+                    {" "}people genuinely value.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
