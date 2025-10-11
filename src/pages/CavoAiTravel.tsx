@@ -134,16 +134,13 @@ const CavoAiTravel = () => {
                 Emotionally Intelligent Travel Companion
               </span>
             </h3>
-            <div className="space-y-8">
-              <p className="text-2xl text-muted-foreground leading-relaxed">
-                Cavo redefines how travelers plan, personalize, and emotionally navigate trips. As Lead AI Product Manager, 
-                I'm driving the 0-to-1 product vision, strategy, and build execution combining AI, design, and user empathy 
-                to create a context-aware travel assistant that adapts to user mood, intent, and location.
-              </p>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                The product integrates multi-agent LLMs, emotional-safety logic, and dynamic itinerary generation to deliver 
-                real-time, adaptive experiences. My focus spans user research, system prompt design, and cross-functional 
-                coordination to convert abstract travel goals into actionable workflows.
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed text-center">
+                Cavo redefines how travelers plan and emotionally navigate trips. As Lead AI Product Manager, 
+                I'm driving the 0-to-1 product vision—combining AI, design, and user empathy to create a 
+                context-aware travel assistant that adapts to mood, intent, and location. The product integrates 
+                multi-agent LLMs, emotional-safety logic, and dynamic itinerary generation to deliver real-time, 
+                adaptive experiences.
               </p>
             </div>
           </div>
