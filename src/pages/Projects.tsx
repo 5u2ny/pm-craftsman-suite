@@ -12,11 +12,26 @@ import airlinesDataImage from "@/assets/airlines-data-analysis.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
 import seismixImage from "@/assets/seismix-project.jpg";
+import cavoHeroImage from "@/assets/cavo-hero.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "Cavo – AI Travel Companion",
+      tagline: "AI Product Management | UX Strategy | Prompt Engineering",
+      description: "Leading 0-to-1 development of an AI-powered travel companion that personalizes trips using emotional-safety logic, multi-agent LLMs, and dynamic itinerary generation.",
+      image: cavoHeroImage,
+      metrics: [
+        "Designed adaptive itinerary builder with contextual AI reasoning",
+        "Built emotional safety modes tuned to user mood and context",
+        "Architected zero-budget MVP using LangChain and modular prompts"
+      ],
+      tags: ["AI Product Management", "LLM Systems", "UX Design", "Product Strategy"],
+      slug: "cavo-ai-travel",
+      category: "Products"
+    },
     {
       title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
       tagline: "Undergraduate Research, Spring 2021",
@@ -156,7 +171,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "MBA", "Undergrad"];
+  const categories = ["All", "Products", "MBA", "Undergrad"];
   
   const filteredProjects = activeCategory === "All" 
     ? projects 

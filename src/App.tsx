@@ -17,6 +17,7 @@ import CyberRiskAssessment from "./pages/CyberRiskAssessment";
 import EnergyOneOB from "./pages/EnergyOneOB";
 import AirlinesDataAnalysis from "./pages/AirlinesDataAnalysis";
 import BrewscoveryProject from "./pages/BrewscoveryProject";
+import CavoAiTravel from "./pages/CavoAiTravel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/projects/energyone-organizational-behavior" element={<EnergyOneOB />} />
           <Route path="/projects/airlines-customer-satisfaction" element={<AirlinesDataAnalysis />} />
           <Route path="/projects/brewscovery-subscription" element={<BrewscoveryProject />} />
+          <Route path="/projects/cavo-ai-travel" element={<CavoAiTravel />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:slug" element={<CaseStudy />} />
           <Route path="/projects/:slug" element={<CaseStudy />} />

@@ -2,13 +2,27 @@ import ProjectCard from "./ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import openaiStrategyImage from "@/assets/openai-strategy.jpg";
+import cavoHeroImage from "@/assets/cavo-hero.jpg";
 import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 
 const ProjectsShowcase = () => {
   const navigate = useNavigate();
 
   const projects = [
+    {
+      title: "Cavo – AI Travel Companion",
+      tagline: "AI Product Management | IpserLab, May 2025 – Ongoing",
+      description: "Leading 0-to-1 development of an AI-powered travel companion that personalizes trips using emotional-safety logic, multi-agent LLMs, and dynamic itinerary generation.",
+      image: cavoHeroImage,
+      metrics: [
+        "Designed adaptive itinerary builder with contextual AI reasoning",
+        "Built emotional safety modes tuned to user mood and context",
+        "Architected zero-budget MVP using LangChain and modular prompts"
+      ],
+      tags: ["AI Product Management", "LLM Systems", "UX Design", "Product Strategy"],
+      slug: "cavo-ai-travel",
+      featured: true,
+    },
     {
       title: "Brewscovery – Craft Beer Subscription Model",
       tagline: "MBA Sprint Week, Fall 2024",
@@ -22,19 +36,6 @@ const ProjectsShowcase = () => {
       tags: ["Marketing Strategy", "Financial Modeling", "GTM Strategy", "Subscription Business"],
       slug: "brewscovery-subscription",
       featured: true,
-    },
-    {
-      title: "OpenAI ChatGPT Competitive Strategy",
-      tagline: "MBA Global Competitive Strategy, Spring 2025",
-      description: "Three-phase strategic analysis using PESTEL, Porter's Five Forces, VRIO, and SWOT. Developed implementation roadmap focused on plugin infrastructure and ethical AI leadership.",
-      image: openaiStrategyImage,
-      metrics: [
-        "Multi-framework strategic analysis",
-        "Competitive positioning assessment",
-        "Implementation roadmap developed"
-      ],
-      tags: ["Business Frameworks", "Competitive Strategy", "Market Positioning", "Strategic Planning"],
-      slug: "openai-competitive-strategy",
     },
   ];
 
@@ -54,8 +55,8 @@ const ProjectsShowcase = () => {
             Featured Projects & Case Studies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of academic research projects and strategic analyses 
-            from my MBA program demonstrating analytical and strategic thinking.
+            A selection of product builds, strategic analyses, and academic research 
+            demonstrating hands-on AI product management and strategic thinking.
           </p>
         </div>
 
