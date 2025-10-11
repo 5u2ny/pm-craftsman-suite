@@ -129,10 +129,14 @@ const CavoAiTravel = () => {
               <div className="h-px w-12 bg-primary"></div>
               <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Overview</h2>
             </div>
-            <h3 className="text-4xl sm:text-5xl font-bold text-foreground mb-12 leading-tight">
-              An AI-powered travel companion that personalizes trips using{" "}
-              <span className="text-gradient">emotional intelligence</span> and{" "}
-              <span className="text-gradient">adaptive reasoning</span>
+            <h3 className="group cursor-default text-5xl sm:text-6xl lg:text-7xl font-hero font-black text-foreground mb-12 leading-[1.1] tracking-tight hover:tracking-normal transition-all duration-500">
+              <span className="inline-block hover:animate-glow-pulse transition-all duration-300">
+                Your Intelligent
+              </span>
+              <br />
+              <span className="text-gradient inline-block transform hover:scale-105 transition-transform duration-300">
+                Travel Partner
+              </span>
             </h3>
             <div className="space-y-8">
               <p className="text-2xl text-muted-foreground leading-relaxed">
