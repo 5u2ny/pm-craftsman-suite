@@ -72,20 +72,6 @@ const Hero = () => {
 
           <div className="flex flex-col items-center gap-6 mb-12">
             {/* Primary Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
-            animationDelay: "1s"
-          }}>
-              <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 font-medium">
-                
-              </Button>
-              
-              <Button size="lg" variant="outline" className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium" asChild>
-                <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf">
-                  <FileDown className="h-5 w-5 mr-3 transition-transform group-hover:scale-110" />
-                  Download Resume
-                </a>
-              </Button>
-            </div>
           </div>
 
           {/* Redesigned Interactive Social Links */}
@@ -171,6 +157,34 @@ const Hero = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent blur-md opacity-50"></div>
                   <span className="relative text-sm text-white font-bold bg-gradient-to-r from-primary to-accent px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
                     View on GitHub
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Download Resume Button */}
+            <div className="group/social relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
+              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
+                <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf" aria-label="Download Resume">
+                  {/* Ripple effect */}
+                  <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
+                  
+                  {/* Animated border glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute inset-[-2px] bg-gradient-to-r from-accent via-primary to-accent rounded-2xl animate-spin-slow blur-sm"></div>
+                  </div>
+                  
+                  <FileDown className="h-8 w-8 text-muted-foreground group-hover:text-white transition-all duration-300 relative z-10 group-hover:scale-125 group-hover:rotate-12" />
+                </a>
+              </Button>
+              
+              {/* Enhanced tooltip */}
+              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/social:opacity-100 group-hover/social:-translate-y-2 transition-all duration-300 pointer-events-none">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary blur-md opacity-50"></div>
+                  <span className="relative text-sm text-white font-bold bg-gradient-to-r from-accent to-primary px-4 py-2 rounded-xl shadow-lg whitespace-nowrap block">
+                    Download Resume
                   </span>
                 </div>
               </div>
