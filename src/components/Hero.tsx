@@ -62,17 +62,37 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
+          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto font-display">
             <div className="relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
               
-              <div className="relative bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-8 group-hover:border-primary/30 transition-all duration-300 animate-fade-in" style={{animationDelay: "0.6s"}}>
+              <div className="relative bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-6 sm:p-8 group-hover:border-primary/30 group-hover:shadow-xl transition-all duration-300 animate-fade-in" style={{animationDelay: "0.6s"}}>
                 <p className="text-foreground/90 leading-relaxed mb-4">
-                  <span className="font-semibold text-primary">AI Product Manager</span> blending technical depth with business insight to craft intelligent, user-centric products.
+                  <span className="inline-block font-semibold text-xl text-primary cursor-pointer transition-all duration-300 hover:scale-105 hover:text-primary/90 hover:drop-shadow-[0_0_12px_hsl(var(--primary)/0.5)]">
+                    AI Product Manager
+                  </span> blending{" "}
+                  <span className="inline-block font-medium text-accent cursor-pointer transition-all duration-300 hover:scale-105 hover:text-accent/90 hover:drop-shadow-[0_0_8px_hsl(var(--accent)/0.4)]">
+                    technical depth
+                  </span>{" "}with{" "}
+                  <span className="inline-block font-medium text-primary cursor-pointer transition-all duration-300 hover:scale-105 hover:text-primary/90 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.4)]">
+                    business insight
+                  </span>{" "}to craft intelligent, user-centric products.
                 </p>
                 
                 <p className="text-foreground/80 leading-relaxed">
-                  Pursuing an <span className="font-medium text-accent">MBA in Business Analytics</span> at <span className="font-medium text-primary">William & Mary</span>, with a foundation in Computer Science. I build purposeful AI experiences that turn complex problems into simple, scalable solutions.
+                  Pursuing an{" "}
+                  <span className="inline-block font-medium text-accent cursor-pointer transition-all duration-300 hover:scale-105 hover:text-accent/90 hover:drop-shadow-[0_0_8px_hsl(var(--accent)/0.4)]">
+                    MBA in Business Analytics
+                  </span>{" "}at{" "}
+                  <span className="inline-block font-medium text-primary cursor-pointer transition-all duration-300 hover:scale-105 hover:text-primary/90 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.4)]">
+                    William & Mary
+                  </span>, with a foundation in Computer Science. I build purposeful{" "}
+                  <span className="inline-block font-medium text-accent cursor-pointer transition-all duration-300 hover:scale-105 hover:text-accent/90 hover:drop-shadow-[0_0_8px_hsl(var(--accent)/0.4)]">
+                    AI experiences
+                  </span>{" "}that turn{" "}
+                  <span className="inline-block font-medium text-primary cursor-pointer transition-all duration-300 hover:scale-105 hover:text-primary/90 hover:drop-shadow-[0_0_8px_hsl(var(--primary)/0.4)]">
+                    complex problems
+                  </span>{" "}into simple, scalable solutions.
                 </p>
               </div>
             </div>
