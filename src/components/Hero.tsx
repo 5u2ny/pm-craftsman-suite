@@ -70,21 +70,24 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-base sm:text-lg lg:text-xl mb-12 max-w-3xl mx-auto leading-relaxed px-4">
-            <p className="text-muted-foreground animate-fade-in mb-6" style={{ animationDelay: "0.8s" }}>
-              <span className="text-foreground font-bold text-lg sm:text-xl lg:text-2xl">MBA Candidate</span> at William & Mary, specializing in{" "}
-              <span className="text-primary font-semibold">Business Analytics</span>. Undergraduate degree in{" "}
-              <span className="text-foreground font-semibold">Computer Science & Engineering</span>.
+          <div className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto leading-relaxed space-y-4">
+            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.8s" }}>
+              <span className="text-foreground font-semibold">MBA Candidate</span> at William & Mary, specializing in{" "}
+              <span className="text-primary font-semibold">Business Analytics</span>
             </p>
             
             <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "1s" }}>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent font-bold text-lg sm:text-xl lg:text-2xl">
+              <span className="text-foreground font-semibold">B.Tech</span> in Computer Science & Engineering
+            </p>
+            
+            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "1.2s" }}>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent font-bold">
                 AI Product Manager
               </span>{" "}
               with experience building{" "}
               <span className="text-foreground font-semibold">0-to-1 products</span> and driving{" "}
               <span className="text-foreground font-semibold">growth</span> through{" "}
-              <span className="text-foreground font-semibold">data-driven strategies</span>.
+              <span className="text-foreground font-semibold">data-driven strategies</span>
             </p>
           </div>
 
