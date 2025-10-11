@@ -2,10 +2,8 @@ import { ArrowRight, Github, Linkedin, Send, FileDown, Eye } from "lucide-react"
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Profile4D from "@/components/Profile4D";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Dynamic Animated Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Large gradient orbs with floating animation */}
@@ -42,68 +40,46 @@ const Hero = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           {/* 4D Profile Picture */}
-          <div className="mb-8 flex justify-center animate-scale-in" style={{ animationDelay: "0.2s" }}>
+          <div className="mb-8 flex justify-center animate-scale-in" style={{
+          animationDelay: "0.2s"
+        }}>
             <Profile4D />
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            <span className="block text-foreground mb-2 font-hero font-extrabold tracking-tight" style={{ animationDelay: "0.4s" }}>
-              {"Sunny Soni".split("").map((letter, index) => (
-                <span 
-                  key={index}
-                  className="inline-block cursor-pointer transition-all duration-300 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:animate-glow-pulse hover:drop-shadow-[0_0_15px_hsl(var(--primary))]"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.classList.add('animate-letter-bounce');
-                  }}
-                  onAnimationEnd={(e) => {
-                    if (e.animationName.includes('bounce')) {
-                      e.currentTarget.classList.remove('animate-letter-bounce');
-                    }
-                  }}
-                >
+            <span className="block text-foreground mb-2 font-hero font-extrabold tracking-tight" style={{
+            animationDelay: "0.4s"
+          }}>
+              {"Sunny Soni".split("").map((letter, index) => <span key={index} className="inline-block cursor-pointer transition-all duration-300 hover:text-primary hover:scale-125 hover:-translate-y-2 hover:animate-glow-pulse hover:drop-shadow-[0_0_15px_hsl(var(--primary))]" onMouseEnter={e => {
+              e.currentTarget.classList.add('animate-letter-bounce');
+            }} onAnimationEnd={e => {
+              if (e.animationName.includes('bounce')) {
+                e.currentTarget.classList.remove('animate-letter-bounce');
+              }
+            }}>
                   {letter === " " ? "\u00A0" : letter}
-                </span>
-              ))}
+                </span>)}
             </span>
-            <span className="relative inline-block text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-wide animate-fade-in" style={{ animationDelay: "1.2s" }}>
-              <span className="relative inline-block group cursor-default">
-                {/* Animated gradient background */}
-                <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></span>
-                
-                {/* Animated border */}
-                <span className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
-                
-                {/* Text with individual letter animations */}
-                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift">
-                  {"AI Product Manager".split("").map((letter, index) => (
-                    <span 
-                      key={index}
-                      className="inline-block transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]"
-                      style={{ 
-                        animationDelay: `${1.2 + index * 0.05}s`,
-                        animation: "fade-in 0.5s ease-out forwards"
-                      }}
-                    >
-                      {letter === " " ? "\u00A0" : letter}
-                    </span>
-                  ))}
-                </span>
-                
-                {/* Animated cursor */}
-                <span className="inline-block w-0.5 h-8 sm:h-10 lg:h-12 bg-accent ml-1 animate-pulse"></span>
-              </span>
+            <span className="relative inline-block text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-wide animate-fade-in" style={{
+            animationDelay: "1.2s"
+          }}>
+              
             </span>
           </h1>
           
           <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            <p className="text-muted-foreground animate-fade-in" style={{
+            animationDelay: "0.8s"
+          }}>
               AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
             {/* Primary Actions */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "1s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{
+            animationDelay: "1s"
+          }}>
               <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-3 font-medium">
                 <Link to="/about" className="flex items-center gap-3">
                   <Eye className="h-5 w-5 transition-transform group-hover:scale-110" />
@@ -112,12 +88,7 @@ const Hero = () => {
                 </Link>
               </Button>
               
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium"
-                asChild
-              >
+              <Button size="lg" variant="outline" className="group border-2 border-accent text-accent hover:bg-accent hover:text-background transition-all duration-300 px-8 py-3 font-medium" asChild>
                 <a href="/Sunny_Soni_Resume.pdf" download="Sunny_Soni_Resume.pdf">
                   <FileDown className="h-5 w-5 mr-3 transition-transform group-hover:scale-110" />
                   Download Resume
@@ -127,16 +98,13 @@ const Hero = () => {
           </div>
 
           {/* Redesigned Interactive Social Links */}
-          <div className="flex items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: "1.4s" }}>
+          <div className="flex items-center justify-center gap-4 animate-slide-up" style={{
+          animationDelay: "1.4s"
+        }}>
             {/* Email Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
-                asChild
-              >
+              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
                 <a href="mailto:sunnysoni.mba@proton.me" aria-label="Email">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
@@ -164,12 +132,7 @@ const Hero = () => {
             {/* LinkedIn Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
-                asChild
-              >
+              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-accent hover:to-primary hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
                 <a href="https://www.linkedin.com/in/sunnysonimba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
@@ -197,12 +160,7 @@ const Hero = () => {
             {/* GitHub Button */}
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group"
-                asChild
-              >
+              <Button variant="ghost" size="lg" className="relative h-20 w-20 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 p-0 hover:scale-110 hover:-translate-y-2 hover:shadow-2xl overflow-hidden group" asChild>
                 <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
@@ -229,8 +187,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
