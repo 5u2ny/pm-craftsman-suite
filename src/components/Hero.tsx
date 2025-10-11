@@ -62,21 +62,119 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          <div className="text-lg sm:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
             <div className="relative group">
-              {/* Subtle glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl"></div>
+              {/* Animated gradient background glow */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl animate-pulse"></div>
               
-              <div className="relative bg-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-8 sm:p-10 group-hover:border-primary/20 transition-all duration-500 animate-fade-in" style={{
+              {/* Floating particles around the card */}
+              <div className="absolute -top-4 -left-4 w-3 h-3 bg-primary/40 rounded-full animate-float"></div>
+              <div className="absolute -bottom-4 -right-4 w-2 h-2 bg-accent/50 rounded-full animate-float-delay"></div>
+              <div className="absolute top-1/2 -left-6 w-2 h-2 bg-primary/30 rounded-full animate-float-slow"></div>
+              <div className="absolute top-1/4 -right-6 w-3 h-3 bg-accent/40 rounded-full animate-float"></div>
+              
+              {/* Animated border shimmer */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-[-1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-3xl animate-[slide-in-right_3s_ease-in-out_infinite]"></div>
+              </div>
+              
+              <div className="relative bg-gradient-to-br from-card/40 via-card/30 to-card/40 backdrop-blur-md border border-border/50 rounded-3xl p-8 sm:p-10 group-hover:border-primary/40 group-hover:shadow-2xl group-hover:shadow-primary/10 transition-all duration-700 animate-fade-in overflow-hidden" style={{
                 animationDelay: "0.8s"
               }}>
-                <p className="text-foreground/90 leading-relaxed mb-6">
-                  <span className="font-bold text-primary">AI Product Manager</span> blending technical depth with business insight to craft intelligent, user-centric products. Currently pursuing an <span className="font-semibold text-accent">MBA in Business Analytics</span> at <span className="font-semibold text-primary">William & Mary</span>, with a foundation in <span className="font-semibold text-accent">Computer Science</span>.
-                </p>
+                {/* Inner animated background pattern */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(var(--primary)/0.05),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--accent)/0.04),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                <p className="text-foreground/80 leading-relaxed">
-                  I focus on building purposeful <span className="font-semibold text-accent">AI experiences</span> that connect <span className="font-semibold text-primary">data, design, and impact</span> — turning <span className="font-semibold text-accent">complex problems</span> into <span className="font-semibold text-primary">simple, scalable solutions</span> people genuinely value.
-                </p>
+                {/* Animated corner accents */}
+                <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/20 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24 group-hover:h-24"></div>
+                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/20 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:w-24 group-hover:h-24"></div>
+                
+                <div className="relative z-10">
+                  <p className="text-foreground/95 leading-relaxed text-base sm:text-lg">
+                    <span className="inline-block font-bold text-xl sm:text-2xl bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent hover:scale-105 transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "1s" }}>
+                      AI Product Manager
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "1.1s" }}>
+                      {" "}blending{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "1.2s" }}>
+                      technical depth
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "1.3s" }}>
+                      {" "}with{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "1.4s" }}>
+                      business insight
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "1.5s" }}>
+                      {" "}to craft intelligent, user-centric products.
+                    </span>
+                  </p>
+                  
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent my-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <p className="text-foreground/90 leading-relaxed text-base sm:text-lg">
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "1.6s" }}>
+                      Currently pursuing an{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "1.7s" }}>
+                      MBA
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "1.8s" }}>
+                      {" "}in{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "1.9s" }}>
+                      Business Analytics
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2s" }}>
+                      {" "}at{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "2.1s" }}>
+                      William & Mary
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2.2s" }}>
+                      , with a foundation in{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "2.3s" }}>
+                      Computer Science
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2.4s" }}>
+                      .
+                    </span>
+                  </p>
+                  
+                  <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent my-6 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <p className="text-foreground/90 leading-relaxed text-base sm:text-lg">
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2.5s" }}>
+                      I focus on building purposeful{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "2.6s" }}>
+                      AI experiences
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2.7s" }}>
+                      {" "}that connect{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "2.8s" }}>
+                      data, design, and impact
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "2.9s" }}>
+                      {" "}turning{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary hover:drop-shadow-[0_0_8px_hsl(var(--accent))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "3s" }}>
+                      complex problems
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "3.1s" }}>
+                      {" "}into{" "}
+                    </span>
+                    <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent hover:drop-shadow-[0_0_8px_hsl(var(--primary))] transition-all duration-300 cursor-default animate-fade-in" style={{ animationDelay: "3.2s" }}>
+                      simple, scalable solutions
+                    </span>
+                    <span className="inline-block animate-fade-in" style={{ animationDelay: "3.3s" }}>
+                      {" "}people genuinely value.
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
