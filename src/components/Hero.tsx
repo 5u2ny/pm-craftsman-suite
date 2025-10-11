@@ -72,31 +72,23 @@ const Hero = () => {
               }}>
                 <p className="text-foreground/90 leading-relaxed">
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">AI Product Manager</span>
-                  {" "}with a strong foundation in{" "}
+                  {" "}blending technical depth with business insight to craft intelligent, user-centric products. With a foundation in{" "}
                   <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Computer Science</span>
-                  {" "}and{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Business Analytics</span>
-                  , passionate about building{" "}
-                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">0-to-1 AI products</span>
-                  {" "}that solve real user problems.
-                  <br /><br />
-                  Experienced in turning{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">data into strategy</span>
-                  , leading{" "}
-                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">cross-functional teams</span>
-                  , and delivering measurable business impact through{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">machine learning</span>
-                  ,{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">experimentation</span>
-                  , and{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">user-centered design</span>
-                  .
-                  <br /><br />
-                  Currently pursuing an{" "}
+                  {" "}and an{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">MBA</span>
-                  {" "}at{" "}
+                  {" "}in{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Business Analytics</span>
+                  {" "}from{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">William & Mary</span>
-                  {" "}to deepen expertise at the intersection of product, data, and AI.
+                  , I focus on building purposeful{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">AI experiences</span>
+                  {" "}that connect{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">data, design, and impact</span>
+                  . Passionate about turning{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">complex problems</span>
+                  {" "}into{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">simple, scalable solutions</span>
+                  {" "}that people genuinely value.
                 </p>
               </div>
             </div>
