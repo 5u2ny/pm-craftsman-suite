@@ -1,7 +1,8 @@
-import { ArrowLeft, Calendar, Users, Briefcase, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Briefcase, CheckCircle2, Sparkles, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import cavoHeroImage from "@/assets/cavo-hero.jpg";
 import cavoWelcomeImage from "@/assets/cavo-welcome-ui.png";
 import cavoChatImage from "@/assets/cavo-chat-ui.png";
@@ -33,37 +34,49 @@ const CavoAiTravel = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Back Navigation */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <Button variant="ghost" asChild>
-          <Link to="/projects" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Projects
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
+        <Button variant="ghost" asChild className="group hover:bg-muted/50 transition-all duration-300">
+          <Link to="/projects" className="flex items-center gap-2">
+            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+            <span>Back to Projects</span>
           </Link>
         </Button>
       </div>
 
       {/* Hero Section - Full Width Image */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+      <section className="relative h-[70vh] min-h-[600px] overflow-hidden mb-20">
         <div className="absolute inset-0">
           <img
             src={cavoHeroImage}
             alt="Cavo AI Travel Companion"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-fade-in"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+          
+          {/* Floating gradient orbs */}
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
         </div>
         
-        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 text-foreground">
+        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-20">
+          <div className="max-w-5xl animate-slide-up">
+            <div className="inline-block mb-6 px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
+              <span className="text-sm font-semibold text-primary">AI Product Case Study</span>
+            </div>
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 text-foreground tracking-tight">
               Cavo
             </h1>
-            <p className="text-2xl sm:text-3xl text-primary font-medium mb-6">
+            <p className="text-3xl sm:text-4xl text-gradient font-semibold mb-8">
               AI Travel Companion
             </p>
-            <div className="flex flex-wrap gap-2 mb-6">
-              {tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="text-sm px-4 py-1.5">
+            <div className="flex flex-wrap gap-3">
+              {tags.map((tag, index) => (
+                <Badge 
+                  key={tag} 
+                  variant="secondary" 
+                  className="text-sm px-5 py-2 hover-scale cursor-default backdrop-blur-sm bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-300"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
                   {tag}
                 </Badge>
               ))}
@@ -73,46 +86,58 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Project Meta */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
-            <div>
-              <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <Calendar className="h-4 w-4" />
-                <span className="text-sm font-medium">Timeline</span>
+      <section className="border-y border-border/50 bg-muted/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl">
+            <div className="group cursor-default">
+              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
+                  <Calendar className="h-5 w-5" />
+                </div>
+                <span className="text-sm font-semibold uppercase tracking-wider">Timeline</span>
               </div>
-              <p className="text-foreground font-medium">May 2025 - Ongoing</p>
+              <p className="text-xl text-foreground font-medium">May 2025 - Ongoing</p>
             </div>
-            <div>
-              <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <Briefcase className="h-4 w-4" />
-                <span className="text-sm font-medium">Organization</span>
+            <div className="group cursor-default">
+              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
+                  <Briefcase className="h-5 w-5" />
+                </div>
+                <span className="text-sm font-semibold uppercase tracking-wider">Organization</span>
               </div>
-              <p className="text-foreground font-medium">IpserLab</p>
+              <p className="text-xl text-foreground font-medium">IpserLab</p>
             </div>
-            <div>
-              <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <Users className="h-4 w-4" />
-                <span className="text-sm font-medium">Role</span>
+            <div className="group cursor-default">
+              <div className="flex items-center gap-3 text-muted-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <div className="p-2 bg-primary/5 rounded-lg group-hover:bg-primary/10 transition-colors duration-300">
+                  <Users className="h-5 w-5" />
+                </div>
+                <span className="text-sm font-semibold uppercase tracking-wider">Role</span>
               </div>
-              <p className="text-foreground font-medium">Lead AI Product Manager</p>
+              <p className="text-xl text-foreground font-medium">Lead AI Product Manager</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Overview</h2>
-            <p className="text-3xl sm:text-4xl font-bold text-foreground mb-8 leading-tight">
-              An AI-powered travel companion that personalizes trips using emotional intelligence and adaptive reasoning
-            </p>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl animate-fade-in">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-primary"></div>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Overview</h2>
+            </div>
+            <h3 className="text-4xl sm:text-5xl font-bold text-foreground mb-12 leading-tight">
+              An AI-powered travel companion that personalizes trips using{" "}
+              <span className="text-gradient">emotional intelligence</span> and{" "}
+              <span className="text-gradient">adaptive reasoning</span>
+            </h3>
+            <div className="space-y-8">
+              <p className="text-2xl text-muted-foreground leading-relaxed">
                 Cavo redefines how travelers plan, personalize, and emotionally navigate trips. As Lead AI Product Manager, 
-                I'm driving the 0-to-1 product vision, strategy, and build execution—combining AI, design, and user empathy 
+                I'm driving the 0-to-1 product vision, strategy, and build execution combining AI, design, and user empathy 
                 to create a context-aware travel assistant that adapts to user mood, intent, and location.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
@@ -126,12 +151,17 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Vision */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-4 uppercase tracking-wider">Vision</h2>
-            <p className="text-3xl sm:text-4xl font-bold text-foreground leading-tight">
-              To create a personalized AI travel partner that offers emotional and contextual assistance—helping users plan, 
+          <div className="max-w-5xl animate-slide-up">
+            <div className="flex items-center gap-3 mb-8">
+              <Sparkles className="h-6 w-6 text-primary" />
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Vision</h2>
+            </div>
+            <p className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
+              To create a personalized AI travel partner that offers emotional and contextual assistance helping users plan, 
               discover, and adapt trips with intelligence, empathy, and precision.
             </p>
           </div>
@@ -139,46 +169,94 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Product Interface - Image Grid */}
-      <section className="py-20">
+      <section className="py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-sm font-semibold text-primary mb-8 uppercase tracking-wider">Product Interface</h2>
+          <div className="flex items-center gap-3 mb-12">
+            <div className="h-px w-12 bg-primary"></div>
+            <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Product Interface</h2>
+          </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div className="space-y-4">
-              <img src={cavoWelcomeImage} alt="Mode Selection" className="w-full rounded-lg shadow-lg" />
-              <p className="text-sm text-muted-foreground">Welcome & Mode Selection</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+            <div className="group animate-fade-in">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-6 bg-muted/20 hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img 
+                  src={cavoWelcomeImage} 
+                  alt="Mode Selection" 
+                  className="w-full transform transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <p className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                Welcome & Mode Selection
+              </p>
             </div>
-            <div className="space-y-4">
-              <img src={cavoChatImage} alt="Conversational Planning" className="w-full rounded-lg shadow-lg" />
-              <p className="text-sm text-muted-foreground">Conversational Planning</p>
+            <div className="group animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-6 bg-muted/20 hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img 
+                  src={cavoChatImage} 
+                  alt="Conversational Planning" 
+                  className="w-full transform transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <p className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                Conversational Planning
+              </p>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <img src={cavoEnergyImage} alt="Energy Adaptation" className="w-full rounded-lg shadow-lg" />
-              <p className="text-sm text-muted-foreground">Energy Level Adaptation</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="group animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-6 bg-muted/20 hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img 
+                  src={cavoEnergyImage} 
+                  alt="Energy Adaptation" 
+                  className="w-full transform transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <p className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                Energy Level Adaptation
+              </p>
             </div>
-            <div className="space-y-4">
-              <img src={cavoItineraryImage} alt="Daily Itinerary" className="w-full rounded-lg shadow-lg" />
-              <p className="text-sm text-muted-foreground">Daily Itinerary</p>
+            <div className="group animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-6 bg-muted/20 hover-lift">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img 
+                  src={cavoItineraryImage} 
+                  alt="Daily Itinerary" 
+                  className="w-full transform transition-transform duration-700 group-hover:scale-105" 
+                />
+              </div>
+              <p className="text-lg font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                Daily Itinerary
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Key Features */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-8 uppercase tracking-wider">
-              Key Features <span className="text-muted-foreground normal-case">(In Development)</span>
-            </h2>
-            <div className="space-y-4">
+          <div className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="h-px w-12 bg-primary"></div>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">
+                Key Features <span className="text-muted-foreground font-normal">(In Development)</span>
+              </h2>
+            </div>
+            <div className="space-y-6">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4 py-4 border-b border-border last:border-0">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-lg text-foreground">{feature}</p>
+                <div 
+                  key={index} 
+                  className="group flex items-start gap-6 py-8 border-b border-border/50 last:border-0 hover:bg-card/50 px-6 -mx-6 rounded-lg transition-all duration-300 cursor-default animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110">
+                    <CheckCircle2 className="h-7 w-7 text-primary" />
+                  </div>
+                  <p className="text-xl text-foreground leading-relaxed flex-1 pt-2">{feature}</p>
                 </div>
               ))}
             </div>
@@ -187,21 +265,39 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Roadmap */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-8 uppercase tracking-wider">Product Roadmap</h2>
-            <div className="space-y-6">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="h-px w-12 bg-primary"></div>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Product Roadmap</h2>
+            </div>
+            <div className="space-y-8">
               {roadmap.map((item, index) => (
-                <div key={index} className="flex items-start justify-between py-6 border-b border-border last:border-0">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{item.phase}</h3>
-                    <p className="text-muted-foreground">{item.timeline}</p>
+                <Card 
+                  key={index} 
+                  className="group p-8 hover:shadow-2xl transition-all duration-500 border-l-4 border-l-primary hover:border-l-accent bg-gradient-to-r from-card to-transparent hover:from-card/80 animate-fade-in"
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                          {item.phase}
+                        </h3>
+                      </div>
+                      <p className="text-lg text-muted-foreground">{item.timeline}</p>
+                    </div>
+                    <Badge 
+                      variant={item.status === "In Progress" ? "default" : "secondary"}
+                      className="text-sm px-4 py-2 group-hover:scale-110 transition-transform duration-300"
+                    >
+                      {item.status}
+                    </Badge>
                   </div>
-                  <Badge variant={item.status === "In Progress" ? "default" : "secondary"}>
-                    {item.status}
-                  </Badge>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
@@ -209,16 +305,28 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Differentiators */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-gradient-to-br from-background via-primary/5 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-8 uppercase tracking-wider">Strategic Differentiators</h2>
+          <div className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="h-px w-12 bg-primary"></div>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Strategic Differentiators</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {differentiators.map((item, index) => (
-                <div key={index}>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </div>
+                <Card 
+                  key={index} 
+                  className="group p-8 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/50 hover:from-card hover:to-card/80 border-2 border-border hover:border-primary/30 cursor-default animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="mb-6 inline-flex p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
+                    <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg"></div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                </Card>
               ))}
             </div>
           </div>
@@ -226,37 +334,54 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Current Status */}
-      <section className="py-20">
+      <section className="py-24 bg-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <h2 className="text-sm font-semibold text-primary mb-6 uppercase tracking-wider">Current Status</h2>
-            <div className="flex items-start gap-4">
-              <div className="w-3 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                Cavo is in active development, progressing through MVP build and internal prototype testing. 
-                Early user flows, design prototypes, and backend prompt logic have been finalized. Next milestones 
-                include UI integration, travel dataset ingestion, and user feedback collection.
-              </p>
+          <div className="max-w-5xl">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="h-px w-12 bg-primary"></div>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Current Status</h2>
             </div>
+            <Card className="p-10 bg-gradient-to-br from-primary/10 via-card to-accent/10 border-2 border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl">
+              <div className="flex items-start gap-6">
+                <div className="p-4 bg-primary/20 rounded-full animate-pulse">
+                  <div className="w-4 h-4 bg-primary rounded-full"></div>
+                </div>
+                <p className="text-2xl text-foreground leading-relaxed flex-1">
+                  Cavo is in active development, progressing through MVP build and internal prototype testing. 
+                  Early user flows, design prototypes, and backend prompt logic have been finalized. Next milestones 
+                  include UI integration, travel dataset ingestion, and user feedback collection.
+                </p>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 border-t border-border">
+      <section className="py-24 border-t border-border/50 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">Want to discuss this project?</h2>
-              <p className="text-muted-foreground">Let's talk about the product strategy and technical decisions</p>
-            </div>
-            <div className="flex gap-4">
-              <Button asChild size="lg">
-                <Link to="/contact">Get In Touch</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link to="/projects">All Projects</Link>
-              </Button>
+          <div className="max-w-5xl">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12">
+              <div className="flex-1">
+                <h2 className="text-4xl font-bold text-foreground mb-4">Want to discuss this project?</h2>
+                <p className="text-xl text-muted-foreground">
+                  Let's talk about the product strategy, technical implementation, and design decisions behind Cavo.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="group text-lg px-8 py-6 hover-scale hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300">
+                  <Link to="/contact">
+                    Get In Touch
+                    <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="group text-lg px-8 py-6 hover-scale border-2 hover:border-primary/50 transition-all duration-300">
+                  <Link to="/projects">
+                    All Projects
+                    <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
