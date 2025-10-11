@@ -65,54 +65,40 @@ const Hero = () => {
                 </span>
               ))}
             </span>
-            <span className="text-gradient font-display font-semibold tracking-wide text-2xl sm:text-3xl lg:text-4xl animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-accent" style={{ animationDelay: "1.2s" }}>
-              <span className="typewriter-text">AI Product Manager</span>
+            <span className="relative inline-block text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-wide animate-fade-in" style={{ animationDelay: "1.2s" }}>
+              <span className="relative inline-block group cursor-default">
+                {/* Animated gradient background */}
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></span>
+                
+                {/* Animated border */}
+                <span className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
+                
+                {/* Text with individual letter animations */}
+                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift">
+                  {"AI Product Manager".split("").map((letter, index) => (
+                    <span 
+                      key={index}
+                      className="inline-block transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]"
+                      style={{ 
+                        animationDelay: `${1.2 + index * 0.05}s`,
+                        animation: "fade-in 0.5s ease-out forwards"
+                      }}
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </span>
+                  ))}
+                </span>
+                
+                {/* Animated cursor */}
+                <span className="inline-block w-0.5 h-8 sm:h-10 lg:h-12 bg-accent ml-1 animate-pulse"></span>
+              </span>
             </span>
           </h1>
           
-          <div className="max-w-3xl mx-auto mb-12 px-4">
-            <div className="space-y-6 text-center">
-              {/* Education Block */}
-              <div className="animate-fade-in" style={{ animationDelay: "0.8s" }}>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  <span className="text-foreground font-bold text-xl sm:text-2xl">MBA Candidate</span>
-                  <span className="block sm:inline sm:mx-2 my-1 sm:my-0 text-muted-foreground/60">•</span>
-                  <span className="text-foreground font-medium">William & Mary</span>
-                </p>
-                <p className="text-base sm:text-lg text-muted-foreground mt-2">
-                  Specializing in <span className="text-primary font-semibold">Business Analytics</span>
-                </p>
-              </div>
-
-              {/* Divider */}
-              <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto animate-fade-in" style={{ animationDelay: "1s" }}></div>
-
-              {/* Undergraduate Block */}
-              <div className="animate-fade-in" style={{ animationDelay: "1s" }}>
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  <span className="text-foreground font-bold text-xl sm:text-2xl">B.Tech</span>
-                  <span className="block sm:inline sm:mx-2 my-1 sm:my-0 text-muted-foreground/60">•</span>
-                  <span className="text-foreground font-medium">Computer Science & Engineering</span>
-                </p>
-              </div>
-
-              {/* Divider */}
-              <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto animate-fade-in" style={{ animationDelay: "1.2s" }}></div>
-
-              {/* Role & Experience Block */}
-              <div className="animate-fade-in pt-2" style={{ animationDelay: "1.2s" }}>
-                <p className="text-xl sm:text-2xl font-bold mb-3">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                    AI Product Manager
-                  </span>
-                </p>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                  Building <span className="text-foreground font-semibold">0-to-1 products</span> and driving{" "}
-                  <span className="text-foreground font-semibold">growth</span> through{" "}
-                  <span className="text-foreground font-semibold">data-driven strategies</span>
-                </p>
-              </div>
-            </div>
+          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-muted-foreground animate-fade-in" style={{ animationDelay: "0.8s" }}>
+              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
+            </p>
           </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
