@@ -62,12 +62,44 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            <p className="text-muted-foreground animate-fade-in transition-colors duration-300 hover:text-foreground" style={{
-            animationDelay: "0.8s"
-          }}>
-              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
-            </p>
+          <div className="text-lg sm:text-xl mb-8 max-w-4xl mx-auto leading-relaxed">
+            <div className="relative group">
+              {/* Decorative elements */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+              
+              <div className="relative bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl p-8 group-hover:border-primary/30 transition-all duration-500 animate-fade-in" style={{
+                animationDelay: "0.8s"
+              }}>
+                <p className="text-foreground/90 leading-relaxed">
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">AI Product Manager</span>
+                  {" "}with a strong foundation in{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Computer Science</span>
+                  {" "}and{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Business Analytics</span>
+                  , passionate about building{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">0-to-1 AI products</span>
+                  {" "}that solve real user problems.
+                  <br /><br />
+                  Experienced in turning{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">data into strategy</span>
+                  , leading{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">cross-functional teams</span>
+                  , and delivering measurable business impact through{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">machine learning</span>
+                  ,{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">experimentation</span>
+                  , and{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">user-centered design</span>
+                  .
+                  <br /><br />
+                  Currently pursuing an{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">MBA</span>
+                  {" "}at{" "}
+                  <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">William & Mary</span>
+                  {" "}to deepen expertise at the intersection of product, data, and AI.
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
