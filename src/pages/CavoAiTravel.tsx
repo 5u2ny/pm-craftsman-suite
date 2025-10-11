@@ -1,4 +1,4 @@
-import { ArrowLeft, Calendar, Users, Briefcase, CheckCircle2, Sparkles, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Briefcase, CheckCircle2, Sparkles, ArrowUpRight, Heart, Layers, Target } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,9 +20,21 @@ const CavoAiTravel = () => {
   ];
 
   const differentiators = [
-    { title: "Human-AI Co-travel Design", desc: "Built around emotional intelligence, not just itinerary generation" },
-    { title: "Scalable Multi-Modal Framework", desc: "Integrates APIs, RAG pipelines, and voice-to-intent mapping" },
-    { title: "Data-Driven PM Workflow", desc: "RICE prioritization and sprint cycles optimized for speed" }
+    { 
+      title: "Human-AI Co-travel Design", 
+      desc: "Built around emotional intelligence, not just itinerary generation",
+      icon: Heart
+    },
+    { 
+      title: "Scalable Multi-Modal Framework", 
+      desc: "Integrates APIs, RAG pipelines, and voice-to-intent mapping",
+      icon: Layers
+    },
+    { 
+      title: "Data-Driven PM Workflow", 
+      desc: "RICE prioritization and sprint cycles optimized for speed",
+      icon: Target
+    }
   ];
 
   const roadmap = [
@@ -348,29 +360,48 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Differentiators */}
-      <section className="py-24 bg-gradient-to-br from-background via-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-12">
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background"></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-float-slow"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-3 mb-16 animate-fade-in">
               <div className="h-px w-12 bg-primary"></div>
               <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Strategic Differentiators</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {differentiators.map((item, index) => (
-                <Card 
-                  key={index} 
-                  className="group p-8 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/50 hover:from-card hover:to-card/80 border-2 border-border hover:border-primary/30 cursor-default animate-slide-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="mb-6 inline-flex p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors duration-300">
-                    <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg"></div>
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                </Card>
-              ))}
+              {differentiators.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <Card 
+                    key={index} 
+                    className="group relative p-10 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 bg-gradient-to-br from-card via-card to-card/80 border-2 border-border/50 hover:border-primary/50 cursor-default overflow-hidden animate-scale-in"
+                    style={{ animationDelay: `${index * 0.15}s` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                    
+                    <div className="relative">
+                      <div className="mb-6 inline-flex p-4 bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-primary/20 group-hover:border-primary/40">
+                        <IconComponent className="w-8 h-8 text-primary group-hover:text-accent transition-colors duration-300" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold font-hero text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      
+                      <p className="text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                        {item.desc}
+                      </p>
+                      
+                      <div className="mt-6 h-1 w-0 bg-gradient-to-r from-primary to-accent rounded-full group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
