@@ -130,7 +130,7 @@ const CavoAiTravel = () => {
               <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Overview</h2>
             </div>
             <h3 className="group cursor-default text-center text-5xl sm:text-6xl lg:text-7xl font-hero font-black text-foreground mb-12 leading-[1.1] tracking-tight hover:tracking-normal transition-all duration-500">
-              <span className="text-gradient inline-block transform hover:scale-105 hover:animate-glow-pulse transition-all duration-300">
+              <span className="text-gradient block w-full transform hover:scale-105 hover:animate-glow-pulse transition-all duration-300">
                 Emotionally Intelligent Travel Companion
               </span>
             </h3>
