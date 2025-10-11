@@ -72,23 +72,23 @@ const Hero = () => {
               }}>
                 <p className="text-foreground/90 leading-relaxed">
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">AI Product Manager</span>
-                  {" "}blending technical depth with business insight to craft intelligent, user-centric products. With a foundation in{" "}
-                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Computer Science</span>
-                  {" "}and an{" "}
+                  {" "}blending technical depth with business insight to craft intelligent, user-centric products. Currently pursuing an{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">MBA</span>
                   {" "}in{" "}
                   <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Business Analytics</span>
-                  {" "}from{" "}
+                  {" "}at{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">William & Mary</span>
-                  , I focus on building purposeful{" "}
+                  , with a foundation in{" "}
+                  <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">Computer Science</span>
+                  . I focus on building purposeful{" "}
                   <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">AI experiences</span>
                   {" "}that connect{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">data, design, and impact</span>
-                  . Passionate about turning{" "}
+                  {" "}turning{" "}
                   <span className="inline-block font-semibold text-accent hover:scale-110 hover:text-primary transition-all duration-300 cursor-default">complex problems</span>
                   {" "}into{" "}
                   <span className="inline-block font-semibold text-primary hover:scale-110 hover:text-accent transition-all duration-300 cursor-default">simple, scalable solutions</span>
-                  {" "}that people genuinely value.
+                  {" "}people genuinely value.
                 </p>
               </div>
             </div>
