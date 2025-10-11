@@ -62,12 +62,31 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            <p className="text-muted-foreground animate-fade-in transition-colors duration-300 hover:text-foreground" style={{
-            animationDelay: "0.8s"
-          }}>
-              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
-            </p>
+          <div className="text-base sm:text-lg lg:text-xl mb-8 max-w-4xl mx-auto">
+            <div className="relative group/bio p-8 rounded-2xl border border-border/40 bg-gradient-to-br from-card/40 to-card/20 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 animate-fade-in" style={{
+              animationDelay: "0.8s"
+            }}>
+              {/* Subtle corner accents */}
+              <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-primary/40 rounded-tl-lg opacity-0 group-hover/bio:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-accent/40 rounded-br-lg opacity-0 group-hover/bio:opacity-100 transition-opacity duration-300"></div>
+              
+              <p className="text-muted-foreground leading-relaxed text-center transition-colors duration-300 group-hover/bio:text-foreground">
+                <span className="font-semibold text-foreground">AI Product Manager</span> with a strong foundation in{" "}
+                <span className="text-primary/90 font-medium">Computer Science</span> and{" "}
+                <span className="text-primary/90 font-medium">Business Analytics</span>, passionate about building{" "}
+                <span className="text-accent/90 font-medium">0-to-1 AI products</span> that solve real user problems.
+                <br /><br />
+                Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through{" "}
+                <span className="text-primary/80">machine learning</span>,{" "}
+                <span className="text-primary/80">experimentation</span>, and{" "}
+                <span className="text-primary/80">user-centered design</span>.
+                <br /><br />
+                Currently pursuing an <span className="font-semibold text-foreground">MBA at William & Mary</span> to deepen expertise at the intersection of product, data, and AI.
+              </p>
+              
+              {/* Bottom accent line */}
+              <div className="mt-6 h-px w-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto transition-all duration-700 group-hover/bio:w-full"></div>
+            </div>
           </div>
 
           <div className="flex flex-col items-center gap-6 mb-12">
