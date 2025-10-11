@@ -38,9 +38,9 @@ const CavoAiTravel = () => {
   ];
 
   const roadmap = [
-    { phase: "MVP Development", timeline: "May - Aug 2025", status: "In Progress" },
-    { phase: "User Testing", timeline: "Sep 2025", status: "Planned" },
-    { phase: "Beta Launch", timeline: "Oct - Dec 2025", status: "Planned" }
+    { phase: "MVP Development", timeline: "May - Aug 2025", status: "Completed" },
+    { phase: "User Testing", timeline: "Sep 2025", status: "Completed" },
+    { phase: "Beta Launch", timeline: "Oct - Dec 2025", status: "In Progress" }
   ];
 
   return (
@@ -332,13 +332,17 @@ const CavoAiTravel = () => {
               {roadmap.map((item, index) => (
                 <Card 
                   key={index} 
-                  className="group p-8 hover:shadow-2xl transition-all duration-500 border-l-4 border-l-primary hover:border-l-accent bg-gradient-to-r from-card to-transparent hover:from-card/80 animate-fade-in"
+                  className={`group p-8 hover:shadow-2xl transition-all duration-500 border-l-4 ${
+                    item.status === "Completed" ? "border-l-success" : "border-l-primary"
+                  } hover:border-l-accent bg-gradient-to-r from-card to-transparent hover:from-card/80 animate-fade-in`}
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   <div className="flex items-start justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <div className={`w-2 h-2 rounded-full ${
+                          item.status === "Completed" ? "bg-success" : "bg-primary animate-pulse"
+                        }`}></div>
                         <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                           {item.phase}
                         </h3>
@@ -346,8 +350,14 @@ const CavoAiTravel = () => {
                       <p className="text-lg text-muted-foreground">{item.timeline}</p>
                     </div>
                     <Badge 
-                      variant={item.status === "In Progress" ? "default" : "secondary"}
-                      className="text-sm px-4 py-2 group-hover:scale-110 transition-transform duration-300"
+                      variant={
+                        item.status === "Completed" ? "outline" : 
+                        item.status === "In Progress" ? "default" : 
+                        "secondary"
+                      }
+                      className={`text-sm px-4 py-2 group-hover:scale-110 transition-transform duration-300 ${
+                        item.status === "Completed" ? "border-success text-success" : ""
+                      }`}
                     >
                       {item.status}
                     </Badge>
