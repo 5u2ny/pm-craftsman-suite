@@ -7,7 +7,7 @@ import cavoHeroImage from "@/assets/cavo-hero.jpg";
 import cavoWelcomeImage from "@/assets/cavo-welcome-ui.png";
 import cavoChatImage from "@/assets/cavo-chat-ui.png";
 import cavoEnergyImage from "@/assets/cavo-energy-modal.png";
-import cavoItineraryImage from "@/assets/cavo-itinerary-ui.png";
+import cavoItineraryImage from "@/assets/cavo-itinerary-real.png";
 import cavoActivitiesImage from "@/assets/cavo-activities-ui.png";
 
 const CavoAiTravel = () => {
