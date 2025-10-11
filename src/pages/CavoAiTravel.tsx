@@ -148,19 +148,50 @@ const CavoAiTravel = () => {
       </section>
 
       {/* Vision */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-accent/10 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl animate-slide-up">
-            <div className="flex items-center gap-3 mb-8">
-              <Sparkles className="h-6 w-6 text-primary" />
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Vision</h2>
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float-delay"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-12 animate-fade-in">
+              <Sparkles className="h-7 w-7 text-primary animate-pulse" />
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Our Vision</h2>
+              <Sparkles className="h-7 w-7 text-primary animate-pulse" style={{ animationDelay: "0.5s" }} />
             </div>
-            <p className="text-4xl sm:text-5xl font-bold text-foreground leading-tight">
-              To create a personalized AI travel partner that offers emotional and contextual assistance helping users plan, 
-              discover, and adapt trips with intelligence, empathy, and precision.
-            </p>
+            
+            <div className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-2 border-primary/20 rounded-3xl p-12 sm:p-16 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 cursor-default animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <p className="relative text-3xl sm:text-4xl lg:text-5xl font-hero font-bold text-foreground leading-tight text-center">
+                Reimagining travel through{" "}
+                <span className="text-gradient inline-block transform group-hover:scale-105 transition-transform duration-300">
+                  AI-powered empathy
+                </span>
+                {" "}and{" "}
+                <span className="text-gradient inline-block transform group-hover:scale-105 transition-transform duration-300">
+                  contextual intelligence
+                </span>
+              </p>
+              
+              <div className="mt-8 flex justify-center gap-8 text-muted-foreground">
+                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Personalized</span>
+                </div>
+                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300" style={{ animationDelay: "0.2s" }}>
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Adaptive</span>
+                </div>
+                <div className="flex items-center gap-2 group-hover:text-primary transition-colors duration-300" style={{ animationDelay: "0.4s" }}>
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium">Intelligent</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
