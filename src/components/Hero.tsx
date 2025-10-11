@@ -60,11 +60,6 @@ const Hero = () => {
                   {letter === " " ? "\u00A0" : letter}
                 </span>)}
             </span>
-            <span className="relative inline-block text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-wide animate-fade-in" style={{
-            animationDelay: "1.2s"
-          }}>
-              
-            </span>
           </h1>
           
           <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
