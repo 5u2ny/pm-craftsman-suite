@@ -65,8 +65,33 @@ const Hero = () => {
                 </span>
               ))}
             </span>
-            <span className="text-gradient font-display font-semibold tracking-wide text-2xl sm:text-3xl lg:text-4xl animate-typewriter overflow-hidden whitespace-nowrap border-r-2 border-accent" style={{ animationDelay: "1.2s" }}>
-              <span className="typewriter-text">AI Product Manager</span>
+            <span className="relative inline-block text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-wide animate-fade-in" style={{ animationDelay: "1.2s" }}>
+              <span className="relative inline-block group cursor-default">
+                {/* Animated gradient background */}
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></span>
+                
+                {/* Animated border */}
+                <span className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift rounded-lg opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
+                
+                {/* Text with individual letter animations */}
+                <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_100%] animate-gradient-shift">
+                  {"AI Product Manager".split("").map((letter, index) => (
+                    <span 
+                      key={index}
+                      className="inline-block transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_0_10px_hsl(var(--primary))]"
+                      style={{ 
+                        animationDelay: `${1.2 + index * 0.05}s`,
+                        animation: "fade-in 0.5s ease-out forwards"
+                      }}
+                    >
+                      {letter === " " ? "\u00A0" : letter}
+                    </span>
+                  ))}
+                </span>
+                
+                {/* Animated cursor */}
+                <span className="inline-block w-0.5 h-8 sm:h-10 lg:h-12 bg-accent ml-1 animate-pulse"></span>
+              </span>
             </span>
           </h1>
           
