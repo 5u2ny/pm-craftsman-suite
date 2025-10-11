@@ -62,11 +62,25 @@ const Hero = () => {
             </span>
           </h1>
           
-          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            <p className="text-muted-foreground animate-fade-in" style={{
-            animationDelay: "0.8s"
+          <div className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed group/text relative">
+            {/* Animated background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 rounded-2xl blur-xl opacity-0 group-hover/text:opacity-100 transition-opacity duration-700"></div>
+            
+            <p className="relative text-muted-foreground animate-fade-in bg-gradient-to-r from-foreground via-primary/80 to-foreground bg-clip-text transition-all duration-500 group-hover/text:from-primary group-hover/text:via-accent group-hover/text:to-primary p-6 rounded-2xl border border-transparent group-hover/text:border-primary/10 group-hover/text:bg-card/30 backdrop-blur-sm" style={{
+            animationDelay: "0.8s",
+            backgroundSize: "200% auto"
           }}>
-              AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.
+              {("AI Product Manager with a strong foundation in Computer Science and Business Analytics, passionate about building 0-to-1 AI products that solve real user problems. Experienced in turning data into strategy, leading cross-functional teams, and delivering measurable business impact through machine learning, experimentation, and user-centered design. Currently pursuing an MBA at William & Mary to deepen expertise at the intersection of product, data, and AI.").split(' ').map((word, index) => (
+                <span 
+                  key={index}
+                  className="inline-block transition-all duration-300 hover:text-primary hover:scale-110 hover:-translate-y-1 hover:font-semibold cursor-default mr-1"
+                  style={{
+                    animationDelay: `${0.8 + index * 0.02}s`
+                  }}
+                >
+                  {word}
+                </span>
+              ))}
             </p>
           </div>
 
