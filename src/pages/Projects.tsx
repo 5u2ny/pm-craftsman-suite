@@ -50,7 +50,7 @@ const Projects = () => {
     },
     {
       title: "Seismix – Earthquake Detection MVP",
-      tagline: "Undergraduate Project, Karunya University, Sep 2018 - Jan 2019",
+      tagline: "UNDERGRADUATE PROJECT, FALL 2018",
       description: "Led team developing earthquake detection MVP using Arduino hardware, sensors, and real-time data visualization",
       image: seismixImage,
       metrics: [
