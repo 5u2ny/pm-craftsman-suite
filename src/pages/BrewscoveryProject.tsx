@@ -41,9 +41,9 @@ const BrewscoveryProject = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg">
-                <a href="/projects/BeerProject.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/projects/BeerProject.pdf" download="Brewscovery_Project.pdf">
                   <Download className="mr-2 h-4 w-4" />
-                  View Full Pitch Deck
+                  Download PDF
                 </a>
               </Button>
             </div>

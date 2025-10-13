@@ -42,9 +42,9 @@ const AirlinesDataAnalysis = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button asChild size="lg">
-                <a href="/projects/DataAnalysis.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/projects/DataAnalysis.pdf" download="Airlines_Data_Analysis.pdf">
                   <Download className="mr-2 h-4 w-4" />
-                  View Full Presentation
+                  Download PDF
                 </a>
               </Button>
             </div>
