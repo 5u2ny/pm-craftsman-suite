@@ -224,15 +224,88 @@ const About = () => {
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
-            About Me
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm an AI Product Manager and MBA candidate specializing in Business Analytics & Marketing. 
-            With experience spanning stealth AI startups to established SaaS platforms, I excel at 
-            building data-driven products that drive measurable growth and user engagement.
-          </p>
+        <div className="text-center mb-20 animate-fade-in relative">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-shimmer"></div>
+          
+          {/* Animated title with split effect */}
+          <div className="relative inline-block mb-8 group/title">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl opacity-0 group-hover/title:opacity-100 blur-2xl transition-all duration-700"></div>
+            
+            <h1 className="relative text-5xl sm:text-6xl lg:text-7xl font-hero font-black mb-4 tracking-tight">
+              <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                {"About".split("").map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="inline-block hover:scale-125 hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:drop-shadow-[0_0_20px_hsl(var(--primary)/0.8)]"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </span>
+              {" "}
+              <span className="inline-block bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
+                {"Me".split("").map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className="inline-block hover:scale-125 hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:drop-shadow-[0_0_20px_hsl(var(--accent)/0.8)]"
+                    style={{ animationDelay: `${(index + 5) * 0.1}s` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </span>
+            </h1>
+            
+            {/* Animated underline */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary via-accent to-primary group-hover/title:w-full transition-all duration-700 rounded-full"></div>
+          </div>
+
+          {/* Enhanced description card */}
+          <div className="relative group/desc max-w-4xl mx-auto">
+            {/* Glow effect */}
+            <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl opacity-0 group-hover/desc:opacity-100 blur-3xl transition-all duration-700"></div>
+            
+            {/* Main content card */}
+            <div className="relative bg-card/60 backdrop-blur-xl border-2 border-border/50 rounded-3xl p-8 sm:p-10 group-hover/desc:border-primary/40 group-hover/desc:shadow-2xl transition-all duration-500">
+              {/* Decorative corner accents */}
+              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/30 rounded-tl-3xl group-hover/desc:border-primary/60 transition-colors duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/30 rounded-br-3xl group-hover/desc:border-accent/60 transition-colors duration-500"></div>
+              
+              <p className="text-xl sm:text-2xl font-display leading-relaxed text-foreground/90 group-hover/desc:text-foreground transition-colors duration-300">
+                I'm an{" "}
+                <span className="relative inline-block group/word">
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent group-hover/word:scale-110 inline-block transition-transform duration-300 cursor-pointer">
+                    AI Product Manager
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300"></span>
+                </span>
+                {" "}and MBA candidate specializing in{" "}
+                <span className="relative inline-block group/word">
+                  <span className="font-semibold text-accent group-hover/word:scale-110 inline-block transition-transform duration-300 cursor-pointer">
+                    Business Analytics & Marketing
+                  </span>
+                  <span className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300"></span>
+                </span>
+                .{" "}
+                <span className="block mt-4 text-lg sm:text-xl text-muted-foreground group-hover/desc:text-foreground/80 transition-colors duration-300">
+                  With experience spanning{" "}
+                  <span className="font-medium text-primary group-hover/word:scale-105 inline-block transition-transform duration-300">stealth AI startups</span>
+                  {" "}to{" "}
+                  <span className="font-medium text-accent group-hover/word:scale-105 inline-block transition-transform duration-300">established SaaS platforms</span>
+                  , I excel at building{" "}
+                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">data-driven products</span>
+                  {" "}that drive measurable growth and user engagement.
+                </span>
+              </p>
+
+              {/* Floating particles inside card */}
+              <div className="absolute top-4 right-4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+              <div className="absolute bottom-8 left-8 w-2 h-2 bg-accent/40 rounded-full animate-float-delay"></div>
+              <div className="absolute top-1/2 right-12 w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse-slow"></div>
+            </div>
+          </div>
         </div>
 
         {/* Philosophy */}
