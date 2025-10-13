@@ -133,19 +133,21 @@ const Experience = () => {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Timeline Dot */}
-                <div className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-500 z-10 cursor-pointer ${
+                {/* Timeline Star */}
+                <div className={`absolute left-5 w-6 h-6 flex items-center justify-center transition-all duration-500 z-10 cursor-pointer ${
                   isSelected 
-                    ? 'bg-primary scale-150 shadow-primary/50 shadow-2xl ring-4 ring-primary/20' 
+                    ? 'scale-150 animate-pulse' 
                     : isExpanded
-                    ? 'bg-gradient-to-r from-primary to-accent scale-125 shadow-accent/50'
-                    : 'bg-gradient-to-r from-primary to-accent group-hover:scale-125'
+                    ? 'scale-125 animate-pulse'
+                    : 'group-hover:scale-125 animate-pulse'
                 }`}
                 onClick={() => handleCompanyClick(exp.company)}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 ${
-                    isExpanded ? 'animate-ping' : ''
-                  }`}></div>
+                  <Star className={`w-full h-full ${
+                    isSelected || isExpanded
+                      ? 'fill-foreground text-foreground'
+                      : 'fill-foreground text-foreground group-hover:fill-primary group-hover:text-primary'
+                  } transition-all duration-500`} strokeWidth={2} />
                 </div>
                 
                 {/* Experience Card */}
