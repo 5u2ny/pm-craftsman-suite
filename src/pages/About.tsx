@@ -1,8 +1,20 @@
+import { useState } from "react";
 import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart, Trophy, Building2, HandHeart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+
 const About = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+    setMousePosition({ x, y });
+  };
+
+
   const skills = [
     {
       category: "Product Management",
@@ -213,6 +225,7 @@ const About = () => {
     }
   ];
 
+
   return (
     <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
       {/* Animated background */}
@@ -224,86 +237,155 @@ const About = () => {
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in relative">
-          {/* Decorative elements */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-shimmer"></div>
-          
-          {/* Animated title with split effect */}
-          <div className="relative inline-block mb-8 group/title">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl opacity-0 group-hover/title:opacity-100 blur-2xl transition-all duration-700"></div>
-            
-            <h1 className="relative text-5xl sm:text-6xl lg:text-7xl font-hero font-black mb-4 tracking-tight">
-              <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                {"About".split("").map((letter, index) => (
-                  <span 
-                    key={index} 
-                    className="inline-block hover:scale-125 hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:drop-shadow-[0_0_20px_hsl(var(--primary)/0.8)]"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </span>
-              {" "}
-              <span className="inline-block bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer">
-                {"Me".split("").map((letter, index) => (
-                  <span 
-                    key={index} 
-                    className="inline-block hover:scale-125 hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:drop-shadow-[0_0_20px_hsl(var(--accent)/0.8)]"
-                    style={{ animationDelay: `${(index + 5) * 0.1}s` }}
-                  >
-                    {letter}
-                  </span>
-                ))}
-              </span>
-            </h1>
-            
-            {/* Animated underline */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-primary via-accent to-primary group-hover/title:w-full transition-all duration-700 rounded-full"></div>
+        <div 
+          className="text-center mb-20 animate-fade-in relative overflow-visible"
+          onMouseMove={handleMouseMove}
+        >
+          {/* Dynamic flowing particles that follow mouse */}
+          <div 
+            className="absolute top-1/2 left-1/2 w-96 h-96 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            style={{
+              transform: `translate(${-50 + mousePosition.x * 20}%, ${-50 + mousePosition.y * 20}%)`
+            }}
+          >
+            <div className="absolute top-0 left-0 w-4 h-4 bg-primary/40 rounded-full blur-sm animate-float"></div>
+            <div className="absolute top-1/4 right-0 w-3 h-3 bg-accent/40 rounded-full blur-sm animate-float-delay"></div>
+            <div className="absolute bottom-0 left-1/4 w-2 h-2 bg-primary/50 rounded-full blur-sm animate-float-slow"></div>
+            <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-accent/30 rounded-full blur-sm animate-pulse-slow"></div>
           </div>
 
-          {/* Enhanced description card */}
-          <div className="relative group/desc max-w-4xl mx-auto">
-            {/* Glow effect */}
-            <div className="absolute -inset-6 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl opacity-0 group-hover/desc:opacity-100 blur-3xl transition-all duration-700"></div>
+          {/* Interactive 3D title */}
+          <div className="relative inline-block mb-12 perspective-1000">
+            {/* Layered glow effects */}
+            <div className="absolute -inset-8 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div className="absolute -inset-12 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+            
+            <h1 
+              className="relative text-6xl sm:text-7xl lg:text-8xl font-hero font-black tracking-tighter"
+              style={{
+                transform: `perspective(1000px) rotateX(${mousePosition.y * -10}deg) rotateY(${mousePosition.x * 10}deg)`,
+                transition: 'transform 0.3s ease-out'
+              }}
+            >
+              {/* "About" with individual letter animations */}
+              <div className="inline-block mr-6">
+                {"About".split("").map((letter, index) => (
+                  <span
+                    key={`about-${index}`}
+                    className="inline-block relative group/letter cursor-pointer"
+                    style={{
+                      animation: `letter-drop 0.8s ease-out forwards`,
+                      animationDelay: `${index * 0.1}s`,
+                      opacity: 0
+                    }}
+                  >
+                    {/* Multiple text layers for 3D effect */}
+                    <span className="absolute inset-0 text-primary/30 blur-md transform translate-x-1 translate-y-1 group-hover/letter:translate-x-2 group-hover/letter:translate-y-2 transition-transform duration-300">
+                      {letter}
+                    </span>
+                    <span className="absolute inset-0 text-primary/50 blur-sm transform translate-x-0.5 translate-y-0.5 group-hover/letter:translate-x-1 group-hover/letter:translate-y-1 transition-transform duration-300">
+                      {letter}
+                    </span>
+                    <span className="relative bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent group-hover/letter:scale-125 group-hover/letter:-translate-y-3 transition-all duration-300 drop-shadow-[0_0_30px_hsl(var(--primary)/0.5)] group-hover/letter:drop-shadow-[0_0_50px_hsl(var(--primary)/0.9)]">
+                      {letter}
+                    </span>
+                    
+                    {/* Sparkle effect on hover */}
+                    <span className="absolute -top-2 -right-2 w-2 h-2 bg-accent rounded-full opacity-0 group-hover/letter:opacity-100 group-hover/letter:animate-ping"></span>
+                  </span>
+                ))}
+              </div>
+
+              {/* "Me" with different animation timing */}
+              <div className="inline-block">
+                {"Me".split("").map((letter, index) => (
+                  <span
+                    key={`me-${index}`}
+                    className="inline-block relative group/letter cursor-pointer"
+                    style={{
+                      animation: `letter-drop 0.8s ease-out forwards`,
+                      animationDelay: `${(index + 5) * 0.1}s`,
+                      opacity: 0
+                    }}
+                  >
+                    {/* Multiple text layers for 3D effect */}
+                    <span className="absolute inset-0 text-accent/30 blur-md transform translate-x-1 translate-y-1 group-hover/letter:translate-x-2 group-hover/letter:translate-y-2 transition-transform duration-300">
+                      {letter}
+                    </span>
+                    <span className="absolute inset-0 text-accent/50 blur-sm transform translate-x-0.5 translate-y-0.5 group-hover/letter:translate-x-1 group-hover/letter:translate-y-1 transition-transform duration-300">
+                      {letter}
+                    </span>
+                    <span className="relative bg-gradient-to-br from-accent via-primary to-accent bg-clip-text text-transparent group-hover/letter:scale-125 group-hover/letter:-translate-y-3 transition-all duration-300 drop-shadow-[0_0_30px_hsl(var(--accent)/0.5)] group-hover/letter:drop-shadow-[0_0_50px_hsl(var(--accent)/0.9)]">
+                      {letter}
+                    </span>
+                    
+                    {/* Sparkle effect on hover */}
+                    <span className="absolute -top-2 -right-2 w-2 h-2 bg-primary rounded-full opacity-0 group-hover/letter:opacity-100 group-hover/letter:animate-ping"></span>
+                  </span>
+                ))}
+              </div>
+            </h1>
+
+            {/* Animated flowing underline */}
+            <div className="absolute -bottom-4 left-0 right-0 h-1 overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-r from-transparent via-primary to-transparent animate-shimmer"></div>
+            </div>
+          </div>
+
+          {/* Enhanced description card with tilt effect */}
+          <div 
+            className="relative group/desc max-w-4xl mx-auto"
+            style={{
+              transform: `perspective(1000px) rotateX(${mousePosition.y * -5}deg) rotateY(${mousePosition.x * 5}deg)`,
+              transition: 'transform 0.3s ease-out'
+            }}
+          >
+            {/* Multi-layer glow */}
+            <div className="absolute -inset-8 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-2xl opacity-50 group-hover/desc:opacity-100 transition-opacity duration-700"></div>
+            <div className="absolute -inset-12 bg-gradient-to-r from-accent/5 via-primary/5 to-accent/5 rounded-3xl blur-3xl opacity-0 group-hover/desc:opacity-100 transition-opacity duration-700"></div>
             
             {/* Main content card */}
-            <div className="relative bg-card/60 backdrop-blur-xl border-2 border-border/50 rounded-3xl p-8 sm:p-10 group-hover/desc:border-primary/40 group-hover/desc:shadow-2xl transition-all duration-500">
-              {/* Decorative corner accents */}
-              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/30 rounded-tl-3xl group-hover/desc:border-primary/60 transition-colors duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-accent/30 rounded-br-3xl group-hover/desc:border-accent/60 transition-colors duration-500"></div>
+            <div className="relative bg-gradient-to-br from-card/80 via-card/60 to-card/80 backdrop-blur-2xl border-2 border-border/50 rounded-3xl p-10 sm:p-12 group-hover/desc:border-primary/60 group-hover/desc:shadow-[0_0_80px_-20px_hsl(var(--primary)/0.4)] transition-all duration-700">
+              {/* Animated corner accents */}
+              <div className="absolute top-0 left-0 w-24 h-24 border-t-4 border-l-4 border-primary/40 rounded-tl-3xl group-hover/desc:border-primary group-hover/desc:w-32 group-hover/desc:h-32 transition-all duration-700"></div>
+              <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-accent/40 rounded-br-3xl group-hover/desc:border-accent group-hover/desc:w-32 group-hover/desc:h-32 transition-all duration-700"></div>
               
-              <p className="text-xl sm:text-2xl font-display leading-relaxed text-foreground/90 group-hover/desc:text-foreground transition-colors duration-300">
+              {/* Floating orb decorations */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-full blur-md opacity-60 group-hover/desc:scale-150 group-hover/desc:opacity-100 transition-all duration-500"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-br from-accent to-primary rounded-full blur-md opacity-60 group-hover/desc:scale-150 group-hover/desc:opacity-100 transition-all duration-500" style={{ transitionDelay: '100ms' }}></div>
+              
+              <p className="text-xl sm:text-2xl font-display leading-relaxed text-foreground/90 group-hover/desc:text-foreground transition-colors duration-500 relative z-10">
                 I'm an{" "}
                 <span className="relative inline-block group/word">
-                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent group-hover/word:scale-110 inline-block transition-transform duration-300 cursor-pointer">
+                  <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] animate-shimmer group-hover/word:scale-110 inline-block transition-all duration-300 cursor-pointer">
                     AI Product Manager
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300 -z-10"></span>
                 </span>
                 {" "}and MBA candidate specializing in{" "}
                 <span className="relative inline-block group/word">
-                  <span className="font-semibold text-accent group-hover/word:scale-110 inline-block transition-transform duration-300 cursor-pointer">
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-accent bg-[length:200%_auto] animate-shimmer group-hover/word:scale-110 inline-block transition-all duration-300 cursor-pointer">
                     Business Analytics & Marketing
                   </span>
-                  <span className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-accent/30 to-primary/30 blur-xl opacity-0 group-hover/word:opacity-100 transition-opacity duration-300 -z-10"></span>
                 </span>
                 .{" "}
-                <span className="block mt-4 text-lg sm:text-xl text-muted-foreground group-hover/desc:text-foreground/80 transition-colors duration-300">
+                <span className="block mt-6 text-lg sm:text-xl text-muted-foreground group-hover/desc:text-foreground/90 transition-colors duration-500">
                   With experience spanning{" "}
-                  <span className="font-medium text-primary group-hover/word:scale-105 inline-block transition-transform duration-300">stealth AI startups</span>
+                  <span className="font-semibold text-primary hover:scale-105 inline-block transition-transform duration-300 cursor-pointer">stealth AI startups</span>
                   {" "}to{" "}
-                  <span className="font-medium text-accent group-hover/word:scale-105 inline-block transition-transform duration-300">established SaaS platforms</span>
+                  <span className="font-semibold text-accent hover:scale-105 inline-block transition-transform duration-300 cursor-pointer">established SaaS platforms</span>
                   , I excel at building{" "}
-                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary">data-driven products</span>
+                  <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary hover:scale-105 inline-block transition-transform duration-300 cursor-pointer">data-driven products</span>
                   {" "}that drive measurable growth and user engagement.
                 </span>
               </p>
 
-              {/* Floating particles inside card */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
-              <div className="absolute bottom-8 left-8 w-2 h-2 bg-accent/40 rounded-full animate-float-delay"></div>
-              <div className="absolute top-1/2 right-12 w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse-slow"></div>
+              {/* Animated particles */}
+              <div className="absolute top-8 right-12 w-2 h-2 bg-primary/50 rounded-full animate-float"></div>
+              <div className="absolute bottom-12 left-12 w-2 h-2 bg-accent/50 rounded-full animate-float-delay"></div>
+              <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-primary/40 rounded-full animate-pulse-slow"></div>
+              <div className="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-accent/40 rounded-full animate-float-slow"></div>
             </div>
           </div>
         </div>
