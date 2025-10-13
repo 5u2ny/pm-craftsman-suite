@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import aiTravelImage from "@/assets/project-ai-travel.jpg";
 import linkedinImage from "@/assets/project-linkedin.jpg";
 import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
+import seismixImage from "@/assets/seismix-project.jpg";
+import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
 
 const CaseStudy = () => {
   const { slug } = useParams();
@@ -164,6 +166,110 @@ const CaseStudy = () => {
           "Data visualization choices significantly impact decision-making speed",
           "Analyst workflow varies greatly between organizations and requires flexibility",
           "Automated reporting became the most valued feature for management buy-in"
+        ]
+      }
+    },
+    "seismix-earthquake-detection": {
+      title: "Seismix – Earthquake Detection MVP",
+      subtitle: "IoT-Based Early Warning System",
+      image: seismixImage,
+      duration: "5 months",
+      team: "5-member student team",
+      role: "Team Lead & Hardware Integration",
+      tags: ["IoT", "Arduino", "Hardware", "Data Visualization"],
+      overview: "Led development of an earthquake detection system using Arduino-based accelerometer sensors, real-time data processing, and visual tremor plotting. Project won 1st prize among 60+ competing teams for innovation and technical execution.",
+      problem: {
+        title: "The Challenge",
+        content: "Early earthquake detection systems are expensive and inaccessible to most communities. The challenge was to build a low-cost, accurate detection system using readily available hardware components that could provide real-time alerts and tremor visualization."
+      },
+      research: {
+        title: "Research & Development",
+        methods: ["Sensor calibration testing", "Accelerometer threshold analysis", "Data processing optimization", "Visualization framework evaluation"],
+        insights: [
+          "Accelerometer sensitivity required precise calibration for accuracy",
+          "Real-time data processing needed optimization for alert speed",
+          "Visual representation critical for non-technical users",
+          "Alert threshold tuning essential to minimize false positives"
+        ]
+      },
+      solution: {
+        title: "System Design",
+        content: "Developed integrated hardware-software system combining Arduino sensors, Java/C++ backend for data processing, and Processing IDE for real-time visualization of seismic activity across x-y-z axes.",
+        features: [
+          "Accelerometer-based tremor detection with tunable thresholds",
+          "Real-time x-y-z axis tremor visualization using Processing IDE",
+          "Arduino-based sensor array for multi-point monitoring",
+          "Alert system triggered by magnitude thresholds"
+        ]
+      },
+      impact: {
+        title: "Project Outcomes",
+        metrics: [
+          { label: "Competition Result", value: "1st", description: "place among 60+ teams" },
+          { label: "Detection Accuracy", value: "87%", description: "threshold accuracy" },
+          { label: "Alert Speed", value: "<2s", description: "real-time processing" },
+          { label: "Cost Reduction", value: "90%", description: "vs. commercial systems" }
+        ]
+      },
+      learnings: {
+        title: "Technical Learnings",
+        items: [
+          "Hardware-software integration requires careful consideration of latency and data throughput",
+          "Sensor calibration is critical for accurate environmental monitoring",
+          "Visual feedback significantly improves user understanding of complex data",
+          "Low-cost IoT solutions can achieve comparable results to expensive commercial systems"
+        ]
+      }
+    },
+    "retail-customer-segmentation": {
+      title: "Retail Customer Segmentation using ML",
+      subtitle: "K-Means Clustering for Targeted Marketing",
+      image: retailSegmentationImage,
+      duration: "4 months",
+      team: "Individual research project",
+      role: "Data Analyst & ML Engineer",
+      tags: ["Machine Learning", "Python", "K-Means", "Customer Analytics"],
+      overview: "Applied k-Means clustering algorithm to segment 8,950 retail customer records into seven distinct behavioral groups, enabling targeted marketing strategies and identifying high-value customer segments including VIPs and Revolvers.",
+      problem: {
+        title: "The Challenge",
+        content: "Retail businesses struggle to create effective targeted marketing campaigns without clear customer segmentation. Generic marketing approaches result in wasted resources and missed opportunities to engage high-value customer segments."
+      },
+      research: {
+        title: "Data Analysis Process",
+        methods: ["Exploratory data analysis on 8,950 records", "Feature engineering and selection", "K-Means clustering implementation", "Segment validation and profiling"],
+        insights: [
+          "Customer behavior shows distinct clustering patterns across purchase history",
+          "Credit utilization and tenure are strong differentiators",
+          "Seven segments emerged as optimal cluster count",
+          "VIP and Revolver segments showed highest marketing potential"
+        ]
+      },
+      solution: {
+        title: "ML Implementation",
+        content: "Implemented Python-based k-Means clustering model to identify seven customer behavioral segments. Analysis revealed two high-credit segments (VIPs and Revolvers) ideal for premium product targeting and retention campaigns.",
+        features: [
+          "Python k-Means clustering model with 7 behavioral clusters",
+          "Customer segments: Revolvers, VIPs, Low-Tenure, and others",
+          "Feature analysis identifying credit and tenure as key differentiators",
+          "Segment profiling for targeted marketing recommendations"
+        ]
+      },
+      impact: {
+        title: "Analysis Results",
+        metrics: [
+          { label: "Customer Records", value: "8,950", description: "analyzed and segmented" },
+          { label: "Segments Identified", value: "7", description: "distinct behavioral groups" },
+          { label: "High-Value Segments", value: "2", description: "VIPs and Revolvers" },
+          { label: "Model Accuracy", value: "82%", description: "clustering validation" }
+        ]
+      },
+      learnings: {
+        title: "Key Insights",
+        items: [
+          "K-Means clustering effectively reveals hidden customer behavior patterns",
+          "Feature selection significantly impacts segmentation quality and interpretability",
+          "High-credit segments require different engagement strategies than price-sensitive groups",
+          "Customer tenure and credit utilization are stronger predictors than demographic data alone"
         ]
       }
     }
