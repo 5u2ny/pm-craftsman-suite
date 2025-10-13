@@ -455,7 +455,7 @@ const CaseStudy = () => {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/projects">
-                  View other case studies
+                  View other projects
                 </Link>
               </Button>
             </div>
