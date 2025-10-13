@@ -560,15 +560,25 @@ const About = () => {
 
         {/* CTA */}
         <div className="text-center mt-16 animate-fade-in">
-          <p className="text-muted-foreground mb-4">
+          <p className="text-muted-foreground mb-6 text-lg">
             Interested in collaborating or learning more about my work?
           </p>
           <a
-            href="/contact"
-            className="inline-flex items-center text-primary font-medium hover:text-primary/80 transition-all duration-300 hover:scale-105"
+            href="https://www.linkedin.com/in/sunnysonimba/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-primary-foreground bg-gradient-to-r from-primary to-accent rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/50"
           >
-            Let's connect
-            <span className="ml-2">→</span>
+            {/* Animated background shine */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            
+            {/* Glow effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-primary/50 to-accent/50 blur-xl transition-opacity duration-300"></div>
+            
+            <span className="relative z-10">Let's Connect on LinkedIn</span>
+            <svg className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
         </div>
       </div>
