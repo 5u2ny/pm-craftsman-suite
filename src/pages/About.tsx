@@ -1,20 +1,8 @@
-import { useState } from "react";
 import { Brain, Target, Users2, TrendingUp, Award, BookOpen, CheckCircle2, GraduationCap, ChefHat, Plane, Music, Dumbbell, Camera, Cpu, Tv, Film, Radio, Heart, Trophy, Building2, HandHeart } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-
 const About = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
-    setMousePosition({ x, y });
-  };
-
-
   const skills = [
     {
       category: "Product Management",
@@ -227,144 +215,41 @@ const About = () => {
 
 
   return (
-    <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-      </div>
-      
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div 
-          className="text-center mb-20 relative"
-          onMouseMove={handleMouseMove}
-        >
-          {/* Interactive spotlight effect that follows mouse */}
-          <div 
-            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] pointer-events-none opacity-30 blur-3xl transition-all duration-500 ease-out"
-            style={{
-              background: `radial-gradient(circle, hsl(var(--primary) / 0.3) 0%, hsl(var(--accent) / 0.2) 50%, transparent 70%)`,
-              transform: `translate(calc(-50% + ${mousePosition.x * 100}px), calc(-50% + ${mousePosition.y * 100}px))`
-            }}
-          />
-
-          {/* Main heading */}
-          <div className="relative mb-12">
-            <h1 className="text-7xl sm:text-8xl lg:text-9xl font-hero font-black tracking-tighter mb-4">
-              <span 
-                className="inline-block bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent transition-all duration-300 hover:scale-105 cursor-pointer"
-                style={{
-                  transform: `perspective(800px) rotateX(${mousePosition.y * -3}deg) rotateY(${mousePosition.x * 3}deg)`,
-                  textShadow: `${mousePosition.x * 2}px ${mousePosition.y * 2}px 20px hsl(var(--primary) / 0.3)`
-                }}
-              >
-                About Me
-              </span>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section with Background */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Floating gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.08] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.04] rounded-full blur-3xl animate-float-slow"></div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute top-20 right-20 w-24 h-24 border border-primary/10 rounded-lg rotate-45 animate-spin-slow"></div>
+          <div className="absolute bottom-32 left-16 w-20 h-20 border border-accent/15 rounded-full animate-spin-reverse"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+          <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+          <div className="absolute top-60 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float-slow"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+              <span className="text-gradient">About Me</span>
             </h1>
-            
-            {/* Dynamic underline */}
-            <div 
-              className="mx-auto h-1.5 rounded-full transition-all duration-300"
-              style={{
-                width: `${200 + Math.abs(mousePosition.x) * 100}px`,
-                background: `linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))`,
-                opacity: 0.6 + Math.abs(mousePosition.x) * 0.4
-              }}
-            />
-          </div>
-
-          {/* Interactive description card */}
-          <div 
-            className="relative max-w-4xl mx-auto group/card"
-            style={{
-              transform: `perspective(1200px) rotateX(${mousePosition.y * -2}deg) rotateY(${mousePosition.x * 2}deg)`,
-              transition: 'transform 0.2s ease-out'
-            }}
-          >
-            {/* Card glow */}
-            <div 
-              className="absolute -inset-4 rounded-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 blur-2xl"
-              style={{
-                background: `radial-gradient(circle at ${50 + mousePosition.x * 50}% ${50 + mousePosition.y * 50}%, hsl(var(--primary) / 0.3), hsl(var(--accent) / 0.2), transparent)`
-              }}
-            />
-            
-            {/* Main card */}
-            <div className="relative bg-card/50 backdrop-blur-xl border-2 border-border/50 rounded-3xl p-10 sm:p-14 transition-all duration-300 group-hover/card:border-primary/50 group-hover/card:bg-card/70">
-              {/* Interactive corner highlights */}
-              <div 
-                className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 rounded-tl-3xl transition-all duration-300"
-                style={{
-                  borderColor: `hsl(var(--primary) / ${0.3 + Math.abs(mousePosition.x) * 0.3})`
-                }}
-              />
-              <div 
-                className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 rounded-br-3xl transition-all duration-300"
-                style={{
-                  borderColor: `hsl(var(--accent) / ${0.3 + Math.abs(mousePosition.y) * 0.3})`
-                }}
-              />
-
-              {/* Content */}
-              <div className="relative z-10">
-                <p className="text-2xl sm:text-3xl font-display font-semibold leading-relaxed text-foreground mb-6">
-                  I'm an{" "}
-                  <span className="relative inline-block group/highlight">
-                    <span className="relative z-10 font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                      AI Product Manager
-                    </span>
-                    <span 
-                      className="absolute inset-0 bg-primary/10 blur-xl -z-10 opacity-0 group-hover/highlight:opacity-100 transition-opacity duration-300"
-                    />
-                  </span>
-                  {" "}and MBA candidate specializing in{" "}
-                  <span className="relative inline-block group/highlight">
-                    <span className="relative z-10 font-black text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">
-                      Business Analytics & Marketing
-                    </span>
-                    <span 
-                      className="absolute inset-0 bg-accent/10 blur-xl -z-10 opacity-0 group-hover/highlight:opacity-100 transition-opacity duration-300"
-                    />
-                  </span>
-                  .
-                </p>
-                
-                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  With experience spanning{" "}
-                  <span className="font-semibold text-primary hover:text-accent transition-colors cursor-pointer">
-                    stealth AI startups
-                  </span>
-                  {" "}to{" "}
-                  <span className="font-semibold text-accent hover:text-primary transition-colors cursor-pointer">
-                    established SaaS platforms
-                  </span>
-                  , I excel at building{" "}
-                  <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                    data-driven products
-                  </span>
-                  {" "}that drive measurable growth and user engagement.
-                </p>
-              </div>
-
-              {/* Floating interactive dots */}
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-2 h-2 rounded-full bg-primary/40 transition-all duration-500"
-                  style={{
-                    top: `${20 + i * 25}%`,
-                    left: i % 2 === 0 ? '5%' : '95%',
-                    transform: `translate(${mousePosition.x * (10 + i * 5)}px, ${mousePosition.y * (10 + i * 5)}px)`,
-                    opacity: 0.3 + Math.abs(mousePosition.x + mousePosition.y) * 0.3
-                  }}
-                />
-              ))}
-            </div>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+              I'm an AI Product Manager and MBA candidate specializing in Business Analytics & Marketing. 
+              With experience spanning stealth AI startups to established SaaS platforms, I excel at 
+              building data-driven products that drive measurable growth and user engagement.
+            </p>
           </div>
         </div>
+      </section>
 
+      {/* Content Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Philosophy */}
         <Card className="card-gradient p-8 mb-12 animate-fade-in hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
           <div className="grid md:grid-cols-3 gap-6 text-center">
