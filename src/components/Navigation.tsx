@@ -5,30 +5,24 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      setIsScrolled(currentScrollY > 50);
-      
-      // Hide nav when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
+      // Show nav only when at the top of the page
+      if (currentScrollY < 100) {
         setIsVisible(true);
+      } else {
+        setIsVisible(false);
       }
-      
-      setLastScrollY(currentScrollY);
     };
     
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/", icon: House },
