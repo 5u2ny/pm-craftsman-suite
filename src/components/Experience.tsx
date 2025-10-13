@@ -227,8 +227,8 @@ const Experience = () => {
                   </div>
                   
                   {/* Expandable Content */}
-                  <div className={`transition-all duration-500 overflow-hidden ${
-                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  <div className={`transition-all duration-500 overflow-x-hidden ${
+                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 overflow-y-hidden'
                   }`}>
                     {/* Description */}
                     <p className="text-muted-foreground leading-relaxed text-base mb-4">
