@@ -36,7 +36,7 @@ const Projects = () => {
     },
     {
       title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
-      tagline: "Undergraduate Research, Spring 2021",
+      tagline: "Undergraduate Project, Spring 2021",
       description: "Applied machine learning clustering algorithms to identify behavioral customer segments for targeted marketing strategies",
       image: retailSegmentationImage,
       metrics: [
