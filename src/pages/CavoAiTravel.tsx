@@ -72,9 +72,6 @@ const CavoAiTravel = () => {
         
         <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-20">
           <div className="max-w-5xl animate-slide-up">
-            <div className="inline-block mb-6 px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
-              <span className="text-sm font-semibold text-primary">AI Product Case Study</span>
-            </div>
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 text-foreground tracking-tight">
               Cavo
             </h1>
