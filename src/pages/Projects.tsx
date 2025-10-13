@@ -23,7 +23,7 @@ const Projects = () => {
     {
       title: "Cavo – AI Travel Companion",
       tagline: "AI Product Management • UX Strategy • Prompt Engineering",
-      description: "Leading 0-to-1 development of an AI-powered travel companion that personalizes trips using emotional-safety logic, multi-agent LLMs, and dynamic itinerary generation.",
+      description: "Leading development of an AI-powered travel companion with emotional-safety logic and dynamic itinerary generation",
       image: cavoHeroImage,
       metrics: [
         "Designed adaptive itinerary builder with contextual AI reasoning",
@@ -37,7 +37,7 @@ const Projects = () => {
     {
       title: "Retail Stores Customer Segmentation using ML and K-Cluster Algorithms",
       tagline: "Undergraduate Research, Spring 2021",
-      description: "Analyzed 8,950 retail customer records using Python k-Means clustering to identify seven behavioral segments including VIPs and Revolvers for targeted marketing.",
+      description: "Applied machine learning clustering algorithms to identify behavioral customer segments for targeted marketing strategies",
       image: retailSegmentationImage,
       metrics: [
         "Implemented Python-based k-Means model for 7 behavioral clusters",
@@ -51,7 +51,7 @@ const Projects = () => {
     {
       title: "Seismix – Earthquake Detection MVP",
       tagline: "Undergraduate Project, Karunya University, Sep 2018 - Jan 2019",
-      description: "Led 5-member team developing earthquake detection MVP using Arduino hardware, sensors, and Java/C++ backend. Awarded 1st prize among 60+ teams for innovation and execution.",
+      description: "Led team developing earthquake detection MVP using Arduino hardware, sensors, and real-time data visualization",
       image: seismixImage,
       metrics: [
         "Integrated accelerometer-based detection with alert thresholds",
@@ -65,7 +65,7 @@ const Projects = () => {
     {
       title: "Brewscovery – Craft Beer Subscription Model",
       tagline: "MBA Sprint Week, Fall 2024",
-      description: "Designed investor-ready craft beer subscription with financial projections of $4.8M revenue and $1.5M Year 1 profit. Top 4 team selected to present to Domino's Chief.",
+      description: "Designed investor-ready craft beer subscription model with comprehensive financial projections and go-to-market strategy",
       image: brewscoveryImage,
       metrics: [
         "Built forecast model for 10K subscribers and $1.5M profit in Year 1",
@@ -80,7 +80,7 @@ const Projects = () => {
     {
       title: "Airlines Customer Satisfaction Analysis",
       tagline: "MBA Data Analysis Project, Fall 2024",
-      description: "Applied t-tests, ANOVA, and regression on 5,000 airline records using JASP. Identified service class as strongest satisfaction predictor and delivered economy improvement recommendations.",
+      description: "Applied statistical modeling and hypothesis testing to identify key predictors of airline customer satisfaction",
       image: airlinesDataImage,
       metrics: [
         "Applied t-tests, ANOVA, and regression via JASP for hypothesis testing",
@@ -95,7 +95,7 @@ const Projects = () => {
     {
       title: "EnergyOne America Employee Performance & Commitment",
       tagline: "MBA Organizational Behavior, Fall 2024",
-      description: "Conducted employee interviews for insulation contractor, applied OB frameworks at group and organizational levels, and created phased roadmap for satisfaction improvements.",
+      description: "Conducted employee interviews and applied organizational behavior frameworks to develop phased improvement roadmap",
       image: energyoneObImage,
       metrics: [
         "Conducted qualitative employee interviews across multiple roles",
@@ -110,7 +110,7 @@ const Projects = () => {
     {
       title: "Reconnaissance Healthcare Cyber Risk Assessment",
       tagline: "MBA Sprint Week, Spring 2025",
-      description: "Applied FAIR methodology to quantify healthcare cyber risks. Proposed $1M investment to reduce annual loss by $17M and protect $546M in organizational value.",
+      description: "Applied FAIR methodology to quantify healthcare cyber risks and propose comprehensive investment strategies",
       image: cyberRiskImage,
       metrics: [
         "Applied FAIR to quantify risk magnitude and breach probability",
@@ -125,7 +125,7 @@ const Projects = () => {
     {
       title: "South Korea Demographic Transition & Economic Policy",
       tagline: "MBA Business, Govt & Global Economy, Spring 2025",
-      description: "Built regression models analyzing aging population impact on GDP using KOSIS, KOSTAT, and World Bank data. Delivered policy recommendations for workforce and immigration reform.",
+      description: "Built regression models analyzing demographic transition impact on GDP with policy recommendations for economic reform",
       image: southKoreaEconomy,
       metrics: [
         "Regression models built",
@@ -140,7 +140,7 @@ const Projects = () => {
     {
       title: "OpenAI ChatGPT Competitive Strategy",
       tagline: "MBA Global Competitive Strategy, Spring 2025",
-      description: "Three-phase strategic analysis using PESTEL, Porter's Five Forces, VRIO, and SWOT. Developed implementation roadmap focused on plugin infrastructure and ethical AI leadership.",
+      description: "Strategic analysis using multiple business frameworks with implementation roadmap for competitive positioning",
       image: openaiStrategyImage,
       metrics: [
         "Multi-framework strategic analysis",
@@ -159,7 +159,7 @@ const Projects = () => {
     {
       title: "Colonial Williamsburg Marketing Research",
       tagline: "MBA Marketing Research, Spring 2025",
-      description: "Led three-stage marketing research combining qualitative and quantitative methods. Analyzed 43 survey responses with predictive modeling to identify visitor segments.",
+      description: "Led marketing research combining qualitative and quantitative methods with predictive modeling to identify visitor segments",
       image: colonialWilliamsburgImage,
       metrics: [
         "3-stage research framework developed",

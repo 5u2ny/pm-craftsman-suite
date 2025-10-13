@@ -69,7 +69,7 @@ const ProjectCard = ({
           {tagline}
         </p>
 
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-4">
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
           {description}
         </p>
 
