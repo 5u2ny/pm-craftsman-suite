@@ -1,4 +1,4 @@
-import { ExternalLink, Calendar, MapPin, Briefcase, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, Briefcase, ChevronDown, ChevronUp, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
@@ -238,7 +238,7 @@ const Experience = () => {
                               className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item animate-fade-in overflow-visible"
                               style={{ animationDelay: `${index * 0.15 + i * 0.08}s` }}
                             >
-                              <ChevronRight className="mt-0.5 w-5 h-5 text-foreground flex-shrink-0 group-hover/item:translate-x-2 group-hover/item:scale-110 group-hover/item:text-primary transition-all duration-300" strokeWidth={3} />
+                              <Star className="mt-0.5 w-4 h-4 text-foreground fill-foreground flex-shrink-0 animate-pulse group-hover/item:scale-125 group-hover/item:rotate-180 group-hover/item:fill-primary group-hover/item:text-primary transition-all duration-500" strokeWidth={2} />
                               <span className="flex-1 group-hover/item:translate-x-1 transition-transform duration-300">
                                 {parts.map((part, idx) => {
                           // Check if this part is a number
