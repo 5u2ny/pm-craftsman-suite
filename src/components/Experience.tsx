@@ -262,7 +262,7 @@ const Experience = () => {
                       </ul>}
                     
                     {/* Tech Stack */}
-                    <div className="flex flex-wrap gap-3 mb-6">
+                    <div className="flex flex-wrap gap-3 mb-6 overflow-visible">
                       {exp.techStack.map((tech, i) => <Badge 
                           key={i} 
                           variant="secondary" 
