@@ -36,27 +36,6 @@ const ProjectCard = ({
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
-        
-        {/* Tags on image */}
-        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[85%]">
-          {tags.slice(0, 2).map((tag) => (
-            <Badge 
-              key={tag} 
-              variant="secondary" 
-              className="text-[10px] px-2 py-0.5 bg-background/80 backdrop-blur-sm"
-            >
-              {tag}
-            </Badge>
-          ))}
-          {tags.length > 2 && (
-            <Badge 
-              variant="secondary" 
-              className="text-[10px] px-2 py-0.5 bg-background/80 backdrop-blur-sm"
-            >
-              +{tags.length - 2}
-            </Badge>
-          )}
-        </div>
       </div>
 
       {/* Content */}
@@ -69,9 +48,22 @@ const ProjectCard = ({
           {tagline}
         </p>
 
-        <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+        <p className="text-sm text-muted-foreground leading-relaxed mb-3">
           {description}
         </p>
+
+        {/* Tags - visible on hover */}
+        <div className="flex flex-wrap gap-1.5 mb-4 max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 overflow-hidden transition-all duration-300">
+          {tags.map((tag) => (
+            <Badge 
+              key={tag} 
+              variant="secondary" 
+              className="text-[10px] px-2 py-0.5"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
 
         {/* Buttons */}
         <div className="mt-auto flex flex-col gap-2">
