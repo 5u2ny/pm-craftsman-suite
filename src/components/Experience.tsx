@@ -135,7 +135,7 @@ const Experience = () => {
               >
                 {/* Timeline Dot */}
                 <div 
-                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+                  className="absolute left-6 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
                   onClick={() => handleCompanyClick(exp.company)}
                 >
                   {/* Background circle to hide timeline line */}
