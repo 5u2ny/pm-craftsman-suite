@@ -41,29 +41,40 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 pb-12 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.05] rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl animate-float-slow"></div>
-        
-        {/* Floating particles */}
-        <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
-        <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-6">
-            Let's Connect
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm always interested in discussing product opportunities, AI/ML innovations, 
-            or sharing insights about building user-centric products. Let's start a conversation.
-          </p>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section with Background */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Floating gradient orbs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/[0.08] rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-accent/[0.06] rounded-full blur-3xl animate-float-delay"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/[0.04] rounded-full blur-3xl animate-float-slow"></div>
+          
+          {/* Geometric shapes */}
+          <div className="absolute top-20 right-20 w-24 h-24 border border-primary/10 rounded-lg rotate-45 animate-spin-slow"></div>
+          <div className="absolute bottom-32 left-16 w-20 h-20 border border-accent/15 rounded-full animate-spin-reverse"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute top-40 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+          <div className="absolute bottom-60 right-1/3 w-3 h-3 bg-accent/30 rounded-full animate-float-delay"></div>
+          <div className="absolute top-60 right-1/4 w-2 h-2 bg-accent/40 rounded-full animate-float-slow"></div>
         </div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+              Let's <span className="text-gradient">Connect</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+              I'm always interested in discussing product opportunities, AI/ML innovations, 
+              or sharing insights about building user-centric products. Let's start a conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Form */}
