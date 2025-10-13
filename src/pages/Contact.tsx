@@ -22,8 +22,8 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      value: "@sunnysoni",
-      action: "https://github.com/sunnysoni",
+      value: "@5u2ny",
+      action: "https://github.com/5u2ny",
       description: "Check out my technical projects"
     }
   ];
