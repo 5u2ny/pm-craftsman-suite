@@ -22,7 +22,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Cavo – AI Travel Companion",
-      tagline: "AI Product Management • UX Strategy • Prompt Engineering",
+      tagline: "AI PRODUCT MANAGER, SUMMER INTERNSHIP 2025",
       description: "Leading development of an AI-powered travel companion with emotional-safety logic and dynamic itinerary generation",
       image: cavoHeroImage,
       metrics: [
