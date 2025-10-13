@@ -282,14 +282,6 @@ const Experience = () => {
                           <span>Impact driven results</span>
                         </div>
                         
-                        <a 
-                          href={exp.website} 
-                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-accent/80 bg-accent/10 hover:bg-accent/20 rounded-lg transition-all duration-300 hover:scale-105 group/link"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <span>Learn more</span>
-                          <ExternalLink className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-                        </a>
                       </div>}
                   </div>
                 </div>
