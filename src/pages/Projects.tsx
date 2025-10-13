@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Sparkles } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
+import { toast } from "sonner";
 import colonialWilliamsburgImage from "@/assets/colonial-williamsburg.jpg";
 import openaiStrategyImage from "@/assets/openai-strategy.jpg";
 import southKoreaEconomy from "@/assets/south-korea-economy.jpg";
@@ -44,7 +46,7 @@ const Projects = () => {
       ],
       tags: ["Python", "Machine Learning", "K-Means", "Customer Segmentation"],
       slug: "retail-customer-segmentation",
-      category: "Undergrad"
+      category: "CS Engineering"
     },
     {
       title: "Seismix – Earthquake Detection MVP",
@@ -58,7 +60,7 @@ const Projects = () => {
       ],
       tags: ["IoT", "Arduino", "Python", "Hardware Integration"],
       slug: "seismix-earthquake-detection",
-      category: "Undergrad"
+      category: "CS Engineering"
     },
     {
       title: "Brewscovery – Craft Beer Subscription Model",
@@ -171,7 +173,18 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "Products", "MBA", "Undergrad"];
+  const categories = ["All", "Products", "MBA", "CS Engineering", "Case Studies"];
+  
+  const handleCategoryClick = (category: string) => {
+    if (category === "Case Studies") {
+      toast.info("Coming Soon!", {
+        description: "Case studies are currently being prepared and will be available soon.",
+        duration: 3000,
+      });
+      return;
+    }
+    setActiveCategory(category);
+  };
   
   const filteredProjects = activeCategory === "All" 
     ? projects 
@@ -214,22 +227,60 @@ const Projects = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-slide-up">
-            {categories.map((category, index) => (
-              <Badge
-                key={category}
-                variant={activeCategory === category ? "default" : "outline"}
-                className={`cursor-pointer px-6 py-2.5 hover-scale transition-all duration-300 text-sm font-medium ${
-                  activeCategory === category 
-                    ? 'shadow-lg shadow-primary/30 scale-105' 
-                    : 'hover:shadow-md hover:border-primary/50'
-                }`}
-                onClick={() => setActiveCategory(category)}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {category}
-              </Badge>
-            ))}
+          <div className="flex flex-wrap justify-center gap-4 mb-16 animate-slide-up">
+            {categories.map((category, index) => {
+              const isActive = activeCategory === category;
+              const isCaseStudies = category === "Case Studies";
+              
+              return (
+                <div
+                  key={category}
+                  className="relative group"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <Badge
+                    variant={isActive ? "default" : "outline"}
+                    className={`
+                      cursor-pointer px-8 py-3.5 text-base font-space-grotesk font-semibold uppercase tracking-wide
+                      transition-all duration-500 ease-out
+                      relative overflow-hidden
+                      ${isActive 
+                        ? 'shadow-2xl shadow-primary/40 scale-110 bg-gradient-to-r from-primary to-primary/80 border-primary/50' 
+                        : 'hover:scale-105 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/60 hover:-translate-y-1'
+                      }
+                      ${isCaseStudies ? 'border-accent/60 hover:border-accent hover:shadow-accent/20' : ''}
+                    `}
+                    onClick={() => handleCategoryClick(category)}
+                  >
+                    {/* Shimmer effect on hover */}
+                    <span className={`
+                      absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
+                      -translate-x-full group-hover:translate-x-full transition-transform duration-1000
+                      ${isActive ? 'animate-shimmer' : ''}
+                    `} />
+                    
+                    {/* Content */}
+                    <span className="relative z-10 flex items-center gap-2">
+                      {isCaseStudies && <Sparkles className="w-4 h-4 animate-pulse" />}
+                      {category}
+                      {isCaseStudies && <Sparkles className="w-4 h-4 animate-pulse" />}
+                    </span>
+                    
+                    {/* Active indicator line */}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-background/30 rounded-full animate-pulse" />
+                    )}
+                  </Badge>
+                  
+                  {/* Hover glow effect */}
+                  <div className={`
+                    absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                    ${isCaseStudies ? 'bg-accent/20' : 'bg-primary/20'}
+                    -z-10
+                  `} />
+                </div>
+              );
+            })}
           </div>
 
           {/* Projects Grid */}

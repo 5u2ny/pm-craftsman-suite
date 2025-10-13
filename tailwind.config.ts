@@ -19,6 +19,8 @@ export default {
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
         display: ['Space Grotesk', 'Inter', 'sans-serif'],
         hero: ['Poppins', 'Space Grotesk', 'Inter', 'sans-serif'],
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
+        "poppins": ["Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
