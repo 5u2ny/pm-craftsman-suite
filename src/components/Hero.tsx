@@ -144,7 +144,7 @@ const Hero = () => {
             <div className="group/social relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl opacity-0 group-hover/social:opacity-100 blur-xl transition-all duration-500"></div>
               <Button variant="ghost" size="lg" className="relative h-14 px-6 rounded-2xl border-2 border-border bg-card/50 backdrop-blur-sm hover:bg-gradient-to-br hover:from-primary hover:to-accent hover:border-transparent transition-all duration-500 hover:scale-105 hover:shadow-2xl overflow-hidden group" asChild>
-                <a href="https://github.com/sunnysoni" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <a href="https://github.com/5u2ny" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                   {/* Ripple effect */}
                   <div className="absolute inset-0 bg-white/20 rounded-2xl scale-0 group-hover:scale-100 transition-transform duration-700 ease-out"></div>
                   
