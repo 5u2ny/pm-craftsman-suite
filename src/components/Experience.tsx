@@ -235,10 +235,10 @@ const Experience = () => {
                     const parts = achievement.split(/(\d+[\d,.\$KM%+]*[\w]*)/g);
                     return <li 
                               key={i} 
-                              className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item animate-fade-in"
+                              className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item animate-fade-in overflow-visible"
                               style={{ animationDelay: `${index * 0.15 + i * 0.08}s` }}
                             >
-                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-150 group-hover/item:shadow-lg group-hover/item:shadow-primary/50 transition-all duration-300"></div>
+                              <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 group-hover/item:scale-150 group-hover/item:shadow-lg group-hover/item:shadow-primary/50 transition-all duration-300 overflow-visible"></div>
                               <span className="flex-1 group-hover/item:translate-x-1 transition-transform duration-300">
                                 {parts.map((part, idx) => {
                           // Check if this part is a number
