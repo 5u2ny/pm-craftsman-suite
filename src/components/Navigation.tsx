@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, FileDown, House, Briefcase, UserCircle, MessageSquare } from "lucide-react";
+import { Menu, X, House, Briefcase, UserCircle, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -23,10 +23,6 @@ const Navigation = () => {
     { name: "Contact", path: "/contact", icon: MessageSquare },
   ];
 
-  const handleDownloadResume = () => {
-    window.open('/Sunny_Soni_Resume.pdf', '_blank');
-  };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -36,25 +32,9 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 relative">
-          {/* Logo/Brand */}
-          <Link 
-            to="/" 
-            className="flex items-center gap-3 group z-10"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-lg blur-md group-hover:bg-primary/30 transition-colors duration-300"></div>
-              <div className="relative bg-gradient-to-br from-primary to-accent p-2.5 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                <span className="text-primary-foreground font-bold text-xl">SS</span>
-              </div>
-            </div>
-            <span className="hidden sm:block text-xl font-hero font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-              Sunny Soni
-            </span>
-          </Link>
-
+        <div className="flex justify-center items-center h-20">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const IconComponent = item.icon;
               const isActive = location.pathname === item.path;
@@ -76,18 +56,6 @@ const Navigation = () => {
                 </Link>
               );
             })}
-          </div>
-
-          {/* Desktop Resume Button */}
-          <div className="hidden md:flex items-center gap-2">
-            <Button
-              onClick={handleDownloadResume}
-              size="sm"
-              className="group gap-2 px-5 py-2.5 bg-gradient-to-r from-primary to-accent hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
-            >
-              <FileDown className="h-4 w-4 group-hover:animate-bounce-once" />
-              <span>Resume</span>
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -130,19 +98,6 @@ const Navigation = () => {
                   </Link>
                 );
               })}
-              <div className="pt-2 mt-2 border-t border-border/50">
-                <Button
-                  onClick={() => {
-                    handleDownloadResume();
-                    setIsOpen(false);
-                  }}
-                  size="sm"
-                  className="w-full gap-2 bg-gradient-to-r from-primary to-accent"
-                >
-                  <FileDown className="h-4 w-4" />
-                  Download Resume
-                </Button>
-              </div>
             </div>
           </div>
         )}
