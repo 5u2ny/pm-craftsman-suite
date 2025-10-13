@@ -25,12 +25,12 @@ const Navigation = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-10 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-10 transition-all duration-300 pointer-events-none"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-20">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2 pointer-events-auto">
             {navItems.map((item) => {
               const IconComponent = item.icon;
               const isActive = location.pathname === item.path;
@@ -55,7 +55,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden pointer-events-auto">
             <Button
               variant="ghost"
               size="icon"
