@@ -134,18 +134,25 @@ const Experience = () => {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Timeline Dot */}
-                <div className={`absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-500 z-10 cursor-pointer ${
-                  isSelected 
-                    ? 'bg-primary scale-[2] shadow-primary/50 shadow-2xl ring-4 ring-primary/20 animate-pulse' 
-                    : isExpanded
-                    ? 'bg-gradient-to-r from-primary to-accent scale-[1.75] shadow-accent/50 shadow-xl animate-pulse'
-                    : 'bg-gradient-to-r from-primary to-accent group-hover:scale-[1.75] group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary/50'
-                }`}
-                onClick={() => handleCompanyClick(exp.company)}
+                <div 
+                  className="absolute left-3 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+                  onClick={() => handleCompanyClick(exp.company)}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-20 ${
-                    isExpanded ? 'animate-ping' : 'group-hover:animate-ping'
-                  }`}></div>
+                  {/* Background circle to hide timeline line */}
+                  <div className="absolute inset-0 w-10 h-10 -left-3 -top-3 bg-background rounded-full z-10"></div>
+                  
+                  {/* Main dot */}
+                  <div className={`relative w-4 h-4 rounded-full border-4 border-background shadow-lg transition-all duration-700 ease-in-out z-20 ${
+                    isSelected 
+                      ? 'bg-primary scale-[2] shadow-primary/60 shadow-2xl ring-4 ring-primary/30 animate-pulse' 
+                      : isExpanded
+                      ? 'bg-gradient-to-r from-primary to-accent scale-[1.75] shadow-accent/60 shadow-xl animate-pulse'
+                      : 'bg-gradient-to-r from-primary to-accent group-hover:scale-[1.75] group-hover:animate-pulse group-hover:shadow-xl group-hover:shadow-primary/60'
+                  }`}>
+                    <div className={`absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full opacity-30 transition-opacity duration-700 ${
+                      isExpanded || isSelected ? 'animate-ping opacity-40' : 'group-hover:animate-ping group-hover:opacity-40'
+                    }`}></div>
+                  </div>
                 </div>
                 
                 {/* Experience Card */}
