@@ -238,7 +238,7 @@ const Experience = () => {
                               className="flex items-start gap-3 text-foreground/90 text-sm leading-relaxed group/item animate-fade-in overflow-visible"
                               style={{ animationDelay: `${index * 0.15 + i * 0.08}s` }}
                             >
-                              <ChevronRight className="mt-1.5 w-4 h-4 text-primary flex-shrink-0 group-hover/item:translate-x-1 group-hover/item:text-accent transition-all duration-300" />
+                              <ChevronRight className="mt-0.5 w-4 h-4 text-foreground flex-shrink-0 group-hover/item:translate-x-1 group-hover/item:text-primary transition-all duration-300" />
                               <span className="flex-1 group-hover/item:translate-x-1 transition-transform duration-300">
                                 {parts.map((part, idx) => {
                           // Check if this part is a number
