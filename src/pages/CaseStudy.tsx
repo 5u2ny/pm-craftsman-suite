@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Users, Briefcase, TrendingUp, CheckCircle2, Target, Lightbulb } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Target, TrendingUp, CheckCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -281,7 +281,7 @@ const CaseStudy = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4">Case Study Not Found</h1>
           <Button asChild>
             <Link to="/projects">
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -294,277 +294,166 @@ const CaseStudy = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Back Navigation */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        <Button variant="ghost" asChild className="group hover:bg-muted/50 transition-all duration-300">
-          <Link to="/projects">
-            <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            <span>Back to Projects</span>
-          </Link>
-        </Button>
-      </div>
+    <div className="min-h-screen pt-20 pb-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Back Navigation */}
+        <div className="mb-8 animate-fade-in">
+          <Button variant="ghost" asChild className="hover:bg-muted">
+            <Link to="/projects">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Projects
+            </Link>
+          </Button>
+        </div>
 
-      {/* Hero Section with Full Width Image */}
-      <section className="relative h-[70vh] min-h-[600px] overflow-hidden mb-20">
-        <div className="absolute inset-0">
+        {/* Header */}
+        <div className="mb-12 animate-slide-up">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {study.tags.map((tag) => (
+              <Badge key={tag} variant="secondary">{tag}</Badge>
+            ))}
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gradient mb-4">
+            {study.title}
+          </h1>
+          <p className="text-xl text-muted-foreground mb-6">{study.subtitle}</p>
+          
+          {/* Meta Info */}
+          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center">
+              <Calendar className="h-4 w-4 mr-2" />
+              {study.duration}
+            </div>
+            <div className="flex items-center">
+              <Users className="h-4 w-4 mr-2" />
+              {study.team}
+            </div>
+            <div className="flex items-center">
+              <Target className="h-4 w-4 mr-2" />
+              {study.role}
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.1s" }}>
           <img
             src={study.image}
             alt={study.title}
-            className="w-full h-full object-cover animate-fade-in"
+            className="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-xl"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
-          
-          {/* Floating gradient orbs */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
         </div>
-        
-        <div className="relative h-full container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-20">
-          <div className="max-w-5xl animate-slide-up">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-foreground tracking-tight">
-              {study.title}
-            </h1>
-            <p className="text-2xl sm:text-3xl text-gradient font-semibold mb-8">
-              {study.subtitle}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {study.tags.map((tag, index) => (
-                <Badge 
-                  key={tag} 
-                  variant="secondary" 
-                  className="text-sm px-5 py-2 hover-scale cursor-default backdrop-blur-sm bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-300"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Project Meta */}
-      <section className="border-y border-border/50 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/5"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                    <Calendar className="h-6 w-6 text-primary" />
+        {/* Overview */}
+        <Card className="card-gradient p-8 mb-12 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-4">Overview</h2>
+          <p className="text-muted-foreground leading-relaxed">{study.overview}</p>
+        </Card>
+
+        {/* Problem */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6">{study.problem.title}</h2>
+          <Card className="card-gradient p-6">
+            <p className="text-muted-foreground leading-relaxed">{study.problem.content}</p>
+          </Card>
+        </div>
+
+        {/* Research */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.4s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6">{study.research.title}</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="card-gradient p-6">
+              <h3 className="font-semibold text-foreground mb-4">Research Methods</h3>
+              <div className="space-y-2">
+                {study.research.methods.map((method, index) => (
+                  <div key={index} className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-muted-foreground text-sm">{method}</span>
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors duration-300">Timeline</span>
-                </div>
-                <p className="text-2xl text-foreground font-bold">{study.duration}</p>
-                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                ))}
               </div>
-            </div>
-
-            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                    <Users className="h-6 w-6 text-accent" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-accent transition-colors duration-300">Team</span>
-                </div>
-                <p className="text-2xl text-foreground font-bold">{study.team}</p>
-                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-accent to-primary rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              </div>
-            </div>
-
-            <div className="group relative bg-gradient-to-br from-card to-card/50 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 cursor-default animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-              <div className="relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                    <Briefcase className="h-6 w-6 text-primary" />
-                  </div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors duration-300">Role</span>
-                </div>
-                <p className="text-2xl text-foreground font-bold">{study.role}</p>
-                <div className="mt-4 h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Overview */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Overview</h2>
-            </div>
-            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
-              {study.overview}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem Statement */}
-      <section className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">{study.problem.title}</h2>
-            </div>
-            <Card className="card-gradient p-8 sm:p-12 border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <p className="text-lg text-muted-foreground leading-relaxed">{study.problem.content}</p>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Research & Discovery */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">{study.research.title}</h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="card-gradient p-8 border-2 border-border/50 hover:border-primary/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-6">
-                  <Target className="h-6 w-6 text-primary" />
-                  <h3 className="text-xl font-bold text-foreground">Research Methods</h3>
-                </div>
-                <div className="space-y-4">
-                  {study.research.methods.map((method, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{method}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-              <Card className="card-gradient p-8 border-2 border-border/50 hover:border-primary/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-6">
-                  <Lightbulb className="h-6 w-6 text-accent" />
-                  <h3 className="text-xl font-bold text-foreground">Key Insights</h3>
-                </div>
-                <div className="space-y-4">
-                  {study.research.insights.map((insight, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-muted-foreground">{insight}</p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solution */}
-      <section className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">{study.solution.title}</h2>
-            </div>
-            <Card className="card-gradient p-8 sm:p-12 mb-8 border-2 border-primary/20">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">{study.solution.content}</p>
-              <div className="grid md:grid-cols-2 gap-6">
-                {study.solution.features.map((feature, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-start gap-4 p-4 bg-background/50 rounded-lg hover:bg-background/70 transition-all duration-300"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
+            <Card className="card-gradient p-6">
+              <h3 className="font-semibold text-foreground mb-4">Key Insights</h3>
+              <div className="space-y-3">
+                {study.research.insights.map((insight, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0" />
+                    <p className="text-muted-foreground text-sm">{insight}</p>
                   </div>
                 ))}
               </div>
             </Card>
           </div>
         </div>
-      </section>
 
-      {/* Impact Metrics */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-2">
-                <TrendingUp className="h-5 w-5" />
-                {study.impact.title}
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {study.impact.metrics.map((metric, index) => (
-                <Card 
-                  key={index} 
-                  className="card-gradient p-8 text-center border-2 border-border/50 hover:border-primary/40 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 cursor-default group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="text-4xl font-bold text-primary mb-3 group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                  <div className="font-semibold text-foreground mb-2">{metric.label}</div>
-                  <div className="text-sm text-muted-foreground">{metric.description}</div>
-                </Card>
+        {/* Solution */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.5s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6">{study.solution.title}</h2>
+          <Card className="card-gradient p-6 mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6">{study.solution.content}</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {study.solution.features.map((feature, index) => (
+                <div key={index} className="flex items-start">
+                  <CheckCircle className="h-4 w-4 text-success mt-0.5 mr-2 flex-shrink-0" />
+                  <span className="text-sm text-muted-foreground">{feature}</span>
+                </div>
               ))}
             </div>
+          </Card>
+        </div>
+
+        {/* Impact Metrics */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.6s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center">
+            <TrendingUp className="h-6 w-6 text-primary mr-2" />
+            {study.impact.title}
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {study.impact.metrics.map((metric, index) => (
+              <Card key={index} className="card-gradient p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">{metric.value}</div>
+                <div className="font-semibold text-foreground mb-1">{metric.label}</div>
+                <div className="text-sm text-muted-foreground">{metric.description}</div>
+              </Card>
+            ))}
           </div>
         </div>
-      </section>
 
-      {/* Key Learnings */}
-      <section className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">{study.learnings.title}</h2>
-            </div>
-            <Card className="card-gradient p-8 sm:p-12 border-2 border-primary/20">
-              <div className="space-y-6">
-                {study.learnings.items.map((learning, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-start gap-4 p-6 bg-background/50 rounded-lg hover:bg-background/70 transition-all duration-300"
-                  >
-                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-accent font-bold">{index + 1}</span>
-                    </div>
-                    <p className="text-muted-foreground text-lg">{learning}</p>
+        {/* Key Learnings */}
+        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.7s" }}>
+          <h2 className="text-2xl font-bold text-foreground mb-6">{study.learnings.title}</h2>
+          <Card className="card-gradient p-6">
+            <div className="space-y-4">
+              {study.learnings.items.map((learning, index) => (
+                <div key={index} className="flex items-start">
+                  <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                    <span className="text-accent font-bold text-sm">{index + 1}</span>
                   </div>
-                ))}
-              </div>
-            </Card>
-          </div>
+                  <p className="text-muted-foreground">{learning}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="card-gradient p-12 text-center max-w-4xl mx-auto border-2 border-primary/20 hover:border-primary/40 transition-all duration-300">
-            <h3 className="text-3xl font-bold text-foreground mb-4">
+        {/* Next Steps / CTA */}
+        <div className="text-center animate-fade-in" style={{ animationDelay: "0.8s" }}>
+          <Card className="card-gradient p-8">
+            <h3 className="text-xl font-semibold text-foreground mb-4">
               Interested in learning more about this project?
             </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mb-6">
               I'd love to discuss the details, challenges, and lessons learned in more depth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="hover-scale hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
+              <Button asChild size="lg" className="button-glow">
                 <Link to="/contact">
                   Let's discuss this project
+                  <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="hover-scale hover:shadow-lg transition-all duration-300">
+              <Button asChild variant="outline" size="lg">
                 <Link to="/projects">
                   View other projects
                 </Link>
@@ -572,7 +461,7 @@ const CaseStudy = () => {
             </div>
           </Card>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
