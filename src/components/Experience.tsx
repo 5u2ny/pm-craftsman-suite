@@ -156,7 +156,7 @@ const Experience = () => {
                 </div>
                 
                 {/* Experience Card */}
-                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 cursor-pointer ${
+                <div className={`ml-20 bg-card/60 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 cursor-pointer overflow-visible ${
                   isSelected
                     ? 'border-primary shadow-2xl ring-2 ring-primary/30 scale-[1.02] bg-card/90'
                     : isExpanded
@@ -227,8 +227,8 @@ const Experience = () => {
                   </div>
                   
                   {/* Expandable Content */}
-                  <div className={`transition-all duration-500 overflow-x-hidden ${
-                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 overflow-y-hidden'
+                  <div className={`transition-all duration-500 ${
+                    isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
                   }`}>
                     {/* Description */}
                     <p className="text-muted-foreground leading-relaxed text-base mb-4">
