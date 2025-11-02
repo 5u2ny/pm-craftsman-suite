@@ -40,7 +40,7 @@ const CavoAiTravel = () => {
   const roadmap = [
     { phase: "MVP Development", timeline: "May - Aug 2025", status: "Completed" },
     { phase: "User Testing", timeline: "Sep 2025", status: "Completed" },
-    { phase: "MVP Launch", timeline: "Oct - Dec 2025", status: "In Progress" }
+    { phase: "MVP V2 Development", timeline: "Oct - Nov 2025", status: "Completed" }
   ];
 
   return (
