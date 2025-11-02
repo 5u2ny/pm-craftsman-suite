@@ -413,30 +413,6 @@ const CavoAiTravel = () => {
         </div>
       </section>
 
-      {/* Current Status */}
-      <section className="py-24 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest">Current Status</h2>
-            </div>
-            <Card className="p-10 bg-gradient-to-br from-primary/10 via-card to-accent/10 border-2 border-primary/20 hover:border-primary/40 transition-all duration-500 hover:shadow-2xl">
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/20 rounded-full animate-pulse">
-                  <div className="w-4 h-4 bg-primary rounded-full"></div>
-                </div>
-                <p className="text-2xl text-foreground leading-relaxed flex-1">
-                  Cavo is in active development, progressing through MVP build and internal prototype testing. 
-                  Early user flows, design prototypes, and backend prompt logic have been finalized. Next milestones 
-                  include UI integration, travel dataset ingestion, and user feedback collection.
-                </p>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24 border-t border-border/50 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
