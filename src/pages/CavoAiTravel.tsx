@@ -108,7 +108,7 @@ const CavoAiTravel = () => {
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors duration-300">Timeline</span>
                 </div>
-                <p className="text-2xl text-foreground font-bold font-hero">May 2025 - Ongoing</p>
+                <p className="text-2xl text-foreground font-bold font-hero">May 2025 - November 2025</p>
                 <div className="mt-4 h-1 w-16 bg-gradient-to-r from-primary to-accent rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               </div>
             </div>
