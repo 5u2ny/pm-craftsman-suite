@@ -15,7 +15,7 @@ const Experience = () => {
     company: "IPSERLAB",
     logo: "/logos/ipserlab-logo.png",
     location: "Dallas, TX",
-    period: "May 2025 - Present",
+    period: "May 2025 - November 2025",
     website: "https://www.ipserlab.com/",
     description: "Promoted to Lead AI Product Manager within 4 weeks. Leading 0-to-1 development of AI-powered travel planning platform at stealth-stage startup.",
     achievements: ["Championed the 0-to-1 development by architecting multi-disciplinary teams and ownership models, earning promotion in 4 weeks", "Orchestrated complete product discovery process from user research and problem framing to persona mapping", "Directed product strategy under the CTO, delivering 10+ core artifacts (roadmap, PRD, technical specs) that accelerated initial build phase by 25%", "Steered end-to-end execution of 5 agile sprint cycles, crafting 50+ user stories that cut developer clarification cycles by 40%", "Drove product velocity by implementing RICE prioritization framework, enabling high-impact feature delivery within 3 weeks and cutting backlog churn by 35%", "Engineered asynchronous onboarding system for 20+ contributors, slashing onboarding time by 3.5 days and reducing support queries by 63%"],
