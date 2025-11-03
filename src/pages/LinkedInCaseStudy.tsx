@@ -270,15 +270,15 @@ const LinkedInCaseStudy = () => {
             {/* Fifth feature with wireframe */}
             <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
               <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary">Non-AI</Badge>
+                <Badge variant="default">AI</Badge>
                 <span className="text-2xl font-bold text-primary/30">#5</span>
               </div>
-              <h3 className="font-semibold mb-2">Robust Customer Support</h3>
-              <p className="text-sm text-muted-foreground mb-4">Unresponsive support</p>
+              <h3 className="font-semibold mb-2">Super-Like High-Signal Interaction</h3>
+              <p className="text-sm text-muted-foreground mb-4">Can't cut through noise</p>
               <div className="rounded-lg overflow-hidden border shadow-md">
                 <img 
                   src={linkedinAnonymityWireframe} 
-                  alt="LinkedIn Robust Customer Support Wireframe"
+                  alt="LinkedIn Super-Like High-Signal Interaction Wireframe"
                   className="w-full h-auto"
                 />
               </div>
@@ -290,8 +290,8 @@ const LinkedInCaseStudy = () => {
               { title: "Native Creator Analytics", category: "Non-AI", pain: "50% reach drop, no data" },
               { title: "Better LinkedIn Premium Tier", category: "Non-AI", pain: "Not worth it for most users" },
               { title: "Disable Red Dots Button", category: "Non-AI", pain: "Dark patterns creating anxiety" },
-              { title: "Super-Like High-Signal Interaction", category: "AI", pain: "Can't cut through noise" },
               { title: "True Anonymity for Reviews", category: "Non-AI", pain: "Need safe place for feedback" },
+              { title: "Robust Customer Support", category: "Non-AI", pain: "Unresponsive support" },
             ].map((feature, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-all hover:scale-105">
                 <div className="flex items-start justify-between mb-3">
