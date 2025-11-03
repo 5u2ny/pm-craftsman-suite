@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb } from "lucide-react";
 import linkedinImage from "@/assets/linkedin-icon.png";
-import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -195,25 +194,8 @@ const LinkedInCaseStudy = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-4">
-            {/* First feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#1</span>
-              </div>
-              <h3 className="font-semibold mb-2">AI-Powered Inbox Management</h3>
-              <p className="text-sm text-muted-foreground mb-4">Drowning in sales spam</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinInboxWireframe} 
-                  alt="LinkedIn AI-Powered Inbox Management Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Rest of the features */}
             {[
+              { title: "AI-Powered Inbox Management", category: "AI", pain: "Drowning in sales spam" },
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
               { title: "High-Relevancy Job Matching AI", category: "AI", pain: "Terrible, irrelevant job results" },
               { title: "Native Creator Analytics", category: "Non-AI", pain: "50% reach drop, no data" },
@@ -229,7 +211,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 2}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 1}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
