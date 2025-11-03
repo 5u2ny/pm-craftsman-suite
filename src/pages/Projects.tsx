@@ -15,11 +15,27 @@ import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
 import seismixImage from "@/assets/seismix-project.jpg";
 import cavoHeroImage from "@/assets/cavo-hero.jpg";
+import linkedinImage from "@/assets/project-linkedin.jpg";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const projects = [
+    {
+      title: "LinkedIn's Unmet Feature Landscape",
+      tagline: "PRODUCT ANALYSIS, 2018-2025",
+      description: "Comprehensive 7-year analysis synthesizing 164+ data points from user feedback and market research to identify critical feature gaps and business model conflicts",
+      image: linkedinImage,
+      metrics: [
+        "164+ data points analyzed across multiple sources",
+        "20+ feature recommendations with feasibility scoring",
+        "7-year longitudinal study of platform evolution"
+      ],
+      tags: ["Product Analysis", "UX Research", "Data Analysis", "Strategy"],
+      slug: "linkedin-product-analysis",
+      category: "Case Studies",
+      pdfLink: "/projects/LinkedIn_Case_Study.pdf"
+    },
     {
       title: "Cavo – AI Travel Companion",
       tagline: "AI PRODUCT MANAGER, SUMMER INTERNSHIP 2025",
@@ -176,13 +192,6 @@ const Projects = () => {
   const categories = ["All", "Products", "MBA", "CS Engineering", "Case Studies"];
   
   const handleCategoryClick = (category: string) => {
-    if (category === "Case Studies") {
-      toast.info("Coming Soon!", {
-        description: "Case studies are currently being prepared and will be available soon.",
-        duration: 3000,
-      });
-      return;
-    }
     setActiveCategory(category);
   };
   
