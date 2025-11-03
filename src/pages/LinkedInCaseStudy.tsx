@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb } from "lucide-react";
 import linkedinImage from "@/assets/linkedin-icon.png";
 import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
+import linkedinJobMatchingWireframe from "@/assets/linkedin-job-matching-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -212,10 +213,26 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
+            {/* Second feature with wireframe */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
+              <div className="flex items-start justify-between mb-3">
+                <Badge variant="default">AI</Badge>
+                <span className="text-2xl font-bold text-primary/30">#2</span>
+              </div>
+              <h3 className="font-semibold mb-2">High-Relevancy Job Matching AI</h3>
+              <p className="text-sm text-muted-foreground mb-4">Terrible, irrelevant job results</p>
+              <div className="rounded-lg overflow-hidden border shadow-md">
+                <img 
+                  src={linkedinJobMatchingWireframe} 
+                  alt="LinkedIn High-Relevancy Job Matching AI Wireframe"
+                  className="w-full h-auto"
+                />
+              </div>
+            </Card>
+
             {/* Rest of the features */}
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
-              { title: "High-Relevancy Job Matching AI", category: "AI", pain: "Terrible, irrelevant job results" },
               { title: "Native Creator Analytics", category: "Non-AI", pain: "50% reach drop, no data" },
               { title: "True Opt-In AI Data Controls", category: "AI", pain: "Privacy concerns with AI training" },
               { title: "Disable Red Dots Button", category: "Non-AI", pain: "Dark patterns creating anxiety" },
@@ -229,7 +246,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 2}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 3}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
