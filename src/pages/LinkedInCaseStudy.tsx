@@ -364,7 +364,7 @@ const LinkedInCaseStudy = () => {
                 <span className="text-2xl font-bold text-primary/30">#10</span>
               </div>
               <h3 className="font-semibold mb-2">Polywork-Style Portfolio Showcase</h3>
-              <p className="text-sm text-muted-foreground mb-4">This redesign of the LinkedIn Profile 'Experience' section replaces the text list with visual project cards (image + title + collaborators), adhering to LinkedIn's aesthetic.</p>
+              <p className="text-sm text-muted-foreground mb-4">Text-only profiles, no visual showcase</p>
               <div className="rounded-lg overflow-hidden border shadow-md">
                 <img 
                   src={linkedinPortfolioShowcaseWireframe} 
