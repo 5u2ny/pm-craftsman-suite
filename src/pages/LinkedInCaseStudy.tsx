@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb } from "lucide-react";
-import linkedinImage from "@/assets/project-linkedin.jpg";
+import linkedinImage from "@/assets/linkedin-icon.png";
 
 const LinkedInCaseStudy = () => {
   return (
