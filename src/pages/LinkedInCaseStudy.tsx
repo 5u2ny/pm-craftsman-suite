@@ -119,19 +119,7 @@ const LinkedInCaseStudy = () => {
           </p>
 
           {/* Meta Information */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-primary/10 rounded-lg">
-                  <Calendar className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground mb-1">Duration</p>
-                  <p className="font-semibold">2018 - 2025</p>
-                </div>
-              </div>
-            </Card>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
@@ -147,11 +135,11 @@ const LinkedInCaseStudy = () => {
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-primary/10 rounded-lg">
-                  <Briefcase className="h-6 w-6 text-primary" />
+                  <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Role</p>
-                  <p className="font-semibold">Product Research Analyst</p>
+                  <p className="text-sm text-muted-foreground mb-1">Other Major Trends</p>
+                  <p className="font-semibold">Utility vs. Engagement Conflict</p>
                 </div>
               </div>
             </Card>
