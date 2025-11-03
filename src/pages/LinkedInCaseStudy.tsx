@@ -166,15 +166,6 @@ const LinkedInCaseStudy = () => {
           </Button>
         </div>
 
-        {/* Hero Image */}
-        <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src={linkedinImage} 
-            alt="LinkedIn Product Analysis"
-            className="w-full h-auto"
-          />
-        </div>
-
         {/* Executive Summary */}
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-6">
