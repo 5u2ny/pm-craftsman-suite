@@ -6,6 +6,7 @@ import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Li
 import linkedinImage from "@/assets/linkedin-icon.png";
 import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
 import linkedinJobMatchingWireframe from "@/assets/linkedin-job-matching-wireframe.png";
+import linkedinPremiumWireframe from "@/assets/linkedin-premium-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -230,6 +231,23 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
+            {/* Third feature with wireframe */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
+              <div className="flex items-start justify-between mb-3">
+                <Badge variant="secondary">Non-AI</Badge>
+                <span className="text-2xl font-bold text-primary/30">#3</span>
+              </div>
+              <h3 className="font-semibold mb-2">Better LinkedIn Premium Tier</h3>
+              <p className="text-sm text-muted-foreground mb-4">Not worth it for most users</p>
+              <div className="rounded-lg overflow-hidden border shadow-md">
+                <img 
+                  src={linkedinPremiumWireframe} 
+                  alt="LinkedIn Better Premium Tier Wireframe"
+                  className="w-full h-auto"
+                />
+              </div>
+            </Card>
+
             {/* Rest of the features */}
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
@@ -246,7 +264,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 3}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 4}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
