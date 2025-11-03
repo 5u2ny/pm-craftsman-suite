@@ -77,7 +77,7 @@ const ProjectCard = ({
                   size="sm" 
                   className="w-full group/btn"
                 >
-                  <a href={pdf.url} download={pdf.url.split('/').pop()}>
+                  <a href={pdf.url} download target="_blank" rel="noopener noreferrer">
                     <FileDown className="mr-2 h-3.5 w-3.5" />
                     Download
                   </a>
@@ -103,7 +103,7 @@ const ProjectCard = ({
                 size="sm" 
                 className="w-full group/btn"
               >
-                <a href={pdfLink} download={pdfLink.split('/').pop()}>
+                <a href={pdfLink} download target="_blank" rel="noopener noreferrer">
                   <FileDown className="mr-2 h-3.5 w-3.5" />
                   Download PDF
                 </a>
