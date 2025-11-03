@@ -356,10 +356,19 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
+            {/* Tenth feature */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105">
+              <div className="flex items-start justify-between mb-3">
+                <Badge variant="secondary">Non-AI</Badge>
+                <span className="text-2xl font-bold text-primary/30">#10</span>
+              </div>
+              <h3 className="font-semibold mb-2">Native Creator Analytics</h3>
+              <p className="text-sm text-muted-foreground">50% reach drop, no data</p>
+            </Card>
+
             {/* Rest of the features */}
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
-              { title: "Native Creator Analytics", category: "Non-AI", pain: "50% reach drop, no data" },
               { title: "True Anonymity for Reviews", category: "Non-AI", pain: "Need safe place for feedback" },
               { title: "Robust Customer Support", category: "Non-AI", pain: "Unresponsive support" },
             ].map((feature, index) => (
@@ -368,7 +377,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 10}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 11}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
