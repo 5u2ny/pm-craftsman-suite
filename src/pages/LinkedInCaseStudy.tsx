@@ -345,8 +345,8 @@ const LinkedInCaseStudy = () => {
                 <Badge variant="secondary">Non-AI</Badge>
                 <span className="text-2xl font-bold text-primary/30">#9</span>
               </div>
-              <h3 className="font-semibold mb-2">Better LinkedIn Premium Tier</h3>
-              <p className="text-sm text-muted-foreground mb-4">Not worth it for most users</p>
+              <h3 className="font-semibold mb-2">Native Creator Analytics</h3>
+              <p className="text-sm text-muted-foreground mb-4">50% reach drop, no data</p>
               <div className="rounded-lg overflow-hidden border shadow-md">
                 <img 
                   src={linkedinPremiumTierWireframe} 
