@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb, Eye } from "lucide-react";
-import { useState } from "react";
 import linkedinImage from "@/assets/linkedin-icon.png";
 import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
 import linkedinJobMatchingWireframe from "@/assets/linkedin-job-matching-wireframe.png";
@@ -18,13 +17,6 @@ import linkedinPremiumTierWireframe from "@/assets/linkedin-premium-tier-wirefra
 import linkedinPortfolioShowcaseWireframe from "@/assets/linkedin-portfolio-showcase-wireframe.png";
 
 const LinkedInCaseStudy = () => {
-  const [selectedFeature, setSelectedFeature] = useState<{
-    title: string;
-    description: string;
-    image: string;
-    category: string;
-  } | null>(null);
-
   const features = [
     {
       number: 1,
@@ -286,63 +278,54 @@ const LinkedInCaseStudy = () => {
           </div>
           
           <p className="text-muted-foreground mb-8">
-            Click on any feature to view detailed wireframes and implementation concepts
+            Hover over any feature to preview the wireframe concept
           </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {features.map((feature) => (
-              <Card 
-                key={feature.number}
-                className="p-6 hover:shadow-xl transition-all hover:scale-105 cursor-pointer group"
-                onClick={() => setSelectedFeature(feature)}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
-                    {feature.category}
-                  </Badge>
-                  <span className="text-3xl font-bold text-primary/20">#{feature.number}</span>
-                </div>
-                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
-                <div className="flex items-center gap-2 text-sm text-primary">
-                  <Eye className="h-4 w-4" />
-                  <span>View Wireframe</span>
-                </div>
-              </Card>
+              <HoverCard key={feature.number} openDelay={200}>
+                <HoverCardTrigger asChild>
+                  <Card 
+                    className="p-6 hover:shadow-xl transition-all hover:scale-105 cursor-pointer group"
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
+                        {feature.category}
+                      </Badge>
+                      <span className="text-3xl font-bold text-primary/20">#{feature.number}</span>
+                    </div>
+                    <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
+                    <div className="flex items-center gap-2 text-sm text-primary">
+                      <Eye className="h-4 w-4" />
+                      <span>Hover to Preview</span>
+                    </div>
+                  </Card>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-[600px] p-4" side="top">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge variant={feature.category === "AI" ? "default" : "secondary"} className="text-xs">
+                        {feature.category}
+                      </Badge>
+                      <span className="text-sm font-semibold text-muted-foreground">#{feature.number}</span>
+                    </div>
+                    <h4 className="font-semibold text-sm">{feature.title}</h4>
+                    <div className="rounded-lg overflow-hidden border shadow-lg mt-2">
+                      <img 
+                        src={feature.image} 
+                        alt={`${feature.title} Wireframe`}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
             ))}
           </div>
         </section>
-
-        {/* Feature Dialog */}
-        <Dialog open={!!selectedFeature} onOpenChange={() => setSelectedFeature(null)}>
-          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
-            {selectedFeature && (
-              <>
-                <DialogHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <Badge variant={selectedFeature.category === "AI" ? "default" : "secondary"}>
-                      {selectedFeature.category}
-                    </Badge>
-                    <span className="text-2xl font-bold text-primary/30">
-                      #{features.find(f => f.title === selectedFeature.title)?.number}
-                    </span>
-                  </div>
-                  <DialogTitle className="text-2xl">{selectedFeature.title}</DialogTitle>
-                  <p className="text-muted-foreground">{selectedFeature.description}</p>
-                </DialogHeader>
-                <div className="rounded-lg overflow-hidden border shadow-lg mt-4">
-                  <img 
-                    src={selectedFeature.image} 
-                    alt={`${selectedFeature.title} Wireframe`}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </>
-            )}
-          </DialogContent>
-        </Dialog>
 
         {/* Download CTA */}
         <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 text-center">
