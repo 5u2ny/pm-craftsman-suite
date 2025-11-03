@@ -237,12 +237,12 @@ const LinkedInCaseStudy = () => {
                 <Badge variant="secondary">Non-AI</Badge>
                 <span className="text-2xl font-bold text-primary/30">#3</span>
               </div>
-              <h3 className="font-semibold mb-2">Better LinkedIn Premium Tier</h3>
-              <p className="text-sm text-muted-foreground mb-4">Not worth it for most users</p>
+              <h3 className="font-semibold mb-2">Disable Red Dots Button</h3>
+              <p className="text-sm text-muted-foreground mb-4">Dark patterns creating anxiety</p>
               <div className="rounded-lg overflow-hidden border shadow-md">
                 <img 
                   src={linkedinPremiumWireframe} 
-                  alt="LinkedIn Better Premium Tier Wireframe"
+                  alt="LinkedIn Disable Red Dots Button Wireframe"
                   className="w-full h-auto"
                 />
               </div>
@@ -252,8 +252,8 @@ const LinkedInCaseStudy = () => {
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
               { title: "Native Creator Analytics", category: "Non-AI", pain: "50% reach drop, no data" },
+              { title: "Better LinkedIn Premium Tier", category: "Non-AI", pain: "Not worth it for most users" },
               { title: "True Opt-In AI Data Controls", category: "AI", pain: "Privacy concerns with AI training" },
-              { title: "Disable Red Dots Button", category: "Non-AI", pain: "Dark patterns creating anxiety" },
               { title: "Super-Like High-Signal Interaction", category: "AI", pain: "Can't cut through noise" },
               { title: "True Anonymity for Reviews", category: "Non-AI", pain: "Need safe place for feedback" },
               { title: "Robust Customer Support", category: "Non-AI", pain: "Unresponsive support" },
