@@ -126,8 +126,8 @@ const LinkedInCaseStudy = () => {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Research Scope</p>
-                  <p className="font-semibold">164 Data Points</p>
+                  <p className="text-sm text-muted-foreground mb-1">UX Research</p>
+                  <p className="font-semibold">164 Data Points Analyzed</p>
                 </div>
               </div>
             </Card>
@@ -138,8 +138,8 @@ const LinkedInCaseStudy = () => {
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground mb-1">Other Major Trends</p>
-                  <p className="font-semibold">Utility vs. Engagement Conflict</p>
+                  <p className="text-sm text-muted-foreground mb-1">User Stories</p>
+                  <p className="font-semibold">10 Feature Demands</p>
                 </div>
               </div>
             </Card>
