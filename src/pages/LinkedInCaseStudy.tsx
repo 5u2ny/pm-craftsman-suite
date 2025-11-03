@@ -10,6 +10,7 @@ import linkedinPremiumWireframe from "@/assets/linkedin-premium-wireframe.png";
 import linkedinAiWritingWireframe from "@/assets/linkedin-ai-writing-wireframe.png";
 import linkedinAnonymityWireframe from "@/assets/linkedin-anonymity-wireframe.png";
 import linkedinProfileValidationWireframe from "@/assets/linkedin-profile-validation-wireframe.png";
+import linkedinFeedMutingWireframe from "@/assets/linkedin-feed-muting-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -302,6 +303,23 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
+            {/* Seventh feature with wireframe */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
+              <div className="flex items-start justify-between mb-3">
+                <Badge variant="secondary">Non-AI</Badge>
+                <span className="text-2xl font-bold text-primary/30">#7</span>
+              </div>
+              <h3 className="font-semibold mb-2">Advanced Feed Muting</h3>
+              <p className="text-sm text-muted-foreground mb-4">Can't filter out unwanted content</p>
+              <div className="rounded-lg overflow-hidden border shadow-md">
+                <img 
+                  src={linkedinFeedMutingWireframe} 
+                  alt="LinkedIn Advanced Feed Muting Wireframe"
+                  className="w-full h-auto"
+                />
+              </div>
+            </Card>
+
             {/* Rest of the features */}
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
@@ -316,7 +334,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 7}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 8}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
