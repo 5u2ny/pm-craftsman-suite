@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb } from "lucide-react";
+import { ArrowLeft, Download, Calendar, Users, Briefcase, TrendingUp, Target, Lightbulb, Eye } from "lucide-react";
+import { useState } from "react";
 import linkedinImage from "@/assets/linkedin-icon.png";
 import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
 import linkedinJobMatchingWireframe from "@/assets/linkedin-job-matching-wireframe.png";
@@ -16,6 +18,86 @@ import linkedinPremiumTierWireframe from "@/assets/linkedin-premium-tier-wirefra
 import linkedinPortfolioShowcaseWireframe from "@/assets/linkedin-portfolio-showcase-wireframe.png";
 
 const LinkedInCaseStudy = () => {
+  const [selectedFeature, setSelectedFeature] = useState<{
+    title: string;
+    description: string;
+    image: string;
+    category: string;
+  } | null>(null);
+
+  const features = [
+    {
+      number: 1,
+      title: "AI-Powered Inbox Management",
+      description: "Drowning in sales spam",
+      category: "AI",
+      image: linkedinInboxWireframe,
+    },
+    {
+      number: 2,
+      title: "High-Relevancy Job Matching AI",
+      description: "Terrible, irrelevant job results",
+      category: "AI",
+      image: linkedinJobMatchingWireframe,
+    },
+    {
+      number: 3,
+      title: "True Opt-In AI Data Controls",
+      description: "Privacy concerns with AI training",
+      category: "AI",
+      image: linkedinPremiumWireframe,
+    },
+    {
+      number: 4,
+      title: "AI Writing Assistant",
+      description: "Generic, brand-damaging content",
+      category: "AI",
+      image: linkedinAiWritingWireframe,
+    },
+    {
+      number: 5,
+      title: "Super-Like High-Signal Interaction",
+      description: "Can't cut through noise",
+      category: "AI",
+      image: linkedinAnonymityWireframe,
+    },
+    {
+      number: 6,
+      title: "AI Profile Validation",
+      description: "Fake profiles and spam accounts",
+      category: "AI",
+      image: linkedinProfileValidationWireframe,
+    },
+    {
+      number: 7,
+      title: "Advanced Feed Muting",
+      description: "Can't filter out unwanted content",
+      category: "Non-AI",
+      image: linkedinFeedMutingWireframe,
+    },
+    {
+      number: 8,
+      title: "Disable Red Dots Button",
+      description: "Dark patterns creating anxiety",
+      category: "Non-AI",
+      image: linkedinDisableRedDotsWireframe,
+    },
+    {
+      number: 9,
+      title: "Native Creator Analytics",
+      description: "50% reach drop, no data",
+      category: "Non-AI",
+      image: linkedinPremiumTierWireframe,
+    },
+    {
+      number: 10,
+      title: "Polywork-Style Portfolio Showcase",
+      description: "Text-only profiles, no visual showcase",
+      category: "Non-AI",
+      image: linkedinPortfolioShowcaseWireframe,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
       {/* Back Button */}
@@ -203,237 +285,64 @@ const LinkedInCaseStudy = () => {
             <h2 className="text-3xl font-bold">Top 10 Most Demanded Features</h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-4">
-            {/* First feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#1</span>
-              </div>
-              <h3 className="font-semibold mb-2">AI-Powered Inbox Management</h3>
-              <p className="text-sm text-muted-foreground mb-4">Drowning in sales spam</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinInboxWireframe} 
-                  alt="LinkedIn AI-Powered Inbox Management Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
+          <p className="text-muted-foreground mb-8">
+            Click on any feature to view detailed wireframes and implementation concepts
+          </p>
 
-            {/* Second feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#2</span>
-              </div>
-              <h3 className="font-semibold mb-2">High-Relevancy Job Matching AI</h3>
-              <p className="text-sm text-muted-foreground mb-4">Terrible, irrelevant job results</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinJobMatchingWireframe} 
-                  alt="LinkedIn High-Relevancy Job Matching AI Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Third feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#3</span>
-              </div>
-              <h3 className="font-semibold mb-2">True Opt-In AI Data Controls</h3>
-              <p className="text-sm text-muted-foreground mb-4">Privacy concerns with AI training</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinPremiumWireframe} 
-                  alt="LinkedIn True Opt-In AI Data Controls Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Fourth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#4</span>
-              </div>
-              <h3 className="font-semibold mb-2">AI Writing Assistant</h3>
-              <p className="text-sm text-muted-foreground mb-4">Generic, brand-damaging content</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinAiWritingWireframe} 
-                  alt="LinkedIn AI Writing Assistant Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Fifth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#5</span>
-              </div>
-              <h3 className="font-semibold mb-2">Super-Like High-Signal Interaction</h3>
-              <p className="text-sm text-muted-foreground mb-4">Can't cut through noise</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinAnonymityWireframe} 
-                  alt="LinkedIn Super-Like High-Signal Interaction Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Sixth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="default">AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#6</span>
-              </div>
-              <h3 className="font-semibold mb-2">AI Profile Validation</h3>
-              <p className="text-sm text-muted-foreground mb-4">Fake profiles and spam accounts</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinProfileValidationWireframe} 
-                  alt="LinkedIn AI Profile Validation Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Seventh feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary">Non-AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#7</span>
-              </div>
-              <h3 className="font-semibold mb-2">Advanced Feed Muting</h3>
-              <p className="text-sm text-muted-foreground mb-4">Can't filter out unwanted content</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinFeedMutingWireframe} 
-                  alt="LinkedIn Advanced Feed Muting Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Eighth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary">Non-AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#8</span>
-              </div>
-              <h3 className="font-semibold mb-2">Disable Red Dots Button</h3>
-              <p className="text-sm text-muted-foreground mb-4">Dark patterns creating anxiety</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinDisableRedDotsWireframe} 
-                  alt="LinkedIn Disable Red Dots Button Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Ninth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary">Non-AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#9</span>
-              </div>
-              <h3 className="font-semibold mb-2">Native Creator Analytics</h3>
-              <p className="text-sm text-muted-foreground mb-4">50% reach drop, no data</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinPremiumTierWireframe} 
-                  alt="LinkedIn Better Premium Tier Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
-
-            {/* Tenth feature with wireframe */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
-              <div className="flex items-start justify-between mb-3">
-                <Badge variant="secondary">Non-AI</Badge>
-                <span className="text-2xl font-bold text-primary/30">#10</span>
-              </div>
-              <h3 className="font-semibold mb-2">Polywork-Style Portfolio Showcase</h3>
-              <p className="text-sm text-muted-foreground mb-4">Text-only profiles, no visual showcase</p>
-              <div className="rounded-lg overflow-hidden border shadow-md">
-                <img 
-                  src={linkedinPortfolioShowcaseWireframe} 
-                  alt="LinkedIn Polywork-Style Portfolio Showcase Wireframe"
-                  className="w-full h-auto"
-                />
-              </div>
-            </Card>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {features.map((feature) => (
+              <Card 
+                key={feature.number}
+                className="p-6 hover:shadow-xl transition-all hover:scale-105 cursor-pointer group"
+                onClick={() => setSelectedFeature(feature)}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
+                    {feature.category}
+                  </Badge>
+                  <span className="text-3xl font-bold text-primary/20">#{feature.number}</span>
+                </div>
+                <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mb-4">{feature.description}</p>
+                <div className="flex items-center gap-2 text-sm text-primary">
+                  <Eye className="h-4 w-4" />
+                  <span>View Wireframe</span>
+                </div>
+              </Card>
+            ))}
           </div>
         </section>
 
-        {/* Key Insights */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Key Insights</h2>
-          
-          <div className="space-y-6">
-            <Card className="p-8 border-l-4 border-l-primary">
-              <h3 className="text-xl font-semibold mb-3">The Utility vs. Engagement Schism</h3>
-              <p className="leading-relaxed">
-                One user segment, "Camp Utility" (job seekers, high-level professionals), wants a clean, fast, 
-                and relevant tool—like a search engine or file system. The other, "Camp Engagement" (creators, 
-                sales teams), wants a high-visibility stage like a social network. LinkedIn's fundamental strategic 
-                challenge is its attempt to serve both camps with a single, compromised interface.
-              </p>
-            </Card>
-
-            <Card className="p-8 border-l-4 border-l-accent">
-              <h3 className="text-xl font-semibold mb-3">Business Model Conflicts</h3>
-              <p className="leading-relaxed">
-                The platform's most significant user-facing failures are not simple oversights. They are, in many 
-                cases, the calculated and accepted costs of a business model that monetizes noise, commoditizes 
-                engagement, and harvests user data on an unprecedented, opt-out basis.
-              </p>
-            </Card>
-
-            <Card className="p-8 border-l-4 border-l-primary">
-              <h3 className="text-xl font-semibold mb-3">The Unbundling Opportunity</h3>
-              <p className="leading-relaxed">
-                This core conflict has opened the door for the "unbundling" of LinkedIn's features by more focused 
-                competitors. Niche platforms like Polywork, Wellfound, and Discord communities are capturing specific 
-                use cases that LinkedIn attempts to serve with its one-size-fits-all approach.
-              </p>
-            </Card>
-          </div>
-        </section>
-
-        {/* Impact Metrics */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6">Research Impact</h2>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            <Card className="p-6 text-center">
-              <p className="text-4xl font-bold text-primary mb-2">164</p>
-              <p className="text-sm text-muted-foreground">Data Points Analyzed</p>
-            </Card>
-            <Card className="p-6 text-center">
-              <p className="text-4xl font-bold text-primary mb-2">7</p>
-              <p className="text-sm text-muted-foreground">Years of Data</p>
-            </Card>
-            <Card className="p-6 text-center">
-              <p className="text-4xl font-bold text-primary mb-2">20</p>
-              <p className="text-sm text-muted-foreground">Feature Recommendations</p>
-            </Card>
-            <Card className="p-6 text-center">
-              <p className="text-4xl font-bold text-primary mb-2">5+</p>
-              <p className="text-sm text-muted-foreground">Data Sources</p>
-            </Card>
-          </div>
-        </section>
+        {/* Feature Dialog */}
+        <Dialog open={!!selectedFeature} onOpenChange={() => setSelectedFeature(null)}>
+          <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+            {selectedFeature && (
+              <>
+                <DialogHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Badge variant={selectedFeature.category === "AI" ? "default" : "secondary"}>
+                      {selectedFeature.category}
+                    </Badge>
+                    <span className="text-2xl font-bold text-primary/30">
+                      #{features.find(f => f.title === selectedFeature.title)?.number}
+                    </span>
+                  </div>
+                  <DialogTitle className="text-2xl">{selectedFeature.title}</DialogTitle>
+                  <p className="text-muted-foreground">{selectedFeature.description}</p>
+                </DialogHeader>
+                <div className="rounded-lg overflow-hidden border shadow-lg mt-4">
+                  <img 
+                    src={selectedFeature.image} 
+                    alt={`${selectedFeature.title} Wireframe`}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* Download CTA */}
         <Card className="p-8 bg-gradient-to-r from-primary/10 to-accent/10 text-center">
