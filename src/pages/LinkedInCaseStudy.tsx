@@ -8,6 +8,7 @@ import linkedinInboxWireframe from "@/assets/linkedin-inbox-wireframe.png";
 import linkedinJobMatchingWireframe from "@/assets/linkedin-job-matching-wireframe.png";
 import linkedinPremiumWireframe from "@/assets/linkedin-premium-wireframe.png";
 import linkedinAiWritingWireframe from "@/assets/linkedin-ai-writing-wireframe.png";
+import linkedinAnonymityWireframe from "@/assets/linkedin-anonymity-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -266,6 +267,23 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
+            {/* Fifth feature with wireframe */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
+              <div className="flex items-start justify-between mb-3">
+                <Badge variant="secondary">Non-AI</Badge>
+                <span className="text-2xl font-bold text-primary/30">#5</span>
+              </div>
+              <h3 className="font-semibold mb-2">True Anonymity for Reviews</h3>
+              <p className="text-sm text-muted-foreground mb-4">Need safe place for feedback</p>
+              <div className="rounded-lg overflow-hidden border shadow-md">
+                <img 
+                  src={linkedinAnonymityWireframe} 
+                  alt="LinkedIn True Anonymity for Reviews Wireframe"
+                  className="w-full h-auto"
+                />
+              </div>
+            </Card>
+
             {/* Rest of the features */}
             {[
               { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
@@ -273,7 +291,6 @@ const LinkedInCaseStudy = () => {
               { title: "Better LinkedIn Premium Tier", category: "Non-AI", pain: "Not worth it for most users" },
               { title: "Disable Red Dots Button", category: "Non-AI", pain: "Dark patterns creating anxiety" },
               { title: "Super-Like High-Signal Interaction", category: "AI", pain: "Can't cut through noise" },
-              { title: "True Anonymity for Reviews", category: "Non-AI", pain: "Need safe place for feedback" },
               { title: "Robust Customer Support", category: "Non-AI", pain: "Unresponsive support" },
             ].map((feature, index) => (
               <Card key={index} className="p-6 hover:shadow-lg transition-all hover:scale-105">
@@ -281,7 +298,7 @@ const LinkedInCaseStudy = () => {
                   <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
                     {feature.category}
                   </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 5}</span>
+                  <span className="text-2xl font-bold text-primary/30">#{index + 6}</span>
                 </div>
                 <h3 className="font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.pain}</p>
