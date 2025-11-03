@@ -15,7 +15,7 @@ import brewscoveryImage from "@/assets/brewscovery-project.jpg";
 import retailSegmentationImage from "@/assets/retail-segmentation-ml.jpg";
 import seismixImage from "@/assets/seismix-project.jpg";
 import cavoHeroImage from "@/assets/cavo-hero.jpg";
-import linkedinImage from "@/assets/project-linkedin.jpg";
+import linkedinImage from "@/assets/linkedin-icon.png";
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
