@@ -10,6 +10,22 @@ import cybersecurityImage from "@/assets/project-cybersecurity.jpg";
 const CaseStudies = () => {
   const caseStudies = [
     {
+      id: "linkedin-product-analysis",
+      title: "LinkedIn's Unmet Feature Landscape",
+      subtitle: "User-Driven Demand vs. Strategic Non-Implementation (2018-2025)",
+      description: "Comprehensive 7-year analysis of LinkedIn's product strategy, synthesizing 164+ data points from user feedback, competitive analysis, and market research to identify critical feature gaps and business model conflicts.",
+      image: linkedinImage,
+      duration: "2018 - 2025",
+      team: "Individual research",
+      role: "Product Research Analyst",
+      tags: ["Product Analysis", "UX Research", "Data Analysis", "Strategy"],
+      keyMetrics: [
+        { label: "Data Points", value: "164+" },
+        { label: "Research Scope", value: "7 years" },
+        { label: "Feature Recommendations", value: "20+" }
+      ]
+    },
+    {
       id: "ai-travel-planner",
       title: "AI Travel Planner MVP",
       subtitle: "Building Personalized Trip Planning from 0 to 1",
