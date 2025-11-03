@@ -13,6 +13,7 @@ import linkedinProfileValidationWireframe from "@/assets/linkedin-profile-valida
 import linkedinFeedMutingWireframe from "@/assets/linkedin-feed-muting-wireframe.png";
 import linkedinDisableRedDotsWireframe from "@/assets/linkedin-disable-red-dots-wireframe.png";
 import linkedinPremiumTierWireframe from "@/assets/linkedin-premium-tier-wireframe.png";
+import linkedinPortfolioShowcaseWireframe from "@/assets/linkedin-portfolio-showcase-wireframe.png";
 
 const LinkedInCaseStudy = () => {
   return (
@@ -356,33 +357,22 @@ const LinkedInCaseStudy = () => {
               </div>
             </Card>
 
-            {/* Tenth feature */}
-            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105">
+            {/* Tenth feature with wireframe */}
+            <Card className="p-6 hover:shadow-lg transition-all hover:scale-105 md:col-span-2">
               <div className="flex items-start justify-between mb-3">
                 <Badge variant="secondary">Non-AI</Badge>
                 <span className="text-2xl font-bold text-primary/30">#10</span>
               </div>
-              <h3 className="font-semibold mb-2">Native Creator Analytics</h3>
-              <p className="text-sm text-muted-foreground">50% reach drop, no data</p>
+              <h3 className="font-semibold mb-2">Polywork-Style Portfolio Showcase</h3>
+              <p className="text-sm text-muted-foreground mb-4">This redesign of the LinkedIn Profile 'Experience' section replaces the text list with visual project cards (image + title + collaborators), adhering to LinkedIn's aesthetic.</p>
+              <div className="rounded-lg overflow-hidden border shadow-md">
+                <img 
+                  src={linkedinPortfolioShowcaseWireframe} 
+                  alt="LinkedIn Polywork-Style Portfolio Showcase Wireframe"
+                  className="w-full h-auto"
+                />
+              </div>
             </Card>
-
-            {/* Rest of the features */}
-            {[
-              { title: "Re-Architected Messaging Inbox", category: "Non-AI", pain: "Cluttered, lacks basic features" },
-              { title: "True Anonymity for Reviews", category: "Non-AI", pain: "Need safe place for feedback" },
-              { title: "Robust Customer Support", category: "Non-AI", pain: "Unresponsive support" },
-            ].map((feature, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all hover:scale-105">
-                <div className="flex items-start justify-between mb-3">
-                  <Badge variant={feature.category === "AI" ? "default" : "secondary"}>
-                    {feature.category}
-                  </Badge>
-                  <span className="text-2xl font-bold text-primary/30">#{index + 11}</span>
-                </div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.pain}</p>
-              </Card>
-            ))}
           </div>
         </section>
 
