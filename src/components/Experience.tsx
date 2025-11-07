@@ -71,7 +71,7 @@ const Experience = () => {
     achievements: ["Collaborated directly with product team to redesign user qualification journeys, improving conversion efficiency by 35%", "Executed data-driven activation strategies based on user profiles and CRM signals, generating over $700K in revenue across two quarters"],
     techStack: ["User Journey Design", "CRM Strategy", "Conversion Optimization", "Data-Driven Strategy", "Funnel Optimization"]
   }, {
-    role: "Product-led Growth Analyst",
+    role: "Product Analyst",
     company: "LEADLE",
     logo: "/logos/leadle-logo.png",
     location: "Chennai, India",
