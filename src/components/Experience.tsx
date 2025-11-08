@@ -18,7 +18,7 @@ const Experience = () => {
     period: "May 2025 - November 2025",
     website: "https://www.ipserlab.com/",
     description: "Promoted to Lead AI Product Manager within 4 weeks. Leading 0-to-1 development of AI-powered travel planning platform at stealth-stage startup.",
-    achievements: ["Championed the 0-to-1 development by architecting multi-disciplinary teams and ownership models, earning promotion in 4 weeks", "Orchestrated complete product discovery process from user research and problem framing to persona mapping", "Directed product strategy under the CTO, delivering 10+ core artifacts (roadmap, PRD, technical specs) that accelerated initial build phase by 25%", "Steered end-to-end execution of 5 agile sprint cycles, crafting 50+ user stories that cut developer clarification cycles by 40%", "Drove product velocity by implementing RICE prioritization framework, enabling high-impact feature delivery within 3 weeks and cutting backlog churn by 35%", "Engineered asynchronous onboarding system for 20+ contributors, slashing onboarding time by 3.5 days and reducing support queries by 63%"],
+    achievements: ["Championed 0-to-1 development of an AI travel companion product by structuring ownership models and agile workflows, achieving a 4-week promotion to Lead AI PM and 3× faster cross-team alignment", "Led full discovery cycle user interviews, persona mapping, and hypothesis testing resulting in a validated MVP problem statement with 80% concept acceptance from early users", "Delivered 10+ strategic artifacts (roadmap, PRD, feature briefs, specs) that accelerated engineering kickoff and cut build time by 25% under a zero-budget environment", "Executed A/B experiments on onboarding and itinerary flows, generating 27% higher task completion, 19% lower drop-off, and directly informing next-release UX decisions", "Defined and established KPI framework (activation, adoption, DAU/WAU) and delivered a data-driven roadmap for Version 2 MVP to guide ongoing iteration and product optimization", "Authored 50+ user stories across five sprints using the RICE framework, reducing backlog churn by 35%, clarification loops by 40%, and boosting sprint delivery predictability by 18%"],
     techStack: ["Product Strategy", "AI/ML", "RICE Framework", "Agile/Scrum", "Team Leadership", "0-to-1 Development"]
   }, {
     role: "Graduate Teaching Assistant",
@@ -58,7 +58,7 @@ const Experience = () => {
     period: "Sep 2022 - Aug 2023",
     website: "https://asanify.com/",
     description: "Drove growth and revenue optimization for HR and Payroll automation software serving small to medium-sized businesses.",
-    achievements: ["Spearheaded CRM automation and audience segmentation strategy driving 18% increase in revenue efficiency and 27% boost in lead conversion", "Engineered real-time onboarding dashboards in Tableau to pinpoint user drop-off patterns, accelerating product analytics reporting by 31%", "Pioneered Product-Led Growth (PLG) inbound funnel leveraging LinkedIn data, resulting in 14% ARR increase and 19% improvement in onboarding retention"],
+    achievements: ["Drove product-led growth (PLG) strategy, achieving a 16% ARR increase and 29% boost in onboarding retention, laying the foundation for sustainable NRR growth", "Designed and deployed a CRM automation framework that lifted revenue efficiency by 18% and boosted lead-to-customer conversion by 27%", "Built Tableau- and SQL-based onboarding dashboards to uncover user drop-off trends, guiding product roadmap decisions and improving analytics turnaround by 31%"],
     techStack: ["CRM Automation", "Tableau", "Product-Led Growth", "Revenue Optimization", "Lead Conversion", "User Analytics"]
   }, {
     role: "Business Development Associate",
@@ -68,7 +68,7 @@ const Experience = () => {
     period: "Mar 2022 - Sep 2022",
     website: "https://yocket.com/",
     description: "Optimized conversion funnels and activation strategies for India's largest community-based platform for study-abroad aspirants.",
-    achievements: ["Collaborated directly with product team to redesign user qualification journeys, improving conversion efficiency by 35%", "Executed data-driven activation strategies based on user profiles and CRM signals, generating over $700K in revenue across two quarters"],
+    achievements: ["Collaborated with the product and marketing teams to redesign the user qualification journey, improving conversion efficiency by 35%", "Executed data-driven activation strategies based on user profiles and CRM signals, generating over $700K in revenue across two quarters"],
     techStack: ["User Journey Design", "CRM Strategy", "Conversion Optimization", "Data-Driven Strategy", "Funnel Optimization"]
   }, {
     role: "Product Analyst",
@@ -78,7 +78,7 @@ const Experience = () => {
     period: "Oct 2021 - Mar 2022",
     website: "https://www.leadlehq.com/",
     description: "Optimized user activation and lead generation for B2B SaaS platform providing product-led growth tools and analytics.",
-    achievements: ["Optimized user activation paths by analyzing churn signals and MVP-stage feedback, boosting SQL volume by 20% and cutting churn by 17%", "Engineered automated lead capture system integrated with GA dashboards, which quadrupled booked meetings and identified top-performing acquisition channels"],
+    achievements: ["Optimized activation and retention pathways by analyzing churn signals and MVP-stage user feedback, reducing churn by 17% and increasing SQL pipeline volume by 20%", "Built an automated lead-capture and analytics system integrated with GA dashboards, quadrupling booked meetings and identifying top-performing acquisition channels"],
     techStack: ["B2B SaaS", "Churn Analysis", "Lead Capture", "Google Analytics", "User Activation", "Growth Analytics"]
   }];
   return <section className="py-12 bg-background relative overflow-hidden">
