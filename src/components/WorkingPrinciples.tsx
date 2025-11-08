@@ -27,39 +27,13 @@ const WorkingPrinciples = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in relative">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 blur-3xl opacity-50 animate-pulse" style={{ animationDuration: '3s' }}></div>
-          
-          <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">My Product Philosophy</span>
-          </div>
-          
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in relative group cursor-default" style={{ animationDelay: '0.1s' }}>
-            <span className="bg-gradient-to-r from-primary via-primary to-primary/60 bg-clip-text text-transparent bg-[length:200%_auto] transition-all duration-500 group-hover:bg-[position:100%_0]">
-              How I Think & Work
-            </span>
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            How I Think & Work
           </h2>
-          
-          <div className="max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed relative group cursor-default">
-              <span className="inline-block transition-transform duration-300 group-hover:scale-105">
-                <span className="text-primary/80 text-5xl md:text-6xl leading-none">"</span>
-              </span>
-              <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent transition-all duration-300 group-hover:from-primary group-hover:to-primary/70">
-                I build products that turn complexity into clarity and insight into user impact.
-              </span>
-              <span className="inline-block transition-transform duration-300 group-hover:scale-105">
-                <span className="text-primary/80 text-5xl md:text-6xl leading-none">"</span>
-              </span>
-            </p>
-          </div>
-          
-          <div className="mt-8 flex justify-center gap-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-          </div>
+          <p className="text-xl md:text-2xl text-muted-foreground font-light italic max-w-3xl mx-auto">
+            "I build products that turn complexity into clarity and insight into user impact."
+          </p>
         </div>
 
         <div className="relative">
