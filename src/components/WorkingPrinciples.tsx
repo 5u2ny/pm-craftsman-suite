@@ -46,7 +46,7 @@ const WorkingPrinciples = () => {
                   className="group relative animate-fade-in z-10"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-lg animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.1}s` }}>
+                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-primary-foreground text-lg shadow-lg z-20 border-4 border-background animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.1}s` }}>
                     {index + 1}
                   </div>
                   <div className="flex flex-col items-center text-center p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 h-full hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50 hover:bg-gradient-to-br hover:from-card hover:to-primary/5">
