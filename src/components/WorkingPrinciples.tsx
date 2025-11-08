@@ -14,7 +14,7 @@ const WorkingPrinciples = () => {
     },
     {
       icon: Rocket,
-      title: "Ship, learn, iterate—relentlessly",
+      title: "Ship, learn, iterate relentlessly",
       description: "Progress means getting live fast, collecting feedback, and evolving with purpose."
     },
     {
@@ -43,16 +43,17 @@ const WorkingPrinciples = () => {
               <div
                 key={index}
                 className="group relative animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="flex flex-col items-center text-center p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/30 h-full">
-                  <div className="flex-shrink-0 mb-4 p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                    <Icon className="w-8 h-8 text-primary" strokeWidth={2} />
+                <div className="flex flex-col items-center text-center p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 h-full hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50 hover:bg-gradient-to-br hover:from-card hover:to-primary/5">
+                  <div className="flex-shrink-0 mb-4 p-4 rounded-full bg-primary/10 transition-all duration-500 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <Icon className="w-8 h-8 text-primary relative z-10 transition-transform duration-500 group-hover:scale-110" strokeWidth={2.5} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-lg font-semibold mb-3 text-foreground transition-all duration-500 group-hover:text-primary group-hover:scale-105">
                     {principle.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed transition-all duration-500 group-hover:text-foreground">
                     {principle.description}
                   </p>
                 </div>
