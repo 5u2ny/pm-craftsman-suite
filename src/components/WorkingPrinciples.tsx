@@ -36,16 +36,19 @@ const WorkingPrinciples = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {principles.map((principle, index) => {
-            const Icon = principle.icon;
-            return (
-              <>
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {principles.map((principle, index) => {
+              const Icon = principle.icon;
+              return (
                 <div
                   key={index}
-                  className="group relative animate-fade-in"
+                  className="group relative animate-fade-in z-10"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
+                  <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary text-lg animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.1}s` }}>
+                    {index + 1}
+                  </div>
                   <div className="flex flex-col items-center text-center p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-500 h-full hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 hover:border-primary/50 hover:bg-gradient-to-br hover:from-card hover:to-primary/5">
                     <div className="flex-shrink-0 mb-4 p-4 rounded-full bg-primary/10 transition-all duration-500 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-6 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -58,15 +61,18 @@ const WorkingPrinciples = () => {
                       {principle.description}
                     </p>
                   </div>
+                  {index < principles.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-20 animate-fade-in" style={{ animationDelay: `${index * 0.15 + 0.3}s` }}>
+                      <div className="flex items-center gap-1 animate-pulse">
+                        <div className="w-8 h-0.5 bg-gradient-to-r from-primary/40 to-primary"></div>
+                        <ArrowRight className="w-5 h-5 text-primary" strokeWidth={3} />
+                      </div>
+                    </div>
+                  )}
                 </div>
-                {index < principles.length - 1 && (
-                  <div className="hidden lg:flex absolute left-[calc(25%+12px)] items-center justify-center animate-fade-in" style={{ top: '50%', transform: 'translateY(-50%)', marginLeft: `${index * 25}%`, animationDelay: `${index * 0.15 + 0.3}s` }}>
-                    <ArrowRight className="w-6 h-6 text-primary/60 animate-pulse" strokeWidth={2.5} />
-                  </div>
-                )}
-              </>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
