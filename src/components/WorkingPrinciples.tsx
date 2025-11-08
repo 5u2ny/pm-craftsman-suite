@@ -1,22 +1,24 @@
+import { Target, Compass, Rocket, Scale } from "lucide-react";
+
 const WorkingPrinciples = () => {
   const principles = [
     {
-      number: "01",
+      icon: Target,
       title: "Start with the user, end with measurable value",
       description: "Every roadmap begins from real human pain points and ends in outcomes that move the needle."
     },
     {
-      number: "02",
+      icon: Compass,
       title: "Data frames direction, not destination",
       description: "Metrics validate hypotheses, but judgment and context define what truly matters."
     },
     {
-      number: "03",
+      icon: Rocket,
       title: "Ship, learn, iterate—relentlessly",
       description: "Progress means getting live fast, collecting feedback, and evolving with purpose."
     },
     {
-      number: "04",
+      icon: Scale,
       title: "Balance user love, tech feasibility, and business logic",
       description: "Great products live where desirability, viability, and feasibility intersect—and tradeoffs are intentional."
     }
@@ -34,30 +36,29 @@ const WorkingPrinciples = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:gap-10">
-          {principles.map((principle, index) => (
-            <div
-              key={principle.number}
-              className="group relative animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex gap-6 items-start p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/30">
-                <div className="flex-shrink-0">
-                  <span className="text-5xl font-bold text-primary/20 group-hover:text-primary/40 transition-colors duration-300">
-                    {principle.number}
-                  </span>
-                </div>
-                <div className="flex-1 pt-1">
-                  <h3 className="text-xl md:text-2xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {principles.map((principle, index) => {
+            const Icon = principle.icon;
+            return (
+              <div
+                key={index}
+                className="group relative animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex flex-col items-center text-center p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/30 h-full">
+                  <div className="flex-shrink-0 mb-4 p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                    <Icon className="w-8 h-8 text-primary" strokeWidth={2} />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                     {principle.title}
                   </h3>
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {principle.description}
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
